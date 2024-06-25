@@ -1,5 +1,0 @@
-1. For now I only read the repository info:
-    a lot of dependencies have to be manually installed
-    there is a fairly detailed description of the workflow and the notebook step which comes at the end
-        reproducing this may not be worth it
-        suspended until I have looked at all remaining workflows

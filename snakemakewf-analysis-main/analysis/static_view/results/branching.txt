@@ -1,9 +1,0 @@
-number of repos with dag_string = 362
-number of repos with successful graph construction = 362
-number of repos where we retreived workflow files = 320
-  out of those getting workflow rules still failed 74 times.
-
-Distributions of dag characteristics:
-n_logical_dag_rules: p25=1, p50=6, p75=12, avg=8.8, min=1, max=91, 
-n_workflow_rules: p25=1, p50=3, p75=9, avg=7.921875, min=0, max=123, 
-ratio_logical_rules_by_workflow_rules: p25=0.7333333333333333, p50=1.0, p75=5.0, avg=4.131232346486675, min=0.008130081300813009, max=39.0, 
