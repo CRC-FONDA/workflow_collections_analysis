@@ -1,2 +1,6 @@
-# workflow_collections_analysis
+# Workflow Collections Analysis
+
 Scripts for the analysis of collections of scientific workflows
+
+# Credits
+
