@@ -1,0 +1,198 @@
+digraph "denovohybrid_dag" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p41 [label="multiqc"];
+p0 -> p41 [label="ch_multiqc_config"];
+
+p1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p43 [label="output_documentation"];
+p1 -> p43 [label="ch_output_docs"];
+
+p2 [label="get_software_versions"];
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p2 -> p37 [label="software_versions_yaml"];
+
+p3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p3 -> p4;
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p4 -> p5;
+
+p5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p5 -> p6;
+
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p7 [label="porechop"];
+p6 -> p7 [label="files"];
+
+p7 [label="porechop"];
+p8 [label="filtlong"];
+p7 -> p8 [label="files_porechop"];
+
+p7 [label="porechop"];
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p7 -> p12 [label="files_nanoplot_raw"];
+
+p8 [label="filtlong"];
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="choice"];
+p8 -> p9 [label="files_lr_filtered"];
+
+p8 [label="filtlong"];
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p8 -> p12 [label="files_nanoplot_filtered"];
+
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="choice"];
+p15 [label="fastqc"];
+p9 -> p15 [label="files_to_fastqc"];
+
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="choice"];
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p9 -> p10 [label="files_preprocessed"];
+
+p18 [label="sample_shortreads"];
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p18 -> p10 [label="files_filtered"];
+
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p10 -> p11;
+
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p21 [label="wtdbg"];
+p11 -> p21 [label="files_pre_wtdbg2"];
+
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p20 [label="unicycler"];
+p11 -> p20 [label="files_pre_unicycler"];
+
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p19 [label="miniasm"];
+p11 -> p19 [label="files_pre_miniasm"];
+
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p13 [label="nanoplot"];
+p12 -> p13;
+
+p13 [label="nanoplot"];
+p14 [shape=point];
+p13 -> p14 [label="stats_lr"];
+
+p15 [label="fastqc"];
+p35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p15 -> p35 [label="fastqc_results"];
+
+p15 [label="fastqc"];
+p16 [label="seqpurge"];
+p15 -> p16 [label="files_to_seqpurge"];
+
+p16 [label="seqpurge"];
+p18 [label="sample_shortreads"];
+p16 -> p18 [label="files_purged"];
+
+p16 [label="seqpurge"];
+p17 [shape=point];
+p16 -> p17 [label="stats_sr"];
+
+p19 [label="miniasm"];
+p22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p19 -> p22 [label="files_nocon_miniasm"];
+
+p19 [label="miniasm"];
+p29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p19 -> p29 [label="assembly_graph_miniasm"];
+
+p20 [label="unicycler"];
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p20 -> p26 [label="assembly_unicycler"];
+
+p20 [label="unicycler"];
+p29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p20 -> p29 [label="assembly_graph_unicycler"];
+
+p21 [label="wtdbg"];
+p22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p21 -> p22 [label="files_nocon_wtdbg2"];
+
+p22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p23 [label="racon"];
+p22 -> p23;
+
+p23 [label="racon"];
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="choice"];
+p23 -> p24 [label="files_unpolished_racon"];
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="choice"];
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p24 -> p25 [label="assembly_nopilon"];
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="choice"];
+p28 [label="pilon"];
+p24 -> p28 [label="files_pilon"];
+
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p25 -> p26;
+
+p28 [label="pilon"];
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p28 -> p26 [label="assembly_pilon"];
+
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p26 -> p27;
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p31 [label="quast"];
+p27 -> p31 [label="asm_quast"];
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p32 [label="format_final_output"];
+p27 -> p32 [label="asm_format"];
+
+p29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p30 [label="draw_assembly_graph"];
+p29 -> p30;
+
+p31 [label="quast"];
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p31 -> p38 [label="quast_results"];
+
+p32 [label="format_final_output"];
+p34 [shape=point];
+p32 -> p34 [label="final_files"];
+
+p32 [label="format_final_output"];
+p33 [shape=point];
+p32 -> p33 [label="final_files_plasmident"];
+
+p35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p35 -> p36;
+
+p36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p41 [label="multiqc"];
+p36 -> p41;
+
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p41 [label="multiqc"];
+p37 -> p41;
+
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p38 -> p39;
+
+p39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p41 [label="multiqc"];
+p39 -> p41;
+
+p40 [shape=point,label="",fixedsize=true,width=0.1];
+p41 [label="multiqc"];
+p40 -> p41 [label="workflow_summary"];
+
+p41 [label="multiqc"];
+p42 [shape=point];
+p41 -> p42 [label="multiqc_report"];
+
+}

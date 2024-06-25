@@ -1,0 +1,298 @@
+digraph "coproid_dag" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p0 -> p1;
+
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p1 -> p2;
+
+p2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p2 -> p3;
+
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p11 [label="AdapterRemovalCollapse"];
+p3 -> p11 [label="ch_read_files_trimming"];
+
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p6 [label="fastqc"];
+p3 -> p6 [label="ch_read_files_fastqc"];
+
+p4 [shape=point,label="",fixedsize=true,width=0.1];
+p5 [label="decomp_kraken"];
+p4 -> p5 [label="ckdb"];
+
+p5 [label="decomp_kraken"];
+p23 [label="kraken2"];
+p5 -> p23 [label="krakendb_ch"];
+
+p6 [label="fastqc"];
+p51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p6 -> p51 [label="fastqc_results"];
+
+p7 [shape=point,label="",fixedsize=true,width=0.1];
+p8 [label="renameGenome1"];
+p7 -> p8 [label="genome"];
+
+p8 [label="renameGenome1"];
+p14 [label="BowtieIndexGenome1"];
+p8 -> p14 [label="genome1Fasta"];
+
+p8 [label="renameGenome1"];
+p34 [label="countBp2genomes"];
+p8 -> p34 [label="genome1Size"];
+
+p8 [label="renameGenome1"];
+p35 [label="damageprofilerGenome1"];
+p8 -> p35 [label="genome1damageprofiler"];
+
+p9 [shape=point,label="",fixedsize=true,width=0.1];
+p10 [label="renameGenome2"];
+p9 -> p10 [label="genome"];
+
+p10 [label="renameGenome2"];
+p17 [label="BowtieIndexGenome2"];
+p10 -> p17 [label="genome2Fasta"];
+
+p10 [label="renameGenome2"];
+p34 [label="countBp2genomes"];
+p10 -> p34 [label="genome2Size"];
+
+p10 [label="renameGenome2"];
+p36 [label="damageprofilerGenome2"];
+p10 -> p36 [label="genome2damageprofiler"];
+
+p11 [label="AdapterRemovalCollapse"];
+p15 [label="AlignToGenome1"];
+p11 -> p15 [label="trimmed_reads_genome1"];
+
+p11 [label="AdapterRemovalCollapse"];
+p18 [label="AlignToGenome2"];
+p11 -> p18 [label="trimmed_reads_genome2"];
+
+p11 [label="AdapterRemovalCollapse"];
+p13 [shape=point];
+p11 -> p13 [label="trimmed_reads_genome3"];
+
+p11 [label="AdapterRemovalCollapse"];
+p12 [shape=point];
+p11 -> p12 [label="trimmed_reads_kraken"];
+
+p11 [label="AdapterRemovalCollapse"];
+p49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p11 -> p49 [label="adapter_removal_results"];
+
+p14 [label="BowtieIndexGenome1"];
+p15 [label="AlignToGenome1"];
+p14 -> p15 [label="bt1_ch"];
+
+p15 [label="AlignToGenome1"];
+p32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p15 -> p32 [label="alignment_genome1"];
+
+p15 [label="AlignToGenome1"];
+p21 [label="pmdtoolsgenome1"];
+p15 -> p21 [label="alignment_genome1_pmd"];
+
+p15 [label="AlignToGenome1"];
+p16 [label="bam2fq"];
+p15 -> p16 [label="unaligned_genome1"];
+
+p15 [label="AlignToGenome1"];
+p50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p15 -> p50 [label="align1_multiqc"];
+
+p16 [label="bam2fq"];
+p23 [label="kraken2"];
+p16 -> p23 [label="unmapped_humans_reads"];
+
+p17 [label="BowtieIndexGenome2"];
+p18 [label="AlignToGenome2"];
+p17 -> p18 [label="bt2_ch"];
+
+p18 [label="AlignToGenome2"];
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p18 -> p33 [label="alignment_genome2"];
+
+p18 [label="AlignToGenome2"];
+p22 [label="pmdtoolsgenome2"];
+p18 -> p22 [label="alignment_genome2_pmd"];
+
+p18 [label="AlignToGenome2"];
+p20 [shape=point];
+p18 -> p20 [label="unaligned_genome2"];
+
+p18 [label="AlignToGenome2"];
+p19 [shape=point];
+p18 -> p19 [label="align2_multiqc"];
+
+p21 [label="pmdtoolsgenome1"];
+p31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p21 -> p31 [label="pmd_aligned1"];
+
+p22 [label="pmdtoolsgenome2"];
+p31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p22 -> p31 [label="pmd_aligned2"];
+
+p23 [label="kraken2"];
+p24 [shape=point];
+p23 -> p24 [label="kraken_out"];
+
+p23 [label="kraken2"];
+p25 [label="kraken_parse"];
+p23 -> p25 [label="kraken_report"];
+
+p25 [label="kraken_parse"];
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p25 -> p26 [label="kraken_parsed"];
+
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p27 [label="kraken_merge"];
+p26 -> p27;
+
+p27 [label="kraken_merge"];
+p30 [label="sourcepredict"];
+p27 -> p30 [label="kraken_merged"];
+
+p28 [shape=point,label="",fixedsize=true,width=0.1];
+p30 [label="sourcepredict"];
+p28 -> p30 [label="sp_sources"];
+
+p29 [shape=point,label="",fixedsize=true,width=0.1];
+p30 [label="sourcepredict"];
+p29 -> p30 [label="sp_labels"];
+
+p30 [label="sourcepredict"];
+p38 [label="concatenateRatios"];
+p30 -> p38 [label="sourcepredict_out"];
+
+p30 [label="sourcepredict"];
+p46 [label="generate_report_adna_2_genomes"];
+p30 -> p46 [label="sourcepredict_embed_out"];
+
+p31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p31 -> p32;
+
+p32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p32 -> p33;
+
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p34 [label="countBp2genomes"];
+p33 -> p34;
+
+p34 [label="countBp2genomes"];
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p34 -> p37 [label="bp_count"];
+
+p34 [label="countBp2genomes"];
+p35 [label="damageprofilerGenome1"];
+p34 -> p35 [label="ancient_filtered_bam1"];
+
+p34 [label="countBp2genomes"];
+p36 [label="damageprofilerGenome2"];
+p34 -> p36 [label="ancient_filtered_bam2"];
+
+p35 [label="damageprofilerGenome1"];
+p40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p35 -> p40 [label="damage_result_genome1"];
+
+p35 [label="damageprofilerGenome1"];
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p35 -> p52 [label="dmgProf1_ch"];
+
+p36 [label="damageprofilerGenome2"];
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p36 -> p42 [label="damage_result_genome2"];
+
+p36 [label="damageprofilerGenome2"];
+p53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p36 -> p53 [label="dmgProf2_ch"];
+
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p38 [label="concatenateRatios"];
+p37 -> p38;
+
+p38 [label="concatenateRatios"];
+p46 [label="generate_report_adna_2_genomes"];
+p38 -> p46 [label="coproid_res"];
+
+p38 [label="concatenateRatios"];
+p39 [shape=point];
+p38 -> p39 [label="coproid_bp_count"];
+
+p40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p40 -> p41;
+
+p41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p46 [label="generate_report_adna_2_genomes"];
+p41 -> p46;
+
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p42 -> p43;
+
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p46 [label="generate_report_adna_2_genomes"];
+p43 -> p46;
+
+p44 [shape=point,label="",fixedsize=true,width=0.1];
+p46 [label="generate_report_adna_2_genomes"];
+p44 -> p46 [label="thelogo"];
+
+p45 [shape=point,label="",fixedsize=true,width=0.1];
+p46 [label="generate_report_adna_2_genomes"];
+p45 -> p46 [label="report"];
+
+p46 [label="generate_report_adna_2_genomes"];
+p47 [shape=point];
+p46 -> p47 [label="coproid_report"];
+
+p48 [label="get_software_versions"];
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p48 -> p54 [label="ch_software_versions_yaml"];
+
+p49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p57 [label="multiqc"];
+p49 -> p57;
+
+p50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p57 [label="multiqc"];
+p50 -> p57;
+
+p51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p57 [label="multiqc"];
+p51 -> p57;
+
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p57 [label="multiqc"];
+p52 -> p57;
+
+p53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p57 [label="multiqc"];
+p53 -> p57;
+
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p57 [label="multiqc"];
+p54 -> p57;
+
+p55 [shape=point,label="",fixedsize=true,width=0.1];
+p57 [label="multiqc"];
+p55 -> p57 [label="multiqc_conf"];
+
+p56 [shape=point,label="",fixedsize=true,width=0.1];
+p57 [label="multiqc"];
+p56 -> p57 [label="logo"];
+
+p57 [label="multiqc"];
+p58 [shape=point];
+p57 -> p58 [label="multiqc_report"];
+
+p59 [shape=point,label="",fixedsize=true,width=0.1];
+p60 [label="output_documentation"];
+p59 -> p60 [label="output_docs"];
+
+}

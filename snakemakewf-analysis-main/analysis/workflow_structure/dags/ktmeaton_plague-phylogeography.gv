@@ -1,0 +1,152 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.14 0.6 0.85", style="rounded"];
+	1[label = "metadata\nreads_origin: all", color = "0.43 0.6 0.85", style="rounded"];
+	2[label = "snippy_multi_filter\nmissing_data: 50\nprune: prune", color = "0.13 0.6 0.85", style="rounded"];
+	3[label = "snippy_multi_prune", color = "0.30 0.6 0.85", style="rounded"];
+	4[label = "snippy_multi_extract\nlocus_name: chromosome", color = "0.19 0.6 0.85", style="rounded"];
+	5[label = "snippy_multi", color = "0.21 0.6 0.85", style="rounded"];
+	6[label = "snippy_pairwise", color = "0.35 0.6 0.85", style="rounded"];
+	7[label = "download_assembly\next: fna\nreads_origin: assembly\nsample: GCA_009909635.1_ASM990963v1_genomic", color = "0.03 0.6 0.85", style="rounded"];
+	8[label = "download_assembly\next: gbff\nreads_origin: reference\nsample: GCA_000009065.1_ASM906v1_genomic", color = "0.03 0.6 0.85", style="rounded"];
+	9[label = "snippy_pairwise", color = "0.35 0.6 0.85", style="rounded"];
+	10[label = "download_assembly\next: fna\nreads_origin: assembly\nsample: GCA_009669545.1_ASM966954v1_genomic", color = "0.03 0.6 0.85", style="rounded"];
+	11[label = "snippy_pairwise", color = "0.35 0.6 0.85", style="rounded"];
+	12[label = "download_assembly\next: fna\nreads_origin: assembly\nsample: GCA_009669555.1_ASM966955v1_genomic", color = "0.03 0.6 0.85", style="rounded"];
+	13[label = "snippy_pairwise", color = "0.35 0.6 0.85", style="rounded"];
+	14[label = "eager\nreads_origin: sra\nsample: SAMN02442721", color = "0.51 0.6 0.85", style="rounded"];
+	15[label = "download_sra\nsample: SRR1048905\nsample_dir: SAMN02442721", color = "0.56 0.6 0.85", style="rounded"];
+	16[label = "download_assembly\next: fna\nreads_origin: reference\nsample: GCA_000009065.1_ASM906v1_genomic", color = "0.03 0.6 0.85", style="rounded"];
+	17[label = "snippy_pairwise", color = "0.35 0.6 0.85", style="rounded"];
+	18[label = "eager\nreads_origin: sra\nsample: SAMN02442718", color = "0.51 0.6 0.85", style="rounded"];
+	19[label = "download_sra\nsample: SRR1048902\nsample_dir: SAMN02442718", color = "0.56 0.6 0.85", style="rounded"];
+	20[label = "snippy_pairwise", color = "0.35 0.6 0.85", style="rounded"];
+	21[label = "eager\nreads_origin: local\nsample: testlocal1", color = "0.51 0.6 0.85", style="rounded"];
+	22[label = "snippy_pairwise", color = "0.35 0.6 0.85", style="rounded"];
+	23[label = "eager\nreads_origin: local\nsample: testlocal2", color = "0.51 0.6 0.85", style="rounded"];
+	24[label = "detect_repeats", color = "0.57 0.6 0.85", style="rounded"];
+	25[label = "detect_low_complexity", color = "0.54 0.6 0.85", style="rounded"];
+	26[label = "detect_snp_density_collect\nreads_origin: all", color = "0.08 0.6 0.85", style="rounded"];
+	27[label = "detect_snp_density", color = "0.61 0.6 0.85", style="rounded"];
+	28[label = "detect_snp_density", color = "0.61 0.6 0.85", style="rounded"];
+	29[label = "detect_snp_density", color = "0.61 0.6 0.85", style="rounded"];
+	30[label = "detect_snp_density", color = "0.61 0.6 0.85", style="rounded"];
+	31[label = "detect_snp_density", color = "0.61 0.6 0.85", style="rounded"];
+	32[label = "detect_snp_density", color = "0.61 0.6 0.85", style="rounded"];
+	33[label = "detect_snp_density", color = "0.61 0.6 0.85", style="rounded"];
+	34[label = "plot_snp_matrix\nprune: full", color = "0.24 0.6 0.85", style="rounded"];
+	35[label = "iqtree", color = "0.65 0.6 0.85", style="rounded"];
+	36[label = "snippy_multi_filter\nmissing_data: 50\nprune: full", color = "0.13 0.6 0.85", style="rounded"];
+	37[label = "iqtree_filter", color = "0.12 0.6 0.85", style="rounded"];
+	38[label = "locus_coverage_collect\nreads_origin: all", color = "0.33 0.6 0.85", style="rounded"];
+	39[label = "locus_coverage", color = "0.06 0.6 0.85", style="rounded"];
+	40[label = "qualimap", color = "0.01 0.6 0.85", style="rounded"];
+	41[label = "download_assembly\next: gff\nreads_origin: reference\nsample: GCA_000009065.1_ASM906v1_genomic", color = "0.03 0.6 0.85", style="rounded"];
+	42[label = "locus_coverage", color = "0.06 0.6 0.85", style="rounded"];
+	43[label = "qualimap", color = "0.01 0.6 0.85", style="rounded"];
+	44[label = "locus_coverage", color = "0.06 0.6 0.85", style="rounded"];
+	45[label = "qualimap", color = "0.01 0.6 0.85", style="rounded"];
+	46[label = "locus_coverage", color = "0.06 0.6 0.85", style="rounded"];
+	47[label = "qualimap", color = "0.01 0.6 0.85", style="rounded"];
+	48[label = "locus_coverage", color = "0.06 0.6 0.85", style="rounded"];
+	49[label = "qualimap", color = "0.01 0.6 0.85", style="rounded"];
+	50[label = "locus_coverage", color = "0.06 0.6 0.85", style="rounded"];
+	51[label = "qualimap", color = "0.01 0.6 0.85", style="rounded"];
+	52[label = "locus_coverage", color = "0.06 0.6 0.85", style="rounded"];
+	53[label = "qualimap", color = "0.01 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 0
+	35 -> 0
+	37 -> 0
+	38 -> 0
+	3 -> 2
+	4 -> 3
+	1 -> 3
+	34 -> 3
+	5 -> 4
+	1 -> 4
+	6 -> 5
+	9 -> 5
+	11 -> 5
+	13 -> 5
+	17 -> 5
+	20 -> 5
+	22 -> 5
+	16 -> 5
+	24 -> 5
+	25 -> 5
+	26 -> 5
+	7 -> 6
+	8 -> 6
+	10 -> 9
+	8 -> 9
+	12 -> 11
+	8 -> 11
+	14 -> 13
+	8 -> 13
+	15 -> 14
+	16 -> 14
+	18 -> 17
+	8 -> 17
+	19 -> 18
+	16 -> 18
+	21 -> 20
+	8 -> 20
+	16 -> 21
+	23 -> 22
+	8 -> 22
+	16 -> 23
+	16 -> 24
+	16 -> 25
+	27 -> 26
+	28 -> 26
+	29 -> 26
+	30 -> 26
+	31 -> 26
+	32 -> 26
+	33 -> 26
+	6 -> 27
+	9 -> 28
+	11 -> 29
+	13 -> 30
+	17 -> 31
+	20 -> 32
+	22 -> 33
+	4 -> 34
+	4 -> 35
+	36 -> 35
+	4 -> 36
+	36 -> 37
+	1 -> 37
+	35 -> 37
+	39 -> 38
+	42 -> 38
+	44 -> 38
+	46 -> 38
+	48 -> 38
+	50 -> 38
+	52 -> 38
+	40 -> 39
+	41 -> 39
+	6 -> 40
+	43 -> 42
+	41 -> 42
+	9 -> 43
+	45 -> 44
+	41 -> 44
+	11 -> 45
+	47 -> 46
+	41 -> 46
+	13 -> 47
+	49 -> 48
+	41 -> 48
+	17 -> 49
+	51 -> 50
+	41 -> 50
+	20 -> 51
+	53 -> 52
+	41 -> 52
+	22 -> 53
+}            

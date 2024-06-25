@@ -1,0 +1,56 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.00 0.6 0.85", style="rounded"];
+	1[label = "paper", color = "0.32 0.6 0.85", style="rounded"];
+	2[label = "create_figure\niFigure: earnings_by_cohort", color = "0.60 0.6 0.85", style="rounded"];
+	3[label = "gen_cohort_sum", color = "0.13 0.6 0.85", style="rounded"];
+	4[label = "gen_reg_vars", color = "0.06 0.6 0.85", style="rounded"];
+	5[label = "download_data", color = "0.29 0.6 0.85", style="rounded"];
+	6[label = "create_figure\niFigure: education_by_cohort", color = "0.60 0.6 0.85", style="rounded"];
+	7[label = "make_table", color = "0.51 0.6 0.85", style="rounded"];
+	8[label = "run_ols\niFixedEffect: fixed_effects", color = "0.35 0.6 0.85", style="rounded"];
+	9[label = "run_ols\niFixedEffect: no_fixed_effects", color = "0.35 0.6 0.85", style="rounded"];
+	10[label = "run_iv_fe\niFixedEffect: fixed_effects\niInstrument: 2", color = "0.03 0.6 0.85", style="rounded"];
+	11[label = "run_iv_fe\niFixedEffect: no_fixed_effects\niInstrument: 2", color = "0.03 0.6 0.85", style="rounded"];
+	12[label = "run_iv_fe\niFixedEffect: fixed_effects\niInstrument: 3", color = "0.03 0.6 0.85", style="rounded"];
+	13[label = "run_iv_fe\niFixedEffect: no_fixed_effects\niInstrument: 3", color = "0.03 0.6 0.85", style="rounded"];
+	14[label = "run_iv_fe\niFixedEffect: fixed_effects\niInstrument: 1", color = "0.03 0.6 0.85", style="rounded"];
+	15[label = "run_iv_fe\niFixedEffect: no_fixed_effects\niInstrument: 1", color = "0.03 0.6 0.85", style="rounded"];
+	16[label = "run_iv_fe\niFixedEffect: fixed_effects\niInstrument: 4", color = "0.03 0.6 0.85", style="rounded"];
+	17[label = "run_iv_fe\niFixedEffect: no_fixed_effects\niInstrument: 4", color = "0.03 0.6 0.85", style="rounded"];
+	18[label = "slides", color = "0.54 0.6 0.85", style="rounded"];
+	1 -> 0
+	18 -> 0
+	2 -> 1
+	6 -> 1
+	7 -> 1
+	3 -> 2
+	4 -> 3
+	5 -> 4
+	3 -> 6
+	8 -> 7
+	9 -> 7
+	10 -> 7
+	11 -> 7
+	12 -> 7
+	13 -> 7
+	14 -> 7
+	15 -> 7
+	16 -> 7
+	17 -> 7
+	4 -> 8
+	4 -> 9
+	4 -> 10
+	4 -> 11
+	4 -> 12
+	4 -> 13
+	4 -> 14
+	4 -> 15
+	4 -> 16
+	4 -> 17
+	2 -> 18
+	6 -> 18
+	7 -> 18
+}            

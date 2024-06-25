@@ -1,0 +1,210 @@
+digraph "createpanelrefs_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1 [label="ch_from_samplesheet"];
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v16 [label="ch_input"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="ch_dict"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=point];
+v4 -> v5 [label="ch_fai"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v8 -> v24 [label="ch_fasta"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 [shape=point];
+v10 -> v11 [label="ch_ploidy_priors"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v12 -> v47 [label="ch_multiqc_config"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v13 -> v48 [label="ch_multiqc_custom_config"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v14 -> v49 [label="ch_multiqc_logo"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v31 [label="ch_versions"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v19 -> v24 [label="ch_cnvkit_input"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v20 -> v24;
+
+v21 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v21 -> v24;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v22 -> v24;
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v23 -> v24 [label="panel_of_normals"];
+
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v30 [shape=point];
+v24 -> v30;
+
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v29 [shape=point];
+v24 -> v29;
+
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v28 [shape=point];
+v24 -> v28;
+
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v27 [shape=point];
+v24 -> v27;
+
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v26 [shape=point];
+v24 -> v26;
+
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v25 [shape=point];
+v24 -> v25;
+
+v24 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CNVKIT_BATCH"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v31 -> v32 [label="ch_versions"];
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v34 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v33 -> v34;
+
+v34 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v36 [shape=point];
+v34 -> v36;
+
+v34 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 -> v44;
+
+v34 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v35 [shape=point];
+v34 -> v35;
+
+v37 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v40 [label="ch_multiqc_files"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v38 -> v39 [label="ch_workflow_summary"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v43 [label="ch_multiqc_files"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v41 -> v42 [label="ch_methods_description"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v45 [label="ch_multiqc_files"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 -> v46 [label="ch_multiqc_files"];
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v50 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:MULTIQC"];
+v46 -> v50;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v50 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:MULTIQC"];
+v47 -> v50;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v50 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:MULTIQC"];
+v48 -> v50;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v50 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:MULTIQC"];
+v49 -> v50;
+
+v50 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:MULTIQC"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v50 -> v54;
+
+v50 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:MULTIQC"];
+v53 [shape=point];
+v50 -> v53;
+
+v50 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:MULTIQC"];
+v52 [shape=point];
+v50 -> v52;
+
+v50 [label="NFCORE_CREATEPANELREFS:CREATEPANELREFS:MULTIQC"];
+v51 [shape=point];
+v50 -> v51;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v55 [shape=point];
+v54 -> v55;
+
+}

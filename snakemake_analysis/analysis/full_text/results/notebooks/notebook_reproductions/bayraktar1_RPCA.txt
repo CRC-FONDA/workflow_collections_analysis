@@ -1,0 +1,16 @@
+1. repository cloned
+
+2. I am meant to edit the config file, but have no idea what the paths should be
+    I seem to be missing input again
+
+    also unclear what parameters I should pass to singularity:
+How to run
+Set parameters in config.yaml
+run: snakemake -p --use-singularity --singularity-prefix "resources"  --singularity-args "--bind *" --use-conda -j ** all --configfile "config/config.yaml"
+Note * : You should provide your own directory for the --bind command so that the data is accesible from the singularity containers.
+Note ** : Specify number of available threads here.
+
+3. I tried to run the workflow without specific parameters, but I am missing any input
+
+4. The github repository also notifies us about extremely long running times of workflow
+    (8 hours for Covid DNA, multiple days for human DNA)

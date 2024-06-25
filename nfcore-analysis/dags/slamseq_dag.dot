@@ -1,0 +1,362 @@
+digraph "slamseq_dag" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p1 [label="gunzipFasta"];
+p0 -> p1 [label="fastaGunzipChannel"];
+
+p1 [label="gunzipFasta"];
+p22 [label="map"];
+p1 -> p22 [label="fastaMapChannel"];
+
+p1 [label="gunzipFasta"];
+p24 [label="snp"];
+p1 -> p24 [label="fastaSnpChannel"];
+
+p1 [label="gunzipFasta"];
+p28 [label="count"];
+p1 -> p28 [label="fastaCountChannel"];
+
+p1 [label="gunzipFasta"];
+p30 [label="rates"];
+p1 -> p30 [label="fastaRatesChannel"];
+
+p1 [label="gunzipFasta"];
+p31 [label="utrrates"];
+p1 -> p31 [label="fastaUtrRatesChannel"];
+
+p1 [label="gunzipFasta"];
+p32 [label="tcperreadpos"];
+p1 -> p32 [label="fastaReadPosChannel"];
+
+p1 [label="gunzipFasta"];
+p33 [label="tcperutrpos"];
+p1 -> p33 [label="fastaUtrPosChannel"];
+
+p2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p2 -> p3;
+
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p3 -> p4;
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p33 [label="tcperutrpos"];
+p4 -> p33 [label="utrposChannel"];
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p23 [label="filter"];
+p4 -> p23 [label="utrFilterChannel"];
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p28 [label="count"];
+p4 -> p28 [label="utrCountChannel"];
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p31 [label="utrrates"];
+p4 -> p31 [label="utrratesChannel"];
+
+p5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p5 -> p20 [label="vcfChannel"];
+
+p6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p6 -> p50 [label="ch_multiqc_custom_config"];
+
+p7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p7 -> p8;
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p14 [label="checkDesign"];
+p8 -> p14 [label="checkChannel"];
+
+p9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p9 -> p10;
+
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p10 -> p11;
+
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p11 -> p12;
+
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+p12 -> p65 [label="ch_workflow_summary"];
+
+p13 [label="get_software_versions"];
+p64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p13 -> p64 [label="ch_software_versions_yaml"];
+
+p14 [label="checkDesign"];
+p15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p14 -> p15 [label="rawFileChannel"];
+
+p14 [label="checkDesign"];
+p47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p14 -> p47 [label="deseq2ConditionChannel"];
+
+p14 [label="checkDesign"];
+p17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p14 -> p17 [label="splitChannel"];
+
+p14 [label="checkDesign"];
+p18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p14 -> p18 [label="vcfSampleChannel"];
+
+p15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p15 -> p16;
+
+p16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p21 [label="trim"];
+p16 -> p21 [label="rawFiles"];
+
+p17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p17 -> p43 [label="conditionDeconvolution"];
+
+p18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p18 -> p19;
+
+p19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p19 -> p20;
+
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p20 -> p25 [label="vcfCombineChannel"];
+
+p21 [label="trim"];
+p22 [label="map"];
+p21 -> p22 [label="trimmedFiles"];
+
+p21 [label="trim"];
+p60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p21 -> p60 [label="trimgaloreQC"];
+
+p21 [label="trim"];
+p62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p21 -> p62 [label="trimgaloreFastQC"];
+
+p22 [label="map"];
+p23 [label="filter"];
+p22 -> p23 [label="slamdunkMap"];
+
+p23 [label="filter"];
+p24 [label="snp"];
+p23 -> p24 [label="slamdunkFilter"];
+
+p23 [label="filter"];
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p23 -> p26 [label="slamdunkCount"];
+
+p23 [label="filter"];
+p34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p23 -> p34 [label="slamdunkFilterSummary"];
+
+p24 [label="snp"];
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p24 -> p25 [label="slamdunkSnp"];
+
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p25 -> p26 [label="vcfComb"];
+
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p26 -> p27;
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p28 [label="count"];
+p27 -> p28 [label="slamdunkResultsChannel"];
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p33 [label="tcperutrpos"];
+p27 -> p33 [label="slamdunkForTcPerUtrPosChannel"];
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p30 [label="rates"];
+p27 -> p30 [label="slamdunkForRatesChannel"];
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p32 [label="tcperreadpos"];
+p27 -> p32 [label="slamdunkForTcPerReadPosChannel"];
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p31 [label="utrrates"];
+p27 -> p31 [label="slamdunkForUtrRatesChannel"];
+
+p28 [label="count"];
+p29 [label="collapse"];
+p28 -> p29 [label="slamdunkCountOut"];
+
+p28 [label="count"];
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p28 -> p37 [label="slamdunkCountAlleyoop"];
+
+p29 [label="collapse"];
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p29 -> p44 [label="slamdunkCollapseOut"];
+
+p30 [label="rates"];
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p30 -> p52 [label="alleyoopRatesOut"];
+
+p31 [label="utrrates"];
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p31 -> p54 [label="alleyoopUtrRatesOut"];
+
+p32 [label="tcperreadpos"];
+p56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p32 -> p56 [label="alleyoopTcPerReadPosOut"];
+
+p33 [label="tcperutrpos"];
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p33 -> p58 [label="alleyoopTcPerUtrPosOut"];
+
+p34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+p34 -> p35;
+
+p35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+p36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p35 -> p36;
+
+p36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p42 [label="summary"];
+p36 -> p42 [label="slamdunkFilterSummaryCollected"];
+
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p37 -> p38;
+
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+p38 -> p39;
+
+p39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+p40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p39 -> p40;
+
+p40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p40 -> p41 [label="slamdunkCountAlleyoopCollected"];
+
+p41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p42 [label="summary"];
+p41 -> p42;
+
+p42 [label="summary"];
+p67 [label="multiqc"];
+p42 -> p67 [label="summaryQC"];
+
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p43 -> p44;
+
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p44 -> p45;
+
+p45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p45 -> p46;
+
+p46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p48 [label="deseq2"];
+p46 -> p48 [label="deseq2FileChannel"];
+
+p47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p48 [label="deseq2"];
+p47 -> p48;
+
+p48 [label="deseq2"];
+p49 [shape=point];
+p48 -> p49 [label="deseq2out"];
+
+p50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p50 -> p51;
+
+p51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p67 [label="multiqc"];
+p51 -> p67;
+
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p52 -> p53;
+
+p53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p67 [label="multiqc"];
+p53 -> p67;
+
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p54 -> p55;
+
+p55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p67 [label="multiqc"];
+p55 -> p67;
+
+p56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p56 -> p57;
+
+p57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p67 [label="multiqc"];
+p57 -> p67;
+
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p58 -> p59;
+
+p59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p67 [label="multiqc"];
+p59 -> p67;
+
+p60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p60 -> p61;
+
+p61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p67 [label="multiqc"];
+p61 -> p67;
+
+p62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p62 -> p63;
+
+p63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p67 [label="multiqc"];
+p63 -> p67;
+
+p64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p67 [label="multiqc"];
+p64 -> p67;
+
+p65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+p67 [label="multiqc"];
+p65 -> p67;
+
+p66 [shape=point,label="",fixedsize=true,width=0.1];
+p67 [label="multiqc"];
+p66 -> p67 [label="multiqc_config"];
+
+p67 [label="multiqc"];
+p68 [shape=point];
+p67 -> p68 [label="ch_multiqc_report"];
+
+p69 [shape=point,label="",fixedsize=true,width=0.1];
+p71 [label="output_documentation"];
+p69 -> p71 [label="output_docs"];
+
+p70 [shape=point,label="",fixedsize=true,width=0.1];
+p71 [label="output_documentation"];
+p70 -> p71 [label="images"];
+
+}

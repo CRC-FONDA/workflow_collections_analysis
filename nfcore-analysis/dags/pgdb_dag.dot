@@ -1,0 +1,318 @@
+digraph "pgdb_dag" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p0 -> p1;
+
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p1 -> p2;
+
+p2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p2 -> p3;
+
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p4 [shape=point];
+p3 -> p4 [label="ch_workflow_summary"];
+
+p5 [label="get_software_versions"];
+p6 [shape=point];
+p5 -> p6 [label="ch_software_versions_yaml"];
+
+p7 [shape=point,label="",fixedsize=true,width=0.1];
+p8 [label="ensembl_fasta_download"];
+p7 -> p8 [label="ensembl_downloader_config"];
+
+p8 [label="ensembl_fasta_download"];
+p10 [label="add_reference_proteome"];
+p8 -> p10 [label="ensembl_protein_database_sub"];
+
+p8 [label="ensembl_fasta_download"];
+p21 [label="add_altorfs"];
+p8 -> p21 [label="ensembl_cdna_database"];
+
+p8 [label="ensembl_fasta_download"];
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p8 -> p11 [label="ensembl_cdna_database_sub"];
+
+p8 [label="ensembl_fasta_download"];
+p9 [shape=point];
+p8 -> p9 [label="ensembl_ncrna_database"];
+
+p8 [label="ensembl_fasta_download"];
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p8 -> p12 [label="ensembl_ncrna_database_sub"];
+
+p8 [label="ensembl_fasta_download"];
+p38 [label="gtf_to_fasta"];
+p8 -> p38 [label="genome_fasta"];
+
+p8 [label="ensembl_fasta_download"];
+p35 [label="ensembl_vcf_proteinDB"];
+p8 -> p35 [label="gtf"];
+
+p10 [label="add_reference_proteome"];
+p16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p10 -> p16 [label="ensembl_protein_database"];
+
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p13 [label="merge_cdnas"];
+p11 -> p13;
+
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p13 [label="merge_cdnas"];
+p12 -> p13;
+
+p13 [label="merge_cdnas"];
+p15 [label="add_ncrna"];
+p13 -> p15 [label="total_cdnas"];
+
+p14 [shape=point,label="",fixedsize=true,width=0.1];
+p15 [label="add_ncrna"];
+p14 -> p15 [label="ensembl_config"];
+
+p15 [label="add_ncrna"];
+p16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p15 -> p16 [label="optional_ncrna"];
+
+p16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p16 -> p19;
+
+p13 [label="merge_cdnas"];
+p18 [label="add_pseudogenes"];
+p13 -> p18 [label="total_cdnas"];
+
+p17 [shape=point,label="",fixedsize=true,width=0.1];
+p18 [label="add_pseudogenes"];
+p17 -> p18 [label="ensembl_config"];
+
+p18 [label="add_pseudogenes"];
+p19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p18 -> p19 [label="optional_pseudogenes"];
+
+p19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p19 -> p22;
+
+p20 [shape=point,label="",fixedsize=true,width=0.1];
+p21 [label="add_altorfs"];
+p20 -> p21 [label="ensembl_config"];
+
+p21 [label="add_altorfs"];
+p22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p21 -> p22 [label="optional_altorfs"];
+
+p22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p22 -> p27;
+
+p23 [shape=point,label="",fixedsize=true,width=0.1];
+p24 [label="cosmic_download"];
+p23 -> p24 [label="cosmic_config"];
+
+p24 [label="cosmic_download"];
+p26 [label="cosmic_proteindb"];
+p24 -> p26 [label="cosmic_genes"];
+
+p24 [label="cosmic_download"];
+p26 [label="cosmic_proteindb"];
+p24 -> p26 [label="cosmic_mutations"];
+
+p24 [label="cosmic_download"];
+p29 [label="cosmic_celllines_proteindb"];
+p24 -> p29 [label="cosmic_celllines_genes"];
+
+p24 [label="cosmic_download"];
+p29 [label="cosmic_celllines_proteindb"];
+p24 -> p29 [label="cosmic_celllines_mutations"];
+
+p25 [shape=point,label="",fixedsize=true,width=0.1];
+p26 [label="cosmic_proteindb"];
+p25 -> p26 [label="cosmic_config"];
+
+p26 [label="cosmic_proteindb"];
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p26 -> p27 [label="cosmic_proteindbs"];
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p27 -> p30;
+
+p28 [shape=point,label="",fixedsize=true,width=0.1];
+p29 [label="cosmic_celllines_proteindb"];
+p28 -> p29 [label="cosmic_config"];
+
+p29 [label="cosmic_celllines_proteindb"];
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p29 -> p30 [label="cosmic_celllines_proteindbs"];
+
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p30 -> p37;
+
+p31 [shape=point,label="",fixedsize=true,width=0.1];
+p32 [label="ensembl_vcf_download"];
+p31 -> p32 [label="ensembl_downloader_config"];
+
+p32 [label="ensembl_vcf_download"];
+p33 [label="check_ensembl_vcf"];
+p32 -> p33 [label="ensembl_vcf_files"];
+
+p33 [label="check_ensembl_vcf"];
+p35 [label="ensembl_vcf_proteinDB"];
+p33 -> p35 [label="ensembl_vcf_files_checked"];
+
+p13 [label="merge_cdnas"];
+p35 [label="ensembl_vcf_proteinDB"];
+p13 -> p35 [label="total_cdnas"];
+
+p34 [shape=point,label="",fixedsize=true,width=0.1];
+p35 [label="ensembl_vcf_proteinDB"];
+p34 -> p35 [label="e"];
+
+p35 [label="ensembl_vcf_proteinDB"];
+p36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+p35 -> p36 [label="proteinDB_vcf"];
+
+p36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p36 -> p37 [label="proteinDB_vcf_final"];
+
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p37 -> p42;
+
+p8 [label="ensembl_fasta_download"];
+p38 [label="gtf_to_fasta"];
+p8 -> p38 [label="gtf"];
+
+p38 [label="gtf_to_fasta"];
+p41 [label="vcf_proteinDB"];
+p38 -> p41 [label="gtf_transcripts_fasta"];
+
+p39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p41 [label="vcf_proteinDB"];
+p39 -> p41 [label="vcf_file"];
+
+p8 [label="ensembl_fasta_download"];
+p41 [label="vcf_proteinDB"];
+p8 -> p41 [label="gtf"];
+
+p40 [shape=point,label="",fixedsize=true,width=0.1];
+p41 [label="vcf_proteinDB"];
+p40 -> p41 [label="e"];
+
+p41 [label="vcf_proteinDB"];
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p41 -> p42 [label="proteinDB_custom_vcf"];
+
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p42 -> p53;
+
+p43 [shape=point,label="",fixedsize=true,width=0.1];
+p44 [label="gencode_download"];
+p43 -> p44 [label="g"];
+
+p44 [label="gencode_download"];
+p51 [label="gnomad_proteindb"];
+p44 -> p51 [label="gencode_fasta"];
+
+p44 [label="gencode_download"];
+p51 [label="gnomad_proteindb"];
+p44 -> p51 [label="gencode_gtf"];
+
+p45 [shape=point,label="",fixedsize=true,width=0.1];
+p46 [label="gnomad_download"];
+p45 -> p46 [label="g"];
+
+p46 [label="gnomad_download"];
+p47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p46 -> p47 [label="gnomad_vcf_bgz"];
+
+p47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p47 -> p48;
+
+p48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p49 [label="extract_gnomad_vcf"];
+p48 -> p49;
+
+p49 [label="extract_gnomad_vcf"];
+p51 [label="gnomad_proteindb"];
+p49 -> p51 [label="gnomad_vcf_files"];
+
+p50 [shape=point,label="",fixedsize=true,width=0.1];
+p51 [label="gnomad_proteindb"];
+p50 -> p51 [label="e"];
+
+p51 [label="gnomad_proteindb"];
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+p51 -> p52 [label="gnomad_vcf_proteindb"];
+
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+p53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p52 -> p53 [label="gnomad_vcf_proteindb_final"];
+
+p53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p53 -> p58;
+
+p54 [label="cds_GRCh37_download"];
+p57 [label="cbioportal_proteindb"];
+p54 -> p57 [label="ch_GRCh37_cds"];
+
+p55 [label="download_all_cbioportal"];
+p57 [label="cbioportal_proteindb"];
+p55 -> p57 [label="cbio_mutations"];
+
+p55 [label="download_all_cbioportal"];
+p57 [label="cbioportal_proteindb"];
+p55 -> p57 [label="cbio_samples"];
+
+p56 [shape=point,label="",fixedsize=true,width=0.1];
+p57 [label="cbioportal_proteindb"];
+p56 -> p57 [label="cbioportal_config"];
+
+p57 [label="cbioportal_proteindb"];
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p57 -> p58 [label="cBioportal_proteindb"];
+
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p58 -> p59 [label="merged_databases"];
+
+p59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p60 [label="merge_proteindbs"];
+p59 -> p60;
+
+p60 [label="merge_proteindbs"];
+p62 [label="clean_protein_database"];
+p60 -> p62 [label="to_clean_ch"];
+
+p61 [shape=point,label="",fixedsize=true,width=0.1];
+p62 [label="clean_protein_database"];
+p61 -> p62 [label="e"];
+
+p62 [label="clean_protein_database"];
+p64 [label="decoy"];
+p62 -> p64 [label="clean_database_sh"];
+
+p63 [shape=point,label="",fixedsize=true,width=0.1];
+p64 [label="decoy"];
+p63 -> p64 [label="protein_decoy_config"];
+
+p64 [label="decoy"];
+p65 [shape=point];
+p64 -> p65 [label="fasta_decoy_db_ch"];
+
+p66 [shape=point,label="",fixedsize=true,width=0.1];
+p68 [label="output_documentation"];
+p66 -> p68 [label="output_docs"];
+
+p67 [shape=point,label="",fixedsize=true,width=0.1];
+p68 [label="output_documentation"];
+p67 -> p68 [label="images"];
+
+}

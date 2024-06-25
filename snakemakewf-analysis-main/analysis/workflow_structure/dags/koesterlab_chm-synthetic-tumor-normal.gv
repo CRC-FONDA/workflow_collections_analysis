@@ -1,0 +1,43 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.30 0.6 0.85", style="rounded"];
+	1[label = "compose_truth\npercentage: 5", color = "0.00 0.6 0.85", style="rounded"];
+	2[label = "get_confident_vcf", color = "0.44 0.6 0.85", style="rounded"];
+	3[label = "get_eval_kit", color = "0.59 0.6 0.85", style="rounded"];
+	4[label = "remove_chr", color = "0.37 0.6 0.85", style="rounded"];
+	5[label = "get_confident_bed\npercentage: 5", color = "0.07 0.6 0.85", style="rounded"];
+	6[label = "compose_truth\npercentage: 20", color = "0.00 0.6 0.85", style="rounded"];
+	7[label = "remove_chr", color = "0.37 0.6 0.85", style="rounded"];
+	8[label = "get_confident_bed\npercentage: 20", color = "0.07 0.6 0.85", style="rounded"];
+	9[label = "mix_reads\npercentage: 5", color = "0.22 0.6 0.85", style="rounded"];
+	10[label = "get_reads\naccession: SRR2088062", color = "0.15 0.6 0.85", style="rounded"];
+	11[label = "get_reads\naccession: SRR2842672", color = "0.15 0.6 0.85", style="rounded"];
+	12[label = "copy_normal\npercentage: 5", color = "0.52 0.6 0.85", style="rounded"];
+	13[label = "mix_reads\npercentage: 20", color = "0.22 0.6 0.85", style="rounded"];
+	14[label = "copy_normal\npercentage: 20", color = "0.52 0.6 0.85", style="rounded"];
+	1 -> 0
+	4 -> 0
+	5 -> 0
+	6 -> 0
+	7 -> 0
+	8 -> 0
+	9 -> 0
+	12 -> 0
+	13 -> 0
+	14 -> 0
+	2 -> 1
+	3 -> 2
+	1 -> 4
+	3 -> 5
+	2 -> 6
+	6 -> 7
+	3 -> 8
+	10 -> 9
+	11 -> 9
+	10 -> 12
+	10 -> 13
+	11 -> 13
+	10 -> 14
+}            

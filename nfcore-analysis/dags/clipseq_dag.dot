@@ -1,0 +1,390 @@
+digraph "clipseq_dag" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p0 -> p66 [label="ch_multiqc_custom_config"];
+
+p1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p1 -> p59 [label="ch_paraclu_qc"];
+
+p2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p2 -> p57 [label="ch_icount_qc"];
+
+p3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p3 -> p63 [label="ch_piranha_qc"];
+
+p4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p4 -> p61 [label="ch_pureclip_qc"];
+
+p5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p5 -> p6;
+
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p6 -> p7;
+
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p7 -> p8;
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p32 [label="cutadapt"];
+p8 -> p32 [label="ch_fastq"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p31 [label="fastqc"];
+p8 -> p31 [label="ch_fastq_fastqc_pretrim"];
+
+p9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p9 -> p10;
+
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p10 -> p11;
+
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p11 -> p12;
+
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+p12 -> p83 [label="ch_workflow_summary"];
+
+p13 [label="get_software_versions"];
+p82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p13 -> p82 [label="ch_software_versions_yaml"];
+
+p14 [shape=point,label="",fixedsize=true,width=0.1];
+p15 [label="generate_premap_index"];
+p14 -> p15 [label="ch_smrna_fasta"];
+
+p15 [label="generate_premap_index"];
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p15 -> p33 [label="ch_bt2_index"];
+
+p16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p16 -> p17;
+
+p17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p18 [label="decompress_fasta"];
+p17 -> p18 [label="ch_fasta_gz"];
+
+p18 [label="decompress_fasta"];
+p30 [label="generate_star_index_no_gtf"];
+p18 -> p30 [label="ch_fasta"];
+
+p18 [label="decompress_fasta"];
+p24 [label="generate_fai"];
+p18 -> p24 [label="ch_fasta_fai"];
+
+p18 [label="decompress_fasta"];
+p23 [shape=point];
+p18 -> p23 [label="ch_fasta_dreme_icount"];
+
+p18 [label="decompress_fasta"];
+p22 [shape=point];
+p18 -> p22 [label="ch_fasta_dreme_paraclu"];
+
+p18 [label="decompress_fasta"];
+p21 [shape=point];
+p18 -> p21 [label="ch_fasta_pureclip"];
+
+p18 [label="decompress_fasta"];
+p20 [shape=point];
+p18 -> p20 [label="ch_fasta_dreme_pureclip"];
+
+p18 [label="decompress_fasta"];
+p19 [shape=point];
+p18 -> p19 [label="ch_fasta_dreme_piranha"];
+
+p24 [label="generate_fai"];
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p24 -> p43 [label="ch_fai_crosslinks"];
+
+p24 [label="generate_fai"];
+p29 [shape=point];
+p24 -> p29 [label="ch_fai_icount"];
+
+p24 [label="generate_fai"];
+p28 [shape=point];
+p24 -> p28 [label="ch_fai_icount_motif"];
+
+p24 [label="generate_fai"];
+p27 [shape=point];
+p24 -> p27 [label="ch_fai_paraclu_motif"];
+
+p24 [label="generate_fai"];
+p26 [shape=point];
+p24 -> p26 [label="ch_fai_pureclip_motif"];
+
+p24 [label="generate_fai"];
+p25 [shape=point];
+p24 -> p25 [label="ch_fai_piranha_motif"];
+
+p30 [label="generate_star_index_no_gtf"];
+p35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p30 -> p35 [label="ch_star_index"];
+
+p31 [label="fastqc"];
+p68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p31 -> p68 [label="ch_fastqc_pretrim_mqc"];
+
+p32 [label="cutadapt"];
+p34 [label="premap"];
+p32 -> p34 [label="ch_trimmed"];
+
+p32 [label="cutadapt"];
+p70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p32 -> p70 [label="ch_cutadapt_mqc"];
+
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p34 [label="premap"];
+p33 -> p34;
+
+p34 [label="premap"];
+p36 [label="align"];
+p34 -> p36 [label="ch_unmapped"];
+
+p34 [label="premap"];
+p72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p34 -> p72 [label="ch_premap_mqc"];
+
+p34 [label="premap"];
+p49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p34 -> p49 [label="ch_premap_qc"];
+
+p35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p36 [label="align"];
+p35 -> p36;
+
+p36 [label="align"];
+p38 [label="dedup"];
+p36 -> p38 [label="ch_aligned"];
+
+p36 [label="align"];
+p37 [label="preseq"];
+p36 -> p37 [label="ch_aligned_preseq"];
+
+p36 [label="align"];
+p74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p36 -> p74 [label="ch_align_mqc"];
+
+p36 [label="align"];
+p51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p36 -> p51 [label="ch_align_qc"];
+
+p37 [label="preseq"];
+p76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p37 -> p76 [label="ch_preseq_mqc"];
+
+p38 [label="dedup"];
+p44 [label="get_crosslinks"];
+p38 -> p44 [label="ch_dedup"];
+
+p38 [label="dedup"];
+p41 [shape=point];
+p38 -> p41 [label="ch_dedup_pureclip"];
+
+p38 [label="dedup"];
+p40 [shape=point];
+p38 -> p40 [label="ch_dedup_rseqc"];
+
+p38 [label="dedup"];
+p39 [shape=point];
+p38 -> p39 [label="ch_dedup_mqc"];
+
+p38 [label="dedup"];
+p53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p38 -> p53 [label="ch_dedup_qc"];
+
+p42 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p42 -> p78 [label="ch_rseqc_mqc"];
+
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p44 [label="get_crosslinks"];
+p43 -> p44;
+
+p44 [label="get_crosslinks"];
+p48 [shape=point];
+p44 -> p48 [label="ch_xlinks_icount"];
+
+p44 [label="get_crosslinks"];
+p47 [shape=point];
+p44 -> p47 [label="ch_xlinks_paraclu"];
+
+p44 [label="get_crosslinks"];
+p46 [shape=point];
+p44 -> p46 [label="ch_xlinks_piranha"];
+
+p44 [label="get_crosslinks"];
+p45 [shape=point];
+p44 -> p45 [label="ch_xlinks_bedgraphs"];
+
+p44 [label="get_crosslinks"];
+p55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p44 -> p55 [label="ch_xlinks_qc"];
+
+p49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p49 -> p50;
+
+p50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p65 [label="clipqc"];
+p50 -> p65;
+
+p51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p51 -> p52;
+
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p65 [label="clipqc"];
+p52 -> p65;
+
+p53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p53 -> p54;
+
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p65 [label="clipqc"];
+p54 -> p65;
+
+p55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p55 -> p56;
+
+p56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p65 [label="clipqc"];
+p56 -> p65;
+
+p57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p57 -> p58;
+
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p65 [label="clipqc"];
+p58 -> p65;
+
+p59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p59 -> p60;
+
+p60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p65 [label="clipqc"];
+p60 -> p65;
+
+p61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p61 -> p62;
+
+p62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p65 [label="clipqc"];
+p62 -> p65;
+
+p63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p63 -> p64;
+
+p64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p65 [label="clipqc"];
+p64 -> p65;
+
+p65 [label="clipqc"];
+p80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p65 -> p80 [label="ch_clipqc_mqc"];
+
+p66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p66 -> p67;
+
+p67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p85 [label="multiqc"];
+p67 -> p85;
+
+p68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p68 -> p69;
+
+p69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p85 [label="multiqc"];
+p69 -> p85;
+
+p70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p70 -> p71;
+
+p71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p85 [label="multiqc"];
+p71 -> p85;
+
+p72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p72 -> p73;
+
+p73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p85 [label="multiqc"];
+p73 -> p85;
+
+p74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p74 -> p75;
+
+p75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p85 [label="multiqc"];
+p75 -> p85;
+
+p76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p76 -> p77;
+
+p77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p85 [label="multiqc"];
+p77 -> p85;
+
+p78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p78 -> p79;
+
+p79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p85 [label="multiqc"];
+p79 -> p85;
+
+p80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p80 -> p81;
+
+p81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p85 [label="multiqc"];
+p81 -> p85;
+
+p82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p85 [label="multiqc"];
+p82 -> p85;
+
+p83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+p85 [label="multiqc"];
+p83 -> p85;
+
+p84 [shape=point,label="",fixedsize=true,width=0.1];
+p85 [label="multiqc"];
+p84 -> p85 [label="multiqc_config"];
+
+p85 [label="multiqc"];
+p86 [shape=point];
+p85 -> p86 [label="ch_multiqc_report"];
+
+p87 [shape=point,label="",fixedsize=true,width=0.1];
+p89 [label="output_documentation"];
+p87 -> p89 [label="output_docs"];
+
+p88 [shape=point,label="",fixedsize=true,width=0.1];
+p89 [label="output_documentation"];
+p88 -> p89 [label="images"];
+
+}

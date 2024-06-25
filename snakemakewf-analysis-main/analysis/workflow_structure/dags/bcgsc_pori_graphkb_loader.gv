@@ -1,0 +1,115 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.49 0.6 0.85", style="rounded"];
+	1[label = "load_civic", color = "0.65 0.6 0.85", style="rounded"];
+	2[label = "load_local", color = "0.19 0.6 0.85", style="rounded"];
+	3[label = "download_local_data\nlocal: vocab", color = "0.28 0.6 0.85", style="rounded"];
+	4[label = "load_local", color = "0.19 0.6 0.85", style="rounded"];
+	5[label = "download_local_data\nlocal: signatures", color = "0.28 0.6 0.85", style="rounded"];
+	6[label = "load_local", color = "0.19 0.6 0.85", style="rounded"];
+	7[label = "download_local_data\nlocal: chromosomes", color = "0.28 0.6 0.85", style="rounded"];
+	8[label = "load_local", color = "0.19 0.6 0.85", style="rounded"];
+	9[label = "download_local_data\nlocal: evidenceLevels", color = "0.28 0.6 0.85", style="rounded"];
+	10[label = "load_local", color = "0.19 0.6 0.85", style="rounded"];
+	11[label = "download_local_data\nlocal: aacr", color = "0.28 0.6 0.85", style="rounded"];
+	12[label = "load_local", color = "0.19 0.6 0.85", style="rounded"];
+	13[label = "download_local_data\nlocal: asco", color = "0.28 0.6 0.85", style="rounded"];
+	14[label = "load_ncit", color = "0.63 0.6 0.85", style="rounded"];
+	15[label = "download_ncit", color = "0.26 0.6 0.85", style="rounded"];
+	16[label = "load_do", color = "0.02 0.6 0.85", style="rounded"];
+	17[label = "download_do", color = "0.16 0.6 0.85", style="rounded"];
+	18[label = "load_cgi", color = "0.05 0.6 0.85", style="rounded"];
+	19[label = "all_diseases", color = "0.47 0.6 0.85", style="rounded"];
+	20[label = "load_oncotree", color = "0.37 0.6 0.85", style="rounded"];
+	21[label = "all_drugs", color = "0.61 0.6 0.85", style="rounded"];
+	22[label = "download_cgi", color = "0.44 0.6 0.85", style="rounded"];
+	23[label = "load_docm", color = "0.07 0.6 0.85", style="rounded"];
+	24[label = "load_PMC4468049", color = "0.60 0.6 0.85", style="rounded"];
+	25[label = "download_PMC4468049", color = "0.25 0.6 0.85", style="rounded"];
+	26[label = "load_PMC4232638", color = "0.40 0.6 0.85", style="rounded"];
+	27[label = "download_PMC4232638", color = "0.11 0.6 0.85", style="rounded"];
+	28[label = "load_uberon", color = "0.21 0.6 0.85", style="rounded"];
+	29[label = "download_uberon", color = "0.18 0.6 0.85", style="rounded"];
+	30[label = "load_approvals", color = "0.51 0.6 0.85", style="rounded"];
+	31[label = "load_cancerhotspots", color = "0.14 0.6 0.85", style="rounded"];
+	32[label = "load_ensembl", color = "0.46 0.6 0.85", style="rounded"];
+	33[label = "load_refseq", color = "0.58 0.6 0.85", style="rounded"];
+	34[label = "download_refseq", color = "0.56 0.6 0.85", style="rounded"];
+	35[label = "download_ensembl", color = "0.12 0.6 0.85", style="rounded"];
+	36[label = "download_cancerhotspots", color = "0.33 0.6 0.85", style="rounded"];
+	37[label = "load_moa", color = "0.32 0.6 0.85", style="rounded"];
+	1 -> 0
+	18 -> 0
+	23 -> 0
+	24 -> 0
+	26 -> 0
+	28 -> 0
+	30 -> 0
+	31 -> 0
+	37 -> 0
+	2 -> 1
+	4 -> 1
+	6 -> 1
+	8 -> 1
+	10 -> 1
+	12 -> 1
+	14 -> 1
+	16 -> 1
+	3 -> 2
+	5 -> 4
+	7 -> 6
+	9 -> 8
+	11 -> 10
+	13 -> 12
+	2 -> 14
+	15 -> 14
+	14 -> 16
+	17 -> 16
+	2 -> 18
+	4 -> 18
+	6 -> 18
+	8 -> 18
+	19 -> 18
+	21 -> 18
+	22 -> 18
+	16 -> 19
+	14 -> 19
+	20 -> 19
+	14 -> 20
+	14 -> 21
+	2 -> 23
+	4 -> 23
+	6 -> 23
+	14 -> 23
+	16 -> 23
+	2 -> 24
+	4 -> 24
+	6 -> 24
+	19 -> 24
+	25 -> 24
+	2 -> 26
+	4 -> 26
+	6 -> 26
+	27 -> 26
+	14 -> 28
+	29 -> 28
+	2 -> 31
+	4 -> 31
+	6 -> 31
+	20 -> 31
+	32 -> 31
+	36 -> 31
+	33 -> 32
+	35 -> 32
+	2 -> 33
+	34 -> 33
+	20 -> 37
+	2 -> 37
+	4 -> 37
+	6 -> 37
+	8 -> 37
+	10 -> 37
+	12 -> 37
+}            

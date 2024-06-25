@@ -1,0 +1,58 @@
+Sag mir in einem Wort, welche Domäne der Informatik folgender Shell Script zugeordnet werden kann:      """
+     echo {params.ftp}
+     mkdir -p {params.outdir}
+     cd {params.outdir}
+     wget {params.ftp}
+     """
+#################################################### 1
+Sag mir in einem Wort, welche Domäne der Informatik folgender Shell Script zugeordnet werden kann:         """
+        iu-gen-configs {params.info} -o {params.outdir}
+        """
+#################################################### 2
+Sag mir in einem Wort, welche Domäne der Informatik folgender Shell Script zugeordnet werden kann:         \'iu-filter-quality-minoche {input} --ignore-deflines\'
+#################################################### 3
+Sag mir in einem Wort, welche Domäne der Informatik folgender Shell Script zugeordnet werden kann:         \'gzip {input}\'
+#################################################### 4
+Sag mir in einem Wort, welche Domäne der Informatik folgender Shell Script zugeordnet werden kann:         """
+        coverm genome -1 {input.r1} \\
+        -2 {input.r2} --threads 4 \\
+        --genome-fasta-directory {input.derep_dir} \\
+        --genome-fasta-extension "fna" \\
+        --methods count --min-covered-fraction 0 \\
+        --min-read-percent-identity 90 \\
+        -o {output.counts}
+        """
+#################################################### 5
+Sag mir in einem Wort, welche Domäne der Informatik folgender Shell Script zugeordnet werden kann:         """
+        coverm genome -1 {input.r1} \\
+        -2 {input.r2} --threads 4 \\
+        --genome-fasta-directory {input.derep_dir} \\
+        --genome-fasta-extension "fna" \\
+        --methods relative_abundance --min-covered-fraction 10 \\
+        --min-read-percent-identity 90 \\
+        -o {output.abundance}
+        """
+#################################################### 6
+Sag mir in einem Wort, welche Domäne der Informatik folgender Shell Script zugeordnet werden kann:         """
+        coverm genome -1 {input.r1} \\
+        -2 {input.r2} --threads 4 \\
+        --genome-fasta-directory {input.derep_dir} \\
+        --genome-fasta-extension "fna" \\
+        --methods tpm --min-covered-fraction 10 \\
+        --min-read-percent-identity 90 \\
+        -o {output.tpm}
+        """#################################################### 7
+Sag mir in einem Wort, welche Domäne der Informatik folgender Shell Script zugeordnet werden kann:         "bwa-mem2 {input.genome} {input.read_one} {input.read_two} | samtools view -Sb - > {output}"
+
+#################################################### 8
+Sag mir in einem Wort, welche Domäne der Informatik folgender Shell Script zugeordnet werden kann:         "samtools sort -T sorted_reads/{wildcards.sample} "
+        "-O bam {input} > {output}"
+
+#################################################### 9
+Sag mir in einem Wort, welche Domäne der Informatik folgender Shell Script zugeordnet werden kann:         "samtools index {input}"
+
+#################################################### 10
+Sag mir in einem Wort, welche Domäne der Informatik folgender Shell Script zugeordnet werden kann:         "bcftools mpileup -f {input.fa} {input.bam} | "
+        "bcftools call -mv - > {output}"
+
+#################################################### 11

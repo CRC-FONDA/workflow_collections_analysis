@@ -1,0 +1,330 @@
+digraph "metaboigniter_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v36 [label="ch_versions"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v2 -> v6 [label="mzml_files"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=point];
+v3 -> v4 [label="empty_id"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v9 [label="ch_versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v7 [label="NFCORE_METABOIGNITER:METABOIGNITER:QUANTIFICATION:OPENMS_FEATUREFINDERMETABO"];
+v6 -> v7 [label="quantificaiton_data"];
+
+v7 [label="NFCORE_METABOIGNITER:METABOIGNITER:QUANTIFICATION:OPENMS_FEATUREFINDERMETABO"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v10 [label="quantified_features"];
+
+v7 [label="NFCORE_METABOIGNITER:METABOIGNITER:QUANTIFICATION:OPENMS_FEATUREFINDERMETABO"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v17 [label="ch_versions"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v10 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v11 -> v14;
+
+v7 [label="NFCORE_METABOIGNITER:METABOIGNITER:QUANTIFICATION:OPENMS_FEATUREFINDERMETABO"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v7 -> v12 [label="quantified_features"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 [label="NFCORE_METABOIGNITER:METABOIGNITER:QUANTIFICATION:OPENMS_MAPALIGNERPOSECLUSTERING"];
+v14 -> v15;
+
+v15 [label="NFCORE_METABOIGNITER:METABOIGNITER:QUANTIFICATION:OPENMS_MAPALIGNERPOSECLUSTERING"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v23;
+
+v15 [label="NFCORE_METABOIGNITER:METABOIGNITER:QUANTIFICATION:OPENMS_MAPALIGNERPOSECLUSTERING"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v19;
+
+v15 [label="NFCORE_METABOIGNITER:METABOIGNITER:QUANTIFICATION:OPENMS_MAPALIGNERPOSECLUSTERING"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v33 [label="ch_versions"];
+
+v7 [label="NFCORE_METABOIGNITER:METABOIGNITER:QUANTIFICATION:OPENMS_FEATUREFINDERMETABO"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v7 -> v18 [label="quantified_features"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v18 -> v22;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v22 -> v26;
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 -> v28;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v27 [label="quantificaiton_data"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v30 [label="combined_data"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 [label="NFCORE_METABOIGNITER:METABOIGNITER:QUANTIFICATION:OPENMS_MAPRTTRANSFORMER"];
+v30 -> v31;
+
+v31 [label="NFCORE_METABOIGNITER:METABOIGNITER:QUANTIFICATION:OPENMS_MAPRTTRANSFORMER"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v31 -> v35 [label="quantificaiton_data"];
+
+v31 [label="NFCORE_METABOIGNITER:METABOIGNITER:QUANTIFICATION:OPENMS_MAPRTTRANSFORMER"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v36 [label="versions"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v34 [label="combined_data"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v34 -> v35 [label="quantified_features"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v40 [label="quantification_information"];
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v49 [label="ch_versions"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v38 [shape=point];
+v37 -> v38 [label="mzml_files"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v45 [label="ch_versions"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [label="NFCORE_METABOIGNITER:METABOIGNITER:ANNOTATION:OPENMS_METABOLITEADDUCTDECHARGER"];
+v40 -> v41;
+
+v41 [label="NFCORE_METABOIGNITER:METABOIGNITER:ANNOTATION:OPENMS_METABOLITEADDUCTDECHARGER"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v41 -> v43 [label="quantified_features"];
+
+v41 [label="NFCORE_METABOIGNITER:METABOIGNITER:ANNOTATION:OPENMS_METABOLITEADDUCTDECHARGER"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v41 -> v44;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v42 [label="quantification_information"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v42 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v46 [label="NFCORE_METABOIGNITER:METABOIGNITER:ANNOTATION:PYOPENMS_C13DETECTION"];
+v43 -> v46 [label="quantification_information"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v48 [label="ch_versions"];
+
+v46 [label="NFCORE_METABOIGNITER:METABOIGNITER:ANNOTATION:PYOPENMS_C13DETECTION"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v46 -> v52 [label="quantification_information"];
+
+v46 [label="NFCORE_METABOIGNITER:METABOIGNITER:ANNOTATION:PYOPENMS_C13DETECTION"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v48;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v49 [label="versions"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v60 [label="ch_versions"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v59 [label="ch_versions"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v51 -> v55;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v56 [label="NFCORE_METABOIGNITER:METABOIGNITER:LINKER:OPENMS_FEATURELINKERUNLABELEDKD"];
+v55 -> v56;
+
+v56 [label="NFCORE_METABOIGNITER:METABOIGNITER:LINKER:OPENMS_FEATURELINKERUNLABELEDKD"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 -> v57;
+
+v56 [label="NFCORE_METABOIGNITER:METABOIGNITER:LINKER:OPENMS_FEATURELINKERUNLABELEDKD"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v56 -> v58;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [label="NFCORE_METABOIGNITER:METABOIGNITER:PYOPENMS_EXPORTQUANTIFICATION"];
+v57 -> v64 [label="consensusxml_data"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v60 [label="versions"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v66 [label="ch_versions"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="NFCORE_METABOIGNITER:METABOIGNITER:PYOPENMS_EXPORTQUANTIFICATION"];
+v61 -> v64;
+
+v62 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="NFCORE_METABOIGNITER:METABOIGNITER:PYOPENMS_EXPORTQUANTIFICATION"];
+v62 -> v64;
+
+v63 [shape=point,label="",fixedsize=true,width=0.1];
+v64 [label="NFCORE_METABOIGNITER:METABOIGNITER:PYOPENMS_EXPORTQUANTIFICATION"];
+v63 -> v64;
+
+v64 [label="NFCORE_METABOIGNITER:METABOIGNITER:PYOPENMS_EXPORTQUANTIFICATION"];
+v65 [shape=point];
+v64 -> v65 [label="consensusxml_data_tsv"];
+
+v64 [label="NFCORE_METABOIGNITER:METABOIGNITER:PYOPENMS_EXPORTQUANTIFICATION"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v66 -> v67 [label="ch_versions"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v69 [label="NFCORE_METABOIGNITER:METABOIGNITER:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v68 -> v69;
+
+v69 [label="NFCORE_METABOIGNITER:METABOIGNITER:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v72 [shape=point];
+v69 -> v72;
+
+v69 [label="NFCORE_METABOIGNITER:METABOIGNITER:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v71 [shape=point];
+v69 -> v71;
+
+v69 [label="NFCORE_METABOIGNITER:METABOIGNITER:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v70 [shape=point];
+v69 -> v70;
+
+}

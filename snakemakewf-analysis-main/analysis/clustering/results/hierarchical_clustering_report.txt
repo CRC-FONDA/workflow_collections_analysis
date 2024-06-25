@@ -1,0 +1,51 @@
+level 1:
+    cluster 0: 644
+        Unclear pattern.
+    cluster 1: 21
+        Shell lines contain "mkdir" and "RiboReport/scripts/[...].py" scripts.
+    cluster 2: 10
+        Shell lines gzip their input files (not all rules that do this are in this cluster).
+    cluster 3: 178
+        Degenerate cases where shell liens are "shell:\'\'\'".
+    cluster 4: 6805
+        Big group of unclear patterns.
+
+for level 2 we did a clustering on cluster 0 and cluster 4 grouped together
+level 2:
+    cluster 0: 1
+        Singular example.
+    cluster 1: 152
+        Shell lines use "bcftools" with some parameters. Sometimes other tools such as "samtools", "rbt" are used as well.
+    cluster 2: 79
+        Degenerate cases where shell lines are "shell:""""
+    cluster 3: 7210
+        Big group of unclear patterns.
+    cluster 4: 7
+        Shell lines unzip their input.
+
+for level 3 we did a clustering on cluster 0 and cluster 3 grouped together
+level 3:
+    cluster 0: 49
+        Shell lines call "Rscript".
+    cluster 1: 7013
+        Big group of unclear patterns.
+    cluster 2: 136
+        Few lines shell rules. Often they contain "samtools", sometimes "fastqc", "tabix", "python", "bwa-mem2" or other opreators.
+    cluster 3: 12
+        Single shell line starting with "\'ln -rs "$(dirname "{input}")". Sometimes with some output file after it.
+    cluster 4: 1
+        Singular example.
+
+for level 4 we did a clustering on cluster 1, 2 and cluster 4 grouped together
+level 4:
+    cluster 0: 215
+        Pipe stuff into log ("2> {log}")?
+    cluster 1: 1
+        Singular Example.
+    cluster 2: 2
+        Two examples latched onto "{input.script} {input.atacSCE}"
+    cluster 3: 136
+        Samtools, pigz, often with index and maybe the common link is "{input]"?
+    cluster 4: 6796
+        Big group of unclear patterns
+

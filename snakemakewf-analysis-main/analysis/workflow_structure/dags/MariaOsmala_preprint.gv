@@ -1,0 +1,713 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.53 0.6 0.85", style="rounded"];
+	1[label = "train_predict", color = "0.63 0.6 0.85", style="rounded"];
+	2[label = "make_profiles", color = "0.04 0.6 0.85", style="rounded"];
+	3[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	4[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	5[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	6[label = "combine_replicates\ndata_type: Control", color = "0.07 0.6 0.85", style="rounded"];
+	7[label = "align_reads\nsample: wgEncodeBroadHistoneK562ControlStdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	8[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562ControlStdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	9[label = "unzip_bowtie2_index", color = "0.60 0.6 0.85", style="rounded"];
+	10[label = "download_bowtie2_index", color = "0.11 0.6 0.85", style="rounded"];
+	11[label = "estimate_shifts", color = "0.25 0.6 0.85", style="rounded"];
+	12[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	13[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	14[label = "combine_replicates\ndata_type: Ctcf", color = "0.07 0.6 0.85", style="rounded"];
+	15[label = "align_reads\nsample: wgEncodeBroadHistoneK562CtcfStdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	16[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562CtcfStdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	17[label = "align_reads\nsample: wgEncodeBroadHistoneK562CtcfStdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	18[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562CtcfStdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	19[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	20[label = "combine_replicates\ndata_type: H2az", color = "0.07 0.6 0.85", style="rounded"];
+	21[label = "align_reads\nsample: wgEncodeBroadHistoneK562H2azStdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	22[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H2azStdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	23[label = "align_reads\nsample: wgEncodeBroadHistoneK562H2azStdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	24[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H2azStdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	25[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	26[label = "combine_replicates\ndata_type: H3k4me1", color = "0.07 0.6 0.85", style="rounded"];
+	27[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k4me1StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	28[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k4me1StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	29[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k4me1StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	30[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k4me1StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	31[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	32[label = "combine_replicates\ndata_type: H3k4me2", color = "0.07 0.6 0.85", style="rounded"];
+	33[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k4me2StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	34[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k4me2StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	35[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k4me2StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	36[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k4me2StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	37[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	38[label = "combine_replicates\ndata_type: H3k4me3", color = "0.07 0.6 0.85", style="rounded"];
+	39[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k4me3StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	40[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k4me3StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	41[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k4me3StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	42[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k4me3StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	43[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	44[label = "combine_replicates\ndata_type: H3k9ac", color = "0.07 0.6 0.85", style="rounded"];
+	45[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k9acStdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	46[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k9acStdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	47[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k9acStdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	48[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k9acStdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	49[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	50[label = "combine_replicates\ndata_type: H3k9me3", color = "0.07 0.6 0.85", style="rounded"];
+	51[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k9me3StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	52[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k9me3StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	53[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k9me3StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	54[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k9me3StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	55[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	56[label = "combine_replicates\ndata_type: H3k27ac", color = "0.07 0.6 0.85", style="rounded"];
+	57[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k27acStdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	58[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k27acStdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	59[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k27acStdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	60[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k27acStdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	61[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	62[label = "combine_replicates\ndata_type: H3k27me3", color = "0.07 0.6 0.85", style="rounded"];
+	63[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k27me3StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	64[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k27me3StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	65[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k27me3StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	66[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k27me3StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	67[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	68[label = "combine_replicates\ndata_type: H3k36me3", color = "0.07 0.6 0.85", style="rounded"];
+	69[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k36me3StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	70[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k36me3StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	71[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k36me3StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	72[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k36me3StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	73[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	74[label = "combine_replicates\ndata_type: H3k79me2", color = "0.07 0.6 0.85", style="rounded"];
+	75[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k79me2StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	76[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k79me2StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	77[label = "align_reads\nsample: wgEncodeBroadHistoneK562H3k79me2StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	78[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H3k79me2StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	79[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	80[label = "combine_replicates\ndata_type: H4k20me1", color = "0.07 0.6 0.85", style="rounded"];
+	81[label = "align_reads\nsample: wgEncodeBroadHistoneK562H4k20me1StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	82[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H4k20me1StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	83[label = "align_reads\nsample: wgEncodeBroadHistoneK562H4k20me1StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	84[label = "download\ncell_line: K562\nfname: wgEncodeBroadHistoneK562H4k20me1StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	85[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	86[label = "combine_replicates\ndata_type: Pol2RawData", color = "0.07 0.6 0.85", style="rounded"];
+	87[label = "align_reads\nsample: wgEncodeSydhTfbsK562Pol2RawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	88[label = "download\ncell_line: K562\nfname: wgEncodeSydhTfbsK562Pol2RawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	89[label = "align_reads\nsample: wgEncodeSydhTfbsK562Pol2RawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	90[label = "download\ncell_line: K562\nfname: wgEncodeSydhTfbsK562Pol2RawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	91[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	92[label = "combine_replicates\ndata_type: Control", color = "0.07 0.6 0.85", style="rounded"];
+	93[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878ControlStdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	94[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878ControlStdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	95[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878ControlStdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	96[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878ControlStdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	97[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	98[label = "combine_replicates\ndata_type: Ctcf", color = "0.07 0.6 0.85", style="rounded"];
+	99[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878CtcfStdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	100[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878CtcfStdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	101[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878CtcfStdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	102[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878CtcfStdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	103[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	104[label = "combine_replicates\ndata_type: H2az", color = "0.07 0.6 0.85", style="rounded"];
+	105[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H2azStdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	106[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H2azStdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	107[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H2azStdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	108[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H2azStdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	109[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	110[label = "combine_replicates\ndata_type: H3k4me1", color = "0.07 0.6 0.85", style="rounded"];
+	111[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k4me1StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	112[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k4me1StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	113[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k4me1StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	114[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k4me1StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	115[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	116[label = "combine_replicates\ndata_type: H3k4me2", color = "0.07 0.6 0.85", style="rounded"];
+	117[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k4me2StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	118[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k4me2StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	119[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k4me2StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	120[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k4me2StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	121[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	122[label = "combine_replicates\ndata_type: H3k4me3", color = "0.07 0.6 0.85", style="rounded"];
+	123[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k4me3StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	124[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k4me3StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	125[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k4me3StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	126[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k4me3StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	127[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	128[label = "combine_replicates\ndata_type: H3k9ac", color = "0.07 0.6 0.85", style="rounded"];
+	129[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k9acStdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	130[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k9acStdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	131[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k9acStdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	132[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k9acStdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	133[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	134[label = "combine_replicates\ndata_type: H3k9me3", color = "0.07 0.6 0.85", style="rounded"];
+	135[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k9me3StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	136[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k9me3StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	137[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k9me3StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	138[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k9me3StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	139[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k9me3StdRawDataRep3", color = "0.32 0.6 0.85", style="rounded"];
+	140[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k9me3StdRawDataRep3.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	141[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	142[label = "combine_replicates\ndata_type: H3k27ac", color = "0.07 0.6 0.85", style="rounded"];
+	143[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k27acStdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	144[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k27acStdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	145[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k27acStdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	146[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k27acStdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	147[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	148[label = "combine_replicates\ndata_type: H3k27me3", color = "0.07 0.6 0.85", style="rounded"];
+	149[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k27me3StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	150[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k27me3StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	151[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k27me3StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	152[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k27me3StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	153[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k27me3StdRawDataRep3V2", color = "0.32 0.6 0.85", style="rounded"];
+	154[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k27me3StdRawDataRep3V2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	155[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	156[label = "combine_replicates\ndata_type: H3k36me3", color = "0.07 0.6 0.85", style="rounded"];
+	157[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k36me3StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	158[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k36me3StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	159[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k36me3StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	160[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k36me3StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	161[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	162[label = "combine_replicates\ndata_type: H3k79me2", color = "0.07 0.6 0.85", style="rounded"];
+	163[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k79me2StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	164[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k79me2StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	165[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H3k79me2StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	166[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H3k79me2StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	167[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	168[label = "combine_replicates\ndata_type: H4k20me1", color = "0.07 0.6 0.85", style="rounded"];
+	169[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H4k20me1StdRawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	170[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H4k20me1StdRawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	171[label = "align_reads\nsample: wgEncodeBroadHistoneGm12878H4k20me1StdRawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	172[label = "download\ncell_line: Gm12878\nfname: wgEncodeBroadHistoneGm12878H4k20me1StdRawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	173[label = "phantompeakqualtools", color = "0.14 0.6 0.85", style="rounded"];
+	174[label = "combine_replicates\ndata_type: Pol2RawData", color = "0.07 0.6 0.85", style="rounded"];
+	175[label = "align_reads\nsample: wgEncodeSydhTfbsGm12878Pol2RawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	176[label = "download\ncell_line: Gm12878\nfname: wgEncodeSydhTfbsGm12878Pol2RawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	177[label = "align_reads\nsample: wgEncodeSydhTfbsGm12878Pol2RawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	178[label = "download\ncell_line: Gm12878\nfname: wgEncodeSydhTfbsGm12878Pol2RawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	179[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	180[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	181[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	182[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	183[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	184[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	185[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	186[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	187[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	188[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	189[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	190[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	191[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	192[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	193[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	194[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	195[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	196[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	197[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	198[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	199[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	200[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	201[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	202[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	203[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	204[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	205[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	206[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	207[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	208[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	209[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	210[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	211[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	212[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	213[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	214[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	215[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	216[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	217[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	218[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	219[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	220[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	221[label = "combine_replicates\ndata_type: InputV2", color = "0.07 0.6 0.85", style="rounded"];
+	222[label = "align_reads\nsample: wgEncodeSydhTfbsK562InputV2RawDataRep1", color = "0.32 0.6 0.85", style="rounded"];
+	223[label = "download\ncell_line: K562\nfname: wgEncodeSydhTfbsK562InputV2RawDataRep1.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	224[label = "align_reads\nsample: wgEncodeSydhTfbsK562InputV2RawDataRep2", color = "0.32 0.6 0.85", style="rounded"];
+	225[label = "download\ncell_line: K562\nfname: wgEncodeSydhTfbsK562InputV2RawDataRep2.fastq.gz", color = "0.49 0.6 0.85", style="rounded"];
+	226[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	227[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	228[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	229[label = "combine_replicates\ndata_type: OpenChromDnaseV2", color = "0.07 0.6 0.85", style="rounded"];
+	230[label = "align_reads\nsample: wgEncodeOpenChromDnaseK562AlnRep1V2", color = "0.32 0.6 0.85", style="rounded"];
+	231[label = "download\ncell_line: K562\nfname: wgEncodeOpenChromDnaseK562AlnRep1V2.bam", color = "0.49 0.6 0.85", style="rounded"];
+	232[label = "download\ncell_line: K562\nfname: wgEncodeOpenChromDnaseK562AlnRep1V2.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	233[label = "align_reads\nsample: wgEncodeOpenChromDnaseK562AlnRep2V2", color = "0.32 0.6 0.85", style="rounded"];
+	234[label = "download\ncell_line: K562\nfname: wgEncodeOpenChromDnaseK562AlnRep2V2.bam", color = "0.49 0.6 0.85", style="rounded"];
+	235[label = "download\ncell_line: K562\nfname: wgEncodeOpenChromDnaseK562AlnRep2V2.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	236[label = "align_reads\nsample: wgEncodeOpenChromDnaseK562AlnRep3V2", color = "0.32 0.6 0.85", style="rounded"];
+	237[label = "download\ncell_line: K562\nfname: wgEncodeOpenChromDnaseK562AlnRep3V2.bam", color = "0.49 0.6 0.85", style="rounded"];
+	238[label = "download\ncell_line: K562\nfname: wgEncodeOpenChromDnaseK562AlnRep3V2.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	239[label = "bed_to_bam", color = "0.18 0.6 0.85", style="rounded"];
+	240[label = "shift_reads", color = "0.56 0.6 0.85", style="rounded"];
+	241[label = "bam_to_bed", color = "0.28 0.6 0.85", style="rounded"];
+	242[label = "combine_replicates\ndata_type: Nsome", color = "0.07 0.6 0.85", style="rounded"];
+	243[label = "align_reads\nsample: wgEncodeSydhNsomeK562AlnRep1", color = "0.32 0.6 0.85", style="rounded"];
+	244[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep1.bam", color = "0.49 0.6 0.85", style="rounded"];
+	245[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep1.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	246[label = "align_reads\nsample: wgEncodeSydhNsomeK562AlnRep2", color = "0.32 0.6 0.85", style="rounded"];
+	247[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep2.bam", color = "0.49 0.6 0.85", style="rounded"];
+	248[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep2.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	249[label = "align_reads\nsample: wgEncodeSydhNsomeK562AlnRep3", color = "0.32 0.6 0.85", style="rounded"];
+	250[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep3.bam", color = "0.49 0.6 0.85", style="rounded"];
+	251[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep3.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	252[label = "align_reads\nsample: wgEncodeSydhNsomeK562AlnRep4", color = "0.32 0.6 0.85", style="rounded"];
+	253[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep4.bam", color = "0.49 0.6 0.85", style="rounded"];
+	254[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep4.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	255[label = "align_reads\nsample: wgEncodeSydhNsomeK562AlnRep5", color = "0.32 0.6 0.85", style="rounded"];
+	256[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep5.bam", color = "0.49 0.6 0.85", style="rounded"];
+	257[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep5.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	258[label = "align_reads\nsample: wgEncodeSydhNsomeK562AlnRep6", color = "0.32 0.6 0.85", style="rounded"];
+	259[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep6.bam", color = "0.49 0.6 0.85", style="rounded"];
+	260[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep6.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	261[label = "align_reads\nsample: wgEncodeSydhNsomeK562AlnRep7", color = "0.32 0.6 0.85", style="rounded"];
+	262[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep7.bam", color = "0.49 0.6 0.85", style="rounded"];
+	263[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep7.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	264[label = "align_reads\nsample: wgEncodeSydhNsomeK562AlnRep8", color = "0.32 0.6 0.85", style="rounded"];
+	265[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep8.bam", color = "0.49 0.6 0.85", style="rounded"];
+	266[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep8.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	267[label = "align_reads\nsample: wgEncodeSydhNsomeK562AlnRep9", color = "0.32 0.6 0.85", style="rounded"];
+	268[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep9.bam", color = "0.49 0.6 0.85", style="rounded"];
+	269[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep9.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	270[label = "align_reads\nsample: wgEncodeSydhNsomeK562AlnRep10", color = "0.32 0.6 0.85", style="rounded"];
+	271[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep10.bam", color = "0.49 0.6 0.85", style="rounded"];
+	272[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep10.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	273[label = "align_reads\nsample: wgEncodeSydhNsomeK562AlnRep11", color = "0.32 0.6 0.85", style="rounded"];
+	274[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep11.bam", color = "0.49 0.6 0.85", style="rounded"];
+	275[label = "download\ncell_line: K562\nfname: wgEncodeSydhNsomeK562AlnRep11.bam.bai", color = "0.49 0.6 0.85", style="rounded"];
+	276[label = "download\ncell_line: K562\nfname: wgEncodeAwgTfbsSydhK562P300IggrabUniPk.narrowPeak.gz", color = "0.49 0.6 0.85", style="rounded"];
+	277[label = "download\ncell_line: K562\nfname: wgEncodeOpenChromDnaseK562PkV2.narrowPeak.gz", color = "0.49 0.6 0.85", style="rounded"];
+	278[label = "download_blacklists\nfile: wgEncodeDacMapabilityConsensusExcludable.bed.gz", color = "0.21 0.6 0.85", style="rounded"];
+	279[label = "download_blacklists\nfile: wgEncodeDukeMapabilityRegionsExcludable.bed.gz", color = "0.21 0.6 0.85", style="rounded"];
+	280[label = "download_gencode", color = "0.00 0.6 0.85", style="rounded"];
+	281[label = "whole_genome_coverage", color = "0.42 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 1
+	3 -> 2
+	179 -> 2
+	182 -> 2
+	185 -> 2
+	188 -> 2
+	191 -> 2
+	194 -> 2
+	197 -> 2
+	200 -> 2
+	203 -> 2
+	206 -> 2
+	209 -> 2
+	212 -> 2
+	215 -> 2
+	218 -> 2
+	226 -> 2
+	239 -> 2
+	276 -> 2
+	277 -> 2
+	278 -> 2
+	279 -> 2
+	280 -> 2
+	281 -> 2
+	4 -> 3
+	5 -> 4
+	11 -> 4
+	6 -> 5
+	7 -> 6
+	8 -> 7
+	9 -> 7
+	10 -> 9
+	12 -> 11
+	13 -> 11
+	19 -> 11
+	25 -> 11
+	31 -> 11
+	37 -> 11
+	43 -> 11
+	49 -> 11
+	55 -> 11
+	61 -> 11
+	67 -> 11
+	73 -> 11
+	79 -> 11
+	85 -> 11
+	91 -> 11
+	97 -> 11
+	103 -> 11
+	109 -> 11
+	115 -> 11
+	121 -> 11
+	127 -> 11
+	133 -> 11
+	141 -> 11
+	147 -> 11
+	155 -> 11
+	161 -> 11
+	167 -> 11
+	173 -> 11
+	6 -> 12
+	14 -> 13
+	6 -> 13
+	15 -> 14
+	17 -> 14
+	16 -> 15
+	9 -> 15
+	18 -> 17
+	9 -> 17
+	20 -> 19
+	6 -> 19
+	21 -> 20
+	23 -> 20
+	22 -> 21
+	9 -> 21
+	24 -> 23
+	9 -> 23
+	26 -> 25
+	6 -> 25
+	27 -> 26
+	29 -> 26
+	28 -> 27
+	9 -> 27
+	30 -> 29
+	9 -> 29
+	32 -> 31
+	6 -> 31
+	33 -> 32
+	35 -> 32
+	34 -> 33
+	9 -> 33
+	36 -> 35
+	9 -> 35
+	38 -> 37
+	6 -> 37
+	39 -> 38
+	41 -> 38
+	40 -> 39
+	9 -> 39
+	42 -> 41
+	9 -> 41
+	44 -> 43
+	6 -> 43
+	45 -> 44
+	47 -> 44
+	46 -> 45
+	9 -> 45
+	48 -> 47
+	9 -> 47
+	50 -> 49
+	6 -> 49
+	51 -> 50
+	53 -> 50
+	52 -> 51
+	9 -> 51
+	54 -> 53
+	9 -> 53
+	56 -> 55
+	6 -> 55
+	57 -> 56
+	59 -> 56
+	58 -> 57
+	9 -> 57
+	60 -> 59
+	9 -> 59
+	62 -> 61
+	6 -> 61
+	63 -> 62
+	65 -> 62
+	64 -> 63
+	9 -> 63
+	66 -> 65
+	9 -> 65
+	68 -> 67
+	6 -> 67
+	69 -> 68
+	71 -> 68
+	70 -> 69
+	9 -> 69
+	72 -> 71
+	9 -> 71
+	74 -> 73
+	6 -> 73
+	75 -> 74
+	77 -> 74
+	76 -> 75
+	9 -> 75
+	78 -> 77
+	9 -> 77
+	80 -> 79
+	6 -> 79
+	81 -> 80
+	83 -> 80
+	82 -> 81
+	9 -> 81
+	84 -> 83
+	9 -> 83
+	86 -> 85
+	6 -> 85
+	87 -> 86
+	89 -> 86
+	88 -> 87
+	9 -> 87
+	90 -> 89
+	9 -> 89
+	92 -> 91
+	93 -> 92
+	95 -> 92
+	94 -> 93
+	9 -> 93
+	96 -> 95
+	9 -> 95
+	98 -> 97
+	92 -> 97
+	99 -> 98
+	101 -> 98
+	100 -> 99
+	9 -> 99
+	102 -> 101
+	9 -> 101
+	104 -> 103
+	92 -> 103
+	105 -> 104
+	107 -> 104
+	106 -> 105
+	9 -> 105
+	108 -> 107
+	9 -> 107
+	110 -> 109
+	92 -> 109
+	111 -> 110
+	113 -> 110
+	112 -> 111
+	9 -> 111
+	114 -> 113
+	9 -> 113
+	116 -> 115
+	92 -> 115
+	117 -> 116
+	119 -> 116
+	118 -> 117
+	9 -> 117
+	120 -> 119
+	9 -> 119
+	122 -> 121
+	92 -> 121
+	123 -> 122
+	125 -> 122
+	124 -> 123
+	9 -> 123
+	126 -> 125
+	9 -> 125
+	128 -> 127
+	92 -> 127
+	129 -> 128
+	131 -> 128
+	130 -> 129
+	9 -> 129
+	132 -> 131
+	9 -> 131
+	134 -> 133
+	92 -> 133
+	135 -> 134
+	137 -> 134
+	139 -> 134
+	136 -> 135
+	9 -> 135
+	138 -> 137
+	9 -> 137
+	140 -> 139
+	9 -> 139
+	142 -> 141
+	92 -> 141
+	143 -> 142
+	145 -> 142
+	144 -> 143
+	9 -> 143
+	146 -> 145
+	9 -> 145
+	148 -> 147
+	92 -> 147
+	149 -> 148
+	151 -> 148
+	153 -> 148
+	150 -> 149
+	9 -> 149
+	152 -> 151
+	9 -> 151
+	154 -> 153
+	9 -> 153
+	156 -> 155
+	92 -> 155
+	157 -> 156
+	159 -> 156
+	158 -> 157
+	9 -> 157
+	160 -> 159
+	9 -> 159
+	162 -> 161
+	92 -> 161
+	163 -> 162
+	165 -> 162
+	164 -> 163
+	9 -> 163
+	166 -> 165
+	9 -> 165
+	168 -> 167
+	92 -> 167
+	169 -> 168
+	171 -> 168
+	170 -> 169
+	9 -> 169
+	172 -> 171
+	9 -> 171
+	174 -> 173
+	92 -> 173
+	175 -> 174
+	177 -> 174
+	176 -> 175
+	9 -> 175
+	178 -> 177
+	9 -> 177
+	180 -> 179
+	181 -> 180
+	11 -> 180
+	14 -> 181
+	183 -> 182
+	184 -> 183
+	11 -> 183
+	20 -> 184
+	186 -> 185
+	187 -> 186
+	11 -> 186
+	26 -> 187
+	189 -> 188
+	190 -> 189
+	11 -> 189
+	32 -> 190
+	192 -> 191
+	193 -> 192
+	11 -> 192
+	38 -> 193
+	195 -> 194
+	196 -> 195
+	11 -> 195
+	44 -> 196
+	198 -> 197
+	199 -> 198
+	11 -> 198
+	50 -> 199
+	201 -> 200
+	202 -> 201
+	11 -> 201
+	56 -> 202
+	204 -> 203
+	205 -> 204
+	11 -> 204
+	62 -> 205
+	207 -> 206
+	208 -> 207
+	11 -> 207
+	68 -> 208
+	210 -> 209
+	211 -> 210
+	11 -> 210
+	74 -> 211
+	213 -> 212
+	214 -> 213
+	11 -> 213
+	80 -> 214
+	216 -> 215
+	217 -> 216
+	11 -> 216
+	86 -> 217
+	219 -> 218
+	220 -> 219
+	11 -> 219
+	221 -> 220
+	222 -> 221
+	224 -> 221
+	223 -> 222
+	9 -> 222
+	225 -> 224
+	9 -> 224
+	227 -> 226
+	228 -> 227
+	11 -> 227
+	229 -> 228
+	230 -> 229
+	233 -> 229
+	236 -> 229
+	231 -> 230
+	232 -> 230
+	9 -> 230
+	234 -> 233
+	235 -> 233
+	9 -> 233
+	237 -> 236
+	238 -> 236
+	9 -> 236
+	240 -> 239
+	241 -> 240
+	11 -> 240
+	242 -> 241
+	243 -> 242
+	246 -> 242
+	249 -> 242
+	252 -> 242
+	255 -> 242
+	258 -> 242
+	261 -> 242
+	264 -> 242
+	267 -> 242
+	270 -> 242
+	273 -> 242
+	244 -> 243
+	245 -> 243
+	9 -> 243
+	247 -> 246
+	248 -> 246
+	9 -> 246
+	250 -> 249
+	251 -> 249
+	9 -> 249
+	253 -> 252
+	254 -> 252
+	9 -> 252
+	256 -> 255
+	257 -> 255
+	9 -> 255
+	259 -> 258
+	260 -> 258
+	9 -> 258
+	262 -> 261
+	263 -> 261
+	9 -> 261
+	265 -> 264
+	266 -> 264
+	9 -> 264
+	268 -> 267
+	269 -> 267
+	9 -> 267
+	271 -> 270
+	272 -> 270
+	9 -> 270
+	274 -> 273
+	275 -> 273
+	9 -> 273
+	3 -> 281
+	179 -> 281
+	182 -> 281
+	185 -> 281
+	188 -> 281
+	191 -> 281
+	194 -> 281
+	197 -> 281
+	200 -> 281
+	203 -> 281
+	206 -> 281
+	209 -> 281
+	212 -> 281
+	215 -> 281
+	218 -> 281
+	226 -> 281
+	239 -> 281
+}            

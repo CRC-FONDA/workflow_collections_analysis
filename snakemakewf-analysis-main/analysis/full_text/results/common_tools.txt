@@ -1,0 +1,7 @@
+total repos: 1431
+repos using bcftools: 100
+    bcftools occured in rules this many times: 459
+repos using bwa: 142
+    bwa occured in rules this many times: 916
+repos using samtool: 285
+    samtool occured in rules this many times: 1780

@@ -1,0 +1,49 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "make_summary", color = "0.33 0.6 0.85", style="rounded"];
+	1[label = "make_dag", color = "0.15 0.6 0.85", style="rounded,dashed"];
+	2[label = "count_variants", color = "0.41 0.6 0.85", style="rounded"];
+	3[label = "analyze_counts", color = "0.59 0.6 0.85", style="rounded"];
+	4[label = "compute_Titeseq_Kds", color = "0.07 0.6 0.85", style="rounded"];
+	5[label = "compute_expression_meanFs", color = "0.37 0.6 0.85", style="rounded"];
+	6[label = "global_epistasis_binding", color = "0.56 0.6 0.85", style="rounded"];
+	7[label = "global_epistasis_expression", color = "0.00 0.6 0.85", style="rounded"];
+	8[label = "single_mut_effects", color = "0.30 0.6 0.85", style="rounded"];
+	9[label = "structure_function", color = "0.63 0.6 0.85", style="rounded"];
+	10[label = "logoplots_of_muteffects", color = "0.48 0.6 0.85", style="rounded"];
+	11[label = "circulating_variants", color = "0.04 0.6 0.85", style="rounded"];
+	12[label = "antibody_epitopes", color = "0.52 0.6 0.85", style="rounded"];
+	13[label = "sarbecovirus_diversity", color = "0.19 0.6 0.85", style="rounded"];
+	14[label = "interactive_heatmap", color = "0.11 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 0
+	3 -> 0
+	4 -> 0
+	5 -> 0
+	6 -> 0
+	7 -> 0
+	8 -> 0
+	9 -> 0
+	10 -> 0
+	11 -> 0
+	12 -> 0
+	13 -> 0
+	14 -> 0
+	2 -> 3
+	2 -> 4
+	2 -> 5
+	4 -> 6
+	5 -> 7
+	6 -> 8
+	7 -> 8
+	4 -> 8
+	5 -> 8
+	8 -> 9
+	8 -> 10
+	8 -> 11
+	8 -> 12
+	8 -> 13
+	8 -> 14
+}            

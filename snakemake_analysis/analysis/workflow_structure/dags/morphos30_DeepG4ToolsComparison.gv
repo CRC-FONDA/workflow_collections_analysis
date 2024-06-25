@@ -1,0 +1,622 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.18 0.6 0.85", style="rounded"];
+	1[label = "other_metrics\ntool: ATACDeepG4_classictuningOH5", color = "0.46 0.6 0.85", style="rounded"];
+	2[label = "DeepG4OH4\nmodel: classictuningOH5", color = "0.62 0.6 0.85", style="rounded"];
+	3[label = "fastafrom_bed\nsample: TestSet_Peaks_BG4_G4seq_HaCaT_GSE76688_hg19_201b_Ctrl_gkmSVM", color = "0.48 0.6 0.85", style="rounded"];
+	4[label = "other_metrics\ntool: ATACDeepG4_ATACnormBG", color = "0.46 0.6 0.85", style="rounded"];
+	5[label = "DeepG4OH4\nmodel: ATACnormBG", color = "0.62 0.6 0.85", style="rounded"];
+	6[label = "other_metrics\ntool: ATACDeepG4_ATACnorm900BG", color = "0.46 0.6 0.85", style="rounded"];
+	7[label = "DeepG4OH4\nmodel: ATACnorm900BG", color = "0.62 0.6 0.85", style="rounded"];
+	8[label = "other_metrics\ntool: G4detector_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	9[label = "G4detector_tsv_format", color = "0.32 0.6 0.85", style="rounded"];
+	10[label = "subseq_fasta", color = "0.57 0.6 0.85", style="rounded"];
+	11[label = "G4detector", color = "0.16 0.6 0.85", style="rounded"];
+	12[label = "other_metrics\ntool: G4detector_retrained_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	13[label = "G4detector_retrained_tsv_format", color = "0.55 0.6 0.85", style="rounded"];
+	14[label = "G4detector_retrained", color = "0.39 0.6 0.85", style="rounded"];
+	15[label = "other_metrics\ntool: penguinn", color = "0.46 0.6 0.85", style="rounded"];
+	16[label = "penguinn", color = "0.05 0.6 0.85", style="rounded"];
+	17[label = "other_metrics\ntool: penguinn_retrained", color = "0.46 0.6 0.85", style="rounded"];
+	18[label = "penguinn_retrained", color = "0.51 0.6 0.85", style="rounded"];
+	19[label = "other_metrics\ntool: ATACDeepG4_classictuningOH5", color = "0.46 0.6 0.85", style="rounded"];
+	20[label = "DeepG4OH4\nmodel: classictuningOH5", color = "0.62 0.6 0.85", style="rounded"];
+	21[label = "fastafrom_bed\nsample: Peaks_BG4_G4seq_HaCaT_GSE99205_hg19_201b_Ctrl_gkmSVM", color = "0.48 0.6 0.85", style="rounded"];
+	22[label = "other_metrics\ntool: ATACDeepG4_ATACnormBG", color = "0.46 0.6 0.85", style="rounded"];
+	23[label = "DeepG4OH4\nmodel: ATACnormBG", color = "0.62 0.6 0.85", style="rounded"];
+	24[label = "other_metrics\ntool: ATACDeepG4_ATACnorm900BG", color = "0.46 0.6 0.85", style="rounded"];
+	25[label = "DeepG4OH4\nmodel: ATACnorm900BG", color = "0.62 0.6 0.85", style="rounded"];
+	26[label = "other_metrics\ntool: G4detector_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	27[label = "G4detector_tsv_format", color = "0.32 0.6 0.85", style="rounded"];
+	28[label = "subseq_fasta", color = "0.57 0.6 0.85", style="rounded"];
+	29[label = "G4detector", color = "0.16 0.6 0.85", style="rounded"];
+	30[label = "other_metrics\ntool: G4detector_retrained_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	31[label = "G4detector_retrained_tsv_format", color = "0.55 0.6 0.85", style="rounded"];
+	32[label = "G4detector_retrained", color = "0.39 0.6 0.85", style="rounded"];
+	33[label = "other_metrics\ntool: penguinn", color = "0.46 0.6 0.85", style="rounded"];
+	34[label = "penguinn", color = "0.05 0.6 0.85", style="rounded"];
+	35[label = "other_metrics\ntool: penguinn_retrained", color = "0.46 0.6 0.85", style="rounded"];
+	36[label = "penguinn_retrained", color = "0.51 0.6 0.85", style="rounded"];
+	37[label = "other_metrics\ntool: ATACDeepG4_classictuningOH5", color = "0.46 0.6 0.85", style="rounded"];
+	38[label = "DeepG4OH4\nmodel: classictuningOH5", color = "0.62 0.6 0.85", style="rounded"];
+	39[label = "fastafrom_bed\nsample: Peaks_BG4_G4seq_HEKnp_GSE76688_hg19_201b_Ctrl_gkmSVM", color = "0.48 0.6 0.85", style="rounded"];
+	40[label = "other_metrics\ntool: ATACDeepG4_ATACnormBG", color = "0.46 0.6 0.85", style="rounded"];
+	41[label = "DeepG4OH4\nmodel: ATACnormBG", color = "0.62 0.6 0.85", style="rounded"];
+	42[label = "other_metrics\ntool: ATACDeepG4_ATACnorm900BG", color = "0.46 0.6 0.85", style="rounded"];
+	43[label = "DeepG4OH4\nmodel: ATACnorm900BG", color = "0.62 0.6 0.85", style="rounded"];
+	44[label = "other_metrics\ntool: G4detector_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	45[label = "G4detector_tsv_format", color = "0.32 0.6 0.85", style="rounded"];
+	46[label = "subseq_fasta", color = "0.57 0.6 0.85", style="rounded"];
+	47[label = "G4detector", color = "0.16 0.6 0.85", style="rounded"];
+	48[label = "other_metrics\ntool: G4detector_retrained_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	49[label = "G4detector_retrained_tsv_format", color = "0.55 0.6 0.85", style="rounded"];
+	50[label = "G4detector_retrained", color = "0.39 0.6 0.85", style="rounded"];
+	51[label = "other_metrics\ntool: penguinn", color = "0.46 0.6 0.85", style="rounded"];
+	52[label = "penguinn", color = "0.05 0.6 0.85", style="rounded"];
+	53[label = "other_metrics\ntool: penguinn_retrained", color = "0.46 0.6 0.85", style="rounded"];
+	54[label = "penguinn_retrained", color = "0.51 0.6 0.85", style="rounded"];
+	55[label = "other_metrics\ntool: ATACDeepG4_classictuningOH5", color = "0.46 0.6 0.85", style="rounded"];
+	56[label = "DeepG4OH4\nmodel: classictuningOH5", color = "0.62 0.6 0.85", style="rounded"];
+	57[label = "fastafrom_bed\nsample: Peaks_BG4_G4seq_K562_GSE107690_hg19_201b_Ctrl_gkmSVM", color = "0.48 0.6 0.85", style="rounded"];
+	58[label = "other_metrics\ntool: ATACDeepG4_ATACnormBG", color = "0.46 0.6 0.85", style="rounded"];
+	59[label = "DeepG4OH4\nmodel: ATACnormBG", color = "0.62 0.6 0.85", style="rounded"];
+	60[label = "other_metrics\ntool: ATACDeepG4_ATACnorm900BG", color = "0.46 0.6 0.85", style="rounded"];
+	61[label = "DeepG4OH4\nmodel: ATACnorm900BG", color = "0.62 0.6 0.85", style="rounded"];
+	62[label = "other_metrics\ntool: G4detector_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	63[label = "G4detector_tsv_format", color = "0.32 0.6 0.85", style="rounded"];
+	64[label = "subseq_fasta", color = "0.57 0.6 0.85", style="rounded"];
+	65[label = "G4detector", color = "0.16 0.6 0.85", style="rounded"];
+	66[label = "other_metrics\ntool: G4detector_retrained_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	67[label = "G4detector_retrained_tsv_format", color = "0.55 0.6 0.85", style="rounded"];
+	68[label = "G4detector_retrained", color = "0.39 0.6 0.85", style="rounded"];
+	69[label = "other_metrics\ntool: penguinn", color = "0.46 0.6 0.85", style="rounded"];
+	70[label = "penguinn", color = "0.05 0.6 0.85", style="rounded"];
+	71[label = "other_metrics\ntool: penguinn_retrained", color = "0.46 0.6 0.85", style="rounded"];
+	72[label = "penguinn_retrained", color = "0.51 0.6 0.85", style="rounded"];
+	73[label = "other_metrics\ntool: ATACDeepG4_classictuningOH5", color = "0.46 0.6 0.85", style="rounded"];
+	74[label = "DeepG4OH4\nmodel: classictuningOH5", color = "0.62 0.6 0.85", style="rounded"];
+	75[label = "fastafrom_bed\nsample: Peaks_G4P_G4seq_GSE133379_293T_hg19_201b_Ctrl_gkmSVM", color = "0.48 0.6 0.85", style="rounded"];
+	76[label = "other_metrics\ntool: ATACDeepG4_ATACnormBG", color = "0.46 0.6 0.85", style="rounded"];
+	77[label = "DeepG4OH4\nmodel: ATACnormBG", color = "0.62 0.6 0.85", style="rounded"];
+	78[label = "other_metrics\ntool: ATACDeepG4_ATACnorm900BG", color = "0.46 0.6 0.85", style="rounded"];
+	79[label = "DeepG4OH4\nmodel: ATACnorm900BG", color = "0.62 0.6 0.85", style="rounded"];
+	80[label = "other_metrics\ntool: G4detector_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	81[label = "G4detector_tsv_format", color = "0.32 0.6 0.85", style="rounded"];
+	82[label = "subseq_fasta", color = "0.57 0.6 0.85", style="rounded"];
+	83[label = "G4detector", color = "0.16 0.6 0.85", style="rounded"];
+	84[label = "other_metrics\ntool: G4detector_retrained_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	85[label = "G4detector_retrained_tsv_format", color = "0.55 0.6 0.85", style="rounded"];
+	86[label = "G4detector_retrained", color = "0.39 0.6 0.85", style="rounded"];
+	87[label = "other_metrics\ntool: penguinn", color = "0.46 0.6 0.85", style="rounded"];
+	88[label = "penguinn", color = "0.05 0.6 0.85", style="rounded"];
+	89[label = "other_metrics\ntool: penguinn_retrained", color = "0.46 0.6 0.85", style="rounded"];
+	90[label = "penguinn_retrained", color = "0.51 0.6 0.85", style="rounded"];
+	91[label = "other_metrics\ntool: ATACDeepG4_classictuningOH5", color = "0.46 0.6 0.85", style="rounded"];
+	92[label = "DeepG4OH4\nmodel: classictuningOH5", color = "0.62 0.6 0.85", style="rounded"];
+	93[label = "fastafrom_bed\nsample: Peaks_G4P_G4seq_GSE133379_A549_hg19_201b_Ctrl_gkmSVM", color = "0.48 0.6 0.85", style="rounded"];
+	94[label = "other_metrics\ntool: ATACDeepG4_ATACnormBG", color = "0.46 0.6 0.85", style="rounded"];
+	95[label = "DeepG4OH4\nmodel: ATACnormBG", color = "0.62 0.6 0.85", style="rounded"];
+	96[label = "other_metrics\ntool: ATACDeepG4_ATACnorm900BG", color = "0.46 0.6 0.85", style="rounded"];
+	97[label = "DeepG4OH4\nmodel: ATACnorm900BG", color = "0.62 0.6 0.85", style="rounded"];
+	98[label = "other_metrics\ntool: G4detector_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	99[label = "G4detector_tsv_format", color = "0.32 0.6 0.85", style="rounded"];
+	100[label = "subseq_fasta", color = "0.57 0.6 0.85", style="rounded"];
+	101[label = "G4detector", color = "0.16 0.6 0.85", style="rounded"];
+	102[label = "other_metrics\ntool: G4detector_retrained_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	103[label = "G4detector_retrained_tsv_format", color = "0.55 0.6 0.85", style="rounded"];
+	104[label = "G4detector_retrained", color = "0.39 0.6 0.85", style="rounded"];
+	105[label = "other_metrics\ntool: penguinn", color = "0.46 0.6 0.85", style="rounded"];
+	106[label = "penguinn", color = "0.05 0.6 0.85", style="rounded"];
+	107[label = "other_metrics\ntool: penguinn_retrained", color = "0.46 0.6 0.85", style="rounded"];
+	108[label = "penguinn_retrained", color = "0.51 0.6 0.85", style="rounded"];
+	109[label = "other_metrics\ntool: ATACDeepG4_classictuningOH5", color = "0.46 0.6 0.85", style="rounded"];
+	110[label = "DeepG4OH4\nmodel: classictuningOH5", color = "0.62 0.6 0.85", style="rounded"];
+	111[label = "fastafrom_bed\nsample: Peaks_G4P_G4seq_GSE133379_H1975_hg19_201b_Ctrl_gkmSVM", color = "0.48 0.6 0.85", style="rounded"];
+	112[label = "other_metrics\ntool: ATACDeepG4_ATACnormBG", color = "0.46 0.6 0.85", style="rounded"];
+	113[label = "DeepG4OH4\nmodel: ATACnormBG", color = "0.62 0.6 0.85", style="rounded"];
+	114[label = "other_metrics\ntool: ATACDeepG4_ATACnorm900BG", color = "0.46 0.6 0.85", style="rounded"];
+	115[label = "DeepG4OH4\nmodel: ATACnorm900BG", color = "0.62 0.6 0.85", style="rounded"];
+	116[label = "other_metrics\ntool: G4detector_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	117[label = "G4detector_tsv_format", color = "0.32 0.6 0.85", style="rounded"];
+	118[label = "subseq_fasta", color = "0.57 0.6 0.85", style="rounded"];
+	119[label = "G4detector", color = "0.16 0.6 0.85", style="rounded"];
+	120[label = "other_metrics\ntool: G4detector_retrained_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	121[label = "G4detector_retrained_tsv_format", color = "0.55 0.6 0.85", style="rounded"];
+	122[label = "G4detector_retrained", color = "0.39 0.6 0.85", style="rounded"];
+	123[label = "other_metrics\ntool: penguinn", color = "0.46 0.6 0.85", style="rounded"];
+	124[label = "penguinn", color = "0.05 0.6 0.85", style="rounded"];
+	125[label = "other_metrics\ntool: penguinn_retrained", color = "0.46 0.6 0.85", style="rounded"];
+	126[label = "penguinn_retrained", color = "0.51 0.6 0.85", style="rounded"];
+	127[label = "other_metrics\ntool: ATACDeepG4_classictuningOH5", color = "0.46 0.6 0.85", style="rounded"];
+	128[label = "DeepG4OH4\nmodel: classictuningOH5", color = "0.62 0.6 0.85", style="rounded"];
+	129[label = "fastafrom_bed\nsample: Peaks_G4P_G4seq_GSE133379_HeLaS3_hg19_201b_Ctrl_gkmSVM", color = "0.48 0.6 0.85", style="rounded"];
+	130[label = "other_metrics\ntool: ATACDeepG4_ATACnormBG", color = "0.46 0.6 0.85", style="rounded"];
+	131[label = "DeepG4OH4\nmodel: ATACnormBG", color = "0.62 0.6 0.85", style="rounded"];
+	132[label = "other_metrics\ntool: ATACDeepG4_ATACnorm900BG", color = "0.46 0.6 0.85", style="rounded"];
+	133[label = "DeepG4OH4\nmodel: ATACnorm900BG", color = "0.62 0.6 0.85", style="rounded"];
+	134[label = "other_metrics\ntool: G4detector_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	135[label = "G4detector_tsv_format", color = "0.32 0.6 0.85", style="rounded"];
+	136[label = "subseq_fasta", color = "0.57 0.6 0.85", style="rounded"];
+	137[label = "G4detector", color = "0.16 0.6 0.85", style="rounded"];
+	138[label = "other_metrics\ntool: G4detector_retrained_tsv", color = "0.46 0.6 0.85", style="rounded"];
+	139[label = "G4detector_retrained_tsv_format", color = "0.55 0.6 0.85", style="rounded"];
+	140[label = "G4detector_retrained", color = "0.39 0.6 0.85", style="rounded"];
+	141[label = "other_metrics\ntool: penguinn", color = "0.46 0.6 0.85", style="rounded"];
+	142[label = "penguinn", color = "0.05 0.6 0.85", style="rounded"];
+	143[label = "other_metrics\ntool: penguinn_retrained", color = "0.46 0.6 0.85", style="rounded"];
+	144[label = "penguinn_retrained", color = "0.51 0.6 0.85", style="rounded"];
+	145[label = "AUC\ntool: ATACDeepG4_classictuningOH5", color = "0.02 0.6 0.85", style="rounded"];
+	146[label = "AUC\ntool: ATACDeepG4_ATACnormBG", color = "0.02 0.6 0.85", style="rounded"];
+	147[label = "AUC\ntool: ATACDeepG4_ATACnorm900BG", color = "0.02 0.6 0.85", style="rounded"];
+	148[label = "AUC\ntool: G4detector_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	149[label = "AUC\ntool: G4detector_retrained_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	150[label = "AUC\ntool: penguinn", color = "0.02 0.6 0.85", style="rounded"];
+	151[label = "AUC\ntool: penguinn_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	152[label = "AUC\ntool: ATACDeepG4_classictuningOH5", color = "0.02 0.6 0.85", style="rounded"];
+	153[label = "AUC\ntool: ATACDeepG4_ATACnormBG", color = "0.02 0.6 0.85", style="rounded"];
+	154[label = "AUC\ntool: ATACDeepG4_ATACnorm900BG", color = "0.02 0.6 0.85", style="rounded"];
+	155[label = "AUC\ntool: G4detector_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	156[label = "AUC\ntool: G4detector_retrained_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	157[label = "AUC\ntool: penguinn", color = "0.02 0.6 0.85", style="rounded"];
+	158[label = "AUC\ntool: penguinn_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	159[label = "AUC\ntool: ATACDeepG4_classictuningOH5", color = "0.02 0.6 0.85", style="rounded"];
+	160[label = "AUC\ntool: ATACDeepG4_ATACnormBG", color = "0.02 0.6 0.85", style="rounded"];
+	161[label = "AUC\ntool: ATACDeepG4_ATACnorm900BG", color = "0.02 0.6 0.85", style="rounded"];
+	162[label = "AUC\ntool: G4detector_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	163[label = "AUC\ntool: G4detector_retrained_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	164[label = "AUC\ntool: penguinn", color = "0.02 0.6 0.85", style="rounded"];
+	165[label = "AUC\ntool: penguinn_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	166[label = "AUC\ntool: ATACDeepG4_classictuningOH5", color = "0.02 0.6 0.85", style="rounded"];
+	167[label = "AUC\ntool: ATACDeepG4_ATACnormBG", color = "0.02 0.6 0.85", style="rounded"];
+	168[label = "AUC\ntool: ATACDeepG4_ATACnorm900BG", color = "0.02 0.6 0.85", style="rounded"];
+	169[label = "AUC\ntool: G4detector_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	170[label = "AUC\ntool: G4detector_retrained_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	171[label = "AUC\ntool: penguinn", color = "0.02 0.6 0.85", style="rounded"];
+	172[label = "AUC\ntool: penguinn_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	173[label = "AUC\ntool: ATACDeepG4_classictuningOH5", color = "0.02 0.6 0.85", style="rounded"];
+	174[label = "AUC\ntool: ATACDeepG4_ATACnormBG", color = "0.02 0.6 0.85", style="rounded"];
+	175[label = "AUC\ntool: ATACDeepG4_ATACnorm900BG", color = "0.02 0.6 0.85", style="rounded"];
+	176[label = "AUC\ntool: G4detector_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	177[label = "AUC\ntool: G4detector_retrained_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	178[label = "AUC\ntool: penguinn", color = "0.02 0.6 0.85", style="rounded"];
+	179[label = "AUC\ntool: penguinn_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	180[label = "AUC\ntool: ATACDeepG4_classictuningOH5", color = "0.02 0.6 0.85", style="rounded"];
+	181[label = "AUC\ntool: ATACDeepG4_ATACnormBG", color = "0.02 0.6 0.85", style="rounded"];
+	182[label = "AUC\ntool: ATACDeepG4_ATACnorm900BG", color = "0.02 0.6 0.85", style="rounded"];
+	183[label = "AUC\ntool: G4detector_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	184[label = "AUC\ntool: G4detector_retrained_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	185[label = "AUC\ntool: penguinn", color = "0.02 0.6 0.85", style="rounded"];
+	186[label = "AUC\ntool: penguinn_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	187[label = "AUC\ntool: ATACDeepG4_classictuningOH5", color = "0.02 0.6 0.85", style="rounded"];
+	188[label = "AUC\ntool: ATACDeepG4_ATACnormBG", color = "0.02 0.6 0.85", style="rounded"];
+	189[label = "AUC\ntool: ATACDeepG4_ATACnorm900BG", color = "0.02 0.6 0.85", style="rounded"];
+	190[label = "AUC\ntool: G4detector_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	191[label = "AUC\ntool: G4detector_retrained_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	192[label = "AUC\ntool: penguinn", color = "0.02 0.6 0.85", style="rounded"];
+	193[label = "AUC\ntool: penguinn_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	194[label = "AUC\ntool: ATACDeepG4_classictuningOH5", color = "0.02 0.6 0.85", style="rounded"];
+	195[label = "AUC\ntool: ATACDeepG4_ATACnormBG", color = "0.02 0.6 0.85", style="rounded"];
+	196[label = "AUC\ntool: ATACDeepG4_ATACnorm900BG", color = "0.02 0.6 0.85", style="rounded"];
+	197[label = "AUC\ntool: G4detector_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	198[label = "AUC\ntool: G4detector_retrained_tsv", color = "0.02 0.6 0.85", style="rounded"];
+	199[label = "AUC\ntool: penguinn", color = "0.02 0.6 0.85", style="rounded"];
+	200[label = "AUC\ntool: penguinn_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	201[label = "AUC\ntool: quadron_score", color = "0.02 0.6 0.85", style="rounded"];
+	202[label = "quadron_score", color = "0.41 0.6 0.85", style="rounded"];
+	203[label = "AUC\ntool: quadron_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	204[label = "quadron_retrained", color = "0.34 0.6 0.85", style="rounded"];
+	205[label = "quadron_features", color = "0.60 0.6 0.85", style="rounded"];
+	206[label = "AUC\ntool: quadron_score", color = "0.02 0.6 0.85", style="rounded"];
+	207[label = "quadron_score", color = "0.41 0.6 0.85", style="rounded"];
+	208[label = "AUC\ntool: quadron_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	209[label = "quadron_retrained", color = "0.34 0.6 0.85", style="rounded"];
+	210[label = "quadron_features", color = "0.60 0.6 0.85", style="rounded"];
+	211[label = "AUC\ntool: quadron_score", color = "0.02 0.6 0.85", style="rounded"];
+	212[label = "quadron_score", color = "0.41 0.6 0.85", style="rounded"];
+	213[label = "AUC\ntool: quadron_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	214[label = "quadron_retrained", color = "0.34 0.6 0.85", style="rounded"];
+	215[label = "quadron_features", color = "0.60 0.6 0.85", style="rounded"];
+	216[label = "AUC\ntool: quadron_score", color = "0.02 0.6 0.85", style="rounded"];
+	217[label = "quadron_score", color = "0.41 0.6 0.85", style="rounded"];
+	218[label = "AUC\ntool: quadron_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	219[label = "quadron_retrained", color = "0.34 0.6 0.85", style="rounded"];
+	220[label = "quadron_features", color = "0.60 0.6 0.85", style="rounded"];
+	221[label = "AUC\ntool: quadron_score", color = "0.02 0.6 0.85", style="rounded"];
+	222[label = "quadron_score", color = "0.41 0.6 0.85", style="rounded"];
+	223[label = "AUC\ntool: quadron_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	224[label = "quadron_retrained", color = "0.34 0.6 0.85", style="rounded"];
+	225[label = "quadron_features", color = "0.60 0.6 0.85", style="rounded"];
+	226[label = "AUC\ntool: quadron_score", color = "0.02 0.6 0.85", style="rounded"];
+	227[label = "quadron_score", color = "0.41 0.6 0.85", style="rounded"];
+	228[label = "AUC\ntool: quadron_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	229[label = "quadron_retrained", color = "0.34 0.6 0.85", style="rounded"];
+	230[label = "quadron_features", color = "0.60 0.6 0.85", style="rounded"];
+	231[label = "AUC\ntool: quadron_score", color = "0.02 0.6 0.85", style="rounded"];
+	232[label = "quadron_score", color = "0.41 0.6 0.85", style="rounded"];
+	233[label = "AUC\ntool: quadron_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	234[label = "quadron_retrained", color = "0.34 0.6 0.85", style="rounded"];
+	235[label = "quadron_features", color = "0.60 0.6 0.85", style="rounded"];
+	236[label = "AUC\ntool: quadron_score", color = "0.02 0.6 0.85", style="rounded"];
+	237[label = "quadron_score", color = "0.41 0.6 0.85", style="rounded"];
+	238[label = "AUC\ntool: quadron_retrained", color = "0.02 0.6 0.85", style="rounded"];
+	239[label = "quadron_retrained", color = "0.34 0.6 0.85", style="rounded"];
+	240[label = "quadron_features", color = "0.60 0.6 0.85", style="rounded"];
+	1 -> 0
+	4 -> 0
+	6 -> 0
+	8 -> 0
+	12 -> 0
+	15 -> 0
+	17 -> 0
+	19 -> 0
+	22 -> 0
+	24 -> 0
+	26 -> 0
+	30 -> 0
+	33 -> 0
+	35 -> 0
+	37 -> 0
+	40 -> 0
+	42 -> 0
+	44 -> 0
+	48 -> 0
+	51 -> 0
+	53 -> 0
+	55 -> 0
+	58 -> 0
+	60 -> 0
+	62 -> 0
+	66 -> 0
+	69 -> 0
+	71 -> 0
+	73 -> 0
+	76 -> 0
+	78 -> 0
+	80 -> 0
+	84 -> 0
+	87 -> 0
+	89 -> 0
+	91 -> 0
+	94 -> 0
+	96 -> 0
+	98 -> 0
+	102 -> 0
+	105 -> 0
+	107 -> 0
+	109 -> 0
+	112 -> 0
+	114 -> 0
+	116 -> 0
+	120 -> 0
+	123 -> 0
+	125 -> 0
+	127 -> 0
+	130 -> 0
+	132 -> 0
+	134 -> 0
+	138 -> 0
+	141 -> 0
+	143 -> 0
+	145 -> 0
+	146 -> 0
+	147 -> 0
+	148 -> 0
+	149 -> 0
+	150 -> 0
+	151 -> 0
+	152 -> 0
+	153 -> 0
+	154 -> 0
+	155 -> 0
+	156 -> 0
+	157 -> 0
+	158 -> 0
+	159 -> 0
+	160 -> 0
+	161 -> 0
+	162 -> 0
+	163 -> 0
+	164 -> 0
+	165 -> 0
+	166 -> 0
+	167 -> 0
+	168 -> 0
+	169 -> 0
+	170 -> 0
+	171 -> 0
+	172 -> 0
+	173 -> 0
+	174 -> 0
+	175 -> 0
+	176 -> 0
+	177 -> 0
+	178 -> 0
+	179 -> 0
+	180 -> 0
+	181 -> 0
+	182 -> 0
+	183 -> 0
+	184 -> 0
+	185 -> 0
+	186 -> 0
+	187 -> 0
+	188 -> 0
+	189 -> 0
+	190 -> 0
+	191 -> 0
+	192 -> 0
+	193 -> 0
+	194 -> 0
+	195 -> 0
+	196 -> 0
+	197 -> 0
+	198 -> 0
+	199 -> 0
+	200 -> 0
+	201 -> 0
+	203 -> 0
+	206 -> 0
+	208 -> 0
+	211 -> 0
+	213 -> 0
+	216 -> 0
+	218 -> 0
+	221 -> 0
+	223 -> 0
+	226 -> 0
+	228 -> 0
+	231 -> 0
+	233 -> 0
+	236 -> 0
+	238 -> 0
+	2 -> 1
+	3 -> 2
+	5 -> 4
+	3 -> 5
+	7 -> 6
+	3 -> 7
+	9 -> 8
+	10 -> 9
+	11 -> 9
+	3 -> 10
+	10 -> 11
+	13 -> 12
+	10 -> 13
+	14 -> 13
+	10 -> 14
+	16 -> 15
+	10 -> 16
+	18 -> 17
+	10 -> 18
+	20 -> 19
+	21 -> 20
+	23 -> 22
+	21 -> 23
+	25 -> 24
+	21 -> 25
+	27 -> 26
+	28 -> 27
+	29 -> 27
+	21 -> 28
+	28 -> 29
+	31 -> 30
+	28 -> 31
+	32 -> 31
+	28 -> 32
+	34 -> 33
+	28 -> 34
+	36 -> 35
+	28 -> 36
+	38 -> 37
+	39 -> 38
+	41 -> 40
+	39 -> 41
+	43 -> 42
+	39 -> 43
+	45 -> 44
+	46 -> 45
+	47 -> 45
+	39 -> 46
+	46 -> 47
+	49 -> 48
+	46 -> 49
+	50 -> 49
+	46 -> 50
+	52 -> 51
+	46 -> 52
+	54 -> 53
+	46 -> 54
+	56 -> 55
+	57 -> 56
+	59 -> 58
+	57 -> 59
+	61 -> 60
+	57 -> 61
+	63 -> 62
+	64 -> 63
+	65 -> 63
+	57 -> 64
+	64 -> 65
+	67 -> 66
+	64 -> 67
+	68 -> 67
+	64 -> 68
+	70 -> 69
+	64 -> 70
+	72 -> 71
+	64 -> 72
+	74 -> 73
+	75 -> 74
+	77 -> 76
+	75 -> 77
+	79 -> 78
+	75 -> 79
+	81 -> 80
+	82 -> 81
+	83 -> 81
+	75 -> 82
+	82 -> 83
+	85 -> 84
+	82 -> 85
+	86 -> 85
+	82 -> 86
+	88 -> 87
+	82 -> 88
+	90 -> 89
+	82 -> 90
+	92 -> 91
+	93 -> 92
+	95 -> 94
+	93 -> 95
+	97 -> 96
+	93 -> 97
+	99 -> 98
+	100 -> 99
+	101 -> 99
+	93 -> 100
+	100 -> 101
+	103 -> 102
+	100 -> 103
+	104 -> 103
+	100 -> 104
+	106 -> 105
+	100 -> 106
+	108 -> 107
+	100 -> 108
+	110 -> 109
+	111 -> 110
+	113 -> 112
+	111 -> 113
+	115 -> 114
+	111 -> 115
+	117 -> 116
+	118 -> 117
+	119 -> 117
+	111 -> 118
+	118 -> 119
+	121 -> 120
+	118 -> 121
+	122 -> 121
+	118 -> 122
+	124 -> 123
+	118 -> 124
+	126 -> 125
+	118 -> 126
+	128 -> 127
+	129 -> 128
+	131 -> 130
+	129 -> 131
+	133 -> 132
+	129 -> 133
+	135 -> 134
+	136 -> 135
+	137 -> 135
+	129 -> 136
+	136 -> 137
+	139 -> 138
+	136 -> 139
+	140 -> 139
+	136 -> 140
+	142 -> 141
+	136 -> 142
+	144 -> 143
+	136 -> 144
+	2 -> 145
+	5 -> 146
+	7 -> 147
+	9 -> 148
+	13 -> 149
+	16 -> 150
+	18 -> 151
+	20 -> 152
+	23 -> 153
+	25 -> 154
+	27 -> 155
+	31 -> 156
+	34 -> 157
+	36 -> 158
+	38 -> 159
+	41 -> 160
+	43 -> 161
+	45 -> 162
+	49 -> 163
+	52 -> 164
+	54 -> 165
+	56 -> 166
+	59 -> 167
+	61 -> 168
+	63 -> 169
+	67 -> 170
+	70 -> 171
+	72 -> 172
+	74 -> 173
+	77 -> 174
+	79 -> 175
+	81 -> 176
+	85 -> 177
+	88 -> 178
+	90 -> 179
+	92 -> 180
+	95 -> 181
+	97 -> 182
+	99 -> 183
+	103 -> 184
+	106 -> 185
+	108 -> 186
+	110 -> 187
+	113 -> 188
+	115 -> 189
+	117 -> 190
+	121 -> 191
+	124 -> 192
+	126 -> 193
+	128 -> 194
+	131 -> 195
+	133 -> 196
+	135 -> 197
+	139 -> 198
+	142 -> 199
+	144 -> 200
+	202 -> 201
+	3 -> 202
+	204 -> 203
+	205 -> 204
+	3 -> 205
+	207 -> 206
+	21 -> 207
+	209 -> 208
+	210 -> 209
+	21 -> 210
+	212 -> 211
+	39 -> 212
+	214 -> 213
+	215 -> 214
+	39 -> 215
+	217 -> 216
+	57 -> 217
+	219 -> 218
+	220 -> 219
+	57 -> 220
+	222 -> 221
+	75 -> 222
+	224 -> 223
+	225 -> 224
+	75 -> 225
+	227 -> 226
+	93 -> 227
+	229 -> 228
+	230 -> 229
+	93 -> 230
+	232 -> 231
+	111 -> 232
+	234 -> 233
+	235 -> 234
+	111 -> 235
+	237 -> 236
+	129 -> 237
+	239 -> 238
+	240 -> 239
+	129 -> 240
+}            

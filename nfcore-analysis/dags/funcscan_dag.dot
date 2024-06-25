@@ -1,0 +1,866 @@
+digraph "funcscan_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v177 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v178 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v3 [shape=point];
+v2 -> v3 [label="ch_multiqc_logo"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v9 [label="ch_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v5 -> v179 [label="ch_multiqc_logo"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v6 -> v7 [label="ch_input"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v10;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v8 [label="NFCORE_FUNCSCAN:FUNCSCAN:GUNZIP_FASTA_PREP"];
+v7 -> v8;
+
+v8 [label="NFCORE_FUNCSCAN:FUNCSCAN:GUNZIP_FASTA_PREP"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v10;
+
+v8 [label="NFCORE_FUNCSCAN:FUNCSCAN:GUNZIP_FASTA_PREP"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v13 [label="ch_versions"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 [label="NFCORE_FUNCSCAN:FUNCSCAN:BIOAWK"];
+v10 -> v11 [label="ch_prepped_fastas"];
+
+v11 [label="NFCORE_FUNCSCAN:FUNCSCAN:BIOAWK"];
+v12 [shape=point];
+v11 -> v12;
+
+v11 [label="NFCORE_FUNCSCAN:FUNCSCAN:BIOAWK"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v11 -> v14;
+
+v11 [label="NFCORE_FUNCSCAN:FUNCSCAN:BIOAWK"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 -> v27 [label="ch_versions"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v10 -> v14 [label="ch_prepped_fastas"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [label="NFCORE_FUNCSCAN:FUNCSCAN:PRODIGAL_GFF"];
+v15 -> v17 [label="contigs"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="NFCORE_FUNCSCAN:FUNCSCAN:PRODIGAL_GFF"];
+v16 -> v17 [label="output_format"];
+
+v17 [label="NFCORE_FUNCSCAN:FUNCSCAN:PRODIGAL_GFF"];
+v24 [label="NFCORE_FUNCSCAN:FUNCSCAN:GUNZIP_PRODIGAL_GFF"];
+v17 -> v24;
+
+v17 [label="NFCORE_FUNCSCAN:FUNCSCAN:PRODIGAL_GFF"];
+v21 [label="NFCORE_FUNCSCAN:FUNCSCAN:GUNZIP_PRODIGAL_FNA"];
+v17 -> v21;
+
+v17 [label="NFCORE_FUNCSCAN:FUNCSCAN:PRODIGAL_GFF"];
+v19 [label="NFCORE_FUNCSCAN:FUNCSCAN:GUNZIP_PRODIGAL_FAA"];
+v17 -> v19;
+
+v17 [label="NFCORE_FUNCSCAN:FUNCSCAN:PRODIGAL_GFF"];
+v18 [shape=point];
+v17 -> v18;
+
+v17 [label="NFCORE_FUNCSCAN:FUNCSCAN:PRODIGAL_GFF"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v27;
+
+v19 [label="NFCORE_FUNCSCAN:FUNCSCAN:GUNZIP_PRODIGAL_FAA"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v19 -> v30 [label="ch_annotation_faa"];
+
+v19 [label="NFCORE_FUNCSCAN:FUNCSCAN:GUNZIP_PRODIGAL_FAA"];
+v20 [shape=point];
+v19 -> v20;
+
+v21 [label="NFCORE_FUNCSCAN:FUNCSCAN:GUNZIP_PRODIGAL_FNA"];
+v23 [shape=point];
+v21 -> v23 [label="ch_annotation_fna"];
+
+v21 [label="NFCORE_FUNCSCAN:FUNCSCAN:GUNZIP_PRODIGAL_FNA"];
+v22 [shape=point];
+v21 -> v22;
+
+v24 [label="NFCORE_FUNCSCAN:FUNCSCAN:GUNZIP_PRODIGAL_GFF"];
+v26 [shape=point];
+v24 -> v26 [label="ch_annotation_gff"];
+
+v24 [label="NFCORE_FUNCSCAN:FUNCSCAN:GUNZIP_PRODIGAL_GFF"];
+v25 [shape=point];
+v24 -> v25;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v95 [label="ch_versions"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=point];
+v28 -> v29 [label="ch_annotation_gbk"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v36 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPLIFY_PREDICT"];
+v30 -> v36 [label="ch_faa_for_ampcombi"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v37 [label="ch_versions"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v38 [label="ch_ampresults_for_ampcombi"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v85 [label="ch_ampcombi_summaries"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v49 [label="ch_macrel_faa"];
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPLIFY_PREDICT"];
+v35 -> v36 [label="model_dir"];
+
+v36 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPLIFY_PREDICT"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v38;
+
+v36 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPLIFY_PREDICT"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v37;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v43 [label="ch_versions"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v48 [label="ch_ampresults_for_ampcombi"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:MACREL_CONTIGS"];
+v15 -> v39 [label="contigs"];
+
+v39 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:MACREL_CONTIGS"];
+v42 [shape=point];
+v39 -> v42;
+
+v39 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:MACREL_CONTIGS"];
+v45 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:GUNZIP_MACREL_ORFS"];
+v39 -> v45;
+
+v39 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:MACREL_CONTIGS"];
+v44 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:GUNZIP_MACREL_PRED"];
+v39 -> v44;
+
+v39 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:MACREL_CONTIGS"];
+v41 [shape=point];
+v39 -> v41;
+
+v39 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:MACREL_CONTIGS"];
+v40 [shape=point];
+v39 -> v40;
+
+v39 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:MACREL_CONTIGS"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v43;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v46 [label="ch_versions"];
+
+v44 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:GUNZIP_MACREL_PRED"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v48;
+
+v44 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:GUNZIP_MACREL_PRED"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v46;
+
+v45 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:GUNZIP_MACREL_ORFS"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v49;
+
+v45 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:GUNZIP_MACREL_ORFS"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v47;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47 [label="ch_versions"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v56 [label="ch_versions"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v57 [label="ch_ampresults_for_ampcombi"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v50 [label="ch_macrel_faa"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v50 [label="ch_faa_for_ampcombi"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v50 -> v69 [label="ch_faa_for_ampcombi"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v54 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPIR"];
+v30 -> v54 [label="ch_faa_for_ampcombi"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPIR"];
+v51 -> v54 [label="model"];
+
+v52 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPIR"];
+v52 -> v54 [label="min_length"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1];
+v54 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPIR"];
+v53 -> v54 [label="min_probability"];
+
+v54 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPIR"];
+v55 [shape=point];
+v54 -> v55;
+
+v54 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPIR"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v57;
+
+v54 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPIR"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v67 [label="ch_versions"];
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v57 -> v68 [label="ch_ampresults_for_ampcombi"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 -> v59 [label="ch_amp_hmm_models"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v59 -> v60 [label="ch_amp_hmm_models_meta"];
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v30 -> v60 [label="ch_faa_for_ampcombi"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMP_HMMER_HMMSEARCH"];
+v61 -> v62 [label="ch_in_for_amp_hmmsearch"];
+
+v62 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMP_HMMER_HMMSEARCH"];
+v66 [shape=point];
+v62 -> v66;
+
+v62 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMP_HMMER_HMMSEARCH"];
+v65 [shape=point];
+v62 -> v65;
+
+v62 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMP_HMMER_HMMSEARCH"];
+v64 [shape=point];
+v62 -> v64;
+
+v62 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMP_HMMER_HMMSEARCH"];
+v63 [shape=point];
+v62 -> v63;
+
+v62 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMP_HMMER_HMMSEARCH"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v95 [label="versions"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v70 -> v73;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v70 -> v73;
+
+v71 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:DRAMP_DOWNLOAD"];
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v71 -> v73 [label="ch_ampcombi_input_db"];
+
+v71 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:DRAMP_DOWNLOAD"];
+v72 [shape=point];
+v71 -> v72;
+
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v84 [shape=point];
+v73 -> v84;
+
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v83 [shape=point];
+v73 -> v83;
+
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v85;
+
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v82 [shape=point];
+v73 -> v82;
+
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v81 [shape=point];
+v73 -> v81;
+
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v80 [shape=point];
+v73 -> v80;
+
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v79 [shape=point];
+v73 -> v79;
+
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v78 [shape=point];
+v73 -> v78;
+
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v77 [shape=point];
+v73 -> v77;
+
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v76 [shape=point];
+v73 -> v76;
+
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v75 [shape=point];
+v73 -> v75;
+
+v73 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:AMPCOMBI"];
+v74 [shape=point];
+v73 -> v74;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v85 -> v86 [label="ch_ampcombi_summaries"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v86 -> v89;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v87 [shape=point];
+v86 -> v87;
+
+v88 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v88 -> v90;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v91 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:TABIX_BGZIP"];
+v90 -> v91 [label="ch_tabix_input"];
+
+v91 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:TABIX_BGZIP"];
+v94 [shape=point];
+v91 -> v94;
+
+v91 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:TABIX_BGZIP"];
+v93 [shape=point];
+v91 -> v93;
+
+v91 [label="NFCORE_FUNCSCAN:FUNCSCAN:AMP:TABIX_BGZIP"];
+v92 [shape=point];
+v91 -> v92;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v161 [label="ch_versions"];
+
+v96 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v99 [label="ch_versions"];
+
+v97 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v107 [label="ch_input_to_hamronization_summarize"];
+
+v98 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:AMRFINDERPLUS_UPDATE"];
+v100 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:AMRFINDERPLUS_RUN"];
+v98 -> v100 [label="ch_amrfinderplus_db"];
+
+v98 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:AMRFINDERPLUS_UPDATE"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v102 [label="ch_versions"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:AMRFINDERPLUS_RUN"];
+v15 -> v100 [label="contigs"];
+
+v100 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:AMRFINDERPLUS_RUN"];
+v104 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_AMRFINDERPLUS"];
+v100 -> v104;
+
+v100 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:AMRFINDERPLUS_RUN"];
+v101 [shape=point];
+v100 -> v101;
+
+v100 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:AMRFINDERPLUS_RUN"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v102;
+
+v100 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:AMRFINDERPLUS_RUN"];
+v104 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_AMRFINDERPLUS"];
+v100 -> v104 [label="VER"];
+
+v100 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:AMRFINDERPLUS_RUN"];
+v104 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_AMRFINDERPLUS"];
+v100 -> v104 [label="DBVER"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v106 [label="ch_versions"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1];
+v104 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_AMRFINDERPLUS"];
+v103 -> v104 [label="format"];
+
+v104 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_AMRFINDERPLUS"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v107;
+
+v104 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_AMRFINDERPLUS"];
+v105 [shape=point];
+v104 -> v105;
+
+v104 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_AMRFINDERPLUS"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v126 [label="ch_versions"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v134 [label="ch_input_to_hamronization_summarize"];
+
+v108 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v108 -> v109 [label="ch_fargene_classes"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v109 [label="contigs"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v110 -> v111;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v111 -> v112;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v111 -> v112;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v125 [shape=point];
+v112 -> v125;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v124 [shape=point];
+v112 -> v124;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v112 -> v127;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v123 [shape=point];
+v112 -> v123;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v122 [shape=point];
+v112 -> v122;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v121 [shape=point];
+v112 -> v121;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v120 [shape=point];
+v112 -> v120;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v119 [shape=point];
+v112 -> v119;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v118 [shape=point];
+v112 -> v118;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v117 [shape=point];
+v112 -> v117;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v116 [shape=point];
+v112 -> v116;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v115 [shape=point];
+v112 -> v115;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v114 [shape=point];
+v112 -> v114;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v113 [shape=point];
+v112 -> v113;
+
+v112 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:FARGENE"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v126;
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v133 [label="ch_versions"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v131 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_FARGENE"];
+v127 -> v131;
+
+v128 [shape=point,label="",fixedsize=true,width=0.1];
+v131 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_FARGENE"];
+v128 -> v131 [label="format"];
+
+v129 [shape=point,label="",fixedsize=true,width=0.1];
+v131 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_FARGENE"];
+v129 -> v131 [label="software_version"];
+
+v130 [shape=point,label="",fixedsize=true,width=0.1];
+v131 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_FARGENE"];
+v130 -> v131 [label="reference_db_version"];
+
+v131 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_FARGENE"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v134;
+
+v131 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_FARGENE"];
+v132 [shape=point];
+v131 -> v132;
+
+v131 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_FARGENE"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v133;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v138 [label="ch_versions"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v143 [label="ch_input_to_hamronization_summarize"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v135 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:RGI_MAIN"];
+v15 -> v135 [label="contigs"];
+
+v135 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:RGI_MAIN"];
+v137 [shape=point];
+v135 -> v137;
+
+v135 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:RGI_MAIN"];
+v140 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_RGI"];
+v135 -> v140;
+
+v135 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:RGI_MAIN"];
+v136 [shape=point];
+v135 -> v136;
+
+v135 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:RGI_MAIN"];
+v140 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_RGI"];
+v135 -> v140 [label="VER"];
+
+v135 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:RGI_MAIN"];
+v140 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_RGI"];
+v135 -> v140 [label="DBVER"];
+
+v135 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:RGI_MAIN"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v142 [label="ch_versions"];
+
+v139 [shape=point,label="",fixedsize=true,width=0.1];
+v140 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_RGI"];
+v139 -> v140 [label="format"];
+
+v140 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_RGI"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v143;
+
+v140 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_RGI"];
+v141 [shape=point];
+v140 -> v141;
+
+v140 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_RGI"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v142;
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v145 [label="ch_versions"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v152 [label="ch_input_to_hamronization_summarize"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v144 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:ABRICATE_RUN"];
+v15 -> v144 [label="contigs"];
+
+v144 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:ABRICATE_RUN"];
+v149 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_ABRICATE"];
+v144 -> v149;
+
+v144 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:ABRICATE_RUN"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v151 [label="ch_versions"];
+
+v146 [shape=point,label="",fixedsize=true,width=0.1];
+v149 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_ABRICATE"];
+v146 -> v149 [label="format"];
+
+v147 [shape=point,label="",fixedsize=true,width=0.1];
+v149 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_ABRICATE"];
+v147 -> v149 [label="software_version"];
+
+v148 [shape=point,label="",fixedsize=true,width=0.1];
+v149 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_ABRICATE"];
+v148 -> v149 [label="reference_db_version"];
+
+v149 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_ABRICATE"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v152;
+
+v149 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_ABRICATE"];
+v150 [shape=point];
+v149 -> v150;
+
+v149 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_ABRICATE"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 -> v160 [label="ch_versions"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 -> v153 [label="ch_input_to_hamronization_summarize"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v153 -> v154;
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v156 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_SUMMARIZE"];
+v154 -> v156 [label="ch_input_for_hamronization_summarize"];
+
+v155 [shape=point,label="",fixedsize=true,width=0.1];
+v156 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_SUMMARIZE"];
+v155 -> v156 [label="format"];
+
+v156 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_SUMMARIZE"];
+v159 [shape=point];
+v156 -> v159;
+
+v156 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_SUMMARIZE"];
+v158 [shape=point];
+v156 -> v158;
+
+v156 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_SUMMARIZE"];
+v157 [shape=point];
+v156 -> v157;
+
+v156 [label="NFCORE_FUNCSCAN:FUNCSCAN:ARG:HAMRONIZATION_SUMMARIZE"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v161 [label="versions"];
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v161 -> v162 [label="ch_versions"];
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v162 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v164 [label="NFCORE_FUNCSCAN:FUNCSCAN:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v163 -> v164;
+
+v164 [label="NFCORE_FUNCSCAN:FUNCSCAN:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v166 [shape=point];
+v164 -> v166;
+
+v164 [label="NFCORE_FUNCSCAN:FUNCSCAN:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v164 -> v174;
+
+v164 [label="NFCORE_FUNCSCAN:FUNCSCAN:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v165 [shape=point];
+v164 -> v165;
+
+v167 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v170 [label="ch_multiqc_files"];
+
+v168 [shape=point,label="",fixedsize=true,width=0.1];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v168 -> v169 [label="ch_workflow_summary"];
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v170;
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 -> v173 [label="ch_multiqc_files"];
+
+v171 [shape=point,label="",fixedsize=true,width=0.1];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v171 -> v172 [label="ch_methods_description"];
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v173;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 -> v175 [label="ch_multiqc_files"];
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v174 -> v175;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v175 -> v176 [label="ch_multiqc_files"];
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v180 [label="NFCORE_FUNCSCAN:FUNCSCAN:MULTIQC"];
+v176 -> v180;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v180 [label="NFCORE_FUNCSCAN:FUNCSCAN:MULTIQC"];
+v177 -> v180;
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v180 [label="NFCORE_FUNCSCAN:FUNCSCAN:MULTIQC"];
+v178 -> v180;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v180 [label="NFCORE_FUNCSCAN:FUNCSCAN:MULTIQC"];
+v179 -> v180;
+
+v180 [label="NFCORE_FUNCSCAN:FUNCSCAN:MULTIQC"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v180 -> v184;
+
+v180 [label="NFCORE_FUNCSCAN:FUNCSCAN:MULTIQC"];
+v183 [shape=point];
+v180 -> v183;
+
+v180 [label="NFCORE_FUNCSCAN:FUNCSCAN:MULTIQC"];
+v182 [shape=point];
+v180 -> v182;
+
+v180 [label="NFCORE_FUNCSCAN:FUNCSCAN:MULTIQC"];
+v181 [shape=point];
+v180 -> v181;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v185 [shape=point];
+v184 -> v185;
+
+}

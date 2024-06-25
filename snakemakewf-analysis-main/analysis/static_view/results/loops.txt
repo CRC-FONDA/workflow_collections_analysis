@@ -1,0 +1,37 @@
+number of analysed graphs: 349/362
+
+max_n_logical_in_one_path (max number of times a logical rule was repeated per repo): 
+repeat_count = 1: occurred 343 times
+repeat_count = 2: occurred 5 times
+repeat_count = 3: occurred 1 times
+
+
+Distributions of dag characteristics:
+n_paths: p25=1, p50=6, p75=39, avg=261015.92550143268, min=1, max=90839728, 
+n_loop_paths: p25=0, p50=0, p75=0, avg=46.51002865329513, min=0, max=15184, 
+avg_logical_by_length: p25=1.0, p50=1.0, p75=1.0, avg=0.9990973354410929, min=0.853703703703704, max=1.0, 
+median_logical_by_length: p25=1.0, p50=1.0, p75=1.0, avg=0.9994269340974212, min=0.8, max=1.0, 
+min_logical_by_length: p25=1.0, p50=1.0, p75=1.0, avg=0.9972102803090499, min=0.6470588235294118, max=1.0, 
+
+repos with loops:
+repo name, repeated rule name, number of paths with rule repetition, max rule repetition in one path
+longest loop path,
+shortest loop path
+snakemake-workflows/cyrcular-calling, {'bcf_index'}, 576, 2, 
+        ['all', 'copy_qc_plots_for_datavzrd', 'datavzrd_circle_calls', 'annotate_breakpoint_sequence', 'sort_and_tidy_tsv', 'vembrane_table', 'filter_calls', 'copy_annotation_from_cyrcular', 'bcf_index', 'annotate_genes', 'bcftools_concat', 'bcf_index', 'bcftools_sort', 'varlociraptor_call', 'varlociraptor_preprocess', 'scatter_candidates', 'sort_bnd_bcfs', 'circle_bnds', 'samtools_index', 'minimap2_bam', 'minimap2_index'],
+        ['all', 'annotate_breakpoint_sequence', 'sort_and_tidy_tsv', 'vembrane_table', 'filter_calls', 'copy_annotation_from_cyrcular', 'bcf_index', 'annotate_genes', 'bcftools_concat', 'bcf_index', 'bcftools_sort', 'varlociraptor_call', 'varlociraptor_preprocess', 'genome_faidx'],
+MaNyh/NTRFlows, {'execute'}, 8, 2, 
+        ['all', 'bladeloading', 'create_vtk', 'execute', 'prep_dependent', 'execute', 'prep_independent', 'create_case', 'write_caseconfig'],
+        ['all', 'bladeloading', 'create_vtk', 'execute', 'prep_dependent', 'execute', 'prep_independent', 'touch_independents'],
+vembrane/vembrane-benchmark, {'bcftools_merge'}, 15184, 3, 
+        ['all', 'plot', 'aggregate_benchmarks', 'add_benchmark_info', 'num_written_records', 'filter_directly', 'convert_to_bcfb', 'annotate_variants_vep', 'bcftools_merge', 'index_bgzip', 'bgzip', 'bcftools_merge', 'index_bgzip', 'bgzip', 'bcftools_merge', 'index_bgzip', 'bgzip', 'bcftools_norm', 'restrict_to_chromosome_1', 'gunzip_vcfs', 'download_vcfs'],
+        ['all', 'aggregate_benchmarks', 'add_benchmark_info', 'count_num_records', 'bcftools_merge', 'bgzip', 'bcftools_merge', 'bgzip', 'bcftools_norm', 'restrict_to_chromosome_1', 'gunzip_vcfs', 'download_vcfs'],
+jlanga/smsk_trinotate, {'faidx_pep'}, 128, 2, 
+        ['all', 'trinotate_report', 'trinotate_load', 'trinotate_hmmscan_merge', 'trinotate_hmmscan_chunk', 'trinotate_split_proteome', 'faidx_pep', 'transdecoder_predict', 'transdecoder_hmmscan_merge', 'transdecoder_hmmscan_chunk', 'transdecoder_split_longest_orfs', 'faidx_pep', 'transdecoder_longorfs', 'raw_link_gene_to_trans_map'],
+        ['all', 'trinotate_report', 'trinotate_load', 'trinotate_hmmscan_merge', 'trinotate_hmmscan_chunk', 'faidx_pep', 'transdecoder_predict', 'transdecoder_hmmscan_merge', 'transdecoder_hmmscan_chunk', 'faidx_pep', 'transdecoder_longorfs', 'raw_link_gene_to_trans_map'],
+scottgigante/haplotyped-methylome, {'samtools_index'}, 312, 2, 
+        ['all', 'visualise_dmrs', 'build_dmrlist', 'paired_dss', 'calculate_allele_meth_freq', 'split_methylation_by_haplotype', 'merge_threeway_variants', 'fvb_resolution', 'call_variant_proportion_threeway', 'samtools_index', 'nanopolish_phase', 'samtools_index', 'bwa_mem_align', 'albacore_merge_output', 'albacore_minion', 'merge_b6xcast', 'untar_cleanup', 'untar', 'fast5_md5', 'download_fast5_b6xcast_0503'],
+        ['all', 'b6_haplotype_analysis', 'read_haplotype', 'call_variant_proportion', 'samtools_index', 'nanopolish_phase', 'samtools_index', 'bwa_mem_align', 'mask_with_cast_genome', 'gunzip_fa', 'download_B6_genome'],
+robinmeyers/atac-encode-snakemake, {'run_cromwell_workflow'}, 24, 2, 
+        ['all', 'gather_qc', 'croo_collect_metadata', 'run_cromwell_workflow', 'make_grouped_json_input', 'merge_grouped_tagalign', 'collect_tag_align_files', 'croo_collect_metadata', 'run_cromwell_workflow', 'make_json_input'],
+        ['all', 'croo_collect_metadata', 'run_cromwell_workflow', 'merge_grouped_tagalign', 'collect_tag_align_files', 'croo_collect_metadata', 'run_cromwell_workflow', 'make_json_input'],

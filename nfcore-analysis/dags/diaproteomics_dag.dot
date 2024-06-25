@@ -1,0 +1,406 @@
+digraph "diaproteomics_dag" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p0 -> p1;
+
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p1 -> p83 [label="input_exp_design_mztab"];
+
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p1 -> p80 [label="input_exp_design"];
+
+p2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p2 -> p3;
+
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p3 -> p4;
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+p4 -> p5;
+
+p5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p5 -> p6;
+
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p6 -> p7 [label="input_branch"];
+
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p6 -> p9 [label="check_dia"];
+
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p7 -> p61;
+
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p7 -> p61;
+
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p60 [label="dia_raw_file_conversion"];
+p7 -> p60;
+
+p7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="subscribe"];
+p7 -> p8;
+
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+p9 -> p10;
+
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+p10 -> p11;
+
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+p12 [shape=point];
+p11 -> p12;
+
+p13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p13 -> p14;
+
+p14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+p15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p14 -> p15;
+
+p15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+p15 -> p16;
+
+p16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+p17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p16 -> p17;
+
+p17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+p17 -> p18 [label="input_check"];
+
+p17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p17 -> p20 [label="input_check_samples"];
+
+p17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p17 -> p24 [label="input_dda"];
+
+p18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+p19 [shape=point];
+p18 -> p19;
+
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+p20 -> p21;
+
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+p22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+p21 -> p22;
+
+p22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+p23 [shape=point];
+p22 -> p23;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p24 -> p43;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p42 [label="dda_raw_file_conversion"];
+p24 -> p42;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p24 -> p43;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p25 [shape=point];
+p24 -> p25;
+
+p26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p26 -> p27;
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p27 -> p46 [label="input_unimod"];
+
+p28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p28 -> p48 [label="input_lib"];
+
+p29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p30 [shape=point];
+p29 -> p30 [label="input_lib_1"];
+
+p31 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p31 -> p63 [label="input_lib_nd"];
+
+p32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p33 [shape=point];
+p32 -> p33 [label="input_lib_nd_1"];
+
+p34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p34 -> p65 [label="input_irts"];
+
+p35 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p35 -> p36;
+
+p36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p36 -> p37;
+
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p37 -> p38;
+
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p39 [shape=point];
+p38 -> p39 [label="ch_workflow_summary"];
+
+p40 [label="get_software_versions"];
+p41 [shape=point];
+p40 -> p41 [label="ch_software_versions_yaml"];
+
+p42 [label="dda_raw_file_conversion"];
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p42 -> p44 [label="converted_dda_input_mzmls"];
+
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p43 -> p44;
+
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p45 [label="dda_id_format_conversion"];
+p44 -> p45;
+
+p45 [label="dda_id_format_conversion"];
+p47 [label="dda_library_generation"];
+p45 -> p47 [label="input_dda_converted"];
+
+p46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p47 [label="dda_library_generation"];
+p46 -> p47;
+
+p47 [label="dda_library_generation"];
+p48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p47 -> p48 [label="input_lib_dda_nd"];
+
+p48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p49 [label="assay_generation"];
+p48 -> p49;
+
+p49 [label="assay_generation"];
+p51 [shape=point];
+p49 -> p51;
+
+p49 [label="assay_generation"];
+p50 [shape=point];
+p49 -> p50;
+
+p49 [label="assay_generation"];
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p49 -> p54 [label="input_lib_assay_for_merging"];
+
+p52 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p52 -> p58 [label="input_lib_assay"];
+
+p53 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p53 -> p56 [label="input_lib_assay_for_irt"];
+
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p55 [label="library_merging_and_alignment"];
+p54 -> p55;
+
+p55 [label="library_merging_and_alignment"];
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p55 -> p58 [label="input_lib_assay_merged"];
+
+p55 [label="library_merging_and_alignment"];
+p56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p55 -> p56 [label="input_lib_assay_merged_for_irt"];
+
+p56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p57 [label="pseudo_irt_generation"];
+p56 -> p57;
+
+p57 [label="pseudo_irt_generation"];
+p65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p57 -> p65 [label="input_lib_assay_irt_2"];
+
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p59 [label="decoy_generation"];
+p58 -> p59;
+
+p59 [label="decoy_generation"];
+p63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p59 -> p63 [label="input_lib_decoy"];
+
+p60 [label="dia_raw_file_conversion"];
+p62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p60 -> p62 [label="converted_dia_input_mzmls"];
+
+p61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p61 -> p62;
+
+p62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p62 -> p64;
+
+p63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p63 -> p64;
+
+p64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p64 -> p66;
+
+p65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p65 -> p66;
+
+p66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p67 [label="dia_spectral_library_search"];
+p66 -> p67;
+
+p67 [label="dia_spectral_library_search"];
+p74 [label="chromatogram_indexing"];
+p67 -> p74 [label="chromatogram_files"];
+
+p67 [label="dia_spectral_library_search"];
+p68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p67 -> p68 [label="osw_files"];
+
+p67 [label="dia_spectral_library_search"];
+p69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p67 -> p69 [label="input_lib_used"];
+
+p67 [label="dia_spectral_library_search"];
+p81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p67 -> p81 [label="input_lib_used_I"];
+
+p67 [label="dia_spectral_library_search"];
+p84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p67 -> p84 [label="input_lib_used_I_mztab"];
+
+p68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p68 -> p69;
+
+p69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p70 [label="dia_search_output_merging"];
+p69 -> p70;
+
+p70 [label="dia_search_output_merging"];
+p71 [label="global_false_discovery_rate_estimation"];
+p70 -> p71 [label="merged_osw_file_for_global"];
+
+p71 [label="global_false_discovery_rate_estimation"];
+p73 [label="export_of_scoring_results"];
+p71 -> p73 [label="merged_osw_scored_global_for_pyprophet"];
+
+p71 [label="global_false_discovery_rate_estimation"];
+p72 [shape=point];
+p71 -> p72 [label="target_decoy_global_score_plots"];
+
+p73 [label="export_of_scoring_results"];
+p90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p73 -> p90 [label="pyprophet_results"];
+
+p73 [label="export_of_scoring_results"];
+p75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+p73 -> p75 [label="osw_for_dialignr"];
+
+p74 [label="chromatogram_indexing"];
+p76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p74 -> p76 [label="chromatogram_files_indexed"];
+
+p75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+p76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p75 -> p76;
+
+p76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p76 -> p77;
+
+p77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+p77 -> p78;
+
+p78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+p79 [label="chromatogram_alignment"];
+p78 -> p79 [label="osw_and_chromatograms_combined_by_condition"];
+
+p79 [label="chromatogram_alignment"];
+p82 [label="reformatting"];
+p79 -> p82 [label="DIALignR_result"];
+
+p79 [label="chromatogram_alignment"];
+p89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+p79 -> p89 [label="DIALignR_result_I"];
+
+p79 [label="chromatogram_alignment"];
+p85 [label="mztab_export"];
+p79 -> p85 [label="DIALignR_result_mztab"];
+
+p80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p82 [label="reformatting"];
+p80 -> p82;
+
+p81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p82 [label="reformatting"];
+p81 -> p82;
+
+p82 [label="reformatting"];
+p87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p82 -> p87 [label="msstats_file"];
+
+p83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p85 [label="mztab_export"];
+p83 -> p85;
+
+p84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p85 [label="mztab_export"];
+p84 -> p85;
+
+p85 [label="mztab_export"];
+p86 [shape=point];
+p85 -> p86 [label="mztab_file"];
+
+p87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p88 [label="statistical_post_processing"];
+p87 -> p88;
+
+p89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+p90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p89 -> p90;
+
+p90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p91 [label="output_visualization"];
+p90 -> p91;
+
+p91 [label="output_visualization"];
+p92 [shape=point];
+p91 -> p92 [label="output_plots"];
+
+p93 [shape=point,label="",fixedsize=true,width=0.1];
+p95 [label="output_documentation"];
+p93 -> p95 [label="output_docs"];
+
+p94 [shape=point,label="",fixedsize=true,width=0.1];
+p95 [label="output_documentation"];
+p94 -> p95 [label="images"];
+
+}

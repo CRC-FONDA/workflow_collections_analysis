@@ -1,0 +1,36 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "finish", color = "0.00 0.6 0.85", style="rounded"];
+	1[label = "merge_results", color = "0.27 0.6 0.85", style="rounded"];
+	2[label = "HTSeq_count", color = "0.13 0.6 0.85", style="rounded"];
+	3[label = "samtools_sort\nsample: control_rep1", color = "0.53 0.6 0.85", style="rounded"];
+	4[label = "samtools_index", color = "0.40 0.6 0.85", style="rounded"];
+	5[label = "HTSeq_count", color = "0.13 0.6 0.85", style="rounded"];
+	6[label = "samtools_sort\nsample: control_rep2", color = "0.53 0.6 0.85", style="rounded"];
+	7[label = "samtools_index", color = "0.40 0.6 0.85", style="rounded"];
+	8[label = "HTSeq_count", color = "0.13 0.6 0.85", style="rounded"];
+	9[label = "samtools_sort\nsample: HNRNPCKD_rep1", color = "0.53 0.6 0.85", style="rounded"];
+	10[label = "samtools_index", color = "0.40 0.6 0.85", style="rounded"];
+	11[label = "HTSeq_count", color = "0.13 0.6 0.85", style="rounded"];
+	12[label = "samtools_sort\nsample: HNRNPCKD_rep2", color = "0.53 0.6 0.85", style="rounded"];
+	13[label = "samtools_index", color = "0.40 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 1
+	5 -> 1
+	8 -> 1
+	11 -> 1
+	3 -> 2
+	4 -> 2
+	3 -> 4
+	6 -> 5
+	7 -> 5
+	6 -> 7
+	9 -> 8
+	10 -> 8
+	9 -> 10
+	12 -> 11
+	13 -> 11
+	12 -> 13
+}            

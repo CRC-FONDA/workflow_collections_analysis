@@ -1,0 +1,67 @@
+Description of the data presented here:
+
+For each repository we look at the constructed dag:
+  For each such dag we look at each of its nodes:
+    For each node we look at its neighbours and calculate:
+      its degree (number of jobs it "spawns")
+      its logical_degree (number of logical rules its spawns)
+      its from_one_logical (maximum number of requested jobs stemming from one logical rule)
+      its from_one_wildcard (same as from_one_logical except these must be distinct instances for one wildcard)
+  Then we calculate the average, median and max over all the nodes for each repo.
+Finally reported here are the statistics over these measures over the collection of repositories/dags
+
+number of analysed graphs: 349/362
+
+length of avg_degree: 349
+length of max_degree: 349
+length of avg_logical_degree: 349
+length of max_logical_degree: 349
+
+
+Distributions of dag characteristics:
+
+avg_degree: p25=0.0, p50=1.0909090909090908, p75=1.6, avg=1.2374192034984879, min=0.0, max=48.11059907834101, 
+median_degree: p25=0, p50=1, p75=1, avg=0.6504297994269341, min=0, max=3, 
+max_degree: p25=0, p50=4, p75=11, avg=25.601719197707737, min=0, max=1440, 
+
+avg_logical_degree: p25=0.0, p50=0.9469026548672567, p75=1.2575757575757576, avg=0.8215819930629834, min=0.0, max=2.611607142857143, 
+median_logical_degree: p25=0, p50=1, p75=1, avg=0.6361031518624641, min=0, max=3, 
+max_logical_degree: p25=0, p50=2, p75=4, avg=3.2464183381088825, min=0, max=32, 
+
+avg_from_one_logical: p25=0.0, p50=0.8, p75=1.0454545454545454, avg=0.8892989606804349, min=0.0, max=47.83410138248848, 
+median_from_one_logical: p25=0, p50=1, p75=1, avg=0.5931232091690545, min=0, max=3, 
+max_from_one_logical: p25=0, p50=1, p75=6, avg=19.143266475644698, min=0, max=1440, 
+
+avg_from_one_wildcard: p25=0.0, p50=0.16666666666666666, p75=0.5, avg=0.48194507298290507, min=0.0, max=47.77880184331797, 
+median_from_one_wildcard: p25=0, p50=0, p75=0, avg=0.09169054441260745, min=0, max=3, 
+max_from_one_wildcard: p25=0, p50=1, p75=3, avg=16.53868194842407, min=0, max=1440, 
+
+logical-physical_ratio: p25=0.7777777777777778, p50=1.0, p75=1.0, avg=0.8747086816309716, min=0.14189189189189189, max=1.0, 
+avg_logical_over_physical_degrees: p25=0.9066666666666666, p50=0.969390142021721, p75=1.0, avg=0.9046760344415177, min=0.00273224043715847, max=1.0, 
+min_logical_over_physical_degrees: p25=0.16666666666666666, p50=0.5, p75=1.0, avg=0.5226829449832557, min=0.0006944444444444445, max=1.0, 
+
+
+Example workflows:
+('alhenry/cvd1-hf', 0.9651162790697675, 83, 86)
+('brettellebi/MIKK_F0_tracking', 0.9666666666666667, 29, 30)
+('AAFC-BICoE/snakemake-partial-genome-pipeline', 0.9696969696969697, 32, 33)
+('ENCCS/word-count-hpda', 0.9696969696969697, 64, 66)
+('Ellison-Lab/TestisTEs2021', 0.9736842105263158, 37, 38)
+('mal2017/TestisTEs2021', 0.9736842105263158, 37, 38)
+('Sendrowski/BirchesScandinavia', 0.9844155844155844, 379, 385)
+('Xaunther/Moore_Upgrade', 0.9850746268656716, 66, 67)
+('ivansg44/biof-501-project', 0.9912280701754386, 113, 114)
+('m0namon/hk-twitter', 0.997275204359673, 366, 367)
+
+
+Example rules:
+('timtroendle/money-land', 286, 'aggregated_results\\nresolution: continental')
+('gitter-lab/ssps', 288, 'tabulate_dream_scores')
+('SchlossLab/Tomkovich_PEG3350_mSphere_2021', 300, 'combine_benchmarks')
+('SchlossLab/Tomkovich_PEG3350_mSphere_2021', 300, 'combine_results\\ntype: performance')
+('m0namon/hk-twitter', 366, 'all')
+('Sendrowski/BirchesScandinavia', 379, 'all')
+('qferre/ologram-modl_supp_mat', 502, 'depth_merge_runs')
+('vembrane/vembrane-benchmark', 616, 'aggregate_benchmarks')
+('AlexanderLabWHOI/tara-download-snakemake', 738, 'all')
+('gitter-lab/ssps', 1440, 'tabulate_sim_scores')

@@ -1,0 +1,442 @@
+digraph "scrnaseq_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v93 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v94 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v95 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v83 [label="ch_multiqc_alevin"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=point];
+v4 -> v5 [label="ch_multiqc_star"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v89 [label="ch_multiqc_cellranger"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v15 [label="ch_versions"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v52 [label="ch_mtx_matrices"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="NFCORE_SCRNASEQ:SCRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v9 -> v10 [label="samplesheet"];
+
+v10 [label="NFCORE_SCRNASEQ:SCRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v10 -> v11;
+
+v10 [label="NFCORE_SCRNASEQ:SCRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v15 [label="versions"];
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 -> v18 [label="ch_fastq"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v25 [label="ch_versions"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v17 [shape=point];
+v16 -> v17 [label="ch_multiqc_fastqc"];
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [label="NFCORE_SCRNASEQ:SCRNASEQ:FASTQC_CHECK:FASTQC"];
+v18 -> v19 [label="ch_fastq"];
+
+v19 [label="NFCORE_SCRNASEQ:SCRNASEQ:FASTQC_CHECK:FASTQC"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v21 [label="fastqc_html"];
+
+v19 [label="NFCORE_SCRNASEQ:SCRNASEQ:FASTQC_CHECK:FASTQC"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 -> v20 [label="ch_multiqc_fastqc"];
+
+v19 [label="NFCORE_SCRNASEQ:SCRNASEQ:FASTQC_CHECK:FASTQC"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v25 [label="fastqc_version"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v23 [label="fastqc_zip_only"];
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v23 [label="fastqc_html_only"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v23 [label="fastqc_multiqc"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 [shape=point];
+v23 -> v24 [label="fastqc_multiqc"];
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v51 [label="ch_versions"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="NFCORE_SCRNASEQ:SCRNASEQ:GTF_GENE_FILTER"];
+v26 -> v28 [label="genome_fasta"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="NFCORE_SCRNASEQ:SCRNASEQ:GTF_GENE_FILTER"];
+v27 -> v28 [label="gtf"];
+
+v28 [label="NFCORE_SCRNASEQ:SCRNASEQ:GTF_GENE_FILTER"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 -> v32 [label="gtf"];
+
+v28 [label="NFCORE_SCRNASEQ:SCRNASEQ:GTF_GENE_FILTER"];
+v29 [shape=point];
+v28 -> v29;
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v35 [label="ch_versions"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v31 [label="genome_fasta"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_GENOMEGENERATE"];
+v31 -> v33;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_GENOMEGENERATE"];
+v32 -> v33;
+
+v33 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_GENOMEGENERATE"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v34;
+
+v33 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_GENOMEGENERATE"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v35;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v34 -> v40 [label="star_index"];
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v49 [label="ch_versions"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v14 -> v40 [label="ch_fastq"];
+
+v28 [label="NFCORE_SCRNASEQ:SCRNASEQ:GTF_GENE_FILTER"];
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v28 -> v40 [label="gtf"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v36 -> v40 [label="whitelist"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v37 -> v40 [label="protocol"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v38 -> v40 [label="star_feature"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v39 -> v40 [label="other_10x_parameters"];
+
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v48 [shape=point];
+v40 -> v48;
+
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v52 [label="star_counts"];
+
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v86 [label="ch_multiqc_star"];
+
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v47 [shape=point];
+v40 -> v47;
+
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v46 [shape=point];
+v40 -> v46;
+
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v49;
+
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v45 [shape=point];
+v40 -> v45;
+
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v44 [shape=point];
+v40 -> v44;
+
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v43 [shape=point];
+v40 -> v43;
+
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v42 [shape=point];
+v40 -> v42;
+
+v40 [label="NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO:STAR_ALIGN"];
+v41 [shape=point];
+v40 -> v41 [label="star_result"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v51 [label="ch_versions"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 -> v50 [label="star_index"];
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [label="NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:MTX_TO_H5AD"];
+v50 -> v55 [label="star_index"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v64 [label="ch_versions"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 [label="NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:MTX_TO_H5AD"];
+v52 -> v55 [label="mtx_matrices"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v63 [label="ch_versions"];
+
+v54 [shape=point,label="",fixedsize=true,width=0.1];
+v55 [label="NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:MTX_TO_H5AD"];
+v54 -> v55 [label="txp2gene"];
+
+v55 [label="NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:MTX_TO_H5AD"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v55 -> v57;
+
+v55 [label="NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:MTX_TO_H5AD"];
+v56 [shape=point];
+v55 -> v56 [label="counts"];
+
+v55 [label="NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:MTX_TO_H5AD"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v63;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:CONCAT_H5AD"];
+v57 -> v59;
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:CONCAT_H5AD"];
+v58 -> v59 [label="samplesheet"];
+
+v59 [label="NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:CONCAT_H5AD"];
+v60 [shape=point];
+v59 -> v60;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 [label="NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:MTX_TO_SEURAT"];
+v52 -> v61 [label="mtx_matrices"];
+
+v61 [label="NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:MTX_TO_SEURAT"];
+v62 [shape=point];
+v61 -> v62;
+
+v61 [label="NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:MTX_TO_SEURAT"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v64 [label="ch_versions"];
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=point];
+v64 -> v65;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v51 -> v66 [label="ch_versions"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v66 -> v67;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v68 [label="NFCORE_SCRNASEQ:SCRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v67 -> v68;
+
+v68 [label="NFCORE_SCRNASEQ:SCRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v70 [shape=point];
+v68 -> v70;
+
+v68 [label="NFCORE_SCRNASEQ:SCRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 -> v78;
+
+v68 [label="NFCORE_SCRNASEQ:SCRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v69 [shape=point];
+v68 -> v69;
+
+v71 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v74 [label="ch_multiqc_files"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v72 -> v73 [label="ch_workflow_summary"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v77 [label="ch_multiqc_files"];
+
+v75 [shape=point,label="",fixedsize=true,width=0.1];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v75 -> v76 [label="ch_methods_description"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v79 [label="ch_multiqc_files"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v82 [label="ch_multiqc_files"];
+
+v19 [label="NFCORE_SCRNASEQ:SCRNASEQ:FASTQC_CHECK:FASTQC"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v80 [label="ch_multiqc_fastqc"];
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v85 [label="ch_multiqc_files"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v83 -> v84;
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v88 [label="ch_multiqc_files"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v91 [label="ch_multiqc_files"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v91 -> v92 [label="ch_multiqc_files"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v96 [label="NFCORE_SCRNASEQ:SCRNASEQ:MULTIQC"];
+v92 -> v96;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v96 [label="NFCORE_SCRNASEQ:SCRNASEQ:MULTIQC"];
+v93 -> v96;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v96 [label="NFCORE_SCRNASEQ:SCRNASEQ:MULTIQC"];
+v94 -> v96;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v96 [label="NFCORE_SCRNASEQ:SCRNASEQ:MULTIQC"];
+v95 -> v96;
+
+v96 [label="NFCORE_SCRNASEQ:SCRNASEQ:MULTIQC"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v96 -> v100;
+
+v96 [label="NFCORE_SCRNASEQ:SCRNASEQ:MULTIQC"];
+v99 [shape=point];
+v96 -> v99;
+
+v96 [label="NFCORE_SCRNASEQ:SCRNASEQ:MULTIQC"];
+v98 [shape=point];
+v96 -> v98;
+
+v96 [label="NFCORE_SCRNASEQ:SCRNASEQ:MULTIQC"];
+v97 [shape=point];
+v96 -> v97;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v101 [shape=point];
+v100 -> v101 [label="multiqc_report"];
+
+}

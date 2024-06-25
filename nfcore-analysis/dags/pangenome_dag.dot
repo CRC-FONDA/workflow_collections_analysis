@@ -1,0 +1,642 @@
+digraph "pangenome_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v129 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v130 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v131 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v16 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v15 [label="ch_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v6 [shape=point];
+v5 -> v6 [label="ch_fasta"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=point];
+v7 -> v8 [label="fai"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=point];
+v9 -> v10 [label="gzi"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=point];
+v11 -> v12 [label="meta_fasta"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="NFCORE_PANGENOME:PANGENOME:INPUT_CHECK:SAMTOOLS_FAIDX"];
+v13 -> v14;
+
+v14 [label="NFCORE_PANGENOME:PANGENOME:INPUT_CHECK:SAMTOOLS_FAIDX"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 -> v29 [label="fai"];
+
+v14 [label="NFCORE_PANGENOME:PANGENOME:INPUT_CHECK:SAMTOOLS_FAIDX"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v14 -> v28 [label="gzi"];
+
+v14 [label="NFCORE_PANGENOME:PANGENOME:INPUT_CHECK:SAMTOOLS_FAIDX"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16 [label="versions"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v111 [label="ch_versions"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v33 [label="ch_versions"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v19 [shape=point];
+v18 -> v19 [label="ch_graph_qc"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=point];
+v20 -> v21 [label="ch_odgi_view"];
+
+v22 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v23 [shape=point];
+v22 -> v23 [label="ch_odgi_build_seqwish"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v25 [shape=point];
+v24 -> v25 [label="ch_sorted_graph"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v27 [label="fasta"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v27 -> v28 [label="ch_wfmash_map_align"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v28 -> v29;
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 [label="NFCORE_PANGENOME:PANGENOME:PGGB:WFMASH_MAP_ALIGN"];
+v29 -> v32 [label="ch_wfmash_map_align"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="NFCORE_PANGENOME:PANGENOME:PGGB:WFMASH_MAP_ALIGN"];
+v30 -> v32 [label="query_self"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v32 [label="NFCORE_PANGENOME:PANGENOME:PGGB:WFMASH_MAP_ALIGN"];
+v31 -> v32 [label="fasta_query_list"];
+
+v32 [label="NFCORE_PANGENOME:PANGENOME:PGGB:WFMASH_MAP_ALIGN"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v32 -> v34;
+
+v32 [label="NFCORE_PANGENOME:PANGENOME:PGGB:WFMASH_MAP_ALIGN"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v33;
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v36 [label="ch_versions"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v26 -> v34 [label="fasta"];
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v35 [label="NFCORE_PANGENOME:PANGENOME:PGGB:SEQWISH"];
+v34 -> v35 [label="ch_seqwish_input"];
+
+v35 [label="NFCORE_PANGENOME:PANGENOME:PGGB:SEQWISH"];
+v37 [label="NFCORE_PANGENOME:PANGENOME:PGGB:SMOOTHXG"];
+v35 -> v37;
+
+v35 [label="NFCORE_PANGENOME:PANGENOME:PGGB:SEQWISH"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v39 [label="ch_versions"];
+
+v37 [label="NFCORE_PANGENOME:PANGENOME:PGGB:SMOOTHXG"];
+v40 [label="NFCORE_PANGENOME:PANGENOME:PGGB:GFAFFIX"];
+v37 -> v40;
+
+v37 [label="NFCORE_PANGENOME:PANGENOME:PGGB:SMOOTHXG"];
+v38 [shape=point];
+v37 -> v38;
+
+v37 [label="NFCORE_PANGENOME:PANGENOME:PGGB:SMOOTHXG"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v39;
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v42 [label="ch_versions"];
+
+v40 [label="NFCORE_PANGENOME:PANGENOME:PGGB:GFAFFIX"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 -> v43;
+
+v40 [label="NFCORE_PANGENOME:PANGENOME:PGGB:GFAFFIX"];
+v41 [shape=point];
+v40 -> v41;
+
+v40 [label="NFCORE_PANGENOME:PANGENOME:PGGB:GFAFFIX"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v42;
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v47 [label="ch_versions"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v45 [label="ch_gfaffix"];
+
+v35 [label="NFCORE_PANGENOME:PANGENOME:PGGB:SEQWISH"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 -> v45 [label="ch_seqwish"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_BUILD"];
+v45 -> v46;
+
+v46 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_BUILD"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 -> v48;
+
+v46 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_BUILD"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v51 [label="ch_versions"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v50 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_UNCHOP"];
+v49 -> v50 [label="ch_odgi_build"];
+
+v50 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_UNCHOP"];
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v50 -> v52;
+
+v50 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_UNCHOP"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 -> v53 [label="ch_versions"];
+
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v54 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_VIEW"];
+v52 -> v54 [label="og"];
+
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 -> v56 [label="ch_versions"];
+
+v54 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_VIEW"];
+v55 [shape=point];
+v54 -> v55 [label="gfa"];
+
+v54 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_VIEW"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v110 [label="ch_versions"];
+
+v46 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_BUILD"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v62 [label="seqwish"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v65 [label="ch_versions"];
+
+v60 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v61 [shape=point];
+v60 -> v61 [label="ch_graph_qc"];
+
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v52 -> v62 [label="og"];
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_STATS"];
+v62 -> v63;
+
+v63 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_STATS"];
+v64 [shape=point];
+v63 -> v64;
+
+v63 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_STATS"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 -> v94;
+
+v63 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_STATS"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v68 [label="ch_versions"];
+
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v66 [label="og"];
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_COLOR"];
+v66 -> v67 [label="ch_odgi_viz"];
+
+v67 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_COLOR"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 -> v97;
+
+v67 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_COLOR"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v71 [label="ch_versions"];
+
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v69 [label="og"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_POS"];
+v69 -> v70 [label="ch_odgi_viz_pos"];
+
+v70 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_POS"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 -> v99;
+
+v70 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_POS"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v74 [label="ch_versions"];
+
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v72 [label="og"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_DEPTH"];
+v72 -> v73 [label="ch_odgi_viz_depth"];
+
+v73 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_DEPTH"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v101;
+
+v73 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_DEPTH"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v77 [label="ch_versions"];
+
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v75 [label="og"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_INV"];
+v75 -> v76 [label="ch_odgi_viz_inv"];
+
+v76 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_INV"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 -> v103;
+
+v76 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_INV"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v80 [label="ch_versions"];
+
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v78 [label="og"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_COMPR"];
+v78 -> v79 [label="ch_odgi_viz_compr"];
+
+v79 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_COMPR"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 -> v105;
+
+v79 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_COMPR"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v83 [label="ch_versions"];
+
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v81 [label="og"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v82 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_UNCALLED"];
+v81 -> v82 [label="ch_odgi_viz_uncalled"];
+
+v82 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_UNCALLED"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v82 -> v107;
+
+v82 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_VIZ_UNCALLED"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v86 [label="ch_versions"];
+
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v84 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_LAYOUT"];
+v52 -> v84 [label="og"];
+
+v84 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_LAYOUT"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v84 -> v87;
+
+v84 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_LAYOUT"];
+v85 [shape=point];
+v84 -> v85;
+
+v84 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_LAYOUT"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v89 [label="ch_versions"];
+
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 -> v87 [label="og"];
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_DRAW_MULTIQC"];
+v87 -> v88;
+
+v88 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_DRAW_MULTIQC"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v109;
+
+v88 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_DRAW_MULTIQC"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v93 [label="ch_versions"];
+
+v52 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_SORT"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 -> v90 [label="og"];
+
+v84 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_LAYOUT"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v84 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v91 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_DRAW_HEIGHT"];
+v90 -> v91;
+
+v91 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_DRAW_HEIGHT"];
+v92 [shape=point];
+v91 -> v92;
+
+v91 [label="NFCORE_PANGENOME:PANGENOME:PGGB:ODGI_QC:ODGI_DRAW_HEIGHT"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v110 [label="versions"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 -> v98 [label="ch_graph_qc"];
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v98 -> v100 [label="ch_graph_qc"];
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v100 -> v102 [label="ch_graph_qc"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 -> v104 [label="ch_graph_qc"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v104 -> v106 [label="ch_graph_qc"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v106 -> v108 [label="ch_graph_qc"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v108 -> v109 [label="ch_graph_qc"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 -> v126 [label="qc"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v111 [label="versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v111 -> v112 [label="ch_versions"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v114 [label="NFCORE_PANGENOME:PANGENOME:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v113 -> v114;
+
+v114 [label="NFCORE_PANGENOME:PANGENOME:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v116 [shape=point];
+v114 -> v116;
+
+v114 [label="NFCORE_PANGENOME:PANGENOME:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v114 -> v124;
+
+v114 [label="NFCORE_PANGENOME:PANGENOME:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v115 [shape=point];
+v114 -> v115;
+
+v117 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v120 [label="ch_multiqc_files"];
+
+v118 [shape=point,label="",fixedsize=true,width=0.1];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v118 -> v119 [label="ch_workflow_summary"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v120;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v123 [label="ch_multiqc_files"];
+
+v121 [shape=point,label="",fixedsize=true,width=0.1];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v121 -> v122 [label="ch_methods_description"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v125 [label="ch_multiqc_files"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v125;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v127 [label="ch_multiqc_files"];
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v127 -> v128 [label="ch_multiqc_files"];
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v132 [label="NFCORE_PANGENOME:PANGENOME:MULTIQC"];
+v128 -> v132;
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v132 [label="NFCORE_PANGENOME:PANGENOME:MULTIQC"];
+v129 -> v132;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v132 [label="NFCORE_PANGENOME:PANGENOME:MULTIQC"];
+v130 -> v132;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v132 [label="NFCORE_PANGENOME:PANGENOME:MULTIQC"];
+v131 -> v132;
+
+v132 [label="NFCORE_PANGENOME:PANGENOME:MULTIQC"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v132 -> v136;
+
+v132 [label="NFCORE_PANGENOME:PANGENOME:MULTIQC"];
+v135 [shape=point];
+v132 -> v135;
+
+v132 [label="NFCORE_PANGENOME:PANGENOME:MULTIQC"];
+v134 [shape=point];
+v132 -> v134;
+
+v132 [label="NFCORE_PANGENOME:PANGENOME:MULTIQC"];
+v133 [shape=point];
+v132 -> v133;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v137 [shape=point];
+v136 -> v137;
+
+}

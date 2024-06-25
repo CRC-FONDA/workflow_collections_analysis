@@ -1,0 +1,19 @@
+repository: MGXlab/pvogs_function
+    A central notebook is used for all visualization and machine learning (model search) purposes. Its main output is the results/RF/best_model.pkl file. This file stores the final model, which is then picked up by the rest of the workflow to make predictions on the full target set and produce final output.
+    In the workflow, this comes after all pre-processing has been done, i.e. all feature values have been calculated, all negative datasets have been generated. That means you can either:
+        Execute the whole workflow once in its default, non-interactive mode and (hopefully) get the same output (yay for reproducibility). Then re-run the workflow with the option for interactive data exploration on.
+        Enable the interaction with the notebook already from the start. You need to produce the target output of the rule (results/RF/best_model_id.txt). Once the results/RF/best_model.pkl is written you can save the changes, and quit the server (more info here and you can always watch this demo). This will trigger the execution of the rest of the workflow.
+    In both cases the command you are looking for is
+        (pvogs)$ snakemake --use-conda -j16 --edit-notebook random_forest
+    Changes are stored in the original notebook.
+    Another jupyter notebook is available and used for all annotation statistics reported, as well as the generation of some supplementary info. The main output of this is results/figures/fig_6.pdf. For successful execution you need to create this file.
+    Similarly, you can run this one with:
+        (pvogs)$ snakemake --use-conda -j16 --edit-notebook annotation_stats
+    Note: Depending on the changes you make, the results you get will differ from the default, non-interactive run and what is reported on the paper.
+
+
+repository: CarolinaPB/single-cell-data-processing
+    The notebook interaction described seems to be on a run level:
+        run the entire workflow once,
+        look at the plots (on filesystem or using the notebooks)
+        depending on those results change workflow thresholds in config file

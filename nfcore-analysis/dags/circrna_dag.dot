@@ -1,0 +1,2422 @@
+digraph "circrna_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v492 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v493 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v494 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v73 [label="ch_reports"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v4 -> v17 [label="ch_versions"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 -> v6;
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v7 -> v8;
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v9 [shape=point];
+v8 -> v9;
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="NFCORE_CIRCRNA:CIRCRNA:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v10 -> v11 [label="samplesheet"];
+
+v11 [label="NFCORE_CIRCRNA:CIRCRNA:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v11 -> v12;
+
+v11 [label="NFCORE_CIRCRNA:CIRCRNA:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v17 [label="versions"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v14 [label="reads"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v19;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v18 [label="NFCORE_CIRCRNA:CIRCRNA:CAT_FASTQ"];
+v16 -> v18;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v22 [label="ch_versions"];
+
+v18 [label="NFCORE_CIRCRNA:CIRCRNA:CAT_FASTQ"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v18 -> v19;
+
+v18 [label="NFCORE_CIRCRNA:CIRCRNA:CAT_FASTQ"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v18 -> v20;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v53 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:FASTQC"];
+v19 -> v53 [label="trim_reads"];
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 -> v47 [label="ch_versions"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v23 -> v37 [label="ch_versions"];
+
+v24 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v26 [label="ch_fasta"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v25 -> v27 [label="ch_gtf"];
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE2_BUILD"];
+v26 -> v30 [label="fasta_tuple"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_EXTRACTSPLICESITES"];
+v27 -> v32 [label="gtf_tuple"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1];
+v29 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE_BUILD"];
+v28 -> v29 [label="fasta"];
+
+v29 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE_BUILD"];
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v29 -> v350 [label="bowtie_index"];
+
+v29 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE_BUILD"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v37;
+
+v30 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE2_BUILD"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 -> v152 [label="bowtie2_index"];
+
+v30 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE2_BUILD"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v30 -> v38;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BWA_INDEX"];
+v26 -> v31 [label="fasta_tuple"];
+
+v31 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BWA_INDEX"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 -> v184 [label="bwa_index"];
+
+v31 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BWA_INDEX"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 -> v39;
+
+v32 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_EXTRACTSPLICESITES"];
+v33 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_BUILD"];
+v32 -> v33;
+
+v32 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_EXTRACTSPLICESITES"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v32 -> v40;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_BUILD"];
+v26 -> v33 [label="fasta_tuple"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_BUILD"];
+v27 -> v33 [label="gtf_tuple"];
+
+v33 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_BUILD"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v33 -> v44;
+
+v33 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_BUILD"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v41;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v26 -> v34 [label="fasta_tuple"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v34 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v27 -> v34 [label="gtf_tuple"];
+
+v34 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v34 -> v45;
+
+v34 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:STAR_GENOMEGENERATE"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v43;
+
+v35 [shape=point,label="",fixedsize=true,width=0.1];
+v36 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:SEGEMEHL_INDEX"];
+v35 -> v36 [label="fasta"];
+
+v36 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:SEGEMEHL_INDEX"];
+v84 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SEGEMEHL_ALIGN"];
+v36 -> v84 [label="segemehl_index"];
+
+v36 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:SEGEMEHL_INDEX"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v42;
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38 [label="ch_versions"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v39 [label="ch_versions"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v40 [label="ch_versions"];
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v41 [label="ch_versions"];
+
+v41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v42 [label="ch_versions"];
+
+v42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v43 [label="ch_versions"];
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v47 [label="versions"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v185 [label="hisat2_index"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v45 -> v93 [label="star_index"];
+
+v32 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:HISAT2_EXTRACTSPLICESITES"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v406 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:HISAT2_ALIGN"];
+v46 -> v406 [label="splice_sites"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v70 [label="ch_versions"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v56 [label="ch_versions"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v50 [shape=point];
+v49 -> v50 [label="fastqc_html"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v52 [shape=point];
+v51 -> v52 [label="fastqc_zip"];
+
+v53 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:FASTQC"];
+v54 [shape=point];
+v53 -> v54 [label="fastqc_html"];
+
+v53 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:FASTQC"];
+v485 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 -> v485 [label="fastqc_zip"];
+
+v53 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:FASTQC"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v69 [label="ch_versions"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v58 [shape=point];
+v57 -> v58 [label="trim_html"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v60 [shape=point];
+v59 -> v60 [label="trim_zip"];
+
+v61 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v62 [shape=point];
+v61 -> v62 [label="trim_log"];
+
+v63 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v64 [shape=point];
+v63 -> v64 [label="trimgalore_versions"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v19 -> v65 [label="trim_reads"];
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v84 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SEGEMEHL_ALIGN"];
+v65 -> v84 [label="reads"];
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v65 -> v74 [label="trim_log"];
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v67 [shape=point];
+v65 -> v67;
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v66 [shape=point];
+v65 -> v66 [label="trim_html"];
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v65 -> v71 [label="trim_zip"];
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v65 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70 [label="versions"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v382 [label="ch_versions"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v76 [label="ch_reports"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v74 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v470 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v470 [label="ch_reports"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v88 [label="ch_versions"];
+
+v78 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 -> v80 [label="ch_fasta"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 -> v81 [label="ch_gtf"];
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v163 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_VIEW"];
+v80 -> v163 [label="fasta_tuple"];
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v82 -> v93 [label="gtf_tuple"];
+
+v83 [shape=point,label="",fixedsize=true,width=0.1];
+v84 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SEGEMEHL_ALIGN"];
+v83 -> v84 [label="fasta"];
+
+v84 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SEGEMEHL_ALIGN"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 -> v85;
+
+v84 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SEGEMEHL_ALIGN"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v88;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SEGEMEHL_FILTER"];
+v85 -> v87 [label="segemehl_filter"];
+
+v86 [shape=point,label="",fixedsize=true,width=0.1];
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SEGEMEHL_FILTER"];
+v86 -> v87 [label="bsj_reads"];
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SEGEMEHL_FILTER"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v366;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SEGEMEHL_FILTER"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v377;
+
+v87 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SEGEMEHL_FILTER"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v89;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v89 [label="ch_versions"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v130 [label="ch_versions"];
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v65 -> v93 [label="reads"];
+
+v90 [shape=point,label="",fixedsize=true,width=0.1];
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v90 -> v93 [label="star_ignore_sjdbgtf"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1];
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v91 -> v93 [label="seq_platform"];
+
+v92 [shape=point,label="",fixedsize=true,width=0.1];
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v92 -> v93 [label="seq_center"];
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v107 [shape=point];
+v93 -> v107;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v106 [shape=point];
+v93 -> v106;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v105 [shape=point];
+v93 -> v105;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v130;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v104 [shape=point];
+v93 -> v104;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v103 [shape=point];
+v93 -> v103;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v102 [shape=point];
+v93 -> v102;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v101 [shape=point];
+v93 -> v101;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v100 [shape=point];
+v93 -> v100;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 -> v108;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v99 [shape=point];
+v93 -> v99;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v98 [shape=point];
+v93 -> v98;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v97 [shape=point];
+v93 -> v97;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v96 [shape=point];
+v93 -> v96;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v95 [shape=point];
+v93 -> v95;
+
+v93 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_1ST_PASS"];
+v94 [shape=point];
+v93 -> v94;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v108 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v112 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_SJDB"];
+v110 -> v112 [label="sjdb"];
+
+v111 [shape=point,label="",fixedsize=true,width=0.1];
+v112 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_SJDB"];
+v111 -> v112 [label="bsj_reads"];
+
+v112 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_SJDB"];
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v112 -> v117;
+
+v112 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_SJDB"];
+v113 [shape=point];
+v112 -> v113;
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v65 -> v117 [label="reads"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v45 -> v117 [label="star_index"];
+
+v114 [shape=point,label="",fixedsize=true,width=0.1];
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v114 -> v117 [label="star_ignore_sjdbgtf"];
+
+v115 [shape=point,label="",fixedsize=true,width=0.1];
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v115 -> v117 [label="seq_platform"];
+
+v116 [shape=point,label="",fixedsize=true,width=0.1];
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v116 -> v117 [label="seq_center"];
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v129 [shape=point];
+v117 -> v129;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v128 [shape=point];
+v117 -> v128;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v127 [shape=point];
+v117 -> v127;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v131;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v126 [shape=point];
+v117 -> v126;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v125 [shape=point];
+v117 -> v125;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v124 [shape=point];
+v117 -> v124;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v123 [shape=point];
+v117 -> v123;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v122 [shape=point];
+v117 -> v122;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v117 -> v145;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v121 [shape=point];
+v117 -> v121;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v120 [shape=point];
+v117 -> v120;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v134 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_PAR"];
+v117 -> v134;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v117 -> v144;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v119 [shape=point];
+v117 -> v119;
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v118 [shape=point];
+v117 -> v118;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v131 [label="ch_versions"];
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v140 [label="ch_versions"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1];
+v133 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_REF"];
+v132 -> v133 [label="gtf"];
+
+v133 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_REF"];
+v136 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_ANN"];
+v133 -> v136;
+
+v133 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_REF"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v140;
+
+v134 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_PAR"];
+v136 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_ANN"];
+v134 -> v136;
+
+v134 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_PAR"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v141;
+
+v135 [shape=point,label="",fixedsize=true,width=0.1];
+v136 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_ANN"];
+v135 -> v136 [label="fasta"];
+
+v136 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_ANN"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v136 -> v137;
+
+v136 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_ANN"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v142;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_FLT"];
+v137 -> v139 [label="circexplorer2_filter"];
+
+v138 [shape=point,label="",fixedsize=true,width=0.1];
+v139 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_FLT"];
+v138 -> v139 [label="bsj_reads"];
+
+v139 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_FLT"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v366;
+
+v139 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_FLT"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v377;
+
+v139 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCEXPLORER2_FLT"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v143;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141 [label="ch_versions"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v142 [label="ch_versions"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v143 [label="ch_versions"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v151 [label="ch_versions"];
+
+v117 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:STAR_2ND_PASS"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v117 -> v144;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 -> v146 [label="circrna_finder_stage"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v149 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCRNA_FINDER_FILTER"];
+v146 -> v149 [label="circrna_finder_filter"];
+
+v147 [shape=point,label="",fixedsize=true,width=0.1];
+v149 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCRNA_FINDER_FILTER"];
+v147 -> v149 [label="fasta"];
+
+v148 [shape=point,label="",fixedsize=true,width=0.1];
+v149 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCRNA_FINDER_FILTER"];
+v148 -> v149 [label="bsj_reads"];
+
+v149 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCRNA_FINDER_FILTER"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v366;
+
+v149 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCRNA_FINDER_FILTER"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v377;
+
+v149 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCRNA_FINDER_FILTER"];
+v150 [shape=point];
+v149 -> v150;
+
+v149 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRCRNA_FINDER_FILTER"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 -> v178 [label="ch_versions"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_ALIGN"];
+v152 -> v155;
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v155 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_ALIGN"];
+v65 -> v155 [label="reads"];
+
+v153 [shape=point,label="",fixedsize=true,width=0.1];
+v155 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_ALIGN"];
+v153 -> v155 [label="save_unaligned"];
+
+v154 [shape=point,label="",fixedsize=true,width=0.1];
+v155 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_ALIGN"];
+v154 -> v155 [label="sort_bam"];
+
+v155 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_ALIGN"];
+v158 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_INDEX"];
+v155 -> v158;
+
+v155 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_ALIGN"];
+v157 [shape=point];
+v155 -> v157;
+
+v155 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_ALIGN"];
+v156 [shape=point];
+v155 -> v156;
+
+v155 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_ALIGN"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v178;
+
+v158 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_INDEX"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v158 -> v161;
+
+v158 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_INDEX"];
+v160 [shape=point];
+v158 -> v160;
+
+v158 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_INDEX"];
+v159 [shape=point];
+v158 -> v159;
+
+v158 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_INDEX"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 -> v179;
+
+v155 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_ALIGN"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v155 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v163 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_VIEW"];
+v161 -> v163;
+
+v162 [shape=point,label="",fixedsize=true,width=0.1];
+v163 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_VIEW"];
+v162 -> v163 [label="qname"];
+
+v163 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_VIEW"];
+v169 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_ANCHORS"];
+v163 -> v169;
+
+v163 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_VIEW"];
+v168 [shape=point];
+v163 -> v168;
+
+v163 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_VIEW"];
+v167 [shape=point];
+v163 -> v167;
+
+v163 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_VIEW"];
+v166 [shape=point];
+v163 -> v166;
+
+v163 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_VIEW"];
+v165 [shape=point];
+v163 -> v165;
+
+v163 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_VIEW"];
+v164 [shape=point];
+v163 -> v164;
+
+v163 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:SAMTOOLS_VIEW"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v180;
+
+v169 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_ANCHORS"];
+v172 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC"];
+v169 -> v172;
+
+v169 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_ANCHORS"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v181;
+
+v30 [label="NFCORE_CIRCRNA:CIRCRNA:PREPARE_GENOME:BOWTIE2_BUILD"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 -> v170 [label="bowtie2_index"];
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v172 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC"];
+v170 -> v172;
+
+v171 [shape=point,label="",fixedsize=true,width=0.1];
+v172 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC"];
+v171 -> v172 [label="fasta"];
+
+v172 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v172 -> v175;
+
+v172 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC"];
+v174 [shape=point];
+v172 -> v174;
+
+v172 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC"];
+v173 [shape=point];
+v172 -> v173;
+
+v172 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 -> v182;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v177 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_FILTER"];
+v175 -> v177 [label="find_circ_filter"];
+
+v176 [shape=point,label="",fixedsize=true,width=0.1];
+v177 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_FILTER"];
+v176 -> v177 [label="bsj_reads"];
+
+v177 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_FILTER"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v366;
+
+v177 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_FILTER"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v377;
+
+v177 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FIND_CIRC_FILTER"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v183;
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 -> v179 [label="ch_versions"];
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v180 [label="ch_versions"];
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v181 [label="ch_versions"];
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v182 [label="ch_versions"];
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v183 [label="ch_versions"];
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v183 -> v195 [label="ch_versions"];
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v188 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT_YML"];
+v184 -> v188;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v188 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT_YML"];
+v185 -> v188;
+
+v186 [shape=point,label="",fixedsize=true,width=0.1];
+v188 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT_YML"];
+v186 -> v188 [label="gtf"];
+
+v187 [shape=point,label="",fixedsize=true,width=0.1];
+v188 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT_YML"];
+v187 -> v188 [label="fasta"];
+
+v188 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT_YML"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v188 -> v189;
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v190 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT"];
+v189 -> v190;
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v190 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT"];
+v65 -> v190 [label="reads"];
+
+v190 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v190 -> v192;
+
+v190 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT"];
+v191 [shape=point];
+v190 -> v191;
+
+v190 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v195;
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v194 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT_FILTER"];
+v192 -> v194;
+
+v193 [shape=point,label="",fixedsize=true,width=0.1];
+v194 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT_FILTER"];
+v193 -> v194 [label="bsj_reads"];
+
+v194 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT_FILTER"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v366;
+
+v194 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT_FILTER"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v377;
+
+v194 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:CIRIQUANT_FILTER"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v196;
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 -> v196 [label="ch_versions"];
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v340 [label="ch_versions"];
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v65 -> v200 [label="reads"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v45 -> v200 [label="star_index"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v82 -> v200 [label="gtf_tuple"];
+
+v197 [shape=point,label="",fixedsize=true,width=0.1];
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v197 -> v200 [label="star_ignore_sjdbgtf"];
+
+v198 [shape=point,label="",fixedsize=true,width=0.1];
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v198 -> v200 [label="seq_platform"];
+
+v199 [shape=point,label="",fixedsize=true,width=0.1];
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v199 -> v200 [label="seq_center"];
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v215 [shape=point];
+v200 -> v215;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v214 [shape=point];
+v200 -> v214;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v213 [shape=point];
+v200 -> v213;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v212 [shape=point];
+v200 -> v212;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v211 [shape=point];
+v200 -> v211;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v210 [shape=point];
+v200 -> v210;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v209 [shape=point];
+v200 -> v209;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v208 [shape=point];
+v200 -> v208;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v207 [shape=point];
+v200 -> v207;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v200 -> v216;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v206 [shape=point];
+v200 -> v206;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v205 [shape=point];
+v200 -> v205;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v204 [shape=point];
+v200 -> v204;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v203 [shape=point];
+v200 -> v203;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v202 [shape=point];
+v200 -> v202;
+
+v200 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_1ST_PASS"];
+v201 [shape=point];
+v200 -> v201;
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v216 -> v217;
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 -> v218;
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v220 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_SJDB"];
+v218 -> v220;
+
+v219 [shape=point,label="",fixedsize=true,width=0.1];
+v220 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_SJDB"];
+v219 -> v220 [label="bsj_reads"];
+
+v220 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_SJDB"];
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v220 -> v225;
+
+v220 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_SJDB"];
+v221 [shape=point];
+v220 -> v221;
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v65 -> v225 [label="reads"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v45 -> v225 [label="star_index"];
+
+v222 [shape=point,label="",fixedsize=true,width=0.1];
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v222 -> v225 [label="star_ignore_sjdbgtf"];
+
+v223 [shape=point,label="",fixedsize=true,width=0.1];
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v223 -> v225 [label="seq_platform"];
+
+v224 [shape=point,label="",fixedsize=true,width=0.1];
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v224 -> v225 [label="seq_center"];
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v240 [shape=point];
+v225 -> v240;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v239 [shape=point];
+v225 -> v239;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v238 [shape=point];
+v225 -> v238;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v237 [shape=point];
+v225 -> v237;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v236 [shape=point];
+v225 -> v236;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v235 [shape=point];
+v225 -> v235;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v234 [shape=point];
+v225 -> v234;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v233 [shape=point];
+v225 -> v233;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v232 [shape=point];
+v225 -> v232;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v231 [shape=point];
+v225 -> v231;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v230 [shape=point];
+v225 -> v230;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v229 [shape=point];
+v225 -> v229;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v225 -> v327;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v228 [shape=point];
+v225 -> v228;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v227 [shape=point];
+v225 -> v227;
+
+v225 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_2ND_PASS"];
+v226 [shape=point];
+v225 -> v226;
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v65 -> v241 [label="reads"];
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v241 -> v242;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v242 -> v246 [label="mate1"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v45 -> v246 [label="star_index"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v82 -> v246 [label="gtf_tuple"];
+
+v243 [shape=point,label="",fixedsize=true,width=0.1];
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v243 -> v246 [label="star_ignore_sjdbgtf"];
+
+v244 [shape=point,label="",fixedsize=true,width=0.1];
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v244 -> v246 [label="seq_platform"];
+
+v245 [shape=point,label="",fixedsize=true,width=0.1];
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v245 -> v246 [label="seq_center"];
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v260 [shape=point];
+v246 -> v260;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v259 [shape=point];
+v246 -> v259;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v258 [shape=point];
+v246 -> v258;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v246 -> v340;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v257 [shape=point];
+v246 -> v257;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v256 [shape=point];
+v246 -> v256;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v255 [shape=point];
+v246 -> v255;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v254 [shape=point];
+v246 -> v254;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v253 [shape=point];
+v246 -> v253;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v246 -> v261;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v252 [shape=point];
+v246 -> v252;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v251 [shape=point];
+v246 -> v251;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v250 [shape=point];
+v246 -> v250;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v249 [shape=point];
+v246 -> v249;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v248 [shape=point];
+v246 -> v248;
+
+v246 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_1ST_PASS"];
+v247 [shape=point];
+v246 -> v247;
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v261 -> v262;
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v262 -> v263;
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v265 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_SJDB"];
+v263 -> v265;
+
+v264 [shape=point,label="",fixedsize=true,width=0.1];
+v265 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_SJDB"];
+v264 -> v265 [label="bsj_reads"];
+
+v265 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_SJDB"];
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v265 -> v269;
+
+v265 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_SJDB"];
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 -> v341;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v242 -> v269 [label="mate1"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v45 -> v269 [label="star_index"];
+
+v266 [shape=point,label="",fixedsize=true,width=0.1];
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v266 -> v269 [label="star_ignore_sjdbgtf"];
+
+v267 [shape=point,label="",fixedsize=true,width=0.1];
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v267 -> v269 [label="seq_platform"];
+
+v268 [shape=point,label="",fixedsize=true,width=0.1];
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v268 -> v269 [label="seq_center"];
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v283 [shape=point];
+v269 -> v283;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v282 [shape=point];
+v269 -> v282;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v281 [shape=point];
+v269 -> v281;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v269 -> v342;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v280 [shape=point];
+v269 -> v280;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v279 [shape=point];
+v269 -> v279;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v278 [shape=point];
+v269 -> v278;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v277 [shape=point];
+v269 -> v277;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v276 [shape=point];
+v269 -> v276;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v275 [shape=point];
+v269 -> v275;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v274 [shape=point];
+v269 -> v274;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v273 [shape=point];
+v269 -> v273;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v269 -> v328;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v272 [shape=point];
+v269 -> v272;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v271 [shape=point];
+v269 -> v271;
+
+v269 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE1_2ND_PASS"];
+v270 [shape=point];
+v269 -> v270;
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v65 -> v284 [label="reads"];
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v284 -> v285;
+
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v285 -> v289 [label="mate2"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v45 -> v289 [label="star_index"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v82 -> v289 [label="gtf_tuple"];
+
+v286 [shape=point,label="",fixedsize=true,width=0.1];
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v286 -> v289 [label="star_ignore_sjdbgtf"];
+
+v287 [shape=point,label="",fixedsize=true,width=0.1];
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v287 -> v289 [label="seq_platform"];
+
+v288 [shape=point,label="",fixedsize=true,width=0.1];
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v288 -> v289 [label="seq_center"];
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v303 [shape=point];
+v289 -> v303;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v302 [shape=point];
+v289 -> v302;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v301 [shape=point];
+v289 -> v301;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v289 -> v343;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v300 [shape=point];
+v289 -> v300;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v299 [shape=point];
+v289 -> v299;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v298 [shape=point];
+v289 -> v298;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v297 [shape=point];
+v289 -> v297;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v296 [shape=point];
+v289 -> v296;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v289 -> v304;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v295 [shape=point];
+v289 -> v295;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v294 [shape=point];
+v289 -> v294;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v293 [shape=point];
+v289 -> v293;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v292 [shape=point];
+v289 -> v292;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v291 [shape=point];
+v289 -> v291;
+
+v289 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_1ST_PASS"];
+v290 [shape=point];
+v289 -> v290;
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v304 -> v305;
+
+v305 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v305 -> v306;
+
+v306 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_SJDB"];
+v306 -> v308;
+
+v307 [shape=point,label="",fixedsize=true,width=0.1];
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_SJDB"];
+v307 -> v308 [label="bsj_reads"];
+
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_SJDB"];
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v308 -> v312;
+
+v308 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_SJDB"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v308 -> v344;
+
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v285 -> v312 [label="mate2"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v45 -> v312 [label="star_index"];
+
+v309 [shape=point,label="",fixedsize=true,width=0.1];
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v309 -> v312 [label="star_ignore_sjdbgtf"];
+
+v310 [shape=point,label="",fixedsize=true,width=0.1];
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v310 -> v312 [label="seq_platform"];
+
+v311 [shape=point,label="",fixedsize=true,width=0.1];
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v311 -> v312 [label="seq_center"];
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v326 [shape=point];
+v312 -> v326;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v325 [shape=point];
+v312 -> v325;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v324 [shape=point];
+v312 -> v324;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v312 -> v345;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v323 [shape=point];
+v312 -> v323;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v322 [shape=point];
+v312 -> v322;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v321 [shape=point];
+v312 -> v321;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v320 [shape=point];
+v312 -> v320;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v319 [shape=point];
+v312 -> v319;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v318 [shape=point];
+v312 -> v318;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v317 [shape=point];
+v312 -> v317;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v316 [shape=point];
+v312 -> v316;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v312 -> v330;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v315 [shape=point];
+v312 -> v315;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v314 [shape=point];
+v312 -> v314;
+
+v312 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_MATE2_2ND_PASS"];
+v313 [shape=point];
+v312 -> v313;
+
+v327 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v327 -> v329;
+
+v328 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v328 -> v329;
+
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v329 -> v331;
+
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v330 -> v331;
+
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v331 -> v332;
+
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v332 -> v333 [label="dcc_stage"];
+
+v333 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v336 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC"];
+v333 -> v336 [label="dcc"];
+
+v334 [shape=point,label="",fixedsize=true,width=0.1];
+v336 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC"];
+v334 -> v336 [label="fasta"];
+
+v335 [shape=point,label="",fixedsize=true,width=0.1];
+v336 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC"];
+v335 -> v336 [label="gtf"];
+
+v336 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC"];
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v336 -> v337;
+
+v336 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v336 -> v346;
+
+v337 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v339 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_FILTER"];
+v337 -> v339;
+
+v338 [shape=point,label="",fixedsize=true,width=0.1];
+v339 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_FILTER"];
+v338 -> v339 [label="bsj_reads"];
+
+v339 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_FILTER"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v339 -> v366;
+
+v339 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_FILTER"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v339 -> v377;
+
+v339 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:DCC_FILTER"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v339 -> v347;
+
+v340 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v340 -> v341 [label="ch_versions"];
+
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v341 -> v342 [label="ch_versions"];
+
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v342 -> v343 [label="ch_versions"];
+
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v343 -> v344 [label="ch_versions"];
+
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v344 -> v345 [label="ch_versions"];
+
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v345 -> v346 [label="ch_versions"];
+
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 -> v347 [label="ch_versions"];
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 -> v361 [label="ch_versions"];
+
+v348 [shape=point,label="",fixedsize=true,width=0.1];
+v349 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_REFERENCE"];
+v348 -> v349 [label="gtf"];
+
+v349 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_REFERENCE"];
+v356 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_ANNOTATE"];
+v349 -> v356;
+
+v349 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_REFERENCE"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v349 -> v361;
+
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v353 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_ALIGN"];
+v350 -> v353;
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v353 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_ALIGN"];
+v65 -> v353 [label="reads"];
+
+v351 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_ALIGN"];
+v351 -> v353 [label="chromosomes"];
+
+v352 [shape=point,label="",fixedsize=true,width=0.1];
+v353 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_ALIGN"];
+v352 -> v353 [label="gtf"];
+
+v353 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_ALIGN"];
+v354 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_PARSE"];
+v353 -> v354;
+
+v353 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_ALIGN"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v353 -> v362;
+
+v354 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_PARSE"];
+v356 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_ANNOTATE"];
+v354 -> v356;
+
+v354 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_PARSE"];
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v354 -> v363;
+
+v355 [shape=point,label="",fixedsize=true,width=0.1];
+v356 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_ANNOTATE"];
+v355 -> v356 [label="fasta"];
+
+v356 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_ANNOTATE"];
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v356 -> v357;
+
+v356 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_ANNOTATE"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v356 -> v364;
+
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v359 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_FILTER"];
+v357 -> v359 [label="mapsplice_filter"];
+
+v358 [shape=point,label="",fixedsize=true,width=0.1];
+v359 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_FILTER"];
+v358 -> v359 [label="bsj_reads"];
+
+v359 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_FILTER"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v359 -> v366;
+
+v359 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_FILTER"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v359 -> v377;
+
+v359 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:MAPSPLICE_FILTER"];
+v360 [shape=point];
+v359 -> v360;
+
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v361 -> v362 [label="ch_versions"];
+
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v362 -> v363 [label="ch_versions"];
+
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v363 -> v364 [label="ch_versions"];
+
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 -> v372 [label="ch_versions"];
+
+v365 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v365 -> v367 [label="ch_biotypes"];
+
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v370 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:ANNOTATION"];
+v366 -> v370 [label="circrna_filtered"];
+
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v370 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:ANNOTATION"];
+v367 -> v370;
+
+v368 [shape=point,label="",fixedsize=true,width=0.1];
+v370 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:ANNOTATION"];
+v368 -> v370 [label="gtf"];
+
+v369 [shape=point,label="",fixedsize=true,width=0.1];
+v370 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:ANNOTATION"];
+v369 -> v370 [label="exon_boundary"];
+
+v370 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:ANNOTATION"];
+v374 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FASTA"];
+v370 -> v374 [label="circrna_bed12"];
+
+v370 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:ANNOTATION"];
+v371 [shape=point];
+v370 -> v371;
+
+v370 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:ANNOTATION"];
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v370 -> v372;
+
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v372 -> v376 [label="ch_versions"];
+
+v373 [shape=point,label="",fixedsize=true,width=0.1];
+v374 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FASTA"];
+v373 -> v374 [label="fasta"];
+
+v374 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FASTA"];
+v386 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:TARGETSCAN"];
+v374 -> v386 [label="circrna_fasta"];
+
+v374 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FASTA"];
+v375 [shape=point];
+v374 -> v375;
+
+v374 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FASTA"];
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v374 -> v376;
+
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v376 -> v381 [label="ch_versions"];
+
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v377 -> v378 [label="ch_matrix"];
+
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v378 -> v379;
+
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v380 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:COUNTS_SINGLE"];
+v379 -> v380;
+
+v380 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:COUNTS_SINGLE"];
+v447 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:DESEQ2_DIFFERENTIAL_EXPRESSION"];
+v380 -> v447 [label="dea_matrix"];
+
+v380 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:COUNTS_SINGLE"];
+v455 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PARENT_GENE"];
+v380 -> v455 [label="clr_matrix"];
+
+v380 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:COUNTS_SINGLE"];
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v380 -> v381;
+
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v381 -> v382 [label="versions"];
+
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v382 -> v397 [label="ch_versions"];
+
+v383 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v383 -> v387 [label="ch_versions"];
+
+v384 [shape=point,label="",fixedsize=true,width=0.1];
+v385 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:TARGETSCAN_DATABASE"];
+v384 -> v385 [label="mature"];
+
+v385 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:TARGETSCAN_DATABASE"];
+v386 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:TARGETSCAN"];
+v385 -> v386;
+
+v385 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:TARGETSCAN_DATABASE"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v385 -> v387;
+
+v386 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:TARGETSCAN"];
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v386 -> v392;
+
+v386 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:TARGETSCAN"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v386 -> v388;
+
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v387 -> v388 [label="ch_versions"];
+
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v388 -> v391 [label="ch_versions"];
+
+v374 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:FASTA"];
+v390 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRANDA"];
+v374 -> v390 [label="circrna_fasta"];
+
+v389 [shape=point,label="",fixedsize=true,width=0.1];
+v390 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRANDA"];
+v389 -> v390 [label="mirbase"];
+
+v390 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRANDA"];
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v390 -> v392;
+
+v390 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRANDA"];
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v390 -> v391;
+
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v391 -> v396 [label="ch_versions"];
+
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v392 -> v393;
+
+v370 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:ANNOTATION"];
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v370 -> v393 [label="circrna_bed12"];
+
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v394 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_TARGETS"];
+v393 -> v394 [label="consolidate_targets"];
+
+v394 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_TARGETS"];
+v395 [shape=point];
+v394 -> v395;
+
+v394 [label="NFCORE_CIRCRNA:CIRCRNA:MIRNA_PREDICTION:MIRNA_TARGETS"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v394 -> v396;
+
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v396 -> v397 [label="versions"];
+
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v469 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v397 -> v469 [label="ch_versions"];
+
+v398 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v447 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:DESEQ2_DIFFERENTIAL_EXPRESSION"];
+v398 -> v447 [label="ensembl_map"];
+
+v399 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v399 -> v461 [label="ch_versions"];
+
+v400 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v400 -> v438 [label="qc_reports"];
+
+v401 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v401 -> v403 [label="ch_fasta"];
+
+v402 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v402 -> v404 [label="ch_gtf"];
+
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v421 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v403 -> v421 [label="ch_fasta"];
+
+v404 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v405 [shape=point];
+v404 -> v405 [label="gtf_tuple"];
+
+v65 [label="NFCORE_CIRCRNA:CIRCRNA:FASTQC_TRIMGALORE:TRIMGALORE"];
+v406 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:HISAT2_ALIGN"];
+v65 -> v406 [label="reads"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v406 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:HISAT2_ALIGN"];
+v44 -> v406 [label="hisat2_index"];
+
+v406 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:HISAT2_ALIGN"];
+v409 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v406 -> v409 [label="ch_bam"];
+
+v406 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:HISAT2_ALIGN"];
+v437 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v406 -> v437;
+
+v406 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:HISAT2_ALIGN"];
+v407 [shape=point];
+v406 -> v407;
+
+v406 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:HISAT2_ALIGN"];
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v406 -> v461;
+
+v408 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v408 -> v412 [label="ch_versions"];
+
+v409 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v413 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v409 -> v413 [label="bam"];
+
+v409 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v410 [shape=point];
+v409 -> v410;
+
+v409 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v409 -> v411;
+
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v411 -> v412;
+
+v412 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v412 -> v416 [label="ch_versions"];
+
+v413 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v413 -> v417 [label="bai"];
+
+v413 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v413 -> v418 [label="csi"];
+
+v413 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v414 [shape=point];
+v413 -> v414;
+
+v413 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v413 -> v415;
+
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v415 -> v416;
+
+v416 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v416 -> v427 [label="ch_versions"];
+
+v409 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v409 -> v417 [label="bam"];
+
+v417 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v417 -> v418;
+
+v418 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v418 -> v419;
+
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v421 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v419 -> v421 [label="ch_bam_bai"];
+
+v420 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v422 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v420 -> v422 [label="ch_versions"];
+
+v421 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v421 -> v439 [label="stats"];
+
+v421 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v422 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v421 -> v422;
+
+v422 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v422 -> v424 [label="ch_versions"];
+
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v423 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v419 -> v423 [label="ch_bam_bai"];
+
+v423 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v423 -> v441 [label="flagstat"];
+
+v423 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v423 -> v424;
+
+v424 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v424 -> v426 [label="ch_versions"];
+
+v419 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v425 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v419 -> v425 [label="ch_bam_bai"];
+
+v425 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v425 -> v443 [label="idxstats"];
+
+v425 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v425 -> v426;
+
+v426 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v426 -> v427 [label="versions"];
+
+v427 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v427 -> v462 [label="versions"];
+
+v409 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v429 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:STRINGTIE_STRINGTIE"];
+v409 -> v429 [label="bam"];
+
+v428 [shape=point,label="",fixedsize=true,width=0.1];
+v429 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:STRINGTIE_STRINGTIE"];
+v428 -> v429 [label="annotation_gtf"];
+
+v429 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:STRINGTIE_STRINGTIE"];
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v429 -> v433;
+
+v429 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:STRINGTIE_STRINGTIE"];
+v432 [shape=point];
+v429 -> v432;
+
+v429 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:STRINGTIE_STRINGTIE"];
+v431 [shape=point];
+v429 -> v431;
+
+v429 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:STRINGTIE_STRINGTIE"];
+v430 [shape=point];
+v429 -> v430;
+
+v429 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:STRINGTIE_STRINGTIE"];
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v429 -> v463;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v433 -> v434;
+
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v435 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:STRINGTIE_PREPDE"];
+v434 -> v435;
+
+v435 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:STRINGTIE_PREPDE"];
+v436 [shape=point];
+v435 -> v436;
+
+v435 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:STRINGTIE_PREPDE"];
+v447 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:DESEQ2_DIFFERENTIAL_EXPRESSION"];
+v435 -> v447;
+
+v435 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:STRINGTIE_PREPDE"];
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v435 -> v464;
+
+v437 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v437 -> v438;
+
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v438 -> v440 [label="qc_reports"];
+
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v439 -> v440;
+
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v440 -> v442 [label="qc_reports"];
+
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v441 -> v442;
+
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v442 -> v444 [label="qc_reports"];
+
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v443 -> v444;
+
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v470 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v444 -> v470 [label="reports"];
+
+v445 [shape=point,label="",fixedsize=true,width=0.1];
+v447 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:DESEQ2_DIFFERENTIAL_EXPRESSION"];
+v445 -> v447 [label="phenotype"];
+
+v446 [shape=point,label="",fixedsize=true,width=0.1];
+v447 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:DESEQ2_DIFFERENTIAL_EXPRESSION"];
+v446 -> v447 [label="species"];
+
+v447 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:DESEQ2_DIFFERENTIAL_EXPRESSION"];
+v450 [shape=point];
+v447 -> v450;
+
+v447 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:DESEQ2_DIFFERENTIAL_EXPRESSION"];
+v449 [shape=point];
+v447 -> v449;
+
+v447 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:DESEQ2_DIFFERENTIAL_EXPRESSION"];
+v448 [shape=point];
+v447 -> v448;
+
+v447 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:DESEQ2_DIFFERENTIAL_EXPRESSION"];
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v447 -> v465;
+
+v451 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v451 -> v452 [label="ch_biotypes"];
+
+v452 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v455 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PARENT_GENE"];
+v452 -> v455;
+
+v453 [shape=point,label="",fixedsize=true,width=0.1];
+v455 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PARENT_GENE"];
+v453 -> v455 [label="gtf"];
+
+v454 [shape=point,label="",fixedsize=true,width=0.1];
+v455 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PARENT_GENE"];
+v454 -> v455 [label="exon_boundary"];
+
+v455 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PARENT_GENE"];
+v457 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PREPARE_CLR_TEST"];
+v455 -> v457;
+
+v455 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PARENT_GENE"];
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v455 -> v466;
+
+v435 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:STRINGTIE_PREPDE"];
+v457 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PREPARE_CLR_TEST"];
+v435 -> v457 [label="gene_matrix"];
+
+v380 [label="NFCORE_CIRCRNA:CIRCRNA:CIRCRNA_DISCOVERY:COUNTS_SINGLE"];
+v457 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PREPARE_CLR_TEST"];
+v380 -> v457 [label="clr_matrix"];
+
+v456 [shape=point,label="",fixedsize=true,width=0.1];
+v457 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PREPARE_CLR_TEST"];
+v456 -> v457 [label="gtf"];
+
+v457 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PREPARE_CLR_TEST"];
+v459 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:CIRCTEST"];
+v457 -> v459;
+
+v457 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PREPARE_CLR_TEST"];
+v459 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:CIRCTEST"];
+v457 -> v459;
+
+v457 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:PREPARE_CLR_TEST"];
+v467 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v457 -> v467;
+
+v458 [shape=point,label="",fixedsize=true,width=0.1];
+v459 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:CIRCTEST"];
+v458 -> v459 [label="phenotype"];
+
+v459 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:CIRCTEST"];
+v460 [shape=point];
+v459 -> v460;
+
+v459 [label="NFCORE_CIRCRNA:CIRCRNA:DIFFERENTIAL_EXPRESSION:CIRCTEST"];
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v459 -> v468;
+
+v461 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v461 -> v462 [label="ch_versions"];
+
+v462 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v462 -> v463 [label="ch_versions"];
+
+v463 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v463 -> v464 [label="ch_versions"];
+
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v464 -> v465 [label="ch_versions"];
+
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v465 -> v466 [label="ch_versions"];
+
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v467 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v466 -> v467 [label="ch_versions"];
+
+v467 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v467 -> v468 [label="ch_versions"];
+
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v469 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v468 -> v469 [label="versions"];
+
+v469 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v469 -> v471 [label="ch_versions"];
+
+v470 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v488 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v470 -> v488 [label="ch_reports"];
+
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v471 -> v472;
+
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v473 [label="NFCORE_CIRCRNA:CIRCRNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v472 -> v473;
+
+v473 [label="NFCORE_CIRCRNA:CIRCRNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v475 [shape=point];
+v473 -> v475;
+
+v473 [label="NFCORE_CIRCRNA:CIRCRNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v473 -> v483;
+
+v473 [label="NFCORE_CIRCRNA:CIRCRNA:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v474 [shape=point];
+v473 -> v474;
+
+v476 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v476 -> v479 [label="ch_multiqc_files"];
+
+v477 [shape=point,label="",fixedsize=true,width=0.1];
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v477 -> v478 [label="ch_workflow_summary"];
+
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v478 -> v479;
+
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v479 -> v482 [label="ch_multiqc_files"];
+
+v480 [shape=point,label="",fixedsize=true,width=0.1];
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v480 -> v481 [label="ch_methods_description"];
+
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v481 -> v482;
+
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v484 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v482 -> v484 [label="ch_multiqc_files"];
+
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v484 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v483 -> v484;
+
+v484 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v487 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v484 -> v487 [label="ch_multiqc_files"];
+
+v485 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v486 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v485 -> v486;
+
+v486 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v487 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v486 -> v487;
+
+v487 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v490 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v487 -> v490 [label="ch_multiqc_files"];
+
+v488 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v489 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v488 -> v489;
+
+v489 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v490 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v489 -> v490;
+
+v490 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v490 -> v491 [label="ch_multiqc_files"];
+
+v491 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v495 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v491 -> v495;
+
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v495 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v492 -> v495;
+
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v495 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v493 -> v495;
+
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v495 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v494 -> v495;
+
+v495 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v495 -> v499;
+
+v495 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v498 [shape=point];
+v495 -> v498;
+
+v495 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v497 [shape=point];
+v495 -> v497;
+
+v495 [label="NFCORE_CIRCRNA:CIRCRNA:MULTIQC"];
+v496 [shape=point];
+v495 -> v496;
+
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v500 [shape=point];
+v499 -> v500;
+
+}

@@ -1,0 +1,822 @@
+digraph "dualrnaseq_dag" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p0 -> p145 [label="ch_multiqc_custom_config"];
+
+p1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p1 -> p2;
+
+p2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p2 -> p3;
+
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p3 -> p4;
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p4 -> p41 [label="scatter_plots_set"];
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p99 [label="bbduk"];
+p4 -> p99 [label="trimming_reads"];
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p97 [label="fastqc"];
+p4 -> p97 [label="ch_read_files_fastqc"];
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p4 -> p103 [label="raw_read_count"];
+
+p5 [shape=point,label="",fixedsize=true,width=0.1];
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p5 -> p6;
+
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p6 -> p48 [label="genome_fasta_pathogen_to_unzip"];
+
+p7 [shape=point,label="",fixedsize=true,width=0.1];
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p7 -> p8;
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p18 [shape=point];
+p8 -> p18 [label="attribute_host_RNA_class_stats_alignment"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p133 [label="salmon_quantification_stats"];
+p8 -> p133 [label="attribute_quant_stats_salmon"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p17 [shape=point];
+p8 -> p17 [label="attribute_quant_stats_salmon_alignment"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p119 [label="combine_quantification_tables_salmon"];
+p8 -> p119 [label="host_atr_collect_data_salmon"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p16 [shape=point];
+p8 -> p16 [label="combine_annot_quant_host_salmon_alignment_based"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p15 [shape=point];
+p8 -> p15 [label="gene_attribute_gff_to_create_transcriptome_host_salmon"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p121 [label="combine_annotations_quant_pathogen"];
+p8 -> p121 [label="combine_annot_quant_pathogen"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p122 [label="combine_annotations_quant_host_salmon"];
+p8 -> p122 [label="combine_annot_quant_host"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p14 [shape=point];
+p8 -> p14 [label="combine_annot_quant_pathogen_salmon_alignment_based"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p13 [shape=point];
+p8 -> p13 [label="atr_scatter_plot_pathogen_alignment"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p12 [shape=point];
+p8 -> p12 [label="host_atr_collect_data_salmon_alignment_mode"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p11 [shape=point];
+p8 -> p11 [label="host_annotations_RNA_class_stats_pathogen_alignment"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p10 [shape=point];
+p8 -> p10 [label="atr_scatter_plot_host_alignment"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p128 [label="scatter_plot_host_salmon"];
+p8 -> p128 [label="atr_scatter_plot_host"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p127 [label="scatter_plot_pathogen_salmon"];
+p8 -> p127 [label="atr_scatter_plot_pathogen"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p135 [label="RNA_class_statistics_salmon_pathogen"];
+p8 -> p135 [label="host_annotations_RNA_class_stats_pathogen"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p136 [label="RNA_class_statistics_salmon_host"];
+p8 -> p136 [label="attribute_host_RNA_class_stats"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p9 [shape=point];
+p8 -> p9 [label="host_gff_attribute_salmon_alignment_tRNA"];
+
+p19 [shape=point,label="",fixedsize=true,width=0.1];
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p19 -> p20;
+
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p20 -> p21;
+
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p71 [label="replace_gene_feature_gff_host_salmon"];
+p21 -> p71 [label="gene_feature_gff_host_salmon_alignment"];
+
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p22 [shape=point];
+p21 -> p22 [label="gene_feature_gff_to_create_transcriptome_host_salmon"];
+
+p23 [shape=point,label="",fixedsize=true,width=0.1];
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p23 -> p24;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p73 [label="replace_attribute_pathogen_gff_star_salmon"];
+p24 -> p73 [label="pathogen_gff_attribute_salmon_alignment"];
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p91 [label="create_transcriptome_fasta_pathogen"];
+p24 -> p91 [label="gene_attribute_gff_to_create_transcriptome_pathogen_salmon"];
+
+p25 [shape=point,label="",fixedsize=true,width=0.1];
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p25 -> p26;
+
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p26 -> p27;
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p75 [label="extract_annotations_pathogen_salmon"];
+p27 -> p75 [label="gene_feature_to_extract_annotations_pathogen"];
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p91 [label="create_transcriptome_fasta_pathogen"];
+p27 -> p91 [label="gene_feature_gff_to_create_transcriptome_pathogen_salmon"];
+
+p27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p28 [shape=point];
+p27 -> p28 [label="gene_feature_to_quantify_pathogen_salmon_alignment"];
+
+p29 [shape=point,label="",fixedsize=true,width=0.1];
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p29 -> p30;
+
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p115 [label="salmon_quantification"];
+p30 -> p115 [label="libtype_salmon"];
+
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p31 [shape=point];
+p30 -> p31 [label="libtype_salmon_alignment_mode"];
+
+p32 [shape=point,label="",fixedsize=true,width=0.1];
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p32 -> p33;
+
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p136 [label="RNA_class_statistics_salmon_host"];
+p33 -> p136 [label="RNA_classes_to_replace"];
+
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p35 [shape=point];
+p33 -> p35 [label="RNA_classes_to_replace_alignment"];
+
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p34 [shape=point];
+p33 -> p34 [label="RNA_classes_to_replace_htseq_uniquely_mapped"];
+
+p36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p36 -> p37;
+
+p37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p37 -> p38;
+
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p38 -> p39;
+
+p39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+p39 -> p164 [label="ch_workflow_summary"];
+
+p40 [label="get_software_versions"];
+p163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p40 -> p163 [label="ch_software_versions_yaml"];
+
+p41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p41 -> p42 [label="scatter_plots"];
+
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p43 [label="check_replicates"];
+p42 -> p43;
+
+p43 [label="check_replicates"];
+p127 [label="scatter_plot_pathogen_salmon"];
+p43 -> p127 [label="repl_scatter_plots_salmon_pathogen"];
+
+p43 [label="check_replicates"];
+p128 [label="scatter_plot_host_salmon"];
+p43 -> p128 [label="repl_scatter_plots_salmon_host"];
+
+p43 [label="check_replicates"];
+p47 [shape=point];
+p43 -> p47 [label="repl_scatter_plots_salmon_alignment_host"];
+
+p43 [label="check_replicates"];
+p46 [shape=point];
+p43 -> p46 [label="repl_scatter_plots_salmon_alignment_pathogen"];
+
+p43 [label="check_replicates"];
+p45 [shape=point];
+p43 -> p45 [label="repl_scatter_plots_htseq_pathogen"];
+
+p43 [label="check_replicates"];
+p44 [shape=point];
+p43 -> p44 [label="repl_scatter_plots_htseq_host"];
+
+p48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p49 [label="uncompress_pathogen_fasta_genome"];
+p48 -> p49;
+
+p49 [label="uncompress_pathogen_fasta_genome"];
+p66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p49 -> p66 [label="genome_fasta_pathogen_to_combine"];
+
+p49 [label="uncompress_pathogen_fasta_genome"];
+p50 [shape=point];
+p49 -> p50 [label="genome_fasta_pathogen_ref_names"];
+
+p49 [label="uncompress_pathogen_fasta_genome"];
+p90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p49 -> p90 [label="genome_fasta_pathogen_to_transcriptome"];
+
+p51 [shape=point,label="",fixedsize=true,width=0.1];
+p52 [label="uncompress_host_fasta_genome"];
+p51 -> p52 [label="genome_fasta_host_to_unzip"];
+
+p52 [label="uncompress_host_fasta_genome"];
+p67 [label="combine_pathogen_host_fasta_genome"];
+p52 -> p67 [label="genome_fasta_host_to_combine"];
+
+p52 [label="uncompress_host_fasta_genome"];
+p111 [label="create_decoy_transcriptome_file"];
+p52 -> p111 [label="genome_fasta_host_to_decoys"];
+
+p52 [label="uncompress_host_fasta_genome"];
+p54 [shape=point];
+p52 -> p54 [label="genome_fasta_host_ref_names"];
+
+p52 [label="uncompress_host_fasta_genome"];
+p85 [label="create_transcriptome_fasta_host"];
+p52 -> p85 [label="genome_fasta_host_to_transcriptome"];
+
+p52 [label="uncompress_host_fasta_genome"];
+p53 [shape=point];
+p52 -> p53 [label="genome_fasta_host_to_transcriptome_tRNA"];
+
+p55 [shape=point,label="",fixedsize=true,width=0.1];
+p56 [label="uncompress_pathogen_gff"];
+p55 -> p56 [label="pathogen_gff_to_unzip"];
+
+p56 [label="uncompress_pathogen_gff"];
+p73 [label="replace_attribute_pathogen_gff_star_salmon"];
+p56 -> p73 [label="gff_feature_quant_pathogen_salmon_alignment"];
+
+p56 [label="uncompress_pathogen_gff"];
+p91 [label="create_transcriptome_fasta_pathogen"];
+p56 -> p91 [label="gff_pathogen_create_transcriptome"];
+
+p56 [label="uncompress_pathogen_gff"];
+p58 [shape=point];
+p56 -> p58 [label="gff_feature_quant_pathogen_htseq"];
+
+p56 [label="uncompress_pathogen_gff"];
+p57 [shape=point];
+p56 -> p57 [label="extract_annotations_pathogen_gff_htseq"];
+
+p59 [shape=point,label="",fixedsize=true,width=0.1];
+p60 [label="uncompress_host_gff"];
+p59 -> p60 [label="host_gff_to_unzip"];
+
+p60 [label="uncompress_host_gff"];
+p70 [label="replace_attribute_host_genome_gff_star_salmon"];
+p60 -> p70 [label="gff_host_genome_star_salmon_change_atr"];
+
+p60 [label="uncompress_host_gff"];
+p85 [label="create_transcriptome_fasta_host"];
+p60 -> p85 [label="gff_host_create_transcriptome"];
+
+p60 [label="uncompress_host_gff"];
+p65 [shape=point];
+p60 -> p65 [label="gff_host_genome_htseq"];
+
+p60 [label="uncompress_host_gff"];
+p64 [shape=point];
+p60 -> p64 [label="extract_annotations_host_gff_htseq"];
+
+p60 [label="uncompress_host_gff"];
+p63 [shape=point];
+p60 -> p63 [label="gff_host_star_alignment_gff"];
+
+p60 [label="uncompress_host_gff"];
+p62 [shape=point];
+p60 -> p62 [label="gff_host_star_htseq_alignment_gff"];
+
+p60 [label="uncompress_host_gff"];
+p61 [shape=point];
+p60 -> p61 [label="genome_gff_star_index"];
+
+p66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p67 [label="combine_pathogen_host_fasta_genome"];
+p66 -> p67;
+
+p67 [label="combine_pathogen_host_fasta_genome"];
+p69 [shape=point];
+p67 -> p69 [label="host_pathogen_fasta_index"];
+
+p67 [label="combine_pathogen_host_fasta_genome"];
+p68 [shape=point];
+p67 -> p68 [label="host_pathogen_fasta_star_index"];
+
+p67 [label="combine_pathogen_host_fasta_genome"];
+p111 [label="create_decoy_transcriptome_file"];
+p67 -> p111 [label="genome_fasta_file_host_pathogen_to_decoy_transcriptome"];
+
+p70 [label="replace_attribute_host_genome_gff_star_salmon"];
+p71 [label="replace_gene_feature_gff_host_salmon"];
+p70 -> p71 [label="combine_gff_host_genome_star_salmon"];
+
+p71 [label="replace_gene_feature_gff_host_salmon"];
+p72 [shape=point];
+p71 -> p72 [label="combine_gff_host_salmon_alignment"];
+
+p71 [label="replace_gene_feature_gff_host_salmon"];
+p78 [label="extract_annotations_host_salmon"];
+p71 -> p78 [label="extract_annotations_host_gff_salmon"];
+
+p73 [label="replace_attribute_pathogen_gff_star_salmon"];
+p74 [shape=point];
+p73 -> p74 [label="to_replace_gff_feature_salmon_alignment"];
+
+p73 [label="replace_attribute_pathogen_gff_star_salmon"];
+p75 [label="extract_annotations_pathogen_salmon"];
+p73 -> p75 [label="extract_annotations_pathogen_gff_salmon"];
+
+p75 [label="extract_annotations_pathogen_salmon"];
+p135 [label="RNA_class_statistics_salmon_pathogen"];
+p75 -> p135 [label="pathogen_annotations_RNA_class_stats"];
+
+p75 [label="extract_annotations_pathogen_salmon"];
+p77 [shape=point];
+p75 -> p77 [label="pathogen_annotations_RNA_class_stats_salmon_alignment"];
+
+p75 [label="extract_annotations_pathogen_salmon"];
+p121 [label="combine_annotations_quant_pathogen"];
+p75 -> p121 [label="annotation_pathogen_combine_quant"];
+
+p75 [label="extract_annotations_pathogen_salmon"];
+p76 [shape=point];
+p75 -> p76 [label="annotation_pathogen_combine_quant_salmon_alignment_based"];
+
+p78 [label="extract_annotations_host_salmon"];
+p136 [label="RNA_class_statistics_salmon_host"];
+p78 -> p136 [label="host_annotations_RNA_class_stats"];
+
+p78 [label="extract_annotations_host_salmon"];
+p84 [shape=point];
+p78 -> p84 [label="host_annotations_RNA_class_stats_salmon_alignment"];
+
+p78 [label="extract_annotations_host_salmon"];
+p123 [label="tximport_host"];
+p78 -> p123 [label="tximport_annotations"];
+
+p78 [label="extract_annotations_host_salmon"];
+p83 [shape=point];
+p78 -> p83 [label="host_annotations_uniq_ambig"];
+
+p78 [label="extract_annotations_host_salmon"];
+p82 [shape=point];
+p78 -> p82 [label="tximport_annotations_salmon_alignment"];
+
+p78 [label="extract_annotations_host_salmon"];
+p81 [shape=point];
+p78 -> p81 [label="host_annotations_uniq_ambig_AB"];
+
+p78 [label="extract_annotations_host_salmon"];
+p122 [label="combine_annotations_quant_host_salmon"];
+p78 -> p122 [label="annotation_host_combine_quant"];
+
+p78 [label="extract_annotations_host_salmon"];
+p80 [shape=point];
+p78 -> p80 [label="annotation_host_combine_quant_salmon_alignment_based"];
+
+p78 [label="extract_annotations_host_salmon"];
+p126 [label="combine_annotations_quant_gene_level_salmon"];
+p78 -> p126 [label="annotation_host_combine_quant_gene_level_salmon"];
+
+p78 [label="extract_annotations_host_salmon"];
+p79 [shape=point];
+p78 -> p79 [label="annotation_host_combine_quant_gene_level_salmon_alignment"];
+
+p85 [label="create_transcriptome_fasta_host"];
+p95 [label="combine_pathogen_host_fasta_transcriptome"];
+p85 -> p95 [label="host_transcriptome"];
+
+p85 [label="create_transcriptome_fasta_host"];
+p120 [label="split_quantification_tables_salmon"];
+p85 -> p120 [label="transcriptome_host_to_split_table_salmon_without_tRNA"];
+
+p85 [label="create_transcriptome_fasta_host"];
+p89 [shape=point];
+p85 -> p89 [label="transcriptome_host_to_split_table_salmon_alignment_without_tRNA"];
+
+p85 [label="create_transcriptome_fasta_host"];
+p117 [label="split_table_salmon_each"];
+p85 -> p117 [label="transcriptome_host_to_split_q_table_salmon_without_tRNA"];
+
+p85 [label="create_transcriptome_fasta_host"];
+p88 [shape=point];
+p85 -> p88 [label="transcriptome_host_to_split_q_table_salmon_alignment_based_without_tRNA"];
+
+p85 [label="create_transcriptome_fasta_host"];
+p87 [shape=point];
+p85 -> p87 [label="host_transcriptome_to_combine_host"];
+
+p85 [label="create_transcriptome_fasta_host"];
+p86 [shape=point];
+p85 -> p86 [label="transcriptome_fasta_host_ref_names_without_tRNA"];
+
+p90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p91 [label="create_transcriptome_fasta_pathogen"];
+p90 -> p91;
+
+p91 [label="create_transcriptome_fasta_pathogen"];
+p95 [label="combine_pathogen_host_fasta_transcriptome"];
+p91 -> p95 [label="pathogen_transcriptome_to_combine"];
+
+p91 [label="create_transcriptome_fasta_pathogen"];
+p120 [label="split_quantification_tables_salmon"];
+p91 -> p120 [label="transcriptome_pathogen_to_split_table_salmon"];
+
+p91 [label="create_transcriptome_fasta_pathogen"];
+p94 [shape=point];
+p91 -> p94 [label="transcriptome_pathogen_to_split_table_salmon_alignment"];
+
+p91 [label="create_transcriptome_fasta_pathogen"];
+p117 [label="split_table_salmon_each"];
+p91 -> p117 [label="transcriptome_pathogen_to_split_q_table_salmon"];
+
+p91 [label="create_transcriptome_fasta_pathogen"];
+p93 [shape=point];
+p91 -> p93 [label="transcriptome_pathogen_to_split_q_table_salmon_alignment_based"];
+
+p91 [label="create_transcriptome_fasta_pathogen"];
+p92 [shape=point];
+p91 -> p92 [label="transcriptome_fasta_pathogen_ref_names"];
+
+p95 [label="combine_pathogen_host_fasta_transcriptome"];
+p111 [label="create_decoy_transcriptome_file"];
+p95 -> p111 [label="transcriptome_fasta_file_host_pathogen_to_decoy_transcriptome"];
+
+p95 [label="combine_pathogen_host_fasta_transcriptome"];
+p96 [shape=point];
+p95 -> p96 [label="transcriptome_salmon_alignment_based_mode"];
+
+p97 [label="fastqc"];
+p147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="last"];
+p97 -> p147 [label="ch_fastqc_results"];
+
+p98 [shape=point,label="",fixedsize=true,width=0.1];
+p99 [label="bbduk"];
+p98 -> p99 [label="adapter_database"];
+
+p99 [label="bbduk"];
+p101 [shape=point];
+p99 -> p101 [label="trimming_results_star_htseq"];
+
+p99 [label="bbduk"];
+p115 [label="salmon_quantification"];
+p99 -> p115 [label="trimming_results_to_salmon"];
+
+p99 [label="bbduk"];
+p102 [label="fastqc_after_trimming"];
+p99 -> p102 [label="trimming_results_to_qc"];
+
+p99 [label="bbduk"];
+p100 [shape=point];
+p99 -> p100 [label="trimming_results_star_salmon"];
+
+p102 [label="fastqc_after_trimming"];
+p150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="last"];
+p102 -> p150 [label="ch_fastqc_trimmed_results"];
+
+p103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p103 -> p104 [label="raw_read_count_file"];
+
+p104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p105 [label="count_total_reads"];
+p104 -> p105;
+
+p105 [label="count_total_reads"];
+p106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p105 -> p106 [label="to_collect_total_reads"];
+
+p106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p107 [label="count_total_read_pairs"];
+p106 -> p107;
+
+p107 [label="count_total_read_pairs"];
+p132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p107 -> p132 [label="collect_total_reads_raw_salmon"];
+
+p107 [label="count_total_read_pairs"];
+p110 [shape=point];
+p107 -> p110 [label="collect_total_reads_raw_salmon_alignment"];
+
+p107 [label="count_total_read_pairs"];
+p109 [shape=point];
+p107 -> p109 [label="collect_total_reads_raw_star"];
+
+p107 [label="count_total_read_pairs"];
+p108 [shape=point];
+p107 -> p108 [label="collect_total_reads_raw_star_for_salmon"];
+
+p111 [label="create_decoy_transcriptome_file"];
+p113 [label="salmon_index"];
+p111 -> p113 [label="salmon_index_gentrome"];
+
+p111 [label="create_decoy_transcriptome_file"];
+p113 [label="salmon_index"];
+p111 -> p113 [label="salmon_index_decoys"];
+
+p112 [shape=point,label="",fixedsize=true,width=0.1];
+p113 [label="salmon_index"];
+p112 -> p113 [label="kmer_length_salmon_index"];
+
+p113 [label="salmon_index"];
+p114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p113 -> p114 [label="salmon_index"];
+
+p114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p115 [label="salmon_quantification"];
+p114 -> p115;
+
+p115 [label="salmon_quantification"];
+p117 [label="split_table_salmon_each"];
+p115 -> p117 [label="split_table"];
+
+p115 [label="salmon_quantification"];
+p116 [shape=point];
+p115 -> p116 [label="split_table_uniq_ambig"];
+
+p115 [label="salmon_quantification"];
+p118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p115 -> p118 [label="salmon_files_to_combine"];
+
+p115 [label="salmon_quantification"];
+p153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p115 -> p153 [label="multiqc_salmon_quant"];
+
+p115 [label="salmon_quantification"];
+p129 [label="extract_processed_reads"];
+p115 -> p129 [label="collect_processed_read_counts"];
+
+p117 [label="split_table_salmon_each"];
+p123 [label="tximport_host"];
+p117 -> p123 [label="salmon_host_tximport"];
+
+p118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p119 [label="combine_quantification_tables_salmon"];
+p118 -> p119;
+
+p119 [label="combine_quantification_tables_salmon"];
+p120 [label="split_quantification_tables_salmon"];
+p119 -> p120 [label="split_table_salmon"];
+
+p120 [label="split_quantification_tables_salmon"];
+p133 [label="salmon_quantification_stats"];
+p120 -> p133 [label="host_quantification_mapping_stats_salmon"];
+
+p120 [label="split_quantification_tables_salmon"];
+p133 [label="salmon_quantification_stats"];
+p120 -> p133 [label="pathogen_quantification_mapping_stats_salmon"];
+
+p120 [label="split_quantification_tables_salmon"];
+p136 [label="RNA_class_statistics_salmon_host"];
+p120 -> p136 [label="host_quantification_RNA_stats_salmon"];
+
+p120 [label="split_quantification_tables_salmon"];
+p135 [label="RNA_class_statistics_salmon_pathogen"];
+p120 -> p135 [label="pathogen_quantification_RNA_stats_salmon"];
+
+p120 [label="split_quantification_tables_salmon"];
+p122 [label="combine_annotations_quant_host_salmon"];
+p120 -> p122 [label="quant_host_add_annotations"];
+
+p120 [label="split_quantification_tables_salmon"];
+p121 [label="combine_annotations_quant_pathogen"];
+p120 -> p121 [label="quant_pathogen_add_annotations"];
+
+p120 [label="split_quantification_tables_salmon"];
+p128 [label="scatter_plot_host_salmon"];
+p120 -> p128 [label="quant_scatter_plot_host"];
+
+p120 [label="split_quantification_tables_salmon"];
+p127 [label="scatter_plot_pathogen_salmon"];
+p120 -> p127 [label="quant_scatter_plot_pathogen"];
+
+p120 [label="split_quantification_tables_salmon"];
+p127 [label="scatter_plot_pathogen_salmon"];
+p120 -> p127 [label="scatterplots_pathogen_salmon"];
+
+p120 [label="split_quantification_tables_salmon"];
+p128 [label="scatter_plot_host_salmon"];
+p120 -> p128 [label="scatterplots_host_salmon"];
+
+p123 [label="tximport_host"];
+p124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p123 -> p124 [label="salmon_files_to_combine_gene_level"];
+
+p124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p125 [label="combine_host_quant_gene_level_salmon"];
+p124 -> p125;
+
+p125 [label="combine_host_quant_gene_level_salmon"];
+p126 [label="combine_annotations_quant_gene_level_salmon"];
+p125 -> p126 [label="quant_gene_level_host_add_annotations_salmon"];
+
+p129 [label="extract_processed_reads"];
+p130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p129 -> p130 [label="collect_results"];
+
+p130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p131 [label="collect_processed_reads"];
+p130 -> p131;
+
+p131 [label="collect_processed_reads"];
+p133 [label="salmon_quantification_stats"];
+p131 -> p133 [label="mapping_stats_total_reads"];
+
+p132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p133 [label="salmon_quantification_stats"];
+p132 -> p133;
+
+p133 [label="salmon_quantification_stats"];
+p134 [label="plot_salmon_mapping_stats_host_pathogen"];
+p133 -> p134 [label="salmon_mapped_stats_to_plot"];
+
+p135 [label="RNA_class_statistics_salmon_pathogen"];
+p137 [label="plot_RNA_class_salmon_pathogen_each"];
+p135 -> p137 [label="plot_RNA_stats_pathogen"];
+
+p135 [label="RNA_class_statistics_salmon_pathogen"];
+p138 [label="plot_RNA_class_salmon_pathogen_combined"];
+p135 -> p138 [label="plot_RNA_stats_pathogen_combined"];
+
+p135 [label="RNA_class_statistics_salmon_pathogen"];
+p137 [label="plot_RNA_class_salmon_pathogen_each"];
+p135 -> p137 [label="plot_RNA_stats_pathogen_boolean"];
+
+p135 [label="RNA_class_statistics_salmon_pathogen"];
+p138 [label="plot_RNA_class_salmon_pathogen_combined"];
+p135 -> p138 [label="plot_RNA_stats_pathogen_combined_boolean"];
+
+p136 [label="RNA_class_statistics_salmon_host"];
+p139 [label="plot_RNA_class_salmon_host_each"];
+p136 -> p139 [label="plot_RNA_stats_host"];
+
+p136 [label="RNA_class_statistics_salmon_host"];
+p140 [label="plot_RNA_class_salmon_host_combined"];
+p136 -> p140 [label="plot_RNA_stats_host_combined"];
+
+p136 [label="RNA_class_statistics_salmon_host"];
+p140 [label="plot_RNA_class_salmon_host_combined"];
+p136 -> p140 [label="plot_RNA_stats_host_combined_boolean"];
+
+p136 [label="RNA_class_statistics_salmon_host"];
+p139 [label="plot_RNA_class_salmon_host_each"];
+p136 -> p139 [label="plot_RNA_stats_host_boolean"];
+
+p141 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p141 -> p142;
+
+p142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p142 -> p155 [label="multiqc_salmon_alignment_quant"];
+
+p142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p142 -> p159 [label="multiqc_star_for_salmon_alignment"];
+
+p143 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p143 -> p157 [label="multiqc_star_alignment"];
+
+p144 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p144 -> p161 [label="multiqc_htseq_unique"];
+
+p145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p145 -> p146;
+
+p146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p166 [label="multiqc"];
+p146 -> p166;
+
+p147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="last"];
+p148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p147 -> p148;
+
+p148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p148 -> p149;
+
+p149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p166 [label="multiqc"];
+p149 -> p166;
+
+p150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="last"];
+p151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p150 -> p151;
+
+p151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p151 -> p152;
+
+p152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p166 [label="multiqc"];
+p152 -> p166;
+
+p153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p153 -> p154;
+
+p154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p166 [label="multiqc"];
+p154 -> p166;
+
+p155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p155 -> p156;
+
+p156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p166 [label="multiqc"];
+p156 -> p166;
+
+p157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p157 -> p158;
+
+p158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p166 [label="multiqc"];
+p158 -> p166;
+
+p159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p159 -> p160;
+
+p160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p166 [label="multiqc"];
+p160 -> p166;
+
+p161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p161 -> p162;
+
+p162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p166 [label="multiqc"];
+p162 -> p166;
+
+p163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p166 [label="multiqc"];
+p163 -> p166;
+
+p164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+p166 [label="multiqc"];
+p164 -> p166;
+
+p165 [shape=point,label="",fixedsize=true,width=0.1];
+p166 [label="multiqc"];
+p165 -> p166 [label="multiqc_config"];
+
+p166 [label="multiqc"];
+p167 [shape=point];
+p166 -> p167 [label="ch_multiqc_report"];
+
+p168 [shape=point,label="",fixedsize=true,width=0.1];
+p169 [label="output_documentation"];
+p168 -> p169 [label="output_docs"];
+
+}

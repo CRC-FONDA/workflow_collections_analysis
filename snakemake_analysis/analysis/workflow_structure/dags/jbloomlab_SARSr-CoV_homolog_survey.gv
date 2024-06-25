@@ -1,0 +1,32 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "make_summary", color = "0.17 0.6 0.85", style="rounded"];
+	1[label = "make_dag", color = "0.56 0.6 0.85", style="rounded,dashed"];
+	2[label = "count_variants", color = "0.39 0.6 0.85", style="rounded"];
+	3[label = "merge_sequencing", color = "0.50 0.6 0.85", style="rounded"];
+	4[label = "fit_titrations", color = "0.28 0.6 0.85", style="rounded"];
+	5[label = "calculate_expression", color = "0.33 0.6 0.85", style="rounded"];
+	6[label = "barcode_to_geno_phenos", color = "0.61 0.6 0.85", style="rounded"];
+	7[label = "analyze_evolvability", color = "0.00 0.6 0.85", style="rounded"];
+	8[label = "analyze_preferences", color = "0.44 0.6 0.85", style="rounded"];
+	9[label = "supplemental_binding_curves", color = "0.11 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 0
+	3 -> 0
+	4 -> 0
+	5 -> 0
+	6 -> 0
+	7 -> 0
+	8 -> 0
+	9 -> 0
+	2 -> 3
+	3 -> 4
+	3 -> 5
+	4 -> 6
+	5 -> 6
+	6 -> 7
+	6 -> 8
+	6 -> 9
+}            

@@ -1,0 +1,738 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.00 0.6 0.85", style="rounded"];
+	1[label = "fetch_and_process_archive\ndate: 2019_01_01", color = "0.33 0.6 0.85", style="rounded"];
+	2[label = "fetch_and_process_archive\ndate: 2019_01_02", color = "0.33 0.6 0.85", style="rounded"];
+	3[label = "fetch_and_process_archive\ndate: 2019_01_03", color = "0.33 0.6 0.85", style="rounded"];
+	4[label = "fetch_and_process_archive\ndate: 2019_01_04", color = "0.33 0.6 0.85", style="rounded"];
+	5[label = "fetch_and_process_archive\ndate: 2019_01_05", color = "0.33 0.6 0.85", style="rounded"];
+	6[label = "fetch_and_process_archive\ndate: 2019_01_06", color = "0.33 0.6 0.85", style="rounded"];
+	7[label = "fetch_and_process_archive\ndate: 2019_01_07", color = "0.33 0.6 0.85", style="rounded"];
+	8[label = "fetch_and_process_archive\ndate: 2019_01_08", color = "0.33 0.6 0.85", style="rounded"];
+	9[label = "fetch_and_process_archive\ndate: 2019_01_09", color = "0.33 0.6 0.85", style="rounded"];
+	10[label = "fetch_and_process_archive\ndate: 2019_01_10", color = "0.33 0.6 0.85", style="rounded"];
+	11[label = "fetch_and_process_archive\ndate: 2019_01_11", color = "0.33 0.6 0.85", style="rounded"];
+	12[label = "fetch_and_process_archive\ndate: 2019_01_12", color = "0.33 0.6 0.85", style="rounded"];
+	13[label = "fetch_and_process_archive\ndate: 2019_01_13", color = "0.33 0.6 0.85", style="rounded"];
+	14[label = "fetch_and_process_archive\ndate: 2019_01_14", color = "0.33 0.6 0.85", style="rounded"];
+	15[label = "fetch_and_process_archive\ndate: 2019_01_15", color = "0.33 0.6 0.85", style="rounded"];
+	16[label = "fetch_and_process_archive\ndate: 2019_01_16", color = "0.33 0.6 0.85", style="rounded"];
+	17[label = "fetch_and_process_archive\ndate: 2019_01_17", color = "0.33 0.6 0.85", style="rounded"];
+	18[label = "fetch_and_process_archive\ndate: 2019_01_18", color = "0.33 0.6 0.85", style="rounded"];
+	19[label = "fetch_and_process_archive\ndate: 2019_01_19", color = "0.33 0.6 0.85", style="rounded"];
+	20[label = "fetch_and_process_archive\ndate: 2019_01_20", color = "0.33 0.6 0.85", style="rounded"];
+	21[label = "fetch_and_process_archive\ndate: 2019_01_21", color = "0.33 0.6 0.85", style="rounded"];
+	22[label = "fetch_and_process_archive\ndate: 2019_01_22", color = "0.33 0.6 0.85", style="rounded"];
+	23[label = "fetch_and_process_archive\ndate: 2019_01_23", color = "0.33 0.6 0.85", style="rounded"];
+	24[label = "fetch_and_process_archive\ndate: 2019_01_24", color = "0.33 0.6 0.85", style="rounded"];
+	25[label = "fetch_and_process_archive\ndate: 2019_01_25", color = "0.33 0.6 0.85", style="rounded"];
+	26[label = "fetch_and_process_archive\ndate: 2019_01_26", color = "0.33 0.6 0.85", style="rounded"];
+	27[label = "fetch_and_process_archive\ndate: 2019_01_27", color = "0.33 0.6 0.85", style="rounded"];
+	28[label = "fetch_and_process_archive\ndate: 2019_01_28", color = "0.33 0.6 0.85", style="rounded"];
+	29[label = "fetch_and_process_archive\ndate: 2019_01_29", color = "0.33 0.6 0.85", style="rounded"];
+	30[label = "fetch_and_process_archive\ndate: 2019_01_30", color = "0.33 0.6 0.85", style="rounded"];
+	31[label = "fetch_and_process_archive\ndate: 2019_01_31", color = "0.33 0.6 0.85", style="rounded"];
+	32[label = "fetch_and_process_archive\ndate: 2019_02_01", color = "0.33 0.6 0.85", style="rounded"];
+	33[label = "fetch_and_process_archive\ndate: 2019_02_02", color = "0.33 0.6 0.85", style="rounded"];
+	34[label = "fetch_and_process_archive\ndate: 2019_02_03", color = "0.33 0.6 0.85", style="rounded"];
+	35[label = "fetch_and_process_archive\ndate: 2019_02_04", color = "0.33 0.6 0.85", style="rounded"];
+	36[label = "fetch_and_process_archive\ndate: 2019_02_05", color = "0.33 0.6 0.85", style="rounded"];
+	37[label = "fetch_and_process_archive\ndate: 2019_02_06", color = "0.33 0.6 0.85", style="rounded"];
+	38[label = "fetch_and_process_archive\ndate: 2019_02_07", color = "0.33 0.6 0.85", style="rounded"];
+	39[label = "fetch_and_process_archive\ndate: 2019_02_08", color = "0.33 0.6 0.85", style="rounded"];
+	40[label = "fetch_and_process_archive\ndate: 2019_02_09", color = "0.33 0.6 0.85", style="rounded"];
+	41[label = "fetch_and_process_archive\ndate: 2019_02_10", color = "0.33 0.6 0.85", style="rounded"];
+	42[label = "fetch_and_process_archive\ndate: 2019_02_11", color = "0.33 0.6 0.85", style="rounded"];
+	43[label = "fetch_and_process_archive\ndate: 2019_02_12", color = "0.33 0.6 0.85", style="rounded"];
+	44[label = "fetch_and_process_archive\ndate: 2019_02_13", color = "0.33 0.6 0.85", style="rounded"];
+	45[label = "fetch_and_process_archive\ndate: 2019_02_14", color = "0.33 0.6 0.85", style="rounded"];
+	46[label = "fetch_and_process_archive\ndate: 2019_02_15", color = "0.33 0.6 0.85", style="rounded"];
+	47[label = "fetch_and_process_archive\ndate: 2019_02_16", color = "0.33 0.6 0.85", style="rounded"];
+	48[label = "fetch_and_process_archive\ndate: 2019_02_17", color = "0.33 0.6 0.85", style="rounded"];
+	49[label = "fetch_and_process_archive\ndate: 2019_02_18", color = "0.33 0.6 0.85", style="rounded"];
+	50[label = "fetch_and_process_archive\ndate: 2019_02_19", color = "0.33 0.6 0.85", style="rounded"];
+	51[label = "fetch_and_process_archive\ndate: 2019_02_20", color = "0.33 0.6 0.85", style="rounded"];
+	52[label = "fetch_and_process_archive\ndate: 2019_02_21", color = "0.33 0.6 0.85", style="rounded"];
+	53[label = "fetch_and_process_archive\ndate: 2019_02_22", color = "0.33 0.6 0.85", style="rounded"];
+	54[label = "fetch_and_process_archive\ndate: 2019_02_23", color = "0.33 0.6 0.85", style="rounded"];
+	55[label = "fetch_and_process_archive\ndate: 2019_02_24", color = "0.33 0.6 0.85", style="rounded"];
+	56[label = "fetch_and_process_archive\ndate: 2019_02_25", color = "0.33 0.6 0.85", style="rounded"];
+	57[label = "fetch_and_process_archive\ndate: 2019_02_26", color = "0.33 0.6 0.85", style="rounded"];
+	58[label = "fetch_and_process_archive\ndate: 2019_02_27", color = "0.33 0.6 0.85", style="rounded"];
+	59[label = "fetch_and_process_archive\ndate: 2019_02_28", color = "0.33 0.6 0.85", style="rounded"];
+	60[label = "fetch_and_process_archive\ndate: 2019_03_01", color = "0.33 0.6 0.85", style="rounded"];
+	61[label = "fetch_and_process_archive\ndate: 2019_03_02", color = "0.33 0.6 0.85", style="rounded"];
+	62[label = "fetch_and_process_archive\ndate: 2019_03_03", color = "0.33 0.6 0.85", style="rounded"];
+	63[label = "fetch_and_process_archive\ndate: 2019_03_04", color = "0.33 0.6 0.85", style="rounded"];
+	64[label = "fetch_and_process_archive\ndate: 2019_03_05", color = "0.33 0.6 0.85", style="rounded"];
+	65[label = "fetch_and_process_archive\ndate: 2019_03_06", color = "0.33 0.6 0.85", style="rounded"];
+	66[label = "fetch_and_process_archive\ndate: 2019_03_07", color = "0.33 0.6 0.85", style="rounded"];
+	67[label = "fetch_and_process_archive\ndate: 2019_03_08", color = "0.33 0.6 0.85", style="rounded"];
+	68[label = "fetch_and_process_archive\ndate: 2019_03_09", color = "0.33 0.6 0.85", style="rounded"];
+	69[label = "fetch_and_process_archive\ndate: 2019_03_10", color = "0.33 0.6 0.85", style="rounded"];
+	70[label = "fetch_and_process_archive\ndate: 2019_03_11", color = "0.33 0.6 0.85", style="rounded"];
+	71[label = "fetch_and_process_archive\ndate: 2019_03_12", color = "0.33 0.6 0.85", style="rounded"];
+	72[label = "fetch_and_process_archive\ndate: 2019_03_13", color = "0.33 0.6 0.85", style="rounded"];
+	73[label = "fetch_and_process_archive\ndate: 2019_03_14", color = "0.33 0.6 0.85", style="rounded"];
+	74[label = "fetch_and_process_archive\ndate: 2019_03_15", color = "0.33 0.6 0.85", style="rounded"];
+	75[label = "fetch_and_process_archive\ndate: 2019_03_16", color = "0.33 0.6 0.85", style="rounded"];
+	76[label = "fetch_and_process_archive\ndate: 2019_03_17", color = "0.33 0.6 0.85", style="rounded"];
+	77[label = "fetch_and_process_archive\ndate: 2019_03_18", color = "0.33 0.6 0.85", style="rounded"];
+	78[label = "fetch_and_process_archive\ndate: 2019_03_19", color = "0.33 0.6 0.85", style="rounded"];
+	79[label = "fetch_and_process_archive\ndate: 2019_03_20", color = "0.33 0.6 0.85", style="rounded"];
+	80[label = "fetch_and_process_archive\ndate: 2019_03_21", color = "0.33 0.6 0.85", style="rounded"];
+	81[label = "fetch_and_process_archive\ndate: 2019_03_22", color = "0.33 0.6 0.85", style="rounded"];
+	82[label = "fetch_and_process_archive\ndate: 2019_03_23", color = "0.33 0.6 0.85", style="rounded"];
+	83[label = "fetch_and_process_archive\ndate: 2019_03_24", color = "0.33 0.6 0.85", style="rounded"];
+	84[label = "fetch_and_process_archive\ndate: 2019_03_25", color = "0.33 0.6 0.85", style="rounded"];
+	85[label = "fetch_and_process_archive\ndate: 2019_03_26", color = "0.33 0.6 0.85", style="rounded"];
+	86[label = "fetch_and_process_archive\ndate: 2019_03_27", color = "0.33 0.6 0.85", style="rounded"];
+	87[label = "fetch_and_process_archive\ndate: 2019_03_28", color = "0.33 0.6 0.85", style="rounded"];
+	88[label = "fetch_and_process_archive\ndate: 2019_03_29", color = "0.33 0.6 0.85", style="rounded"];
+	89[label = "fetch_and_process_archive\ndate: 2019_03_30", color = "0.33 0.6 0.85", style="rounded"];
+	90[label = "fetch_and_process_archive\ndate: 2019_03_31", color = "0.33 0.6 0.85", style="rounded"];
+	91[label = "fetch_and_process_archive\ndate: 2019_04_01", color = "0.33 0.6 0.85", style="rounded"];
+	92[label = "fetch_and_process_archive\ndate: 2019_04_02", color = "0.33 0.6 0.85", style="rounded"];
+	93[label = "fetch_and_process_archive\ndate: 2019_04_03", color = "0.33 0.6 0.85", style="rounded"];
+	94[label = "fetch_and_process_archive\ndate: 2019_04_04", color = "0.33 0.6 0.85", style="rounded"];
+	95[label = "fetch_and_process_archive\ndate: 2019_04_05", color = "0.33 0.6 0.85", style="rounded"];
+	96[label = "fetch_and_process_archive\ndate: 2019_04_06", color = "0.33 0.6 0.85", style="rounded"];
+	97[label = "fetch_and_process_archive\ndate: 2019_04_07", color = "0.33 0.6 0.85", style="rounded"];
+	98[label = "fetch_and_process_archive\ndate: 2019_04_08", color = "0.33 0.6 0.85", style="rounded"];
+	99[label = "fetch_and_process_archive\ndate: 2019_04_09", color = "0.33 0.6 0.85", style="rounded"];
+	100[label = "fetch_and_process_archive\ndate: 2019_04_10", color = "0.33 0.6 0.85", style="rounded"];
+	101[label = "fetch_and_process_archive\ndate: 2019_04_11", color = "0.33 0.6 0.85", style="rounded"];
+	102[label = "fetch_and_process_archive\ndate: 2019_04_12", color = "0.33 0.6 0.85", style="rounded"];
+	103[label = "fetch_and_process_archive\ndate: 2019_04_13", color = "0.33 0.6 0.85", style="rounded"];
+	104[label = "fetch_and_process_archive\ndate: 2019_04_14", color = "0.33 0.6 0.85", style="rounded"];
+	105[label = "fetch_and_process_archive\ndate: 2019_04_15", color = "0.33 0.6 0.85", style="rounded"];
+	106[label = "fetch_and_process_archive\ndate: 2019_04_16", color = "0.33 0.6 0.85", style="rounded"];
+	107[label = "fetch_and_process_archive\ndate: 2019_04_17", color = "0.33 0.6 0.85", style="rounded"];
+	108[label = "fetch_and_process_archive\ndate: 2019_04_18", color = "0.33 0.6 0.85", style="rounded"];
+	109[label = "fetch_and_process_archive\ndate: 2019_04_19", color = "0.33 0.6 0.85", style="rounded"];
+	110[label = "fetch_and_process_archive\ndate: 2019_04_20", color = "0.33 0.6 0.85", style="rounded"];
+	111[label = "fetch_and_process_archive\ndate: 2019_04_21", color = "0.33 0.6 0.85", style="rounded"];
+	112[label = "fetch_and_process_archive\ndate: 2019_04_22", color = "0.33 0.6 0.85", style="rounded"];
+	113[label = "fetch_and_process_archive\ndate: 2019_04_23", color = "0.33 0.6 0.85", style="rounded"];
+	114[label = "fetch_and_process_archive\ndate: 2019_04_24", color = "0.33 0.6 0.85", style="rounded"];
+	115[label = "fetch_and_process_archive\ndate: 2019_04_25", color = "0.33 0.6 0.85", style="rounded"];
+	116[label = "fetch_and_process_archive\ndate: 2019_04_26", color = "0.33 0.6 0.85", style="rounded"];
+	117[label = "fetch_and_process_archive\ndate: 2019_04_27", color = "0.33 0.6 0.85", style="rounded"];
+	118[label = "fetch_and_process_archive\ndate: 2019_04_28", color = "0.33 0.6 0.85", style="rounded"];
+	119[label = "fetch_and_process_archive\ndate: 2019_04_29", color = "0.33 0.6 0.85", style="rounded"];
+	120[label = "fetch_and_process_archive\ndate: 2019_04_30", color = "0.33 0.6 0.85", style="rounded"];
+	121[label = "fetch_and_process_archive\ndate: 2019_05_01", color = "0.33 0.6 0.85", style="rounded"];
+	122[label = "fetch_and_process_archive\ndate: 2019_05_02", color = "0.33 0.6 0.85", style="rounded"];
+	123[label = "fetch_and_process_archive\ndate: 2019_05_03", color = "0.33 0.6 0.85", style="rounded"];
+	124[label = "fetch_and_process_archive\ndate: 2019_05_04", color = "0.33 0.6 0.85", style="rounded"];
+	125[label = "fetch_and_process_archive\ndate: 2019_05_05", color = "0.33 0.6 0.85", style="rounded"];
+	126[label = "fetch_and_process_archive\ndate: 2019_05_06", color = "0.33 0.6 0.85", style="rounded"];
+	127[label = "fetch_and_process_archive\ndate: 2019_05_07", color = "0.33 0.6 0.85", style="rounded"];
+	128[label = "fetch_and_process_archive\ndate: 2019_05_08", color = "0.33 0.6 0.85", style="rounded"];
+	129[label = "fetch_and_process_archive\ndate: 2019_05_09", color = "0.33 0.6 0.85", style="rounded"];
+	130[label = "fetch_and_process_archive\ndate: 2019_05_10", color = "0.33 0.6 0.85", style="rounded"];
+	131[label = "fetch_and_process_archive\ndate: 2019_05_11", color = "0.33 0.6 0.85", style="rounded"];
+	132[label = "fetch_and_process_archive\ndate: 2019_05_12", color = "0.33 0.6 0.85", style="rounded"];
+	133[label = "fetch_and_process_archive\ndate: 2019_05_13", color = "0.33 0.6 0.85", style="rounded"];
+	134[label = "fetch_and_process_archive\ndate: 2019_05_14", color = "0.33 0.6 0.85", style="rounded"];
+	135[label = "fetch_and_process_archive\ndate: 2019_05_15", color = "0.33 0.6 0.85", style="rounded"];
+	136[label = "fetch_and_process_archive\ndate: 2019_05_16", color = "0.33 0.6 0.85", style="rounded"];
+	137[label = "fetch_and_process_archive\ndate: 2019_05_17", color = "0.33 0.6 0.85", style="rounded"];
+	138[label = "fetch_and_process_archive\ndate: 2019_05_18", color = "0.33 0.6 0.85", style="rounded"];
+	139[label = "fetch_and_process_archive\ndate: 2019_05_19", color = "0.33 0.6 0.85", style="rounded"];
+	140[label = "fetch_and_process_archive\ndate: 2019_05_20", color = "0.33 0.6 0.85", style="rounded"];
+	141[label = "fetch_and_process_archive\ndate: 2019_05_21", color = "0.33 0.6 0.85", style="rounded"];
+	142[label = "fetch_and_process_archive\ndate: 2019_05_22", color = "0.33 0.6 0.85", style="rounded"];
+	143[label = "fetch_and_process_archive\ndate: 2019_05_23", color = "0.33 0.6 0.85", style="rounded"];
+	144[label = "fetch_and_process_archive\ndate: 2019_05_24", color = "0.33 0.6 0.85", style="rounded"];
+	145[label = "fetch_and_process_archive\ndate: 2019_05_25", color = "0.33 0.6 0.85", style="rounded"];
+	146[label = "fetch_and_process_archive\ndate: 2019_05_26", color = "0.33 0.6 0.85", style="rounded"];
+	147[label = "fetch_and_process_archive\ndate: 2019_05_27", color = "0.33 0.6 0.85", style="rounded"];
+	148[label = "fetch_and_process_archive\ndate: 2019_05_28", color = "0.33 0.6 0.85", style="rounded"];
+	149[label = "fetch_and_process_archive\ndate: 2019_05_29", color = "0.33 0.6 0.85", style="rounded"];
+	150[label = "fetch_and_process_archive\ndate: 2019_05_30", color = "0.33 0.6 0.85", style="rounded"];
+	151[label = "fetch_and_process_archive\ndate: 2019_05_31", color = "0.33 0.6 0.85", style="rounded"];
+	152[label = "fetch_and_process_archive\ndate: 2019_06_01", color = "0.33 0.6 0.85", style="rounded"];
+	153[label = "fetch_and_process_archive\ndate: 2019_06_02", color = "0.33 0.6 0.85", style="rounded"];
+	154[label = "fetch_and_process_archive\ndate: 2019_06_03", color = "0.33 0.6 0.85", style="rounded"];
+	155[label = "fetch_and_process_archive\ndate: 2019_06_04", color = "0.33 0.6 0.85", style="rounded"];
+	156[label = "fetch_and_process_archive\ndate: 2019_06_05", color = "0.33 0.6 0.85", style="rounded"];
+	157[label = "fetch_and_process_archive\ndate: 2019_06_06", color = "0.33 0.6 0.85", style="rounded"];
+	158[label = "fetch_and_process_archive\ndate: 2019_06_07", color = "0.33 0.6 0.85", style="rounded"];
+	159[label = "fetch_and_process_archive\ndate: 2019_06_08", color = "0.33 0.6 0.85", style="rounded"];
+	160[label = "fetch_and_process_archive\ndate: 2019_06_09", color = "0.33 0.6 0.85", style="rounded"];
+	161[label = "fetch_and_process_archive\ndate: 2019_06_10", color = "0.33 0.6 0.85", style="rounded"];
+	162[label = "fetch_and_process_archive\ndate: 2019_06_11", color = "0.33 0.6 0.85", style="rounded"];
+	163[label = "fetch_and_process_archive\ndate: 2019_06_12", color = "0.33 0.6 0.85", style="rounded"];
+	164[label = "fetch_and_process_archive\ndate: 2019_06_13", color = "0.33 0.6 0.85", style="rounded"];
+	165[label = "fetch_and_process_archive\ndate: 2019_06_14", color = "0.33 0.6 0.85", style="rounded"];
+	166[label = "fetch_and_process_archive\ndate: 2019_06_15", color = "0.33 0.6 0.85", style="rounded"];
+	167[label = "fetch_and_process_archive\ndate: 2019_06_16", color = "0.33 0.6 0.85", style="rounded"];
+	168[label = "fetch_and_process_archive\ndate: 2019_06_17", color = "0.33 0.6 0.85", style="rounded"];
+	169[label = "fetch_and_process_archive\ndate: 2019_06_18", color = "0.33 0.6 0.85", style="rounded"];
+	170[label = "fetch_and_process_archive\ndate: 2019_06_19", color = "0.33 0.6 0.85", style="rounded"];
+	171[label = "fetch_and_process_archive\ndate: 2019_06_20", color = "0.33 0.6 0.85", style="rounded"];
+	172[label = "fetch_and_process_archive\ndate: 2019_06_21", color = "0.33 0.6 0.85", style="rounded"];
+	173[label = "fetch_and_process_archive\ndate: 2019_06_22", color = "0.33 0.6 0.85", style="rounded"];
+	174[label = "fetch_and_process_archive\ndate: 2019_06_23", color = "0.33 0.6 0.85", style="rounded"];
+	175[label = "fetch_and_process_archive\ndate: 2019_06_24", color = "0.33 0.6 0.85", style="rounded"];
+	176[label = "fetch_and_process_archive\ndate: 2019_06_25", color = "0.33 0.6 0.85", style="rounded"];
+	177[label = "fetch_and_process_archive\ndate: 2019_06_26", color = "0.33 0.6 0.85", style="rounded"];
+	178[label = "fetch_and_process_archive\ndate: 2019_06_27", color = "0.33 0.6 0.85", style="rounded"];
+	179[label = "fetch_and_process_archive\ndate: 2019_06_28", color = "0.33 0.6 0.85", style="rounded"];
+	180[label = "fetch_and_process_archive\ndate: 2019_06_29", color = "0.33 0.6 0.85", style="rounded"];
+	181[label = "fetch_and_process_archive\ndate: 2019_06_30", color = "0.33 0.6 0.85", style="rounded"];
+	182[label = "fetch_and_process_archive\ndate: 2019_07_01", color = "0.33 0.6 0.85", style="rounded"];
+	183[label = "fetch_and_process_archive\ndate: 2019_07_02", color = "0.33 0.6 0.85", style="rounded"];
+	184[label = "fetch_and_process_archive\ndate: 2019_07_03", color = "0.33 0.6 0.85", style="rounded"];
+	185[label = "fetch_and_process_archive\ndate: 2019_07_04", color = "0.33 0.6 0.85", style="rounded"];
+	186[label = "fetch_and_process_archive\ndate: 2019_07_05", color = "0.33 0.6 0.85", style="rounded"];
+	187[label = "fetch_and_process_archive\ndate: 2019_07_06", color = "0.33 0.6 0.85", style="rounded"];
+	188[label = "fetch_and_process_archive\ndate: 2019_07_07", color = "0.33 0.6 0.85", style="rounded"];
+	189[label = "fetch_and_process_archive\ndate: 2019_07_08", color = "0.33 0.6 0.85", style="rounded"];
+	190[label = "fetch_and_process_archive\ndate: 2019_07_09", color = "0.33 0.6 0.85", style="rounded"];
+	191[label = "fetch_and_process_archive\ndate: 2019_07_10", color = "0.33 0.6 0.85", style="rounded"];
+	192[label = "fetch_and_process_archive\ndate: 2019_07_11", color = "0.33 0.6 0.85", style="rounded"];
+	193[label = "fetch_and_process_archive\ndate: 2019_07_12", color = "0.33 0.6 0.85", style="rounded"];
+	194[label = "fetch_and_process_archive\ndate: 2019_07_13", color = "0.33 0.6 0.85", style="rounded"];
+	195[label = "fetch_and_process_archive\ndate: 2019_07_14", color = "0.33 0.6 0.85", style="rounded"];
+	196[label = "fetch_and_process_archive\ndate: 2019_07_15", color = "0.33 0.6 0.85", style="rounded"];
+	197[label = "fetch_and_process_archive\ndate: 2019_07_16", color = "0.33 0.6 0.85", style="rounded"];
+	198[label = "fetch_and_process_archive\ndate: 2019_07_17", color = "0.33 0.6 0.85", style="rounded"];
+	199[label = "fetch_and_process_archive\ndate: 2019_07_18", color = "0.33 0.6 0.85", style="rounded"];
+	200[label = "fetch_and_process_archive\ndate: 2019_07_19", color = "0.33 0.6 0.85", style="rounded"];
+	201[label = "fetch_and_process_archive\ndate: 2019_07_20", color = "0.33 0.6 0.85", style="rounded"];
+	202[label = "fetch_and_process_archive\ndate: 2019_07_21", color = "0.33 0.6 0.85", style="rounded"];
+	203[label = "fetch_and_process_archive\ndate: 2019_07_22", color = "0.33 0.6 0.85", style="rounded"];
+	204[label = "fetch_and_process_archive\ndate: 2019_07_23", color = "0.33 0.6 0.85", style="rounded"];
+	205[label = "fetch_and_process_archive\ndate: 2019_07_24", color = "0.33 0.6 0.85", style="rounded"];
+	206[label = "fetch_and_process_archive\ndate: 2019_07_25", color = "0.33 0.6 0.85", style="rounded"];
+	207[label = "fetch_and_process_archive\ndate: 2019_07_26", color = "0.33 0.6 0.85", style="rounded"];
+	208[label = "fetch_and_process_archive\ndate: 2019_07_27", color = "0.33 0.6 0.85", style="rounded"];
+	209[label = "fetch_and_process_archive\ndate: 2019_07_28", color = "0.33 0.6 0.85", style="rounded"];
+	210[label = "fetch_and_process_archive\ndate: 2019_07_29", color = "0.33 0.6 0.85", style="rounded"];
+	211[label = "fetch_and_process_archive\ndate: 2019_07_30", color = "0.33 0.6 0.85", style="rounded"];
+	212[label = "fetch_and_process_archive\ndate: 2019_07_31", color = "0.33 0.6 0.85", style="rounded"];
+	213[label = "fetch_and_process_archive\ndate: 2019_08_01", color = "0.33 0.6 0.85", style="rounded"];
+	214[label = "fetch_and_process_archive\ndate: 2019_08_02", color = "0.33 0.6 0.85", style="rounded"];
+	215[label = "fetch_and_process_archive\ndate: 2019_08_03", color = "0.33 0.6 0.85", style="rounded"];
+	216[label = "fetch_and_process_archive\ndate: 2019_08_04", color = "0.33 0.6 0.85", style="rounded"];
+	217[label = "fetch_and_process_archive\ndate: 2019_08_05", color = "0.33 0.6 0.85", style="rounded"];
+	218[label = "fetch_and_process_archive\ndate: 2019_08_06", color = "0.33 0.6 0.85", style="rounded"];
+	219[label = "fetch_and_process_archive\ndate: 2019_08_07", color = "0.33 0.6 0.85", style="rounded"];
+	220[label = "fetch_and_process_archive\ndate: 2019_08_08", color = "0.33 0.6 0.85", style="rounded"];
+	221[label = "fetch_and_process_archive\ndate: 2019_08_09", color = "0.33 0.6 0.85", style="rounded"];
+	222[label = "fetch_and_process_archive\ndate: 2019_08_10", color = "0.33 0.6 0.85", style="rounded"];
+	223[label = "fetch_and_process_archive\ndate: 2019_08_11", color = "0.33 0.6 0.85", style="rounded"];
+	224[label = "fetch_and_process_archive\ndate: 2019_08_12", color = "0.33 0.6 0.85", style="rounded"];
+	225[label = "fetch_and_process_archive\ndate: 2019_08_13", color = "0.33 0.6 0.85", style="rounded"];
+	226[label = "fetch_and_process_archive\ndate: 2019_08_14", color = "0.33 0.6 0.85", style="rounded"];
+	227[label = "fetch_and_process_archive\ndate: 2019_08_15", color = "0.33 0.6 0.85", style="rounded"];
+	228[label = "fetch_and_process_archive\ndate: 2019_08_16", color = "0.33 0.6 0.85", style="rounded"];
+	229[label = "fetch_and_process_archive\ndate: 2019_08_17", color = "0.33 0.6 0.85", style="rounded"];
+	230[label = "fetch_and_process_archive\ndate: 2019_08_18", color = "0.33 0.6 0.85", style="rounded"];
+	231[label = "fetch_and_process_archive\ndate: 2019_08_19", color = "0.33 0.6 0.85", style="rounded"];
+	232[label = "fetch_and_process_archive\ndate: 2019_08_20", color = "0.33 0.6 0.85", style="rounded"];
+	233[label = "fetch_and_process_archive\ndate: 2019_08_21", color = "0.33 0.6 0.85", style="rounded"];
+	234[label = "fetch_and_process_archive\ndate: 2019_08_22", color = "0.33 0.6 0.85", style="rounded"];
+	235[label = "fetch_and_process_archive\ndate: 2019_08_23", color = "0.33 0.6 0.85", style="rounded"];
+	236[label = "fetch_and_process_archive\ndate: 2019_08_24", color = "0.33 0.6 0.85", style="rounded"];
+	237[label = "fetch_and_process_archive\ndate: 2019_08_25", color = "0.33 0.6 0.85", style="rounded"];
+	238[label = "fetch_and_process_archive\ndate: 2019_08_26", color = "0.33 0.6 0.85", style="rounded"];
+	239[label = "fetch_and_process_archive\ndate: 2019_08_27", color = "0.33 0.6 0.85", style="rounded"];
+	240[label = "fetch_and_process_archive\ndate: 2019_08_28", color = "0.33 0.6 0.85", style="rounded"];
+	241[label = "fetch_and_process_archive\ndate: 2019_08_29", color = "0.33 0.6 0.85", style="rounded"];
+	242[label = "fetch_and_process_archive\ndate: 2019_08_30", color = "0.33 0.6 0.85", style="rounded"];
+	243[label = "fetch_and_process_archive\ndate: 2019_08_31", color = "0.33 0.6 0.85", style="rounded"];
+	244[label = "fetch_and_process_archive\ndate: 2019_09_01", color = "0.33 0.6 0.85", style="rounded"];
+	245[label = "fetch_and_process_archive\ndate: 2019_09_02", color = "0.33 0.6 0.85", style="rounded"];
+	246[label = "fetch_and_process_archive\ndate: 2019_09_03", color = "0.33 0.6 0.85", style="rounded"];
+	247[label = "fetch_and_process_archive\ndate: 2019_09_04", color = "0.33 0.6 0.85", style="rounded"];
+	248[label = "fetch_and_process_archive\ndate: 2019_09_05", color = "0.33 0.6 0.85", style="rounded"];
+	249[label = "fetch_and_process_archive\ndate: 2019_09_06", color = "0.33 0.6 0.85", style="rounded"];
+	250[label = "fetch_and_process_archive\ndate: 2019_09_07", color = "0.33 0.6 0.85", style="rounded"];
+	251[label = "fetch_and_process_archive\ndate: 2019_09_08", color = "0.33 0.6 0.85", style="rounded"];
+	252[label = "fetch_and_process_archive\ndate: 2019_09_09", color = "0.33 0.6 0.85", style="rounded"];
+	253[label = "fetch_and_process_archive\ndate: 2019_09_10", color = "0.33 0.6 0.85", style="rounded"];
+	254[label = "fetch_and_process_archive\ndate: 2019_09_11", color = "0.33 0.6 0.85", style="rounded"];
+	255[label = "fetch_and_process_archive\ndate: 2019_09_12", color = "0.33 0.6 0.85", style="rounded"];
+	256[label = "fetch_and_process_archive\ndate: 2019_09_13", color = "0.33 0.6 0.85", style="rounded"];
+	257[label = "fetch_and_process_archive\ndate: 2019_09_14", color = "0.33 0.6 0.85", style="rounded"];
+	258[label = "fetch_and_process_archive\ndate: 2019_09_15", color = "0.33 0.6 0.85", style="rounded"];
+	259[label = "fetch_and_process_archive\ndate: 2019_09_16", color = "0.33 0.6 0.85", style="rounded"];
+	260[label = "fetch_and_process_archive\ndate: 2019_09_17", color = "0.33 0.6 0.85", style="rounded"];
+	261[label = "fetch_and_process_archive\ndate: 2019_09_18", color = "0.33 0.6 0.85", style="rounded"];
+	262[label = "fetch_and_process_archive\ndate: 2019_09_19", color = "0.33 0.6 0.85", style="rounded"];
+	263[label = "fetch_and_process_archive\ndate: 2019_09_20", color = "0.33 0.6 0.85", style="rounded"];
+	264[label = "fetch_and_process_archive\ndate: 2019_09_21", color = "0.33 0.6 0.85", style="rounded"];
+	265[label = "fetch_and_process_archive\ndate: 2019_09_22", color = "0.33 0.6 0.85", style="rounded"];
+	266[label = "fetch_and_process_archive\ndate: 2019_09_23", color = "0.33 0.6 0.85", style="rounded"];
+	267[label = "fetch_and_process_archive\ndate: 2019_09_24", color = "0.33 0.6 0.85", style="rounded"];
+	268[label = "fetch_and_process_archive\ndate: 2019_09_25", color = "0.33 0.6 0.85", style="rounded"];
+	269[label = "fetch_and_process_archive\ndate: 2019_09_26", color = "0.33 0.6 0.85", style="rounded"];
+	270[label = "fetch_and_process_archive\ndate: 2019_09_27", color = "0.33 0.6 0.85", style="rounded"];
+	271[label = "fetch_and_process_archive\ndate: 2019_09_28", color = "0.33 0.6 0.85", style="rounded"];
+	272[label = "fetch_and_process_archive\ndate: 2019_09_29", color = "0.33 0.6 0.85", style="rounded"];
+	273[label = "fetch_and_process_archive\ndate: 2019_09_30", color = "0.33 0.6 0.85", style="rounded"];
+	274[label = "fetch_and_process_archive\ndate: 2019_10_01", color = "0.33 0.6 0.85", style="rounded"];
+	275[label = "fetch_and_process_archive\ndate: 2019_10_02", color = "0.33 0.6 0.85", style="rounded"];
+	276[label = "fetch_and_process_archive\ndate: 2019_10_03", color = "0.33 0.6 0.85", style="rounded"];
+	277[label = "fetch_and_process_archive\ndate: 2019_10_04", color = "0.33 0.6 0.85", style="rounded"];
+	278[label = "fetch_and_process_archive\ndate: 2019_10_05", color = "0.33 0.6 0.85", style="rounded"];
+	279[label = "fetch_and_process_archive\ndate: 2019_10_06", color = "0.33 0.6 0.85", style="rounded"];
+	280[label = "fetch_and_process_archive\ndate: 2019_10_07", color = "0.33 0.6 0.85", style="rounded"];
+	281[label = "fetch_and_process_archive\ndate: 2019_10_08", color = "0.33 0.6 0.85", style="rounded"];
+	282[label = "fetch_and_process_archive\ndate: 2019_10_09", color = "0.33 0.6 0.85", style="rounded"];
+	283[label = "fetch_and_process_archive\ndate: 2019_10_10", color = "0.33 0.6 0.85", style="rounded"];
+	284[label = "fetch_and_process_archive\ndate: 2019_10_11", color = "0.33 0.6 0.85", style="rounded"];
+	285[label = "fetch_and_process_archive\ndate: 2019_10_12", color = "0.33 0.6 0.85", style="rounded"];
+	286[label = "fetch_and_process_archive\ndate: 2019_10_13", color = "0.33 0.6 0.85", style="rounded"];
+	287[label = "fetch_and_process_archive\ndate: 2019_10_14", color = "0.33 0.6 0.85", style="rounded"];
+	288[label = "fetch_and_process_archive\ndate: 2019_10_15", color = "0.33 0.6 0.85", style="rounded"];
+	289[label = "fetch_and_process_archive\ndate: 2019_10_16", color = "0.33 0.6 0.85", style="rounded"];
+	290[label = "fetch_and_process_archive\ndate: 2019_10_17", color = "0.33 0.6 0.85", style="rounded"];
+	291[label = "fetch_and_process_archive\ndate: 2019_10_18", color = "0.33 0.6 0.85", style="rounded"];
+	292[label = "fetch_and_process_archive\ndate: 2019_10_19", color = "0.33 0.6 0.85", style="rounded"];
+	293[label = "fetch_and_process_archive\ndate: 2019_10_20", color = "0.33 0.6 0.85", style="rounded"];
+	294[label = "fetch_and_process_archive\ndate: 2019_10_21", color = "0.33 0.6 0.85", style="rounded"];
+	295[label = "fetch_and_process_archive\ndate: 2019_10_22", color = "0.33 0.6 0.85", style="rounded"];
+	296[label = "fetch_and_process_archive\ndate: 2019_10_23", color = "0.33 0.6 0.85", style="rounded"];
+	297[label = "fetch_and_process_archive\ndate: 2019_10_24", color = "0.33 0.6 0.85", style="rounded"];
+	298[label = "fetch_and_process_archive\ndate: 2019_10_25", color = "0.33 0.6 0.85", style="rounded"];
+	299[label = "fetch_and_process_archive\ndate: 2019_10_26", color = "0.33 0.6 0.85", style="rounded"];
+	300[label = "fetch_and_process_archive\ndate: 2019_10_27", color = "0.33 0.6 0.85", style="rounded"];
+	301[label = "fetch_and_process_archive\ndate: 2019_10_28", color = "0.33 0.6 0.85", style="rounded"];
+	302[label = "fetch_and_process_archive\ndate: 2019_10_29", color = "0.33 0.6 0.85", style="rounded"];
+	303[label = "fetch_and_process_archive\ndate: 2019_10_30", color = "0.33 0.6 0.85", style="rounded"];
+	304[label = "fetch_and_process_archive\ndate: 2019_10_31", color = "0.33 0.6 0.85", style="rounded"];
+	305[label = "fetch_and_process_archive\ndate: 2019_11_01", color = "0.33 0.6 0.85", style="rounded"];
+	306[label = "fetch_and_process_archive\ndate: 2019_11_02", color = "0.33 0.6 0.85", style="rounded"];
+	307[label = "fetch_and_process_archive\ndate: 2019_11_03", color = "0.33 0.6 0.85", style="rounded"];
+	308[label = "fetch_and_process_archive\ndate: 2019_11_04", color = "0.33 0.6 0.85", style="rounded"];
+	309[label = "fetch_and_process_archive\ndate: 2019_11_05", color = "0.33 0.6 0.85", style="rounded"];
+	310[label = "fetch_and_process_archive\ndate: 2019_11_06", color = "0.33 0.6 0.85", style="rounded"];
+	311[label = "fetch_and_process_archive\ndate: 2019_11_07", color = "0.33 0.6 0.85", style="rounded"];
+	312[label = "fetch_and_process_archive\ndate: 2019_11_08", color = "0.33 0.6 0.85", style="rounded"];
+	313[label = "fetch_and_process_archive\ndate: 2019_11_09", color = "0.33 0.6 0.85", style="rounded"];
+	314[label = "fetch_and_process_archive\ndate: 2019_11_10", color = "0.33 0.6 0.85", style="rounded"];
+	315[label = "fetch_and_process_archive\ndate: 2019_11_11", color = "0.33 0.6 0.85", style="rounded"];
+	316[label = "fetch_and_process_archive\ndate: 2019_11_12", color = "0.33 0.6 0.85", style="rounded"];
+	317[label = "fetch_and_process_archive\ndate: 2019_11_13", color = "0.33 0.6 0.85", style="rounded"];
+	318[label = "fetch_and_process_archive\ndate: 2019_11_14", color = "0.33 0.6 0.85", style="rounded"];
+	319[label = "fetch_and_process_archive\ndate: 2019_11_15", color = "0.33 0.6 0.85", style="rounded"];
+	320[label = "fetch_and_process_archive\ndate: 2019_11_16", color = "0.33 0.6 0.85", style="rounded"];
+	321[label = "fetch_and_process_archive\ndate: 2019_11_17", color = "0.33 0.6 0.85", style="rounded"];
+	322[label = "fetch_and_process_archive\ndate: 2019_11_18", color = "0.33 0.6 0.85", style="rounded"];
+	323[label = "fetch_and_process_archive\ndate: 2019_11_19", color = "0.33 0.6 0.85", style="rounded"];
+	324[label = "fetch_and_process_archive\ndate: 2019_11_20", color = "0.33 0.6 0.85", style="rounded"];
+	325[label = "fetch_and_process_archive\ndate: 2019_11_21", color = "0.33 0.6 0.85", style="rounded"];
+	326[label = "fetch_and_process_archive\ndate: 2019_11_22", color = "0.33 0.6 0.85", style="rounded"];
+	327[label = "fetch_and_process_archive\ndate: 2019_11_23", color = "0.33 0.6 0.85", style="rounded"];
+	328[label = "fetch_and_process_archive\ndate: 2019_11_24", color = "0.33 0.6 0.85", style="rounded"];
+	329[label = "fetch_and_process_archive\ndate: 2019_11_25", color = "0.33 0.6 0.85", style="rounded"];
+	330[label = "fetch_and_process_archive\ndate: 2019_11_26", color = "0.33 0.6 0.85", style="rounded"];
+	331[label = "fetch_and_process_archive\ndate: 2019_11_27", color = "0.33 0.6 0.85", style="rounded"];
+	332[label = "fetch_and_process_archive\ndate: 2019_11_28", color = "0.33 0.6 0.85", style="rounded"];
+	333[label = "fetch_and_process_archive\ndate: 2019_11_29", color = "0.33 0.6 0.85", style="rounded"];
+	334[label = "fetch_and_process_archive\ndate: 2019_11_30", color = "0.33 0.6 0.85", style="rounded"];
+	335[label = "fetch_and_process_archive\ndate: 2019_12_01", color = "0.33 0.6 0.85", style="rounded"];
+	336[label = "fetch_and_process_archive\ndate: 2019_12_02", color = "0.33 0.6 0.85", style="rounded"];
+	337[label = "fetch_and_process_archive\ndate: 2019_12_03", color = "0.33 0.6 0.85", style="rounded"];
+	338[label = "fetch_and_process_archive\ndate: 2019_12_04", color = "0.33 0.6 0.85", style="rounded"];
+	339[label = "fetch_and_process_archive\ndate: 2019_12_05", color = "0.33 0.6 0.85", style="rounded"];
+	340[label = "fetch_and_process_archive\ndate: 2019_12_06", color = "0.33 0.6 0.85", style="rounded"];
+	341[label = "fetch_and_process_archive\ndate: 2019_12_07", color = "0.33 0.6 0.85", style="rounded"];
+	342[label = "fetch_and_process_archive\ndate: 2019_12_08", color = "0.33 0.6 0.85", style="rounded"];
+	343[label = "fetch_and_process_archive\ndate: 2019_12_09", color = "0.33 0.6 0.85", style="rounded"];
+	344[label = "fetch_and_process_archive\ndate: 2019_12_10", color = "0.33 0.6 0.85", style="rounded"];
+	345[label = "fetch_and_process_archive\ndate: 2019_12_11", color = "0.33 0.6 0.85", style="rounded"];
+	346[label = "fetch_and_process_archive\ndate: 2019_12_12", color = "0.33 0.6 0.85", style="rounded"];
+	347[label = "fetch_and_process_archive\ndate: 2019_12_13", color = "0.33 0.6 0.85", style="rounded"];
+	348[label = "fetch_and_process_archive\ndate: 2019_12_14", color = "0.33 0.6 0.85", style="rounded"];
+	349[label = "fetch_and_process_archive\ndate: 2019_12_15", color = "0.33 0.6 0.85", style="rounded"];
+	350[label = "fetch_and_process_archive\ndate: 2019_12_16", color = "0.33 0.6 0.85", style="rounded"];
+	351[label = "fetch_and_process_archive\ndate: 2019_12_17", color = "0.33 0.6 0.85", style="rounded"];
+	352[label = "fetch_and_process_archive\ndate: 2019_12_18", color = "0.33 0.6 0.85", style="rounded"];
+	353[label = "fetch_and_process_archive\ndate: 2019_12_19", color = "0.33 0.6 0.85", style="rounded"];
+	354[label = "fetch_and_process_archive\ndate: 2019_12_20", color = "0.33 0.6 0.85", style="rounded"];
+	355[label = "fetch_and_process_archive\ndate: 2019_12_21", color = "0.33 0.6 0.85", style="rounded"];
+	356[label = "fetch_and_process_archive\ndate: 2019_12_22", color = "0.33 0.6 0.85", style="rounded"];
+	357[label = "fetch_and_process_archive\ndate: 2019_12_23", color = "0.33 0.6 0.85", style="rounded"];
+	358[label = "fetch_and_process_archive\ndate: 2019_12_24", color = "0.33 0.6 0.85", style="rounded"];
+	359[label = "fetch_and_process_archive\ndate: 2019_12_25", color = "0.33 0.6 0.85", style="rounded"];
+	360[label = "fetch_and_process_archive\ndate: 2019_12_26", color = "0.33 0.6 0.85", style="rounded"];
+	361[label = "fetch_and_process_archive\ndate: 2019_12_27", color = "0.33 0.6 0.85", style="rounded"];
+	362[label = "fetch_and_process_archive\ndate: 2019_12_28", color = "0.33 0.6 0.85", style="rounded"];
+	363[label = "fetch_and_process_archive\ndate: 2019_12_29", color = "0.33 0.6 0.85", style="rounded"];
+	364[label = "fetch_and_process_archive\ndate: 2019_12_30", color = "0.33 0.6 0.85", style="rounded"];
+	365[label = "fetch_and_process_archive\ndate: 2019_12_31", color = "0.33 0.6 0.85", style="rounded"];
+	366[label = "fetch_and_process_archive\ndate: 2020_01_01", color = "0.33 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 0
+	3 -> 0
+	4 -> 0
+	5 -> 0
+	6 -> 0
+	7 -> 0
+	8 -> 0
+	9 -> 0
+	10 -> 0
+	11 -> 0
+	12 -> 0
+	13 -> 0
+	14 -> 0
+	15 -> 0
+	16 -> 0
+	17 -> 0
+	18 -> 0
+	19 -> 0
+	20 -> 0
+	21 -> 0
+	22 -> 0
+	23 -> 0
+	24 -> 0
+	25 -> 0
+	26 -> 0
+	27 -> 0
+	28 -> 0
+	29 -> 0
+	30 -> 0
+	31 -> 0
+	32 -> 0
+	33 -> 0
+	34 -> 0
+	35 -> 0
+	36 -> 0
+	37 -> 0
+	38 -> 0
+	39 -> 0
+	40 -> 0
+	41 -> 0
+	42 -> 0
+	43 -> 0
+	44 -> 0
+	45 -> 0
+	46 -> 0
+	47 -> 0
+	48 -> 0
+	49 -> 0
+	50 -> 0
+	51 -> 0
+	52 -> 0
+	53 -> 0
+	54 -> 0
+	55 -> 0
+	56 -> 0
+	57 -> 0
+	58 -> 0
+	59 -> 0
+	60 -> 0
+	61 -> 0
+	62 -> 0
+	63 -> 0
+	64 -> 0
+	65 -> 0
+	66 -> 0
+	67 -> 0
+	68 -> 0
+	69 -> 0
+	70 -> 0
+	71 -> 0
+	72 -> 0
+	73 -> 0
+	74 -> 0
+	75 -> 0
+	76 -> 0
+	77 -> 0
+	78 -> 0
+	79 -> 0
+	80 -> 0
+	81 -> 0
+	82 -> 0
+	83 -> 0
+	84 -> 0
+	85 -> 0
+	86 -> 0
+	87 -> 0
+	88 -> 0
+	89 -> 0
+	90 -> 0
+	91 -> 0
+	92 -> 0
+	93 -> 0
+	94 -> 0
+	95 -> 0
+	96 -> 0
+	97 -> 0
+	98 -> 0
+	99 -> 0
+	100 -> 0
+	101 -> 0
+	102 -> 0
+	103 -> 0
+	104 -> 0
+	105 -> 0
+	106 -> 0
+	107 -> 0
+	108 -> 0
+	109 -> 0
+	110 -> 0
+	111 -> 0
+	112 -> 0
+	113 -> 0
+	114 -> 0
+	115 -> 0
+	116 -> 0
+	117 -> 0
+	118 -> 0
+	119 -> 0
+	120 -> 0
+	121 -> 0
+	122 -> 0
+	123 -> 0
+	124 -> 0
+	125 -> 0
+	126 -> 0
+	127 -> 0
+	128 -> 0
+	129 -> 0
+	130 -> 0
+	131 -> 0
+	132 -> 0
+	133 -> 0
+	134 -> 0
+	135 -> 0
+	136 -> 0
+	137 -> 0
+	138 -> 0
+	139 -> 0
+	140 -> 0
+	141 -> 0
+	142 -> 0
+	143 -> 0
+	144 -> 0
+	145 -> 0
+	146 -> 0
+	147 -> 0
+	148 -> 0
+	149 -> 0
+	150 -> 0
+	151 -> 0
+	152 -> 0
+	153 -> 0
+	154 -> 0
+	155 -> 0
+	156 -> 0
+	157 -> 0
+	158 -> 0
+	159 -> 0
+	160 -> 0
+	161 -> 0
+	162 -> 0
+	163 -> 0
+	164 -> 0
+	165 -> 0
+	166 -> 0
+	167 -> 0
+	168 -> 0
+	169 -> 0
+	170 -> 0
+	171 -> 0
+	172 -> 0
+	173 -> 0
+	174 -> 0
+	175 -> 0
+	176 -> 0
+	177 -> 0
+	178 -> 0
+	179 -> 0
+	180 -> 0
+	181 -> 0
+	182 -> 0
+	183 -> 0
+	184 -> 0
+	185 -> 0
+	186 -> 0
+	187 -> 0
+	188 -> 0
+	189 -> 0
+	190 -> 0
+	191 -> 0
+	192 -> 0
+	193 -> 0
+	194 -> 0
+	195 -> 0
+	196 -> 0
+	197 -> 0
+	198 -> 0
+	199 -> 0
+	200 -> 0
+	201 -> 0
+	202 -> 0
+	203 -> 0
+	204 -> 0
+	205 -> 0
+	206 -> 0
+	207 -> 0
+	208 -> 0
+	209 -> 0
+	210 -> 0
+	211 -> 0
+	212 -> 0
+	213 -> 0
+	214 -> 0
+	215 -> 0
+	216 -> 0
+	217 -> 0
+	218 -> 0
+	219 -> 0
+	220 -> 0
+	221 -> 0
+	222 -> 0
+	223 -> 0
+	224 -> 0
+	225 -> 0
+	226 -> 0
+	227 -> 0
+	228 -> 0
+	229 -> 0
+	230 -> 0
+	231 -> 0
+	232 -> 0
+	233 -> 0
+	234 -> 0
+	235 -> 0
+	236 -> 0
+	237 -> 0
+	238 -> 0
+	239 -> 0
+	240 -> 0
+	241 -> 0
+	242 -> 0
+	243 -> 0
+	244 -> 0
+	245 -> 0
+	246 -> 0
+	247 -> 0
+	248 -> 0
+	249 -> 0
+	250 -> 0
+	251 -> 0
+	252 -> 0
+	253 -> 0
+	254 -> 0
+	255 -> 0
+	256 -> 0
+	257 -> 0
+	258 -> 0
+	259 -> 0
+	260 -> 0
+	261 -> 0
+	262 -> 0
+	263 -> 0
+	264 -> 0
+	265 -> 0
+	266 -> 0
+	267 -> 0
+	268 -> 0
+	269 -> 0
+	270 -> 0
+	271 -> 0
+	272 -> 0
+	273 -> 0
+	274 -> 0
+	275 -> 0
+	276 -> 0
+	277 -> 0
+	278 -> 0
+	279 -> 0
+	280 -> 0
+	281 -> 0
+	282 -> 0
+	283 -> 0
+	284 -> 0
+	285 -> 0
+	286 -> 0
+	287 -> 0
+	288 -> 0
+	289 -> 0
+	290 -> 0
+	291 -> 0
+	292 -> 0
+	293 -> 0
+	294 -> 0
+	295 -> 0
+	296 -> 0
+	297 -> 0
+	298 -> 0
+	299 -> 0
+	300 -> 0
+	301 -> 0
+	302 -> 0
+	303 -> 0
+	304 -> 0
+	305 -> 0
+	306 -> 0
+	307 -> 0
+	308 -> 0
+	309 -> 0
+	310 -> 0
+	311 -> 0
+	312 -> 0
+	313 -> 0
+	314 -> 0
+	315 -> 0
+	316 -> 0
+	317 -> 0
+	318 -> 0
+	319 -> 0
+	320 -> 0
+	321 -> 0
+	322 -> 0
+	323 -> 0
+	324 -> 0
+	325 -> 0
+	326 -> 0
+	327 -> 0
+	328 -> 0
+	329 -> 0
+	330 -> 0
+	331 -> 0
+	332 -> 0
+	333 -> 0
+	334 -> 0
+	335 -> 0
+	336 -> 0
+	337 -> 0
+	338 -> 0
+	339 -> 0
+	340 -> 0
+	341 -> 0
+	342 -> 0
+	343 -> 0
+	344 -> 0
+	345 -> 0
+	346 -> 0
+	347 -> 0
+	348 -> 0
+	349 -> 0
+	350 -> 0
+	351 -> 0
+	352 -> 0
+	353 -> 0
+	354 -> 0
+	355 -> 0
+	356 -> 0
+	357 -> 0
+	358 -> 0
+	359 -> 0
+	360 -> 0
+	361 -> 0
+	362 -> 0
+	363 -> 0
+	364 -> 0
+	365 -> 0
+	366 -> 0
+}            

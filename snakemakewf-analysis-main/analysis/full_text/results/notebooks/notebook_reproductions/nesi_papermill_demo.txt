@@ -1,0 +1,19 @@
+Description in github repository:
+    Papermill demo
+    This repository contains a demo of Papermill running on NeSI.
+    The goal is to demonstrate how to use it to run non-interactively a series of notebooks on an HPC plateform.
+
+Description of Papermill:
+    Papermill is a tool for parameterizing and executing Jupyter Notebooks.
+    Papermill lets you:
+        parameterize notebooks
+        execute notebooks
+    This opens up new opportunities for how notebooks can be used. For example:
+        Perhaps you have a financial report that you wish to run with different values on the first or last day of a month or at the beginning or end of the year, using parameters makes this task easier.
+        Do you want to run a notebook and depending on its results, choose a particular notebook to run next? You can now programmatically execute a workflow without having to copy and paste from notebook to notebook manually.
+
+
+problem with reproduction:
+    Cloned without problem. Created conda environment from file.
+    But then we are supposed to install a particular jupyter kernel for the nootebooks. This demo is meant to run on a NeSI cluster
+        (as far as I can tell a HPC cluster provided for researches in new zealand: https://www.nesi.org.nz/about-us/background)

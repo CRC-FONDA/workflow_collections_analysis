@@ -1,0 +1,459 @@
+"bcftools mpileup -f {input.fa} {input.bam} | "
+"bcftools call -mv - > {output}"
+"bcftools mpileup -f {input.fa} {input.bam} | "
+"bcftools call -mv - > {output}"
+"results/calls_bcftools/{reference}/norm_{sample}.vcf.gz",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+caller="bcftools",
+\t\t'bcftools mpileup -f {input.assembly_file} {input.alignment_file_A} {input.alignment_file_B} | bcftools call {params.subrate} -mv - > {output}'
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools concat -Ou -a {input.vcf} > {output}"
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools index {input.bcf}"
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"mkdir -p {params}; bcftools concat -Ou -a {input.vcf} | bcftools sort -T {params} -Oz -o {output.gz}" # sort -k1,1 -k2,2n > {output}\'
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools view --min-ac 1 {input} | bgzip -c > {output.gz}; tabix -p vcf {output.gz}"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools norm -f {input.ref} -m - --threads {threads} {input.vcf} | bcftools view --min-ac 1 --threads {threads}  -Oz -o {output}"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools norm -f {input.ref} -m - --threads {threads} {input.vcf} -Oz -o {output}"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools norm -f {input.ref} -m - --threads {threads} {input.vcf} -Oz -o {output}"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools view --threads {threads} -I -h {input} -Ov -o {output.h};"
+"bcftools view --threads {threads} -I -H {input} -Ov -o {output.v}"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+bcftools merge gets closest to the desired format while still
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools merge --force-samples --threads {threads} -m none {input.vcf} -Ov -o {output}"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+singularity: "docker://quay.io/shukwong/bcftools:2021-06-18"
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+\'docker://quay.io/shukwong/bcftools:2020-12-09\'
+"bcftools concat -Ou -a {input.vcf} | bcftools sort -T {params} -Oz -o {output}"
+\'docker://quay.io/shukwong/bcftools:2020-12-09\'
+"bcftools index {input.bcf}"
+\'docker://quay.io/shukwong/bcftools:2020-12-09\'
+"bcftools view --min-ac 1 {input} | bgzip -c > {output.gz}; tabix -p vcf {output.gz}"
+\'docker://quay.io/shukwong/bcftools:2020-12-09\'
+bcftools=bcftools,
+"{input.bcftools} view -f PASS {input.filtered_vcf} -o {output.pass_only_vcf} -O z &> {log.err_SelectVariants} \
+\t\tlog_dir = "logs/bcftools"
+\t\t"logs/bcftools/{sample}.log"
+\t\t"$BCF/bcftools view --threads {threads} -e \'QUAL < 20 || INFO/DP < 10 || INFO/DP > 100\' {input} 1> {output} 2>> {log}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}" # -Oz : compressed VCF
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"bcftools isec -n=2 -w 1 {params.ref_sample}/{wildcards.file}.vcf.gz {input.vcf} -Ou | bcftools +prune  -l 0.95 -w 1kb -Ou - | bcftools query -f \'%CHROM\\t%POS\\t%ID\\t%REF\\t%ALT\
+"bcftools annotate -a {REF_DIR}/G1K_SNP_EUR_EAF/chr{wildcards.chri}.tsv.gz -c \'CHROM,POS,REF,ALT,EUR_AF\' -h {RES_DIR}/header_EUR_AF.vcf -Ou {input} |  bcftools view -i \'INFO/EUR_AF>={wildcards.maf} & INFO/EUR_AF<={params.maf_upper}\' -Oz -o {output} -"
+"bcftools annotate -a {params.ref_sample}/chr{wildcards.chri}.vcf.gz -c \'REF_AF:=AF\' -Ou {input.vcf} |  bcftools view -i \'REF_AF>={wildcards.maf} & REF_AF<={params.maf_upper}\' -Oz -o {output} -"
+"bcftools view -m2 -M2 -v snps -g ^miss -Oz -o {output} {input}"
+"bcftools view -m2 -M2 -v snps -Oz -o {output} {input}"
+"bcftools view -g ^miss -Oz -o {output} {input}"
+"bcftools view -i \'INFO/MQ>59 & INFO/MQRankSum>-2 & AVG(FORMAT/DP)>20 & AVG(FORMAT/DP)<100 & INFO/QD>15 & INFO/BaseQRankSum>-2 & INFO/SOR<1\' -f PASS -Ou {input} | "
+"bcftools annotate -x INFO,FMT -Oz -o {output} -"
+"bcftools view -S _samples/{wildcards.sample}.txt --force-samples -Oz -o {output} {input.vcf}"
+"bcftools view {input} > {output}"
+- SNPs only (bcftools -v snps + awk length == 1)
+- SNP called in all samples (bcftools -U)
+bcftools view -S {input.ids} -v snps -R {input.bed} {input.vcf} | \\
+bcftools view -e \'{params.filt}\' - | \\
+conda: "../../envs/bcftools.yaml"
+bcftools isec -n=2 -w1 -r {wildcards.chrom} -O z -o {output} {input.vcfRef} {input.hd_genotype_chip}
+"../../envs/bcftools.yaml"
+bcftools concat -f {params.list} -O z -o {output}
+"../../envs/bcftools.yaml"
+bcftools view {input.background} --force-samples --samples-file {input.remove_list} -O z -o {output.back}
+bcftools query --list-samples {output.back} > list.samples
+"../../envs/bcftools.yaml"
+bcftools isec -n=2 -w1 -r {wildcards.chrom} -O z -o {output} {input.vcfRef} {input.hd_genotype_chip}
+"../../envs/bcftools.yaml"
+bcftools concat -f {params.list} -O z -o {output}
+"../../envs/bcftools.yaml"
+"../../envs/bcftools.yaml"
+bcftools convert gen{wildcards.runs}/data{wildcards.runs}.vcf.gz -O z -o  gen{wildcards.runs}/data4merge{wildcards.runs}.vcf.gz
+"../../envs/bcftools.yaml"
+bcftools index -f gen{wildcards.runs}/data4merge{wildcards.runs}.vcf.gz
+"../../envs/bcftools.yaml"
+bcftools merge --merge id {input.samples} -O z -o generated.vcf.gz
+bcftools index -f generated.vcf.gz
+"bcftools call -mv - > {output}"
+"bcftools mpileup -f {input.fa} {input.bam} | bcftools call -cM - | vcfutils.pl vcf2fq | seqtk seq -A - > {output}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+\t\t#get corrections within each range (omitting DUP records, which bcftools can\'t understand)
+\t\tbcftools consensus -f {input} -o {output}
+normalize=False,  # flag to use bcftools norm to normalize indels
+"envs/bcftools.yaml"
+"bcftools stats -F {input.fa} -s - {input.vcf} > {output} 2> {log}"
+"envs/bcftools.yaml"
+"bcftools stats -F {input.fa} -s - {input.vcf} > {output} 2> {log}"
+"envs/bcftools.yaml"
+"bcftools stats -F {input.fa} -s - {input.vcf} > {output} 2> {log}"
+"envs/bcftools.yaml"
+"envs/bcftools.yaml"
+"envs/bcftools.yaml"
+"envs/bcftools.yaml"
+"bcftools query -l {input.vcf} | sort > {output}"
+bcftools merge -m none --force-samples {input.vcf} | bgzip > {output.merge}
+\t\t"envs/bcftools.yaml"
+\t\t" bcftools reheader -f {input.fai} {input.vcf} | "
+\t\t" bcftools view -Oz -  > {output} 2> {log};"
+\t\t"envs/bcftools.yaml"
+\t\t" (bcftools concat {input} | bcftools view -Oz > {output} && "
+\t\t" bcftools index -t {output} ) 2> {log} "
+"logs/bcftools/{sample}.var.stats.log"
+"v1.1.0/bio/bcftools/stats"
+"logs/bcftools/{sample}_QUAL_fltr.log"
+"v1.1.0/bio/bcftools/filter"
+"logs/bcftools/{sample}_DP_fltr.log"
+"v1.1.0/bio/bcftools/filter"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+\t\tshell("bcftools concat {input} -Oz -o {output}")
+conda: "envs/bcftools.yaml"
+conda: "envs/bcftools.yaml"
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+conda: "envs/bcftools.yaml"
+conda: "envs/bcftools.yaml"
+shell: "bcftools consensus {input.vcf} < {input.ref} | " + \\
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+shell: "bcftools merge -m none -O z {input} > {output}"
+conda: "envs/bcftools.yaml"
+conda: "envs/bcftools.yaml"
+conda: "envs/bcftools.yaml"
+shell: "bcftools query -l {input} > {output}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+f"samples/{sample}/logs/bcftools/stats/{sample}.{ref}.deepvariant.vcf.log",
+"envs/bcftools.yaml"
+"(bcftools stats --threads 3 {params} {input} > {output}) > {log} 2>&1"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"bcftools concat {input.vcfs} -O z -o {output.vcf} && "
+"bcftools index {output.vcf}"
+"bcftools index {output.vcf}"
+"bcftools view {input.vcf} -R {input.bed} -O u | "
+"bcftools sort -O z -o {output.vcf} && "
+"bcftools index {output.vcf}"
+"bcftools sort {input.tvcf} -O b -o {output.tbcf} && "
+"bcftools index {output.tbcf} && "
+"bcftools view {output.tbcf} --regions {params.reg} -O z -o {output.vcf} && "
+"bcftools index {output.vcf}"
+bcftools mpileup -Ou -f {input.ref} {input.bams} \\
+| bcftools call -mv -Ov -o {output.vcf}
+\t\t"| bcftools view - "
+\t\t"Calling variants using bcftools..!!"
+\t\t"logs/bcftools/mpileup/stdout.log"
+\t\t"{bcftools} mpileup -a DP,AD -O u --threads {threads} -f {input.genome_fasta} --bam-list {input.sortbamlist} 2> {log} | {bcftools} call --threads {threads} -mv -O z -o {output} 2>> {log}"
+include: "rules/varcall-bcftools.smk"
+| bcftools norm -m- -f {input.fasta} \\
+bcftools +split-vep -d -f \'%CHROM %POS %ID %REF %ALT %QUAL %TYPE [%AD{{0}}] [%AD{{1}}] [%ALT_AF] [%SUM_ALT_AF] %SYMBOL %Gene %Feature %BIOTYPE %Consequence %IMPACT %Amino_acids %Codons [%SAMPLE]\
+"module load bcftools && tabix -p vcf {input}"
+bcftools view \\
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+\t\t"envs/bcftools.yaml"
+\t\tanno = "results/log/rename_chrs/bcftools-view-annotate-{chrom}.log",
+\t\tindex = "results/log/rename_chrs/bcftools-index-{chrom}.log"
+\t\t"bcftools view -Ou {input.vcf} {params.orig_chrom} | "
+\t\t"bcftools annotate --rename-chrs {input.chroms} -Ob > {output.bcf} 2> {log.anno}; "
+\t\t"bcftools index {output.bcf} 2> {log.index}"
+\t\t"envs/bcftools.yaml"
+\t\t"bcftools index {input}"
+bcftools mpileup -Ou -f {input.genome} {input.alignedBAM} | bcftools call -Ou -mv | bcftools filter -e \'QUAL<20 | DP>70\' -Oz > Kleb.variants.vcf.gz
+calledVcf = rules.bcftools_call.output.calledVcf
+""  # optional parameters for bcftools view (except -o)
+"logs/bcftools/{sample}.log"
+"v1.3.2/bio/bcftools/view"
+"logs/bcftools/filter_{sample}.log"
+"v1.3.2/bio/bcftools/view"
+"logs/bcftools/merge_all.log"
+"v1.3.2/bio/bcftools/merge"
+"logs/bcftools/merge_all_highQ.log"
+"v1.3.2/bio/bcftools/merge"
+"envs/bcftools.yaml"
+"bcftools concat --file-list {output.list} -o {output.vcf};"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+bcftools norm -f {input.reference} {params.out}.variants.vcf > {output.variants}
+bcftools norm -f {input.reference} {params.out}.consensus.vcf > {params.out}.consensus.norm.vcf
+bcftools consensus -f {input.reference} -I {params.out}.ambiguous.norm.vcf.gz > {params.out}.ambiguous.fasta
+bcftools consensus -f {params.out}.ambiguous.fasta -m {params.out}.mask.txt {params.out}.fixed.norm.vcf.gz | sed s/MN908947\\.3.*/{wildcards.sn}/ > {output.consensus}
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+module load bcftools
+bcftools stats -s - {input.vcf} > {output}
+"samtools", "gcc", "yhaplo", "bcftools"
+bcftools mpileup -Q 30 -q 30 -f {input.hg19} {input.bam} -r chrY | bcftools call -c -o {output.y_vcf}
+"samtools", "bcftools", "gcc"
+bcftools mpileup -B -Ou -d 1000 -q 30 -f {input.rCRS} {input.rescaled_mito} | bcftools call -mv --ploidy 1 -Ou -o {output.mito_vcf}
+"{bcftools} mpileup -O b -o {output.raw_bcf} -f {input.reference_chromossome} {input.sorted_alignment_bam}"
+"{bcftools} call --ploidy 2 -m -v -o {output.vcf_file} {input.raw_bcf}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+bcftools view {input.delly_bcf} > {params.temp}
+python2 /usr/local/bin/manta/libexec/convertInversion.py /usr/local/bin/samtools {input[0]} {params.manta_run_dir}/results/variants/diploidSV.vcf.gz | bcftools reheader -s <(echo "{params.sample}") > {params.manta_run_dir}/results/variants/diploidSV.vcf
+bcftools query -f \'%CHROM\\t%POS\\t%REF\\t%ALT\\t{params.sample}\
+OLD_HEADER=$(bcftools view -h {input.whamg_bad_header} | grep -v \'##contig=\')
+bcftools reheader -h <( echo "$OLD_HEADER" | sed \\$d ; echo "$CONTIGS_HEADER" ; echo "$OLD_HEADER" | tail -n 1) -s <( echo "{params.sample}") {input.whamg_bad_header} > {output.whamg_vcf}
+bcftools reheader -s <( echo "{params.sample}") {params.melt_results_dir}/{params.temp_vcf} > {output.melt_vcf}
+bcftools view -S {input.list} {input.mvcfqc} | bcftools annotate -x INFO | bgzip -c > {output.clean} 2> {log}
+bcftools view -e "AF=0 | AF=1"  {input} | bgzip -c > {output.vcf}
+bcftools view {input} --regions chr{wildcards.file} | sed -e "/ID=chr{wildcards.file}/p" -e "/contig/d" -e "/##bcftools/d" | bgzip -c > results/{wildcards.file}.out.vcf.gz 2> {log}
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+shell("bcftools sort {params.tmp_raw_vcf} | bgzip > {output.vcf}")
+shell("bcftools view -e \'GT=\\"0/0\\" || GT=\\"./.\\"\' {params.tmp_raw_vcf} | bcftools sort | bgzip > {output.vcf}")
+shell("bcftools sort {params.tmp_raw_vcf} | bgzip > {output.vcf}")
+conda activate bcftools-env
+bcftools view -S {input.filter} --force-samples -Ob {input.dataset} | \\
+bcftools view -i \'MAF[0] > 0.05\' -Ob | \\
+bcftools view --genotype ^miss --phased -Ob -o {output.bcf}
+bcftools index -c {output.bcf}
+conda activate bcftools-env
+bcftools annotate --rename-chrs {input.map} -Ob -o {output.bcf} \\
+bcftools index -c {output.bcf}
+conda activate bcftools-env
+bcftools view -r {wildcards.chr} -Ob -o {output.bcf} {input.bcf}
+bcftools index -c {output.bcf}
+conda activate bcftools-env
+bcftools view -S {input.filter} --force-samples -Ou {input.ref} | \\
+bcftools view --genotype ^miss --phased -Ou | \\
+bcftools view -i \'MAF[0] > .05\' -Ob -o {output.bcf}
+bcftools index -c {output.bcf}
+conda activate bcftools-env
+bcftools isec -p {params.out_dir} -n=2 --collapse none -Ob {input.admix} {input.ref}
+conda activate bcftools-env
+bcftools merge -m none -Ou {input.bcf} | \\
+bcftools view -i \'MAF[0] > {wildcards.maf}\' -m2 -M2 -v snps -Oz -o {output}
+conda activate bcftools-env
+bcftools view -i \'ID=@{input.snps}\' -Oz -o {output} {input.vcf}
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+normalize=False,  # flag to use bcftools norm to normalize indels
+normalize=False,  # flag to use bcftools norm to normalize indels
+"envs/bcftools.yaml"
+"bcftools stats {input} > {output}"
+"envs/bcftools.yaml"
+"bcftools stats {input} > {output}"
+"envs/bcftools.yaml"
+"bcftools stats {input} > {output}"
+"envs/bcftools.yaml"
+"bcftools stats {input} > {output}"
+"envs/bcftools.yaml"
+"bcftools stats {input} > {output}"
+"envs/bcftools.yaml"
+"bcftools stats {input} > {output}"
+"logs/bcftools/namedvariants_70.log"
+"envs/bcftools.yaml"
+"tabix -p vcf {input} && bcftools annotate --set-id +\'%CHROM\\_%POS\\_%REF\\_%FIRST_ALT\' {input} > {output} 2> {log}"
+\tbcftools mpileup -Ou -f {FASTA_REFERENCE} {input.sorted} | bcftools call -Ou -mv  | bcftools norm -Ou -f {FASTA_REFERENCE}  -o {output}
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"bcftools call -mv - > {output}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"bcftools query -f \'%CHROM\\\\t%POS\\\\t%REF\\\\t%ALT\\\\t[%GQ]\\\
+bcftools view -Oz -o {output}
+bcftools annotate --rename-chrs {dbsdir}/chrremove_hg19.tab {input} | \\
+bcftools annotate -c CHROM,POS,REF,ALT,,PHRED \\
+bcftools annotate --rename-chrs {dbsdir}/chradd_hg19.tab -Oz -o {output}
+bcftools view -i \'(%FILTER!="haplotype")&&(%FILTER!="map_qual")&&(%FILTER!="normal_artifact")&&(%FILTER!="weak_evidence")&&(%FILTER!="strand_bias")&&(%FILTER!="strict_strand")&&(%FILTER!="slippage")&&(%FILTER!="germline")\' -s {wildcards.tum_sample} {input.vcf} | bcftools view -i \'(F1R2[0:1]>0)&&(F2R1[0:1]>0)\' | \\
+<(bcftools view -f "PASS" -s {wildcards.tum_sample} -R {input.bed} {input.vcf} | bcftools view -i \'(F1R2[0:1]>2)&&(F2R1[0:1]>2)\' -H | wc -l) \\
+module load bcftools
+bcftools stats -s - {input.vcf} > {output}
+shell("bcftools query -S {input[1]} -R {input[0]} -f \'%CHROM\\t%POS\\t%REF\\t%ALT[\\t%GT]\
+\'bcftools query -l {input[0]} > {output[0]}\'
+shell("bcftools query -S {input[1]} -R {input[0]} -f \'%CHROM\\t%POS\\t%REF\\t%ALT[\\t%GT]\
+"bcftools call -mv - > {output}"
+bcftools concat {input} \\
+bcftools view -i \'INFO/{config[af_flag]} > 0.05\' {input.vcf} > {input.vcf}_filteredAF.vcf
+bcftools view --max-alleles 2 --exclude-types indels {input.vcf}_filteredAF.vcf > {output}
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+shell("bcftools index {input.single_vcf}")
+shell("bcftools merge {input.single_vcf_list} -O v -o {output.merged_vcf}")
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+bcftools filter -i \'{config[VARIANT_FILTER_STRING]}\' {params.temp_results_filtered} | bgzip -c > {output.variant_results_file_filtered} ; tabix -fp vcf {output.variant_results_file_filtered}
+bcftools filter -i \'{config[VARIANT_FILTER_STRING]}\' {params.temp_results_filtered} | bgzip -c > {output.variant_results_file_filtered} ; tabix -fp vcf {output.variant_results_file_filtered}
+bcftools filter -i \'{config[VARIANT_FILTER_STRING]}\' {params.temp_results_filtered} | bgzip -c > {output.variant_results_file_filtered} ; tabix -fp vcf {output.variant_results_file_filtered}
+bcftools view {params.out_dir}{params.sample}/{params.sample}_delly_SV.bcf > {params.delly_SV}
+bcftools view {params.out_dir}{params.sample}/{params.sample}_delly_SV.bcf > {params.delly_SV}
+bcftools stats --threads {config[NUMBER_CPU]} {input.variant_file} > {output.vcfstats}
+conda activate bcftools-env
+bcftools view -S {input.filter} --force-samples -Ob {input.dataset} | \\
+bcftools view -i \'MAF[0] > 0.05\' -Ob | \\
+bcftools view --genotype ^miss --phased -Ob -o {output.bcf}
+bcftools index -c {output.bcf}
+conda activate bcftools-env
+bcftools annotate --rename-chrs {input.map} -Ob -o {output.bcf} \\
+bcftools index -c {output.bcf}
+conda activate bcftools-env
+bcftools view -r {wildcards.chr} -Ob -o {output.bcf} {input.bcf}
+bcftools index -c {output.bcf}
+conda activate bcftools-env
+bcftools view -S {input.filter} --force-samples -Ou {input.ref} | \\
+bcftools view --genotype ^miss --phased -Ou | \\
+bcftools view -i \'MAF[0] > .05\' -Ob -o {output.bcf}
+bcftools index -c {output.bcf}
+conda activate bcftools-env
+bcftools isec -p {params.out_dir} -n=2 --collapse none -Ob {input.admix} {input.ref}
+conda activate bcftools-env
+bcftools merge -m none -Ou {input.bcf} | \\
+bcftools view -i \'MAF[0] > {wildcards.maf}\' -m2 -M2 -v snps -Oz -o {output}
+conda activate bcftools-env
+bcftools view -i \'ID=@{input.snps}\' -Oz -o {output} {input.vcf}
+"bcftools view --samples TUMOR "
+"bcftools merge --output-type z --output {output.vcf} {params.vcfs}\
+"bcftools view --samples TUMOR "
+"bcftools merge --output-type z --output {output.vcf} {params.vcfs}\
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+"{params.nice} bcftools concat --threads {threads} -O z -o {output.vcf} {input.vcfs} 2> {log} && tabix -p vcf {output.vcf}"
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+shell("/lustre_cfc/software/qbic/bcftools-1.2/bin/bcftools norm -f %s.fa {input} -o {output}"
+bcftools consensus -f {input} -o {output}
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+join(workpath, "QC", "BCFStats", "{name}.germline.bcftools_stats.txt"),
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+bcftools consensus -f {input.preconsensus} {input.vcfPassGz} -m {input.mask} -o {output};
+shell: "bcftools view --regions-file {input[2]} {input[0]} | " + \\
+shell: "bcftools view --regions-file {input[2]} {input[0]} | " + \\
+"rbt vcf-fix-iupac-alleles < {input} | bcftools view -Oz > {output}"
+bcftools view -S {ADMIX} {input}.gz > {output.admix}
+bcftools view -S ^{ADMIX} {input}.gz > {output.ref}
+bcftools reheader \\
+| bcftools norm \\
+bcftools norm \\
+bcftools norm \\
+bcftools annotate \\
+"bcftools view --apply-filters PASS --output-type u {input} | "
+\'bcftools norm -f {input.ref} -m-both -c s -o {output.norm} {output.vcf_temp}\' \\
+expand("results/bqsr-round-{bq}/qc/bcftools_stats/all-{fc}.txt", fc=["ALL", "PASS", "FAIL"],  bq=config["bqsr_rounds"]),
+expand("results/bqsr-round-{bq}/qc/bcftools_stats/all-pass-maf-{maf}.txt", maf=mafs,  bq=config["bqsr_rounds"]),
+expand("results/bqsr-round-{bq}/qc/bcftools_stats/all-pass-maf-{maf}.txt", maf=config["bqsr_maf"], bq=[str(x) for x in range(0, int(config["bqsr_rounds"])+1)]),
+Merge all VCF files into a single file with bcftools merge
+conda activate bcftools-env
+bcftools view -S {input.filter} --force-samples -Ob {input.dataset} | \\
+bcftools view -i \'MAF[0] > 0.05\' -Ob | \\
+bcftools view --genotype ^miss --phased -Ob -o {output.bcf}
+bcftools index -c {output.bcf}
+conda activate bcftools-env
+bcftools annotate --rename-chrs {input.map} -Ob -o {output.bcf} \\
+bcftools index -c {output.bcf}
+conda activate bcftools-env
+bcftools view -r {wildcards.chr} -Ob -o {output.bcf} {input.bcf}
+bcftools index -c {output.bcf}
+conda activate bcftools-env
+bcftools view -S {input.filter} --force-samples -Ou {input.ref} | \\
+bcftools view --genotype ^miss --phased -Ou | \\
+bcftools view -i \'MAF[0] > .05\' -Ob -o {output.bcf}
+bcftools index -c {output.bcf}
+conda activate bcftools-env
+bcftools isec -p {params.out_dir} -n=2 --collapse none -Ob {input.admix} {input.ref}
+conda activate bcftools-env
+bcftools merge -m none -Ou {input.bcf} | \\
+bcftools view -i \'MAF[0] > {wildcards.maf}\' -m2 -M2 -v snps -Oz -o {output}
+conda activate bcftools-env
+bcftools view -i \'ID=@{input.snps}\' -Oz -o {output} {input.vcf}
+"bcftools index {input}"
+"bcftools view {input.vcf} -T ^{input.bed} -Oz -o {output.vcf} ;"
+"bcftools consensus -i \'type=\\"SNP\\"\' "
+"bcftools merge -0 --threads {threads} {input.vcfs} -Oz -o {output} "
+"bcftools view {input.vcf} -T ^{input.merge_bed} -Ov | "
+"bcftools view - -T ^{input.gubbins_bed} -Oz -o {output}"
+"bcftools mpileup -d 1000 -q 30 -a DP,AD,ADF,ADR,SP -Oz "
+"bcftools call -Ov -m -v {input} | "
+"bcftools filter -i \'SP<45 & ADF[0:1]>1 & ADR[0:1]>1 & MQ>30 & "
+"bcftools call -Oz -m -v {input} | "
+"bcftools filter -i \'SP>=45 || MQ<=30 || FORMAT/DP<=10 || QUAL<=50\' "
+"bcftools call -Oz -m -v {input} | "
+"bcftools filter -i \'(AD[0:1]/(AD[0:0]+AD[0:1]) < "
+"bcftools filter -i \'(AD[0:1]/(AD[0:0]+AD[0:1]) > "
+"bcftools mpileup -a AD,DP,SP --output-type u --fasta-ref {params.genome} {input} |"
+"bcftools call --threads {threads} --multiallelic-caller --variants-only --output-type z > {output}"
+"bcftools merge {input.vcf} -Oz --output {output}"
+"bcftools index {input}"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools norm -f {input.ref} -m - --threads {threads} {input.vcf} | bcftools view --min-ac 1 --threads {threads}  -Oz -o {output}"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools norm -f {input.ref} -m - --threads {threads} {input.vcf} -Oz -o {output}"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools norm -f {input.ref} -m - --threads {threads} {input.vcf} -Oz -o {output}"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools view --threads {threads} -I -h {input} -Ov -o {output.h};"
+"bcftools view --threads {threads} -I -H {input} -Ov -o {output.v}"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+bcftools merge gets closest to the desired format while still
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools merge --force-samples --threads {threads} -m none {input.vcf} -Ov -o {output}"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+singularity: "docker://quay.io/shukwong/bcftools:2020-12-09"
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools concat -Ou -a {input.vcf} > {output}"
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"mkdir -p {params}; bcftools concat -Ou -a {input.vcf} | bcftools sort -T {params} -Oz -o {output.gz}" # sort -k1,1 -k2,2n > {output}\'
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools view --min-ac 1 {input} | bgzip -c > {output.gz}; tabix -p vcf {output.gz}"
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools concat -Ou -a {input.vcf} > {output}"
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools index {input.bcf}"
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"mkdir -p {params}; bcftools concat -Ou -a {input.vcf} | bcftools sort -T {params} -Oz -o {output.gz}" # sort -k1,1 -k2,2n > {output}\'
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+"bcftools view --min-ac 1 {input} | bgzip -c > {output.gz}; tabix -p vcf {output.gz}"
+"docker://quay.io/shukwong/bcftools:2020-12-09"
+\'docker://quay.io/shukwong/bcftools:2020-12-09\'
+"bcftools concat -Ou -a {input.vcf} | bcftools sort -T {params} -Oz -o {output}"
+\'docker://quay.io/shukwong/bcftools:2020-12-09\'
+"bcftools index {input.bcf}"
+\'docker://quay.io/shukwong/bcftools:2020-12-09\'
+"bcftools view --min-ac 1 {input} | bgzip -c > {output.gz}; tabix -p vcf {output.gz}"
+\'docker://quay.io/shukwong/bcftools:2020-12-09\'
+singularity: "docker://quay.io/shukwong/bcftools:2021-06-18"
+threads: get_threads(\'bcftools_concat\', 1)
+error =  f\'{log_dir}bcftools_concat/bcftools_concat.e\',
+output = f\'{log_dir}bcftools_concat/bcftools_concat.o\'
+(bcftools concat --threads {threads} {input.vcf_file} -o {output.vcf_file} -O z;
+bcftools index --threads {threads} --tbi {output.vcf_file}) 1>{log.output} 2>{log.error}
+vcf_file_all = rules.bcftools_concat.output.vcf_file if not rattlesnp.vcf_path else rattlesnp.vcf_path
+conda: \'envs/bcftools.yaml\'
+conda: \'envs/bcftools.yaml\'

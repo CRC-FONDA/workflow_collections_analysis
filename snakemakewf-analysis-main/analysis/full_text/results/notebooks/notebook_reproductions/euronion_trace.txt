@@ -1,0 +1,21 @@
+1. Following instructions in github repo for cloning and conda environment
+
+2. install and initiated julia
+
+3. There were some problems with this
+    (@v1.4) pkg> activate ./envs
+    (trace) pkg> instantiate
+
+4. When I try to run the workflow I run into:
+    (trace) seb@Ras:~/Fonda/notebook_reproduction/trace$ snakemake -jall results/default/2030/shipping-lch4/AR-DE/results.csv
+    Restricted license - for non-production use only - expires 2024-10-28
+    No parameters matching '_test' found
+    Building DAG of jobs...
+    MissingInputException in rule create_region in file /home/seb/Fonda/notebook_reproduction/trace/rules/gegis.smk, line 39:
+    Missing input files for rule create_region:
+        output: resources/GEGIS/regions_TRACES.jld
+        wildcards: region=TRACES
+        affected files:
+            resources/GEGIS/gadm.tif
+
+4.1. the "resources" folder doesn't even seem to exist

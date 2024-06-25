@@ -1,0 +1,17 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "purge_tips", color = "0.13 0.6 0.85", style="rounded"];
+	1[label = "ln_input\ndir: 1", color = "0.27 0.6 0.85", style="rounded"];
+	2[label = "hifiasm\nbase: your-hifi-fastq-file", color = "0.53 0.6 0.85", style="rounded"];
+	3[label = "winnowmap\nbase: your-hifi-fastq-file.hifiasm.bp.p_utg", color = "0.40 0.6 0.85", style="rounded"];
+	4[label = "all", color = "0.00 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 0
+	3 -> 0
+	1 -> 2
+	2 -> 3
+	1 -> 3
+	0 -> 4
+}            

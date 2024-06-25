@@ -1,0 +1,518 @@
+digraph "isoseq_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v103 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v104 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v105 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v8 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="NFCORE_ISOSEQ:ISOSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v4 -> v5 [label="samplesheet"];
+
+v5 [label="NFCORE_ISOSEQ:ISOSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 -> v6;
+
+v5 [label="NFCORE_ISOSEQ:ISOSEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v8 [label="versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatMap"];
+v11 [label="NFCORE_ISOSEQ:ISOSEQ:PBCCS"];
+v7 -> v11 [label="reads"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v69 [label="ch_versions"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v11 [label="NFCORE_ISOSEQ:ISOSEQ:PBCCS"];
+v9 -> v11 [label="chunk_num"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="NFCORE_ISOSEQ:ISOSEQ:PBCCS"];
+v10 -> v11 [label="chunk_on"];
+
+v11 [label="NFCORE_ISOSEQ:ISOSEQ:PBCCS"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v11 -> v15;
+
+v11 [label="NFCORE_ISOSEQ:ISOSEQ:PBCCS"];
+v14 [shape=point];
+v11 -> v14;
+
+v11 [label="NFCORE_ISOSEQ:ISOSEQ:PBCCS"];
+v13 [shape=point];
+v11 -> v13;
+
+v11 [label="NFCORE_ISOSEQ:ISOSEQ:PBCCS"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v91;
+
+v11 [label="NFCORE_ISOSEQ:ISOSEQ:PBCCS"];
+v12 [shape=point];
+v11 -> v12;
+
+v11 [label="NFCORE_ISOSEQ:ISOSEQ:PBCCS"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v69;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v15 -> v17 [label="ch_pbccs_bam_updated"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v16 -> v17 [label="data"];
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 -> v97;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v27 [shape=point];
+v17 -> v27;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 -> v94;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v70;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v28 [label="NFCORE_ISOSEQ:ISOSEQ:ISOSEQ3_REFINE"];
+v17 -> v28;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v26 [shape=point];
+v17 -> v26;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v25 [shape=point];
+v17 -> v25;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v24 [shape=point];
+v17 -> v24;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v23 [shape=point];
+v17 -> v23;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v22 [shape=point];
+v17 -> v22;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v21 [shape=point];
+v17 -> v21;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v20 [shape=point];
+v17 -> v20;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v19 [shape=point];
+v17 -> v19;
+
+v17 [label="NFCORE_ISOSEQ:ISOSEQ:LIMA"];
+v18 [shape=point];
+v17 -> v18;
+
+v16 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="NFCORE_ISOSEQ:ISOSEQ:ISOSEQ3_REFINE"];
+v16 -> v28 [label="data"];
+
+v28 [label="NFCORE_ISOSEQ:ISOSEQ:ISOSEQ3_REFINE"];
+v33 [label="NFCORE_ISOSEQ:ISOSEQ:BAMTOOLS_CONVERT"];
+v28 -> v33;
+
+v28 [label="NFCORE_ISOSEQ:ISOSEQ:ISOSEQ3_REFINE"];
+v32 [shape=point];
+v28 -> v32;
+
+v28 [label="NFCORE_ISOSEQ:ISOSEQ:ISOSEQ3_REFINE"];
+v31 [shape=point];
+v28 -> v31;
+
+v28 [label="NFCORE_ISOSEQ:ISOSEQ:ISOSEQ3_REFINE"];
+v30 [shape=point];
+v28 -> v30;
+
+v28 [label="NFCORE_ISOSEQ:ISOSEQ:ISOSEQ3_REFINE"];
+v29 [shape=point];
+v28 -> v29;
+
+v28 [label="NFCORE_ISOSEQ:ISOSEQ:ISOSEQ3_REFINE"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v28 -> v71;
+
+v33 [label="NFCORE_ISOSEQ:ISOSEQ:BAMTOOLS_CONVERT"];
+v34 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_POLYACLEANUP"];
+v33 -> v34;
+
+v33 [label="NFCORE_ISOSEQ:ISOSEQ:BAMTOOLS_CONVERT"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v72;
+
+v34 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_POLYACLEANUP"];
+v43 [label="NFCORE_ISOSEQ:ISOSEQ:GUNZIP"];
+v34 -> v43;
+
+v34 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_POLYACLEANUP"];
+v36 [shape=point];
+v34 -> v36;
+
+v34 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_POLYACLEANUP"];
+v35 [shape=point];
+v34 -> v35;
+
+v34 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_POLYACLEANUP"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v75;
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v37 -> v38 [label="data"];
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 [label="NFCORE_ISOSEQ:ISOSEQ:GNU_SORT"];
+v38 -> v39;
+
+v39 [label="NFCORE_ISOSEQ:ISOSEQ:GNU_SORT"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v39 -> v40;
+
+v39 [label="NFCORE_ISOSEQ:ISOSEQ:GNU_SORT"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v76;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v42 [label="NFCORE_ISOSEQ:ISOSEQ:ULTRA_INDEX"];
+v40 -> v42;
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [label="NFCORE_ISOSEQ:ISOSEQ:ULTRA_INDEX"];
+v41 -> v42 [label="data"];
+
+v42 [label="NFCORE_ISOSEQ:ISOSEQ:ULTRA_INDEX"];
+v45 [label="NFCORE_ISOSEQ:ISOSEQ:ULTRA_ALIGN"];
+v42 -> v45;
+
+v42 [label="NFCORE_ISOSEQ:ISOSEQ:ULTRA_INDEX"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v77;
+
+v43 [label="NFCORE_ISOSEQ:ISOSEQ:GUNZIP"];
+v45 [label="NFCORE_ISOSEQ:ISOSEQ:ULTRA_ALIGN"];
+v43 -> v45;
+
+v43 [label="NFCORE_ISOSEQ:ISOSEQ:GUNZIP"];
+v44 [shape=point];
+v43 -> v44;
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="NFCORE_ISOSEQ:ISOSEQ:ULTRA_ALIGN"];
+v41 -> v45 [label="data"];
+
+v45 [label="NFCORE_ISOSEQ:ISOSEQ:ULTRA_ALIGN"];
+v46 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_COLLAPSE"];
+v45 -> v46;
+
+v45 [label="NFCORE_ISOSEQ:ISOSEQ:ULTRA_ALIGN"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v78;
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v46 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_COLLAPSE"];
+v41 -> v46 [label="data"];
+
+v46 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_COLLAPSE"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 -> v55;
+
+v46 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_COLLAPSE"];
+v54 [shape=point];
+v46 -> v54;
+
+v46 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_COLLAPSE"];
+v53 [shape=point];
+v46 -> v53;
+
+v46 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_COLLAPSE"];
+v52 [shape=point];
+v46 -> v52;
+
+v46 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_COLLAPSE"];
+v51 [shape=point];
+v46 -> v51;
+
+v46 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_COLLAPSE"];
+v50 [shape=point];
+v46 -> v50;
+
+v46 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_COLLAPSE"];
+v49 [shape=point];
+v46 -> v49;
+
+v46 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_COLLAPSE"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v73;
+
+v46 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_COLLAPSE"];
+v48 [shape=point];
+v46 -> v48;
+
+v46 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_COLLAPSE"];
+v47 [shape=point];
+v46 -> v47;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v59 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_FILELIST"];
+v56 -> v59 [label="ch_tcollapse"];
+
+v57 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_FILELIST"];
+v57 -> v59 [label="cap_value"];
+
+v58 [shape=point,label="",fixedsize=true,width=0.1];
+v59 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_FILELIST"];
+v58 -> v59 [label="order"];
+
+v59 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_FILELIST"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v59 -> v61;
+
+v59 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_FILELIST"];
+v60 [shape=point];
+v59 -> v60;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v56 -> v61 [label="ch_tcollapse"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v62 [label="ch_tmerge_in"];
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_MERGE"];
+v62 -> v64;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v63 [label="ch_tmerge_in"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_MERGE"];
+v63 -> v64;
+
+v64 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_MERGE"];
+v68 [shape=point];
+v64 -> v68;
+
+v64 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_MERGE"];
+v67 [shape=point];
+v64 -> v67;
+
+v64 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_MERGE"];
+v66 [shape=point];
+v64 -> v66;
+
+v64 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_MERGE"];
+v65 [shape=point];
+v64 -> v65;
+
+v64 [label="NFCORE_ISOSEQ:ISOSEQ:GSTAMA_MERGE"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v74;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70 [label="ch_versions"];
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v71 [label="ch_versions"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v72 [label="ch_versions"];
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v73 [label="ch_versions"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v74 [label="ch_versions"];
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v74 -> v75 [label="ch_versions"];
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v76 [label="ch_versions"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v77 [label="ch_versions"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v78 [label="ch_versions"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v78 -> v79 [label="ch_versions"];
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v81 [label="NFCORE_ISOSEQ:ISOSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v80 -> v81;
+
+v81 [label="NFCORE_ISOSEQ:ISOSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v83 [shape=point];
+v81 -> v83;
+
+v81 [label="NFCORE_ISOSEQ:ISOSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 -> v100;
+
+v81 [label="NFCORE_ISOSEQ:ISOSEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v82 [shape=point];
+v81 -> v82;
+
+v84 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v87 [label="ch_multiqc_files"];
+
+v85 [shape=point,label="",fixedsize=true,width=0.1];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v85 -> v86 [label="ch_workflow_summary"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v90 [label="ch_multiqc_files"];
+
+v88 [shape=point,label="",fixedsize=true,width=0.1];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v88 -> v89 [label="ch_methods_description"];
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v93 [label="ch_multiqc_files"];
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v96 [label="ch_multiqc_files"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v96;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v99 [label="ch_multiqc_files"];
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v101 [label="ch_multiqc_files"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v101 -> v102 [label="ch_multiqc_files"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v106 [label="NFCORE_ISOSEQ:ISOSEQ:MULTIQC"];
+v102 -> v106;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 [label="NFCORE_ISOSEQ:ISOSEQ:MULTIQC"];
+v103 -> v106;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 [label="NFCORE_ISOSEQ:ISOSEQ:MULTIQC"];
+v104 -> v106;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 [label="NFCORE_ISOSEQ:ISOSEQ:MULTIQC"];
+v105 -> v106;
+
+v106 [label="NFCORE_ISOSEQ:ISOSEQ:MULTIQC"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v106 -> v110;
+
+v106 [label="NFCORE_ISOSEQ:ISOSEQ:MULTIQC"];
+v109 [shape=point];
+v106 -> v109;
+
+v106 [label="NFCORE_ISOSEQ:ISOSEQ:MULTIQC"];
+v108 [shape=point];
+v106 -> v108;
+
+v106 [label="NFCORE_ISOSEQ:ISOSEQ:MULTIQC"];
+v107 [shape=point];
+v106 -> v107;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v111 [shape=point];
+v110 -> v111;
+
+}

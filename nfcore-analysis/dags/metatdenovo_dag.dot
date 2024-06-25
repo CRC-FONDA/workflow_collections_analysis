@@ -1,0 +1,890 @@
+digraph "metatdenovo_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v0 -> v179 [label="ch_multiqc_files"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v2 [shape=point];
+v1 -> v2 [label="ch_hmmrs"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v4 -> v101 [label="ch_hmmrs"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v6 [shape=point];
+v5 -> v6 [label="ch_eukulele_db"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=point];
+v7 -> v8 [label="ch_cat_db_file"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v9 -> v193 [label="ch_multiqc_config"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v10 -> v194 [label="ch_multiqc_custom_config"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v11 -> v195 [label="ch_multiqc_logo"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v20 [label="ch_versions"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1];
+v14 [label="NFCORE_METATDENOVO:METATDENOVO:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v13 -> v14 [label="samplesheet"];
+
+v14 [label="NFCORE_METATDENOVO:METATDENOVO:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v14 -> v15;
+
+v14 [label="NFCORE_METATDENOVO:METATDENOVO:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v20 [label="versions"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17 [label="reads"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v17 -> v18;
+
+v18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v22;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v21 [label="NFCORE_METATDENOVO:METATDENOVO:CAT_FASTQ"];
+v19 -> v21;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v20 -> v25 [label="ch_versions"];
+
+v21 [label="NFCORE_METATDENOVO:METATDENOVO:CAT_FASTQ"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v21 -> v22;
+
+v21 [label="NFCORE_METATDENOVO:METATDENOVO:CAT_FASTQ"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v21 -> v23;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v31 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:FASTQC"];
+v22 -> v31 [label="trim_reads"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 -> v25;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v25 -> v48 [label="ch_versions"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v35 [label="ch_versions"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v28 [shape=point];
+v27 -> v28 [label="fastqc_html"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v30 [shape=point];
+v29 -> v30 [label="fastqc_zip"];
+
+v31 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:FASTQC"];
+v33 [shape=point];
+v31 -> v33 [label="fastqc_html"];
+
+v31 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:FASTQC"];
+v32 [shape=point];
+v31 -> v32 [label="fastqc_zip"];
+
+v31 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:FASTQC"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v46 [label="ch_versions"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v37 [shape=point];
+v36 -> v37 [label="trim_html"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v39 [shape=point];
+v38 -> v39 [label="trim_zip"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v41 [shape=point];
+v40 -> v41 [label="trim_log"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:TRIMGALORE"];
+v22 -> v42 [label="trim_reads"];
+
+v42 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:TRIMGALORE"];
+v61 [label="NFCORE_METATDENOVO:METATDENOVO:SEQTK_MERGEPE"];
+v42 -> v61 [label="ch_clean_reads"];
+
+v42 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:TRIMGALORE"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 -> v49 [label="trim_log"];
+
+v42 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:TRIMGALORE"];
+v44 [shape=point];
+v42 -> v44;
+
+v42 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:TRIMGALORE"];
+v43 [shape=point];
+v42 -> v43 [label="trim_html"];
+
+v42 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:TRIMGALORE"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 -> v180 [label="trim_zip"];
+
+v42 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:TRIMGALORE"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v42 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v46;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v46 -> v47 [label="ch_versions"];
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v48 [label="versions"];
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v48 -> v62 [label="ch_versions"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v50 [shape=point];
+v49 -> v50;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 -> v51 [label="trim_reads"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v52 -> v55 [label="ch_collect_stats"];
+
+v42 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:TRIMGALORE"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 -> v53 [label="trim_log"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 -> v58 [label="ch_collect_stats"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v57 [shape=point];
+v56 -> v57 [label="ch_bbduk_logs"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v58 -> v147 [label="ch_collect_stats"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v60 [shape=point];
+v59 -> v60 [label="ch_interleaved"];
+
+v61 [label="NFCORE_METATDENOVO:METATDENOVO:SEQTK_MERGEPE"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v63 [label="ch_interleaved"];
+
+v61 [label="NFCORE_METATDENOVO:METATDENOVO:SEQTK_MERGEPE"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v77 [label="ch_versions"];
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v63 -> v65 [label="ch_pe_reads_to_assembly"];
+
+v64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 -> v67 [label="ch_se_reads_to_assembly"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v70 [label="NFCORE_METATDENOVO:METATDENOVO:MEGAHIT_INTERLEAVED"];
+v66 -> v70;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v70 [label="NFCORE_METATDENOVO:METATDENOVO:MEGAHIT_INTERLEAVED"];
+v68 -> v70;
+
+v69 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [label="NFCORE_METATDENOVO:METATDENOVO:MEGAHIT_INTERLEAVED"];
+v69 -> v70 [label="assembly"];
+
+v70 [label="NFCORE_METATDENOVO:METATDENOVO:MEGAHIT_INTERLEAVED"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 -> v76;
+
+v70 [label="NFCORE_METATDENOVO:METATDENOVO:MEGAHIT_INTERLEAVED"];
+v75 [shape=point];
+v70 -> v75;
+
+v70 [label="NFCORE_METATDENOVO:METATDENOVO:MEGAHIT_INTERLEAVED"];
+v74 [shape=point];
+v70 -> v74;
+
+v70 [label="NFCORE_METATDENOVO:METATDENOVO:MEGAHIT_INTERLEAVED"];
+v73 [shape=point];
+v70 -> v73;
+
+v70 [label="NFCORE_METATDENOVO:METATDENOVO:MEGAHIT_INTERLEAVED"];
+v72 [shape=point];
+v70 -> v72;
+
+v70 [label="NFCORE_METATDENOVO:METATDENOVO:MEGAHIT_INTERLEAVED"];
+v71 [shape=point];
+v70 -> v71;
+
+v70 [label="NFCORE_METATDENOVO:METATDENOVO:MEGAHIT_INTERLEAVED"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v77;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 -> v82 [label="ch_fasta"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v94 [label="ch_versions"];
+
+v78 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v79 [shape=point];
+v78 -> v79 [label="ch_gff"];
+
+v80 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v81 [shape=point];
+v80 -> v81 [label="ch_aa"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 [label="NFCORE_METATDENOVO:METATDENOVO:PRODIGAL:PRODIGAL_MODULE"];
+v82 -> v85 [label="fastafile"];
+
+v83 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v90 [label="ch_versions"];
+
+v84 [shape=point,label="",fixedsize=true,width=0.1];
+v85 [label="NFCORE_METATDENOVO:METATDENOVO:PRODIGAL:PRODIGAL_MODULE"];
+v84 -> v85 [label="output_format"];
+
+v85 [label="NFCORE_METATDENOVO:METATDENOVO:PRODIGAL:PRODIGAL_MODULE"];
+v88 [label="NFCORE_METATDENOVO:METATDENOVO:PRODIGAL:FORMAT_PRODIGAL_GFF"];
+v85 -> v88;
+
+v85 [label="NFCORE_METATDENOVO:METATDENOVO:PRODIGAL:PRODIGAL_MODULE"];
+v87 [shape=point];
+v85 -> v87;
+
+v85 [label="NFCORE_METATDENOVO:METATDENOVO:PRODIGAL:PRODIGAL_MODULE"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v85 -> v101 [label="ch_aa"];
+
+v85 [label="NFCORE_METATDENOVO:METATDENOVO:PRODIGAL:PRODIGAL_MODULE"];
+v86 [shape=point];
+v85 -> v86;
+
+v85 [label="NFCORE_METATDENOVO:METATDENOVO:PRODIGAL:PRODIGAL_MODULE"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v90;
+
+v88 [label="NFCORE_METATDENOVO:METATDENOVO:PRODIGAL:FORMAT_PRODIGAL_GFF"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 -> v91 [label="gff"];
+
+v88 [label="NFCORE_METATDENOVO:METATDENOVO:PRODIGAL:FORMAT_PRODIGAL_GFF"];
+v89 [shape=point];
+v88 -> v89;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v94 [label="versions"];
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 [label="NFCORE_METATDENOVO:METATDENOVO:UNPIGZ_GFF"];
+v91 -> v92;
+
+v92 [label="NFCORE_METATDENOVO:METATDENOVO:UNPIGZ_GFF"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v92 -> v143 [label="ch_gff"];
+
+v92 [label="NFCORE_METATDENOVO:METATDENOVO:UNPIGZ_GFF"];
+v93 [shape=point];
+v92 -> v93;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v97 [label="ch_versions"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v76 -> v95 [label="ch_fasta"];
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 [label="NFCORE_METATDENOVO:METATDENOVO:BBMAP_INDEX"];
+v95 -> v96;
+
+v96 [label="NFCORE_METATDENOVO:METATDENOVO:BBMAP_INDEX"];
+v98 [label="NFCORE_METATDENOVO:METATDENOVO:BBMAP_ALIGN"];
+v96 -> v98;
+
+v96 [label="NFCORE_METATDENOVO:METATDENOVO:BBMAP_INDEX"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v100 [label="ch_versions"];
+
+v42 [label="NFCORE_METATDENOVO:METATDENOVO:FASTQC_TRIMGALORE:TRIMGALORE"];
+v98 [label="NFCORE_METATDENOVO:METATDENOVO:BBMAP_ALIGN"];
+v42 -> v98 [label="ch_clean_reads"];
+
+v98 [label="NFCORE_METATDENOVO:METATDENOVO:BBMAP_ALIGN"];
+v121 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v98 -> v121 [label="ch_bam"];
+
+v98 [label="NFCORE_METATDENOVO:METATDENOVO:BBMAP_ALIGN"];
+v99 [shape=point];
+v98 -> v99;
+
+v98 [label="NFCORE_METATDENOVO:METATDENOVO:BBMAP_ALIGN"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v119 [label="ch_versions"];
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 -> v104 [label="ch_hmmclassify"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v110 [label="ch_versions"];
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v105 [label="NFCORE_METATDENOVO:METATDENOVO:HMMCLASSIFY:HMMER_HMMSEARCH"];
+v104 -> v105;
+
+v105 [label="NFCORE_METATDENOVO:METATDENOVO:HMMCLASSIFY:HMMER_HMMSEARCH"];
+v108 [shape=point];
+v105 -> v108;
+
+v105 [label="NFCORE_METATDENOVO:METATDENOVO:HMMCLASSIFY:HMMER_HMMSEARCH"];
+v107 [shape=point];
+v105 -> v107;
+
+v105 [label="NFCORE_METATDENOVO:METATDENOVO:HMMCLASSIFY:HMMER_HMMSEARCH"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v105 -> v113;
+
+v105 [label="NFCORE_METATDENOVO:METATDENOVO:HMMCLASSIFY:HMMER_HMMSEARCH"];
+v106 [shape=point];
+v105 -> v106;
+
+v105 [label="NFCORE_METATDENOVO:METATDENOVO:HMMCLASSIFY:HMMER_HMMSEARCH"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v105 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v118 [label="ch_versions"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 -> v111 [label="ch_hmmclassify"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="distinct"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="distinct"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v112 -> v114;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v113 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v114 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 [label="NFCORE_METATDENOVO:METATDENOVO:HMMCLASSIFY:HMMRANK"];
+v115 -> v116;
+
+v116 [label="NFCORE_METATDENOVO:METATDENOVO:HMMCLASSIFY:HMMRANK"];
+v117 [shape=point];
+v116 -> v117 [label="$out0"];
+
+v116 [label="NFCORE_METATDENOVO:METATDENOVO:HMMCLASSIFY:HMMRANK"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v119 [label="versions"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v142 [label="ch_versions"];
+
+v120 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v124 [label="ch_versions"];
+
+v121 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v125 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v121 -> v125 [label="bam"];
+
+v121 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v122 [shape=point];
+v121 -> v122;
+
+v121 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v121 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v128 [label="ch_versions"];
+
+v125 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v125 -> v129 [label="bai"];
+
+v125 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v125 -> v130 [label="csi"];
+
+v125 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v126 [shape=point];
+v125 -> v126;
+
+v125 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v125 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v141 [label="ch_versions"];
+
+v121 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v121 -> v129 [label="bam"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v133 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v131 -> v133 [label="ch_bam_bai"];
+
+v132 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v135 [label="ch_versions"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v133 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v76 -> v133 [label="ch_fasta"];
+
+v133 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v134 [shape=point];
+v133 -> v134 [label="stats"];
+
+v133 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v138 [label="ch_versions"];
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v136 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v131 -> v136 [label="ch_bam_bai"];
+
+v136 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v137 [shape=point];
+v136 -> v137 [label="flagstat"];
+
+v136 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v140 [label="ch_versions"];
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v139 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v131 -> v139 [label="ch_bam_bai"];
+
+v139 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 -> v145 [label="idxstats"];
+
+v139 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v140 -> v141 [label="versions"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v141 -> v142 [label="versions"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v149 [label="ch_versions"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v143 -> v144;
+
+v121 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v121 -> v144 [label="bam"];
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v148 [label="NFCORE_METATDENOVO:METATDENOVO:FEATURECOUNTS_CDS"];
+v144 -> v148 [label="ch_featurecounts"];
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v147 -> v158 [label="ch_collect_stats"];
+
+v148 [label="NFCORE_METATDENOVO:METATDENOVO:FEATURECOUNTS_CDS"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v148 -> v150;
+
+v148 [label="NFCORE_METATDENOVO:METATDENOVO:FEATURECOUNTS_CDS"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v148 -> v189;
+
+v148 [label="NFCORE_METATDENOVO:METATDENOVO:FEATURECOUNTS_CDS"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v153 [label="ch_versions"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 [label="NFCORE_METATDENOVO:METATDENOVO:COLLECT_FEATURECOUNTS"];
+v151 -> v152 [label="ch_collect_feature"];
+
+v152 [label="NFCORE_METATDENOVO:METATDENOVO:COLLECT_FEATURECOUNTS"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v152 -> v154;
+
+v152 [label="NFCORE_METATDENOVO:METATDENOVO:COLLECT_FEATURECOUNTS"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v162 [label="ch_versions"];
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v155 -> v158 [label="ch_fcs_for_stats"];
+
+v152 [label="NFCORE_METATDENOVO:METATDENOVO:COLLECT_FEATURECOUNTS"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v157 [shape=point];
+v156 -> v157 [label="ch_fcs_for_summary"];
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v158 -> v169 [label="ch_collect_stats"];
+
+v85 [label="NFCORE_METATDENOVO:METATDENOVO:PRODIGAL:PRODIGAL_MODULE"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 -> v159 [label="ch_aa"];
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v159 -> v160 [label="ch_merge_tables"];
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v160 -> v167 [label="ch_merge_tables"];
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v161 [label="NFCORE_METATDENOVO:METATDENOVO:UNPIGZ_CONTIGS"];
+v76 -> v161 [label="ch_fasta"];
+
+v161 [label="NFCORE_METATDENOVO:METATDENOVO:UNPIGZ_CONTIGS"];
+v165 [label="NFCORE_METATDENOVO:METATDENOVO:TRANSRATE"];
+v161 -> v165 [label="ch_unzipped_contigs"];
+
+v161 [label="NFCORE_METATDENOVO:METATDENOVO:UNPIGZ_CONTIGS"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v162;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v166 [label="ch_versions"];
+
+v163 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v164 [shape=point];
+v163 -> v164 [label="ch_cat_db"];
+
+v165 [label="NFCORE_METATDENOVO:METATDENOVO:TRANSRATE"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v165 -> v183;
+
+v165 [label="NFCORE_METATDENOVO:METATDENOVO:TRANSRATE"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v172 [label="ch_versions"];
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v168 [shape=point];
+v167 -> v168 [label="ch_merge_tables"];
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v170 [label="NFCORE_METATDENOVO:METATDENOVO:COLLECT_STATS"];
+v169 -> v170 [label="ch_collect_stats"];
+
+v170 [label="NFCORE_METATDENOVO:METATDENOVO:COLLECT_STATS"];
+v171 [shape=point];
+v170 -> v171;
+
+v170 [label="NFCORE_METATDENOVO:METATDENOVO:COLLECT_STATS"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 -> v172;
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v172 -> v173 [label="ch_versions"];
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v173 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v175 [label="NFCORE_METATDENOVO:METATDENOVO:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v174 -> v175;
+
+v175 [label="NFCORE_METATDENOVO:METATDENOVO:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v177 [shape=point];
+v175 -> v177;
+
+v175 [label="NFCORE_METATDENOVO:METATDENOVO:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v175 -> v178;
+
+v175 [label="NFCORE_METATDENOVO:METATDENOVO:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v176 [shape=point];
+v175 -> v176;
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v178 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v179 -> v182 [label="ch_multiqc_files"];
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v180 -> v181;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v185 [label="ch_multiqc_files"];
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v183 -> v184;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v188 [label="ch_multiqc_files"];
+
+v139 [label="NFCORE_METATDENOVO:METATDENOVO:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 -> v186 [label="idxstats"];
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v186 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v188;
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v188 -> v191 [label="ch_multiqc_files"];
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v191;
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v191 -> v192 [label="ch_multiqc_files"];
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v196 [label="NFCORE_METATDENOVO:METATDENOVO:MULTIQC"];
+v192 -> v196;
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v196 [label="NFCORE_METATDENOVO:METATDENOVO:MULTIQC"];
+v193 -> v196;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v196 [label="NFCORE_METATDENOVO:METATDENOVO:MULTIQC"];
+v194 -> v196;
+
+v195 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v196 [label="NFCORE_METATDENOVO:METATDENOVO:MULTIQC"];
+v195 -> v196;
+
+v196 [label="NFCORE_METATDENOVO:METATDENOVO:MULTIQC"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v196 -> v200;
+
+v196 [label="NFCORE_METATDENOVO:METATDENOVO:MULTIQC"];
+v199 [shape=point];
+v196 -> v199;
+
+v196 [label="NFCORE_METATDENOVO:METATDENOVO:MULTIQC"];
+v198 [shape=point];
+v196 -> v198;
+
+v196 [label="NFCORE_METATDENOVO:METATDENOVO:MULTIQC"];
+v197 [shape=point];
+v196 -> v197;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v201 [shape=point];
+v200 -> v201;
+
+}

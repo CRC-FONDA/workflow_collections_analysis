@@ -1,0 +1,33 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.03 0.6 0.85", style="rounded"];
+	1[label = "concatenate_seqs", color = "0.35 0.6 0.85", style="rounded"];
+	2[label = "extract_card", color = "0.22 0.6 0.85", style="rounded"];
+	3[label = "download_card", color = "0.57 0.6 0.85", style="rounded"];
+	4[label = "extract_prevalence", color = "0.63 0.6 0.85", style="rounded"];
+	5[label = "organise_by_family", color = "0.44 0.6 0.85", style="rounded"];
+	6[label = "write_mmseqs_0_clusters", color = "0.54 0.6 0.85", style="rounded"];
+	7[label = "cluster_by_mmseq_0", color = "0.25 0.6 0.85", style="rounded"];
+	8[label = "write_mmseqs_90_clusters", color = "0.32 0.6 0.85", style="rounded"];
+	9[label = "cluster_by_mmseq_90", color = "0.19 0.6 0.85", style="rounded"];
+	10[label = "family", color = "0.00 0.6 0.85", style="rounded"];
+	11[label = "mmseqs", color = "0.48 0.6 0.85", style="rounded"];
+	1 -> 0
+	10 -> 0
+	11 -> 0
+	2 -> 1
+	4 -> 1
+	3 -> 2
+	2 -> 4
+	2 -> 5
+	4 -> 5
+	7 -> 6
+	1 -> 7
+	9 -> 8
+	1 -> 9
+	5 -> 10
+	6 -> 11
+	8 -> 11
+}            

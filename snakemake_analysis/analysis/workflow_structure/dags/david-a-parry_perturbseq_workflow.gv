@@ -1,0 +1,91 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.11 0.6 0.85", style="rounded"];
+	1[label = "plot_bagel_results", color = "0.56 0.6 0.85", style="rounded"];
+	2[label = "run_bagel_pr", color = "0.60 0.6 0.85", style="rounded"];
+	3[label = "run_bagel_bf\ntimepoint: 1", color = "0.00 0.6 0.85", style="rounded"];
+	4[label = "run_bagel_fc\ngenotype: WT", color = "0.32 0.6 0.85", style="rounded"];
+	5[label = "combine_read_counts", color = "0.46 0.6 0.85", style="rounded"];
+	6[label = "count_reads", color = "0.07 0.6 0.85", style="rounded"];
+	7[label = "bowtie_map\nsample_name: A_T0\nunit_name: L001", color = "0.42 0.6 0.85", style="rounded"];
+	8[label = "bt_index_reference", color = "0.39 0.6 0.85", style="rounded"];
+	9[label = "build_reference", color = "0.28 0.6 0.85", style="rounded"];
+	10[label = "download_guides", color = "0.63 0.6 0.85", style="rounded"];
+	11[label = "faidx_index_reference", color = "0.04 0.6 0.85", style="rounded"];
+	12[label = "count_reads", color = "0.07 0.6 0.85", style="rounded"];
+	13[label = "bowtie_map\nsample_name: A_T0\nunit_name: L002", color = "0.42 0.6 0.85", style="rounded"];
+	14[label = "count_reads", color = "0.07 0.6 0.85", style="rounded"];
+	15[label = "bowtie_map\nsample_name: A_T1\nunit_name: L001", color = "0.42 0.6 0.85", style="rounded"];
+	16[label = "count_reads", color = "0.07 0.6 0.85", style="rounded"];
+	17[label = "bowtie_map\nsample_name: A_T1\nunit_name: L002", color = "0.42 0.6 0.85", style="rounded"];
+	18[label = "count_reads", color = "0.07 0.6 0.85", style="rounded"];
+	19[label = "bowtie_map\nsample_name: B_T0\nunit_name: L001", color = "0.42 0.6 0.85", style="rounded"];
+	20[label = "count_reads", color = "0.07 0.6 0.85", style="rounded"];
+	21[label = "bowtie_map\nsample_name: B_T1\nunit_name: L001", color = "0.42 0.6 0.85", style="rounded"];
+	22[label = "download_bagel", color = "0.18 0.6 0.85", style="rounded"];
+	23[label = "run_bagel_pr", color = "0.60 0.6 0.85", style="rounded"];
+	24[label = "run_bagel_bf\ntimepoint: 1", color = "0.00 0.6 0.85", style="rounded"];
+	25[label = "run_bagel_fc\ngenotype: KO", color = "0.32 0.6 0.85", style="rounded"];
+	26[label = "plot_jacks_results", color = "0.49 0.6 0.85", style="rounded"];
+	27[label = "run_jacks", color = "0.25 0.6 0.85", style="rounded"];
+	28[label = "prepare_jacks_maps", color = "0.21 0.6 0.85", style="rounded"];
+	29[label = "plot_guide_counts", color = "0.14 0.6 0.85", style="rounded"];
+	30[label = "regression_analysis", color = "0.53 0.6 0.85", style="rounded"];
+	1 -> 0
+	26 -> 0
+	30 -> 0
+	2 -> 1
+	23 -> 1
+	3 -> 2
+	4 -> 3
+	5 -> 4
+	22 -> 4
+	6 -> 5
+	12 -> 5
+	14 -> 5
+	16 -> 5
+	18 -> 5
+	20 -> 5
+	7 -> 6
+	9 -> 6
+	11 -> 6
+	8 -> 7
+	9 -> 8
+	10 -> 9
+	9 -> 11
+	13 -> 12
+	9 -> 12
+	11 -> 12
+	8 -> 13
+	15 -> 14
+	9 -> 14
+	11 -> 14
+	8 -> 15
+	17 -> 16
+	9 -> 16
+	11 -> 16
+	8 -> 17
+	19 -> 18
+	9 -> 18
+	11 -> 18
+	8 -> 19
+	21 -> 20
+	9 -> 20
+	11 -> 20
+	8 -> 21
+	24 -> 23
+	25 -> 24
+	5 -> 25
+	22 -> 25
+	27 -> 26
+	5 -> 27
+	28 -> 27
+	22 -> 27
+	29 -> 28
+	5 -> 29
+	27 -> 30
+	2 -> 30
+	23 -> 30
+}            

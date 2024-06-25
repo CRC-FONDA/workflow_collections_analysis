@@ -1,0 +1,143 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.05 0.6 0.85", style="rounded"];
+	1[label = "Rename_files", color = "0.33 0.6 0.85", style="rounded"];
+	2[label = "Download_reference", color = "0.24 0.6 0.85", style="rounded"];
+	3[label = "Make_logs_directories", color = "0.62 0.6 0.85", style="rounded"];
+	4[label = "Create_gene2name_file", color = "0.52 0.6 0.85", style="rounded"];
+	5[label = "SummarizeQC_pre_trim", color = "0.57 0.6 0.85", style="rounded"];
+	6[label = "QC_pre_trim\nsample: 0A", color = "0.43 0.6 0.85", style="rounded"];
+	7[label = "QC_pre_trim\nsample: 0B", color = "0.43 0.6 0.85", style="rounded"];
+	8[label = "QC_pre_trim\nsample: 0C", color = "0.43 0.6 0.85", style="rounded"];
+	9[label = "QC_pre_trim\nsample: 0D", color = "0.43 0.6 0.85", style="rounded"];
+	10[label = "QC_pre_trim\nsample: 25A", color = "0.43 0.6 0.85", style="rounded"];
+	11[label = "QC_pre_trim\nsample: 25B", color = "0.43 0.6 0.85", style="rounded"];
+	12[label = "QC_pre_trim\nsample: 25C", color = "0.43 0.6 0.85", style="rounded"];
+	13[label = "QC_pre_trim\nsample: 25D", color = "0.43 0.6 0.85", style="rounded"];
+	14[label = "SummarizeQC_post_trim", color = "0.14 0.6 0.85", style="rounded"];
+	15[label = "QC_post_trim", color = "0.10 0.6 0.85", style="rounded"];
+	16[label = "Trim_reads\nsample: 0A", color = "0.38 0.6 0.85", style="rounded"];
+	17[label = "QC_post_trim", color = "0.10 0.6 0.85", style="rounded"];
+	18[label = "Trim_reads\nsample: 0B", color = "0.38 0.6 0.85", style="rounded"];
+	19[label = "QC_post_trim", color = "0.10 0.6 0.85", style="rounded"];
+	20[label = "Trim_reads\nsample: 0C", color = "0.38 0.6 0.85", style="rounded"];
+	21[label = "QC_post_trim", color = "0.10 0.6 0.85", style="rounded"];
+	22[label = "Trim_reads\nsample: 0D", color = "0.38 0.6 0.85", style="rounded"];
+	23[label = "QC_post_trim", color = "0.10 0.6 0.85", style="rounded"];
+	24[label = "Trim_reads\nsample: 25A", color = "0.38 0.6 0.85", style="rounded"];
+	25[label = "QC_post_trim", color = "0.10 0.6 0.85", style="rounded"];
+	26[label = "Trim_reads\nsample: 25B", color = "0.38 0.6 0.85", style="rounded"];
+	27[label = "QC_post_trim", color = "0.10 0.6 0.85", style="rounded"];
+	28[label = "Trim_reads\nsample: 25C", color = "0.38 0.6 0.85", style="rounded"];
+	29[label = "QC_post_trim", color = "0.10 0.6 0.85", style="rounded"];
+	30[label = "Trim_reads\nsample: 25D", color = "0.38 0.6 0.85", style="rounded"];
+	31[label = "Plot_lengths", color = "0.19 0.6 0.85", style="rounded"];
+	32[label = "Estimate_abundance", color = "0.00 0.6 0.85", style="rounded"];
+	33[label = "Prepare_reference", color = "0.29 0.6 0.85", style="rounded"];
+	34[label = "Plot_lengths", color = "0.19 0.6 0.85", style="rounded"];
+	35[label = "Estimate_abundance", color = "0.00 0.6 0.85", style="rounded"];
+	36[label = "Plot_lengths", color = "0.19 0.6 0.85", style="rounded"];
+	37[label = "Estimate_abundance", color = "0.00 0.6 0.85", style="rounded"];
+	38[label = "Plot_lengths", color = "0.19 0.6 0.85", style="rounded"];
+	39[label = "Estimate_abundance", color = "0.00 0.6 0.85", style="rounded"];
+	40[label = "Plot_lengths", color = "0.19 0.6 0.85", style="rounded"];
+	41[label = "Estimate_abundance", color = "0.00 0.6 0.85", style="rounded"];
+	42[label = "Plot_lengths", color = "0.19 0.6 0.85", style="rounded"];
+	43[label = "Estimate_abundance", color = "0.00 0.6 0.85", style="rounded"];
+	44[label = "Plot_lengths", color = "0.19 0.6 0.85", style="rounded"];
+	45[label = "Estimate_abundance", color = "0.00 0.6 0.85", style="rounded"];
+	46[label = "Plot_lengths", color = "0.19 0.6 0.85", style="rounded"];
+	47[label = "Estimate_abundance", color = "0.00 0.6 0.85", style="rounded"];
+	48[label = "Generate_count_matrix", color = "0.48 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 0
+	4 -> 0
+	5 -> 0
+	14 -> 0
+	31 -> 0
+	34 -> 0
+	36 -> 0
+	38 -> 0
+	40 -> 0
+	42 -> 0
+	44 -> 0
+	46 -> 0
+	48 -> 0
+	3 -> 2
+	2 -> 4
+	6 -> 5
+	7 -> 5
+	8 -> 5
+	9 -> 5
+	10 -> 5
+	11 -> 5
+	12 -> 5
+	13 -> 5
+	1 -> 6
+	1 -> 7
+	1 -> 8
+	1 -> 9
+	1 -> 10
+	1 -> 11
+	1 -> 12
+	1 -> 13
+	15 -> 14
+	17 -> 14
+	19 -> 14
+	21 -> 14
+	23 -> 14
+	25 -> 14
+	27 -> 14
+	29 -> 14
+	16 -> 15
+	1 -> 16
+	18 -> 17
+	1 -> 18
+	20 -> 19
+	1 -> 20
+	22 -> 21
+	1 -> 22
+	24 -> 23
+	1 -> 24
+	26 -> 25
+	1 -> 26
+	28 -> 27
+	1 -> 28
+	30 -> 29
+	1 -> 30
+	32 -> 31
+	33 -> 32
+	16 -> 32
+	2 -> 33
+	35 -> 34
+	33 -> 35
+	18 -> 35
+	37 -> 36
+	33 -> 37
+	20 -> 37
+	39 -> 38
+	33 -> 39
+	22 -> 39
+	41 -> 40
+	33 -> 41
+	24 -> 41
+	43 -> 42
+	33 -> 43
+	26 -> 43
+	45 -> 44
+	33 -> 45
+	28 -> 45
+	47 -> 46
+	33 -> 47
+	30 -> 47
+	32 -> 48
+	35 -> 48
+	37 -> 48
+	39 -> 48
+	41 -> 48
+	43 -> 48
+	45 -> 48
+	47 -> 48
+}            

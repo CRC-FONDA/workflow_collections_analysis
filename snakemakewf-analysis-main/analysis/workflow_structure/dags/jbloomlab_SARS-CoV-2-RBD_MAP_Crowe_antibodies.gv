@@ -1,0 +1,50 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "make_summary", color = "0.25 0.6 0.85", style="rounded"];
+	1[label = "make_dag", color = "0.04 0.6 0.85", style="rounded,dashed"];
+	2[label = "get_codon_variant_table", color = "0.08 0.6 0.85", style="rounded"];
+	3[label = "count_variants", color = "0.17 0.6 0.85", style="rounded"];
+	4[label = "counts_to_scores", color = "0.62 0.6 0.85", style="rounded"];
+	5[label = "get_mut_bind_expr", color = "0.33 0.6 0.85", style="rounded"];
+	6[label = "get_variant_expr", color = "0.21 0.6 0.85", style="rounded"];
+	7[label = "get_variant_bind", color = "0.54 0.6 0.85", style="rounded"];
+	8[label = "scores_to_frac_escape", color = "0.58 0.6 0.85", style="rounded"];
+	9[label = "analyze_escape_profiles", color = "0.38 0.6 0.85", style="rounded"];
+	10[label = "mds_escape_profiles", color = "0.46 0.6 0.85", style="rounded"];
+	11[label = "output_pdbs", color = "0.42 0.6 0.85", style="rounded"];
+	12[label = "circulating_variants", color = "0.50 0.6 0.85", style="rounded"];
+	13[label = "crowe_evol", color = "0.00 0.6 0.85", style="rounded"];
+	14[label = "make_supp_data", color = "0.12 0.6 0.85", style="rounded"];
+	15[label = "escape_selections", color = "0.29 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 0
+	3 -> 0
+	4 -> 0
+	8 -> 0
+	9 -> 0
+	10 -> 0
+	11 -> 0
+	12 -> 0
+	13 -> 0
+	14 -> 0
+	15 -> 0
+	2 -> 3
+	3 -> 4
+	5 -> 4
+	6 -> 4
+	7 -> 4
+	4 -> 8
+	8 -> 9
+	5 -> 9
+	8 -> 10
+	8 -> 11
+	9 -> 12
+	9 -> 13
+	12 -> 13
+	8 -> 14
+	9 -> 14
+	8 -> 15
+	5 -> 15
+}            

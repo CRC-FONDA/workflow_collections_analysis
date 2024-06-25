@@ -1,0 +1,29 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.22 0.6 0.85", style="rounded"];
+	1[label = "qc_qc_report", color = "0.27 0.6 0.85", style="rounded"];
+	2[label = "qc_move_qc_output", color = "0.09 0.6 0.85", style="rounded"];
+	3[label = "qc_qc_eval\nsample: example\nword_length: 10", color = "0.13 0.6 0.85", style="rounded"];
+	4[label = "motif_enrichment_enriched_tfs", color = "0.49 0.6 0.85", style="rounded"];
+	5[label = "motif_enrichment_gkm_predict", color = "0.36 0.6 0.85", style="rounded"];
+	6[label = "kmers_get_kmers\nword_length: 10", color = "0.31 0.6 0.85", style="rounded,dashed"];
+	7[label = "motif_enrichment_gkm_train\nword_length: 10", color = "0.44 0.6 0.85", style="rounded"];
+	8[label = "motif_enrichment_generate_null_seq", color = "0.04 0.6 0.85", style="rounded"];
+	9[label = "motif_enrichment_clean_bed\nsample: example", color = "0.53 0.6 0.85", style="rounded"];
+	10[label = "motif_database_combine_fimo_output", color = "0.00 0.6 0.85", style="rounded"];
+	11[label = "motif_database_split_and_run_fimo\nmin_word_length: 8\ntf_database_file: JASPAR2022_CORE_vertebrates_non-redundant_pfms_meme", color = "0.18 0.6 0.85", style="rounded"];
+	1 -> 0
+	4 -> 0
+	2 -> 1
+	3 -> 2
+	5 -> 4
+	10 -> 4
+	6 -> 5
+	7 -> 5
+	8 -> 7
+	9 -> 8
+	11 -> 10
+	6 -> 11
+}            

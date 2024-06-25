@@ -1,0 +1,515 @@
+1. cloned repo
+
+2. created conda environement and run: snakemake -j -d workflow --use-conda --configfile config/one.yaml
+
+3. The workflow is running and trying to create a new conda environment and to install further dependencies
+    filed with this error:
+        CreateCondaEnvironmentException:
+        [...]
+        CondaEnvException: Pip failed
+
+4. The installation of ANN-Solo seems to fail
+
+5. pip install ann_solo also fails. The package, which is linked to the paper reproduced in this repo, seems to be broken
+
+
+
+Full output for (3.):
+
+(ppx-workflow) seb@Ras:~/Fonda/notebook_reproduction/ppx-workflow$ snakemake -j -d workflow --use-conda --configfile config/one.yaml
+Config file ../config/chick.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+/home/seb/anaconda3/envs/ppx-workflow/lib/python3.11/site-packages/conda_package_streaming/package_streaming.py:19: UserWarning: zstandard could not be imported. Running without .conda support.
+  warnings.warn("zstandard could not be imported. Running without .conda support.")
+/home/seb/anaconda3/envs/ppx-workflow/lib/python3.11/site-packages/conda_package_handling/api.py:29: UserWarning: Install zstandard Python bindings for .conda support
+  _warnings.warn("Install zstandard Python bindings for .conda support")
+/home/seb/anaconda3/envs/ppx-workflow/lib/python3.11/site-packages/conda_package_streaming/package_streaming.py:19: UserWarning: zstandard could not be imported. Running without .conda support.
+  warnings.warn("zstandard could not be imported. Running without .conda support.")
+/home/seb/anaconda3/envs/ppx-workflow/lib/python3.11/site-packages/conda_package_handling/api.py:29: UserWarning: Install zstandard Python bindings for .conda support
+  _warnings.warn("Install zstandard Python bindings for .conda support")
+Your conda installation is not configured to use strict channel priorities. This is however crucial for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Creating conda environment envs/ann_solo-cpu.yaml...
+Downloading and installing remote packages.
+CreateCondaEnvironmentException:
+Could not create conda environment from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/envs/ann_solo-cpu.yaml:
+Command:
+mamba env create --quiet --file "/home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_.yaml" --prefix "/home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_"
+Output:
+/home/seb/anaconda3/envs/ppx-workflow/lib/python3.11/site-packages/conda_package_streaming/package_streaming.py:19: UserWarning: zstandard could not be imported. Running without .conda support.
+  warnings.warn("zstandard could not be imported. Running without .conda support.")
+/home/seb/anaconda3/envs/ppx-workflow/lib/python3.11/site-packages/conda_package_handling/api.py:29: UserWarning: Install zstandard Python bindings for .conda support
+  _warnings.warn("Install zstandard Python bindings for .conda support")
+/home/seb/anaconda3/envs/ppx-workflow/lib/python3.11/site-packages/conda_package_streaming/package_streaming.py:19: UserWarning: zstandard could not be imported. Running without .conda support.
+  warnings.warn("zstandard could not be imported. Running without .conda support.")
+/home/seb/anaconda3/envs/ppx-workflow/lib/python3.11/site-packages/conda_package_handling/api.py:29: UserWarning: Install zstandard Python bindings for .conda support
+  _warnings.warn("Install zstandard Python bindings for .conda support")
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+Installing pip dependencies: ...working... Pip subprocess error:
+  error: subprocess-exited-with-error
+
+  × python setup.py bdist_wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [218 lines of output]
+      running bdist_wheel
+      running build
+      running build_py
+      creating build
+      creating build/lib.linux-x86_64-cpython-310
+      creating build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/spectrum.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/utils.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/plot_ssm.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/spectral_library.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/reader.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/__init__.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/config.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/ann_solo.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/writer.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      running build_ext
+      skipping 'ann_solo/spectrum_match.cpp' Cython extension (up-to-date)
+      skipping 'ann_solo/parsers.cpp' Cython extension (up-to-date)
+      building 'ann_solo.spectrum_match' extension
+      creating build/temp.linux-x86_64-cpython-310
+      creating build/temp.linux-x86_64-cpython-310/ann_solo
+      gcc -pthread -B /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include -fPIC -O2 -isystem /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include -fPIC -I/home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/numpy/core/include -I/home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10 -c ann_solo/SpectrumMatch.cpp -o build/temp.linux-x86_64-cpython-310/ann_solo/SpectrumMatch.o -O3 -march=native -ffast-math -fno-associative-math -std=c++14
+      gcc -pthread -B /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include -fPIC -O2 -isystem /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include -fPIC -I/home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/numpy/core/include -I/home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10 -c ann_solo/spectrum_match.cpp -o build/temp.linux-x86_64-cpython-310/ann_solo/spectrum_match.o -O3 -march=native -ffast-math -fno-associative-math -std=c++14
+      In file included from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/numpy/core/include/numpy/ndarraytypes.h:1948,
+                       from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/numpy/core/include/numpy/ndarrayobject.h:12,
+                       from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/numpy/core/include/numpy/arrayobject.h:5,
+                       from ann_solo/spectrum_match.cpp:612:
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning "Using deprecated NumPy API, disable it with " "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+         17 | #warning "Using deprecated NumPy API, disable it with " \
+            |  ^~~~~~~
+      In file included from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/Python.h:74,
+                       from ann_solo/spectrum_match.cpp:4:
+      ann_solo/spectrum_match.cpp: In function ‘void __pyx_tp_dealloc_array(PyObject*)’:
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/object.h:133:33: error: lvalue required as increment operand
+        133 | #define Py_REFCNT(ob) _Py_REFCNT(_PyObject_CAST_CONST(ob))
+            |                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:18886:7: note: in expansion of macro ‘Py_REFCNT’
+      18886 |     ++Py_REFCNT(o);
+            |       ^~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/object.h:133:33: error: lvalue required as decrement operand
+        133 | #define Py_REFCNT(ob) _Py_REFCNT(_PyObject_CAST_CONST(ob))
+            |                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:18888:7: note: in expansion of macro ‘Py_REFCNT’
+      18888 |     --Py_REFCNT(o);
+            |       ^~~~~~~~~
+      ann_solo/spectrum_match.cpp: In function ‘void __pyx_tp_dealloc_memoryview(PyObject*)’:
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/object.h:133:33: error: lvalue required as increment operand
+        133 | #define Py_REFCNT(ob) _Py_REFCNT(_PyObject_CAST_CONST(ob))
+            |                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:19181:7: note: in expansion of macro ‘Py_REFCNT’
+      19181 |     ++Py_REFCNT(o);
+            |       ^~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/object.h:133:33: error: lvalue required as decrement operand
+        133 | #define Py_REFCNT(ob) _Py_REFCNT(_PyObject_CAST_CONST(ob))
+            |                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:19183:7: note: in expansion of macro ‘Py_REFCNT’
+      19183 |     --Py_REFCNT(o);
+            |       ^~~~~~~~~
+      ann_solo/spectrum_match.cpp: In function ‘void __pyx_tp_dealloc__memoryviewslice(PyObject*)’:
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/object.h:133:33: error: lvalue required as increment operand
+        133 | #define Py_REFCNT(ob) _Py_REFCNT(_PyObject_CAST_CONST(ob))
+            |                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:19423:7: note: in expansion of macro ‘Py_REFCNT’
+      19423 |     ++Py_REFCNT(o);
+            |       ^~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/object.h:133:33: error: lvalue required as decrement operand
+        133 | #define Py_REFCNT(ob) _Py_REFCNT(_PyObject_CAST_CONST(ob))
+            |                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:19425:7: note: in expansion of macro ‘Py_REFCNT’
+      19425 |     --Py_REFCNT(o);
+            |       ^~~~~~~~~
+      In file included from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/unicodeobject.h:1046,
+                       from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/Python.h:83,
+                       from ann_solo/spectrum_match.cpp:4:
+      ann_solo/spectrum_match.cpp: In function ‘int __Pyx_ParseOptionalKeywords(PyObject*, PyObject***, PyObject*, PyObject**, Py_ssize_t, const char*)’:
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:261:7: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        261 |       PyUnicode_WSTR_LENGTH(op) :                    \
+            |       ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20792:22: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20792 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                      ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:262:33: warning: ‘Py_UNICODE* PyUnicode_AsUnicode(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        262 |       ((void)PyUnicode_AsUnicode(_PyObject_CAST(op)),\
+            |              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20792:22: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20792 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                      ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:264:8: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        264 |        PyUnicode_WSTR_LENGTH(op)))
+            |        ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20792:22: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20792 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                      ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:261:7: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        261 |       PyUnicode_WSTR_LENGTH(op) :                    \
+            |       ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20792:52: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20792 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                                                    ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:262:33: warning: ‘Py_UNICODE* PyUnicode_AsUnicode(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        262 |       ((void)PyUnicode_AsUnicode(_PyObject_CAST(op)),\
+            |              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20792:52: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20792 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                                                    ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:264:8: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        264 |        PyUnicode_WSTR_LENGTH(op)))
+            |        ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20792:52: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20792 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                                                    ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:261:7: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        261 |       PyUnicode_WSTR_LENGTH(op) :                    \
+            |       ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20808:26: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20808 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                          ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:262:33: warning: ‘Py_UNICODE* PyUnicode_AsUnicode(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        262 |       ((void)PyUnicode_AsUnicode(_PyObject_CAST(op)),\
+            |              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20808:26: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20808 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                          ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:264:8: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        264 |        PyUnicode_WSTR_LENGTH(op)))
+            |        ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20808:26: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20808 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                          ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:261:7: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        261 |       PyUnicode_WSTR_LENGTH(op) :                    \
+            |       ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20808:59: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20808 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                                                           ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:262:33: warning: ‘Py_UNICODE* PyUnicode_AsUnicode(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        262 |       ((void)PyUnicode_AsUnicode(_PyObject_CAST(op)),\
+            |              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20808:59: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20808 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                                                           ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:264:8: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        264 |        PyUnicode_WSTR_LENGTH(op)))
+            |        ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20808:59: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20808 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                                                           ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp: In function ‘PyObject* __Pyx_decode_c_string(const char*, Py_ssize_t, Py_ssize_t, const char*, const char*, PyObject* (*)(const char*, Py_ssize_t, const char*))’:
+      ann_solo/spectrum_match.cpp:22206:37: warning: ‘PyObject* PyUnicode_FromUnicode(const Py_UNICODE*, Py_ssize_t)’ is deprecated [-Wdeprecated-declarations]
+      22206 |         return PyUnicode_FromUnicode(NULL, 0);
+            |                ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+      In file included from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/unicodeobject.h:1046,
+                       from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/Python.h:83,
+                       from ann_solo/spectrum_match.cpp:4:
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:551:42: note: declared here
+        551 | Py_DEPRECATED(3.3) PyAPI_FUNC(PyObject*) PyUnicode_FromUnicode(
+            |                                          ^~~~~~~~~~~~~~~~~~~~~
+      error: command '/usr/bin/gcc' failed with exit code 1
+      [end of output]
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for ann_solo
+  error: subprocess-exited-with-error
+
+  × Running setup.py install for ann_solo did not run successfully.
+  │ exit code: 1
+  ╰─> [220 lines of output]
+      running install
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+        warnings.warn(
+      running build
+      running build_py
+      creating build
+      creating build/lib.linux-x86_64-cpython-310
+      creating build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/spectrum.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/utils.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/plot_ssm.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/spectral_library.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/reader.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/__init__.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/config.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/ann_solo.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      copying ann_solo/writer.py -> build/lib.linux-x86_64-cpython-310/ann_solo
+      running build_ext
+      skipping 'ann_solo/spectrum_match.cpp' Cython extension (up-to-date)
+      skipping 'ann_solo/parsers.cpp' Cython extension (up-to-date)
+      building 'ann_solo.spectrum_match' extension
+      creating build/temp.linux-x86_64-cpython-310
+      creating build/temp.linux-x86_64-cpython-310/ann_solo
+      gcc -pthread -B /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include -fPIC -O2 -isystem /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include -fPIC -I/home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/numpy/core/include -I/home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10 -c ann_solo/SpectrumMatch.cpp -o build/temp.linux-x86_64-cpython-310/ann_solo/SpectrumMatch.o -O3 -march=native -ffast-math -fno-associative-math -std=c++14
+      gcc -pthread -B /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include -fPIC -O2 -isystem /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include -fPIC -I/home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/numpy/core/include -I/home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10 -c ann_solo/spectrum_match.cpp -o build/temp.linux-x86_64-cpython-310/ann_solo/spectrum_match.o -O3 -march=native -ffast-math -fno-associative-math -std=c++14
+      In file included from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/numpy/core/include/numpy/ndarraytypes.h:1948,
+                       from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/numpy/core/include/numpy/ndarrayobject.h:12,
+                       from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/numpy/core/include/numpy/arrayobject.h:5,
+                       from ann_solo/spectrum_match.cpp:612:
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/lib/python3.10/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning "Using deprecated NumPy API, disable it with " "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+         17 | #warning "Using deprecated NumPy API, disable it with " \
+            |  ^~~~~~~
+      In file included from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/Python.h:74,
+                       from ann_solo/spectrum_match.cpp:4:
+      ann_solo/spectrum_match.cpp: In function ‘void __pyx_tp_dealloc_array(PyObject*)’:
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/object.h:133:33: error: lvalue required as increment operand
+        133 | #define Py_REFCNT(ob) _Py_REFCNT(_PyObject_CAST_CONST(ob))
+            |                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:18886:7: note: in expansion of macro ‘Py_REFCNT’
+      18886 |     ++Py_REFCNT(o);
+            |       ^~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/object.h:133:33: error: lvalue required as decrement operand
+        133 | #define Py_REFCNT(ob) _Py_REFCNT(_PyObject_CAST_CONST(ob))
+            |                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:18888:7: note: in expansion of macro ‘Py_REFCNT’
+      18888 |     --Py_REFCNT(o);
+            |       ^~~~~~~~~
+      ann_solo/spectrum_match.cpp: In function ‘void __pyx_tp_dealloc_memoryview(PyObject*)’:
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/object.h:133:33: error: lvalue required as increment operand
+        133 | #define Py_REFCNT(ob) _Py_REFCNT(_PyObject_CAST_CONST(ob))
+            |                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:19181:7: note: in expansion of macro ‘Py_REFCNT’
+      19181 |     ++Py_REFCNT(o);
+            |       ^~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/object.h:133:33: error: lvalue required as decrement operand
+        133 | #define Py_REFCNT(ob) _Py_REFCNT(_PyObject_CAST_CONST(ob))
+            |                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:19183:7: note: in expansion of macro ‘Py_REFCNT’
+      19183 |     --Py_REFCNT(o);
+            |       ^~~~~~~~~
+      ann_solo/spectrum_match.cpp: In function ‘void __pyx_tp_dealloc__memoryviewslice(PyObject*)’:
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/object.h:133:33: error: lvalue required as increment operand
+        133 | #define Py_REFCNT(ob) _Py_REFCNT(_PyObject_CAST_CONST(ob))
+            |                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:19423:7: note: in expansion of macro ‘Py_REFCNT’
+      19423 |     ++Py_REFCNT(o);
+            |       ^~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/object.h:133:33: error: lvalue required as decrement operand
+        133 | #define Py_REFCNT(ob) _Py_REFCNT(_PyObject_CAST_CONST(ob))
+            |                       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:19425:7: note: in expansion of macro ‘Py_REFCNT’
+      19425 |     --Py_REFCNT(o);
+            |       ^~~~~~~~~
+      In file included from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/unicodeobject.h:1046,
+                       from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/Python.h:83,
+                       from ann_solo/spectrum_match.cpp:4:
+      ann_solo/spectrum_match.cpp: In function ‘int __Pyx_ParseOptionalKeywords(PyObject*, PyObject***, PyObject*, PyObject**, Py_ssize_t, const char*)’:
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:261:7: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        261 |       PyUnicode_WSTR_LENGTH(op) :                    \
+            |       ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20792:22: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20792 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                      ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:262:33: warning: ‘Py_UNICODE* PyUnicode_AsUnicode(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        262 |       ((void)PyUnicode_AsUnicode(_PyObject_CAST(op)),\
+            |              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20792:22: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20792 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                      ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:264:8: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        264 |        PyUnicode_WSTR_LENGTH(op)))
+            |        ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20792:22: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20792 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                      ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:261:7: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        261 |       PyUnicode_WSTR_LENGTH(op) :                    \
+            |       ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20792:52: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20792 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                                                    ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:262:33: warning: ‘Py_UNICODE* PyUnicode_AsUnicode(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        262 |       ((void)PyUnicode_AsUnicode(_PyObject_CAST(op)),\
+            |              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20792:52: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20792 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                                                    ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:264:8: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        264 |        PyUnicode_WSTR_LENGTH(op)))
+            |        ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20792:52: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20792 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                                                    ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:261:7: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        261 |       PyUnicode_WSTR_LENGTH(op) :                    \
+            |       ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20808:26: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20808 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                          ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:262:33: warning: ‘Py_UNICODE* PyUnicode_AsUnicode(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        262 |       ((void)PyUnicode_AsUnicode(_PyObject_CAST(op)),\
+            |              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20808:26: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20808 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                          ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:264:8: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        264 |        PyUnicode_WSTR_LENGTH(op)))
+            |        ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20808:26: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20808 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                          ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:261:7: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        261 |       PyUnicode_WSTR_LENGTH(op) :                    \
+            |       ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20808:59: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20808 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                                                           ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:262:33: warning: ‘Py_UNICODE* PyUnicode_AsUnicode(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        262 |       ((void)PyUnicode_AsUnicode(_PyObject_CAST(op)),\
+            |              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20808:59: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20808 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                                                           ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:451:61: warning: ‘Py_ssize_t _PyUnicode_get_wstr_length(PyObject*)’ is deprecated [-Wdeprecated-declarations]
+        451 | #define PyUnicode_WSTR_LENGTH(op) _PyUnicode_get_wstr_length((PyObject*)op)
+            |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:264:8: note: in expansion of macro ‘PyUnicode_WSTR_LENGTH’
+        264 |        PyUnicode_WSTR_LENGTH(op)))
+            |        ^~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp:20808:59: note: in expansion of macro ‘PyUnicode_GET_SIZE’
+      20808 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                                                           ^~~~~~~~~~~~~~~~~~
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      ann_solo/spectrum_match.cpp: In function ‘PyObject* __Pyx_decode_c_string(const char*, Py_ssize_t, Py_ssize_t, const char*, const char*, PyObject* (*)(const char*, Py_ssize_t, const char*))’:
+      ann_solo/spectrum_match.cpp:22206:37: warning: ‘PyObject* PyUnicode_FromUnicode(const Py_UNICODE*, Py_ssize_t)’ is deprecated [-Wdeprecated-declarations]
+      22206 |         return PyUnicode_FromUnicode(NULL, 0);
+            |                ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+      In file included from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/unicodeobject.h:1046,
+                       from /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/Python.h:83,
+                       from ann_solo/spectrum_match.cpp:4:
+      /home/seb/Fonda/notebook_reproduction/ppx-workflow/workflow/.snakemake/conda/707d5dd5fb0e90e1fa7a435dbf573f6b_/include/python3.10/cpython/unicodeobject.h:551:42: note: declared here
+        551 | Py_DEPRECATED(3.3) PyAPI_FUNC(PyObject*) PyUnicode_FromUnicode(
+            |                                          ^~~~~~~~~~~~~~~~~~~~~
+      error: command '/usr/bin/gcc' failed with exit code 1
+      [end of output]
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: legacy-install-failure
+
+× Encountered error while trying to install package.
+╰─> ann_solo
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for output from the failure.
+
+failed
+
+CondaEnvException: Pip failed

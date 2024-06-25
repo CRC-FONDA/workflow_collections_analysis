@@ -1,0 +1,15 @@
+total repos: 1431
+read repos: 1334, ratio (read/total repos): 0.9322152341020266
+total files: 57015, ratio (total files/total repos): 39.84276729559748
+read files: 31974, ratio (read files/read repos): 23.968515742128936, ratio (read files/total_files): 0.5607997895290713
+
+number of repos with subworkflows: 10
+number of subworkflow insertions: 21
+number of repos with configfiles: 675
+number of configfile insertions: 845
+number of repos with inputfunc: 62
+number of inputfunc insertions: 102
+number of repos with checkpoint: 143
+number of checkpoint insertions: 383
+number of repos with notebooks: 52
+number of notebook insertions: 165

@@ -1,0 +1,36 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.00 0.6 0.85", style="rounded"];
+	1[label = "assembly_stats", color = "0.17 0.6 0.85", style="rounded"];
+	2[label = "gfa_to_fastq", color = "0.33 0.6 0.85", style="rounded"];
+	3[label = "run_hifiasm\ns_par: 0.1", color = "0.50 0.6 0.85", style="rounded"];
+	4[label = "assembly_stats", color = "0.17 0.6 0.85", style="rounded"];
+	5[label = "gfa_to_fastq", color = "0.33 0.6 0.85", style="rounded"];
+	6[label = "run_hifiasm\ns_par: 0.2", color = "0.50 0.6 0.85", style="rounded"];
+	7[label = "assembly_stats", color = "0.17 0.6 0.85", style="rounded"];
+	8[label = "gfa_to_fastq", color = "0.33 0.6 0.85", style="rounded"];
+	9[label = "run_hifiasm\ns_par: 0.3", color = "0.50 0.6 0.85", style="rounded"];
+	10[label = "assembly_stats", color = "0.17 0.6 0.85", style="rounded"];
+	11[label = "gfa_to_fastq", color = "0.33 0.6 0.85", style="rounded"];
+	12[label = "run_hifiasm\ns_par: 0.4", color = "0.50 0.6 0.85", style="rounded"];
+	13[label = "assembly_stats", color = "0.17 0.6 0.85", style="rounded"];
+	14[label = "gfa_to_fastq", color = "0.33 0.6 0.85", style="rounded"];
+	15[label = "run_hifiasm\ns_par: 0.5", color = "0.50 0.6 0.85", style="rounded"];
+	1 -> 0
+	4 -> 0
+	7 -> 0
+	10 -> 0
+	13 -> 0
+	2 -> 1
+	3 -> 2
+	5 -> 4
+	6 -> 5
+	8 -> 7
+	9 -> 8
+	11 -> 10
+	12 -> 11
+	14 -> 13
+	15 -> 14
+}            

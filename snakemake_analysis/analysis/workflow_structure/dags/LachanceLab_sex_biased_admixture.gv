@@ -1,0 +1,54 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.38 0.6 0.85", style="rounded"];
+	1[label = "summarize_results_constant", color = "0.59 0.6 0.85", style="rounded"];
+	2[label = "run_admixture_chr1_constant", color = "0.55 0.6 0.85", style="rounded"];
+	3[label = "convert_vcf_to_plink_chr1_constant", color = "0.29 0.6 0.85", style="rounded"];
+	4[label = "compress_vcf_constant", color = "0.16 0.6 0.85", style="rounded"];
+	5[label = "generate_vcf_constant", color = "0.30 0.6 0.85", style="rounded"];
+	6[label = "constant_admixture", color = "0.42 0.6 0.85", style="rounded"];
+	7[label = "simulate_afr_eur_ea", color = "0.20 0.6 0.85", style="rounded"];
+	8[label = "ld_prune_chr1_constant", color = "0.66 0.6 0.85", style="rounded"];
+	9[label = "run_admixture_chrX_constant", color = "0.57 0.6 0.85", style="rounded"];
+	10[label = "convert_vcf_to_plink_chrX_constant", color = "0.31 0.6 0.85", style="rounded"];
+	11[label = "ld_prune_chrX_constant", color = "0.58 0.6 0.85", style="rounded"];
+	12[label = "assign_haplogroups_mtDNA_constant", color = "0.01 0.6 0.85", style="rounded"];
+	13[label = "convert_vcf_to_plink_mtDNA_constant", color = "0.14 0.6 0.85", style="rounded"];
+	14[label = "assign_haplogroups_chrY_constant", color = "0.43 0.6 0.85", style="rounded"];
+	15[label = "convert_vcf_to_plink_chrY_constant", color = "0.48 0.6 0.85", style="rounded"];
+	16[label = "plot_pca_constant", color = "0.19 0.6 0.85", style="rounded"];
+	1 -> 0
+	16 -> 0
+	2 -> 1
+	9 -> 1
+	12 -> 1
+	14 -> 1
+	3 -> 1
+	3 -> 2
+	5 -> 2
+	4 -> 3
+	5 -> 3
+	8 -> 3
+	5 -> 4
+	6 -> 5
+	7 -> 6
+	4 -> 8
+	5 -> 8
+	10 -> 9
+	5 -> 9
+	4 -> 10
+	5 -> 10
+	11 -> 10
+	4 -> 11
+	5 -> 11
+	13 -> 12
+	4 -> 13
+	5 -> 13
+	15 -> 14
+	4 -> 15
+	5 -> 15
+	3 -> 16
+	10 -> 16
+}            

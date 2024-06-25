@@ -1,0 +1,733 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.23 0.6 0.85", style="rounded"];
+	1[label = "b6_haplotype_analysis", color = "0.53 0.6 0.85", style="rounded"];
+	2[label = "read_haplotype", color = "0.12 0.6 0.85", style="rounded"];
+	3[label = "call_variant_proportion", color = "0.35 0.6 0.85", style="rounded"];
+	4[label = "bwa_mem_align", color = "0.64 0.6 0.85", style="rounded"];
+	5[label = "mask_with_cast_genome\ngenome: GRCm38_90", color = "0.52 0.6 0.85", style="rounded"];
+	6[label = "gunzip_fa\nfile: ../genome_data/GRCm38_90", color = "0.39 0.6 0.85", style="rounded"];
+	7[label = "download_B6_genome", color = "0.02 0.6 0.85", style="rounded"];
+	8[label = "gunzip_vcf\nfile: ../genome_data/CAST_EiJ.mgp.v5.snps.dbSNP142", color = "0.07 0.6 0.85", style="rounded"];
+	9[label = "download_vcf\nstrain: CAST_EiJ", color = "0.29 0.6 0.85", style="rounded"];
+	10[label = "bwa_index\ngenome: GRCm38_90.CAST_masked", color = "0.59 0.6 0.85", style="rounded"];
+	11[label = "albacore_merge_output\nsample: b6.minion", color = "0.10 0.6 0.85", style="rounded"];
+	12[label = "albacore_minion\nsample: b6", color = "0.37 0.6 0.85", style="rounded"];
+	13[label = "untar", color = "0.30 0.6 0.85", style="rounded"];
+	14[label = "download_fast5_b6", color = "0.04 0.6 0.85", style="rounded"];
+	15[label = "fast5_md5\narchive: b6.minion.fast5", color = "0.63 0.6 0.85", style="rounded"];
+	16[label = "untar_cleanup", color = "0.03 0.6 0.85", style="rounded"];
+	17[label = "samtools_index\nfile: ../nanopore/b6.minion.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	18[label = "suppdb_bam", color = "0.21 0.6 0.85", style="rounded"];
+	19[label = "nanopolish_phase", color = "0.54 0.6 0.85", style="rounded"];
+	20[label = "nanopolish_index", color = "0.24 0.6 0.85", style="rounded"];
+	21[label = "samtools_index\nfile: ../nanopore/b6.minion.phased_sorted", color = "0.20 0.6 0.85", style="rounded"];
+	22[label = "read_summary", color = "0.20 0.6 0.85", style="rounded"];
+	23[label = "cast_haplotype_analysis", color = "0.28 0.6 0.85", style="rounded"];
+	24[label = "read_haplotype", color = "0.12 0.6 0.85", style="rounded"];
+	25[label = "call_variant_proportion", color = "0.35 0.6 0.85", style="rounded"];
+	26[label = "bwa_mem_align", color = "0.64 0.6 0.85", style="rounded"];
+	27[label = "albacore_merge_output\nsample: cast.minion", color = "0.10 0.6 0.85", style="rounded"];
+	28[label = "albacore_minion\nsample: cast", color = "0.37 0.6 0.85", style="rounded"];
+	29[label = "untar", color = "0.30 0.6 0.85", style="rounded"];
+	30[label = "download_fast5_cast", color = "0.44 0.6 0.85", style="rounded"];
+	31[label = "fast5_md5\narchive: cast.minion.fast5", color = "0.63 0.6 0.85", style="rounded"];
+	32[label = "untar_cleanup", color = "0.03 0.6 0.85", style="rounded"];
+	33[label = "samtools_index\nfile: ../nanopore/cast.minion.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	34[label = "suppdb_bam", color = "0.21 0.6 0.85", style="rounded"];
+	35[label = "nanopolish_phase", color = "0.54 0.6 0.85", style="rounded"];
+	36[label = "nanopolish_index", color = "0.24 0.6 0.85", style="rounded"];
+	37[label = "samtools_index\nfile: ../nanopore/cast.minion.phased_sorted", color = "0.20 0.6 0.85", style="rounded"];
+	38[label = "read_summary", color = "0.20 0.6 0.85", style="rounded"];
+	39[label = "castxb6_haplotype_analysis", color = "0.51 0.6 0.85", style="rounded"];
+	40[label = "read_haplotype", color = "0.12 0.6 0.85", style="rounded"];
+	41[label = "call_variant_proportion", color = "0.35 0.6 0.85", style="rounded"];
+	42[label = "bwa_mem_align", color = "0.64 0.6 0.85", style="rounded"];
+	43[label = "albacore_merge_output\nsample: castxb6.promethion", color = "0.10 0.6 0.85", style="rounded"];
+	44[label = "albacore_promethion\nsample: castxb6", color = "0.56 0.6 0.85", style="rounded"];
+	45[label = "untar", color = "0.30 0.6 0.85", style="rounded"];
+	46[label = "download_fast5_castxb6", color = "0.40 0.6 0.85", style="rounded"];
+	47[label = "fast5_md5\narchive: castxb6.promethion.fast5", color = "0.63 0.6 0.85", style="rounded"];
+	48[label = "untar_cleanup", color = "0.03 0.6 0.85", style="rounded"];
+	49[label = "samtools_index\nfile: ../nanopore/castxb6.promethion.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	50[label = "suppdb_bam", color = "0.21 0.6 0.85", style="rounded"];
+	51[label = "nanopolish_phase", color = "0.54 0.6 0.85", style="rounded"];
+	52[label = "nanopolish_index", color = "0.24 0.6 0.85", style="rounded"];
+	53[label = "samtools_index\nfile: ../nanopore/castxb6.promethion.phased_sorted", color = "0.20 0.6 0.85", style="rounded"];
+	54[label = "read_summary", color = "0.20 0.6 0.85", style="rounded"];
+	55[label = "b6xcast_haplotype_analysis", color = "0.44 0.6 0.85", style="rounded"];
+	56[label = "read_haplotype\nsample: b6xcast.minion", color = "0.12 0.6 0.85", style="rounded"];
+	57[label = "merge_threeway_variants", color = "0.33 0.6 0.85", style="rounded"];
+	58[label = "call_variant_proportion_threeway", color = "0.32 0.6 0.85", style="rounded"];
+	59[label = "bwa_mem_align", color = "0.64 0.6 0.85", style="rounded"];
+	60[label = "albacore_merge_output\nsample: b6xcast.minion", color = "0.10 0.6 0.85", style="rounded"];
+	61[label = "albacore_minion\nsample: b6xcast", color = "0.37 0.6 0.85", style="rounded"];
+	62[label = "merge_b6xcast", color = "0.42 0.6 0.85", style="rounded"];
+	63[label = "untar", color = "0.30 0.6 0.85", style="rounded"];
+	64[label = "download_fast5_b6xcast_0503", color = "0.36 0.6 0.85", style="rounded"];
+	65[label = "fast5_md5\narchive: 2017_05_03.b6xcast.minion.fast5", color = "0.63 0.6 0.85", style="rounded"];
+	66[label = "untar", color = "0.30 0.6 0.85", style="rounded"];
+	67[label = "download_fast5_b6xcast_0512", color = "0.31 0.6 0.85", style="rounded"];
+	68[label = "fast5_md5\narchive: 2017_05_12.b6xcast.minion.fast5", color = "0.63 0.6 0.85", style="rounded"];
+	69[label = "untar", color = "0.30 0.6 0.85", style="rounded"];
+	70[label = "download_fast5_b6xcast_0525", color = "0.60 0.6 0.85", style="rounded"];
+	71[label = "fast5_md5\narchive: 2017_05_25.b6xcast.minion.fast5", color = "0.63 0.6 0.85", style="rounded"];
+	72[label = "untar_cleanup", color = "0.03 0.6 0.85", style="rounded"];
+	73[label = "untar_cleanup", color = "0.03 0.6 0.85", style="rounded"];
+	74[label = "untar_cleanup", color = "0.03 0.6 0.85", style="rounded"];
+	75[label = "samtools_index\nfile: ../nanopore/b6xcast.minion.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	76[label = "suppdb_bam", color = "0.21 0.6 0.85", style="rounded"];
+	77[label = "nanopolish_phase", color = "0.54 0.6 0.85", style="rounded"];
+	78[label = "nanopolish_index", color = "0.24 0.6 0.85", style="rounded"];
+	79[label = "samtools_index\nfile: ../nanopore/b6xcast.minion.phased_sorted", color = "0.20 0.6 0.85", style="rounded"];
+	80[label = "gunzip_vcf\nfile: ../genome_data/FVB_NJ.mgp.v5.snps.dbSNP142", color = "0.07 0.6 0.85", style="rounded"];
+	81[label = "download_vcf\nstrain: FVB_NJ", color = "0.29 0.6 0.85", style="rounded"];
+	82[label = "fvb_resolution", color = "0.47 0.6 0.85", style="rounded"];
+	83[label = "read_summary", color = "0.20 0.6 0.85", style="rounded"];
+	84[label = "haplotype_auc", color = "0.08 0.6 0.85", style="rounded"];
+	85[label = "differential_methylation_heatmaps", color = "0.55 0.6 0.85", style="rounded"];
+	86[label = "compare_haplotype_methylation", color = "0.46 0.6 0.85", style="rounded"];
+	87[label = "sort_by_site", color = "0.39 0.6 0.85", style="rounded"];
+	88[label = "split_methylation_by_alignment", color = "0.08 0.6 0.85", style="rounded"];
+	89[label = "nanopolish_methylation", color = "0.18 0.6 0.85", style="rounded"];
+	90[label = "icr_plot_region_string", color = "0.61 0.6 0.85", style="rounded"];
+	91[label = "compare_haplotype_methylation", color = "0.46 0.6 0.85", style="rounded"];
+	92[label = "sort_by_site", color = "0.39 0.6 0.85", style="rounded"];
+	93[label = "split_methylation_by_alignment", color = "0.08 0.6 0.85", style="rounded"];
+	94[label = "nanopolish_methylation", color = "0.18 0.6 0.85", style="rounded"];
+	95[label = "visualise_dmrs", color = "0.63 0.6 0.85", style="rounded"];
+	96[label = "fit_reads", color = "0.18 0.6 0.85", style="rounded"];
+	97[label = "sort_by_read", color = "0.16 0.6 0.85", style="rounded"];
+	98[label = "build_dmrlist", color = "0.13 0.6 0.85", style="rounded"];
+	99[label = "paired_dss", color = "0.17 0.6 0.85", style="rounded"];
+	100[label = "calculate_allele_meth_freq\nallele: ref", color = "0.03 0.6 0.85", style="rounded"];
+	101[label = "split_methylation_by_haplotype", color = "0.52 0.6 0.85", style="rounded"];
+	102[label = "calculate_allele_meth_freq\nallele: alt", color = "0.03 0.6 0.85", style="rounded"];
+	103[label = "calculate_allele_meth_freq\nallele: ref", color = "0.03 0.6 0.85", style="rounded"];
+	104[label = "split_methylation_by_haplotype", color = "0.52 0.6 0.85", style="rounded"];
+	105[label = "calculate_allele_meth_freq\nallele: alt", color = "0.03 0.6 0.85", style="rounded"];
+	106[label = "ensembl_gtf_to_tsv", color = "0.16 0.6 0.85", style="rounded"];
+	107[label = "gunzip_gtf\nfile: ../genome_data/Mus_musculus.GRCm38_90.chr", color = "0.15 0.6 0.85", style="rounded"];
+	108[label = "download_gtf", color = "0.45 0.6 0.85", style="rounded"];
+	109[label = "fit_reads", color = "0.18 0.6 0.85", style="rounded"];
+	110[label = "sort_by_read", color = "0.16 0.6 0.85", style="rounded"];
+	111[label = "genome_cpg_coordinates", color = "0.58 0.6 0.85", style="rounded"];
+	112[label = "merge_bisulfite_genome1", color = "0.35 0.6 0.85", style="rounded"];
+	113[label = "bismark_extract\nsample: B6CastF1_1_pe.sorted.genome1", color = "0.41 0.6 0.85", style="rounded"];
+	114[label = "snpsplit_bismark", color = "0.59 0.6 0.85", style="rounded"];
+	115[label = "clean_up_snpsplit_genome", color = "0.31 0.6 0.85", style="rounded"];
+	116[label = "snpsplit_prepare_genome", color = "0.27 0.6 0.85", style="rounded"];
+	117[label = "snpsplit_create_path", color = "0.37 0.6 0.85", style="rounded"];
+	118[label = "sort_bisulfite", color = "0.66 0.6 0.85", style="rounded"];
+	119[label = "bismark_align", color = "0.46 0.6 0.85", style="rounded"];
+	120[label = "bismark_prepare_genome", color = "0.01 0.6 0.85", style="rounded"];
+	121[label = "bismark_create_path", color = "0.48 0.6 0.85", style="rounded"];
+	122[label = "trim_galore\nsample: B6CastF1_1", color = "0.38 0.6 0.85", style="rounded"];
+	123[label = "fastq_md5\narchive: B6CastF1_1_R1\noutdir: bisulfite", color = "0.27 0.6 0.85", style="rounded"];
+	124[label = "download_bisulfite_B6Cast1\nfile: 1", color = "0.48 0.6 0.85", style="rounded"];
+	125[label = "fastq_md5\narchive: B6CastF1_1_R2\noutdir: bisulfite", color = "0.27 0.6 0.85", style="rounded"];
+	126[label = "download_bisulfite_B6Cast1\nfile: 2", color = "0.48 0.6 0.85", style="rounded"];
+	127[label = "bismark_extract\nsample: B6CastF1_2_pe.sorted.genome1", color = "0.41 0.6 0.85", style="rounded"];
+	128[label = "snpsplit_bismark", color = "0.59 0.6 0.85", style="rounded"];
+	129[label = "sort_bisulfite", color = "0.66 0.6 0.85", style="rounded"];
+	130[label = "bismark_align", color = "0.46 0.6 0.85", style="rounded"];
+	131[label = "trim_galore\nsample: B6CastF1_2", color = "0.38 0.6 0.85", style="rounded"];
+	132[label = "fastq_md5\narchive: B6CastF1_2_R1\noutdir: bisulfite", color = "0.27 0.6 0.85", style="rounded"];
+	133[label = "download_bisulfite_B6Cast2\nfile: 1", color = "0.65 0.6 0.85", style="rounded"];
+	134[label = "fastq_md5\narchive: B6CastF1_2_R2\noutdir: bisulfite", color = "0.27 0.6 0.85", style="rounded"];
+	135[label = "download_bisulfite_B6Cast2\nfile: 2", color = "0.65 0.6 0.85", style="rounded"];
+	136[label = "bismark_extract\nsample: B6CastF1_5_pe.sorted.genome1", color = "0.41 0.6 0.85", style="rounded"];
+	137[label = "snpsplit_bismark", color = "0.59 0.6 0.85", style="rounded"];
+	138[label = "sort_bisulfite", color = "0.66 0.6 0.85", style="rounded"];
+	139[label = "bismark_align", color = "0.46 0.6 0.85", style="rounded"];
+	140[label = "trim_galore\nsample: B6CastF1_5", color = "0.38 0.6 0.85", style="rounded"];
+	141[label = "fastq_md5\narchive: B6CastF1_5_R1\noutdir: bisulfite", color = "0.27 0.6 0.85", style="rounded"];
+	142[label = "download_bisulfite_B6Cast5\nfile: 1", color = "0.11 0.6 0.85", style="rounded"];
+	143[label = "fastq_md5\narchive: B6CastF1_5_R2\noutdir: bisulfite", color = "0.27 0.6 0.85", style="rounded"];
+	144[label = "download_bisulfite_B6Cast5\nfile: 2", color = "0.11 0.6 0.85", style="rounded"];
+	145[label = "bismark_extract\nsample: B6CastF1_6_pe.sorted.genome1", color = "0.41 0.6 0.85", style="rounded"];
+	146[label = "snpsplit_bismark", color = "0.59 0.6 0.85", style="rounded"];
+	147[label = "sort_bisulfite", color = "0.66 0.6 0.85", style="rounded"];
+	148[label = "bismark_align", color = "0.46 0.6 0.85", style="rounded"];
+	149[label = "trim_galore\nsample: B6CastF1_6", color = "0.38 0.6 0.85", style="rounded"];
+	150[label = "fastq_md5\narchive: B6CastF1_6_R1\noutdir: bisulfite", color = "0.27 0.6 0.85", style="rounded"];
+	151[label = "download_bisulfite_B6Cast6\nfile: 1", color = "0.01 0.6 0.85", style="rounded"];
+	152[label = "fastq_md5\narchive: B6CastF1_6_R2\noutdir: bisulfite", color = "0.27 0.6 0.85", style="rounded"];
+	153[label = "download_bisulfite_B6Cast6\nfile: 2", color = "0.01 0.6 0.85", style="rounded"];
+	154[label = "merge_bisulfite_genome2", color = "0.14 0.6 0.85", style="rounded"];
+	155[label = "bismark_extract\nsample: B6CastF1_1_pe.sorted.genome2", color = "0.41 0.6 0.85", style="rounded"];
+	156[label = "bismark_extract\nsample: B6CastF1_2_pe.sorted.genome2", color = "0.41 0.6 0.85", style="rounded"];
+	157[label = "bismark_extract\nsample: B6CastF1_5_pe.sorted.genome2", color = "0.41 0.6 0.85", style="rounded"];
+	158[label = "bismark_extract\nsample: B6CastF1_6_pe.sorted.genome2", color = "0.41 0.6 0.85", style="rounded"];
+	159[label = "prepare_visualisation", color = "0.54 0.6 0.85", style="rounded"];
+	160[label = "samtools_depth", color = "0.22 0.6 0.85", style="rounded"];
+	161[label = "snp_split_sort\nallele: 1", color = "0.25 0.6 0.85", style="rounded"];
+	162[label = "snp_split_hisat2", color = "0.19 0.6 0.85", style="rounded"];
+	163[label = "map_hisat2", color = "0.14 0.6 0.85", style="rounded"];
+	164[label = "build_hisat2\ngenome: GRCm38.Cast_N-masked", color = "0.65 0.6 0.85", style="rounded"];
+	165[label = "trim_galore\nsample: B6CastF1_2", color = "0.38 0.6 0.85", style="rounded"];
+	166[label = "fastq_md5\narchive: B6CastF1_2_R1\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	167[label = "download_rnaseq_B6Cast2\nfile: 1", color = "0.05 0.6 0.85", style="rounded"];
+	168[label = "fastq_md5\narchive: B6CastF1_2_R2\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	169[label = "download_rnaseq_B6Cast2\nfile: 2", color = "0.05 0.6 0.85", style="rounded"];
+	170[label = "snp_split_sort\nallele: 2", color = "0.25 0.6 0.85", style="rounded"];
+	171[label = "snp_split_sort\nallele: 1", color = "0.25 0.6 0.85", style="rounded"];
+	172[label = "snp_split_hisat2", color = "0.19 0.6 0.85", style="rounded"];
+	173[label = "map_hisat2", color = "0.14 0.6 0.85", style="rounded"];
+	174[label = "trim_galore\nsample: B6CastF1_3", color = "0.38 0.6 0.85", style="rounded"];
+	175[label = "fastq_md5\narchive: B6CastF1_3_R1\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	176[label = "download_rnaseq_B6Cast3\nfile: 1", color = "0.50 0.6 0.85", style="rounded"];
+	177[label = "fastq_md5\narchive: B6CastF1_3_R2\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	178[label = "download_rnaseq_B6Cast3\nfile: 2", color = "0.50 0.6 0.85", style="rounded"];
+	179[label = "snp_split_sort\nallele: 2", color = "0.25 0.6 0.85", style="rounded"];
+	180[label = "snp_split_sort\nallele: 1", color = "0.25 0.6 0.85", style="rounded"];
+	181[label = "snp_split_hisat2", color = "0.19 0.6 0.85", style="rounded"];
+	182[label = "map_hisat2", color = "0.14 0.6 0.85", style="rounded"];
+	183[label = "trim_galore\nsample: B6CastF1_4", color = "0.38 0.6 0.85", style="rounded"];
+	184[label = "fastq_md5\narchive: B6CastF1_4_R1\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	185[label = "download_rnaseq_B6Cast4\nfile: 1", color = "0.29 0.6 0.85", style="rounded"];
+	186[label = "fastq_md5\narchive: B6CastF1_4_R2\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	187[label = "download_rnaseq_B6Cast4\nfile: 2", color = "0.29 0.6 0.85", style="rounded"];
+	188[label = "snp_split_sort\nallele: 2", color = "0.25 0.6 0.85", style="rounded"];
+	189[label = "snp_split_sort\nallele: 1", color = "0.25 0.6 0.85", style="rounded"];
+	190[label = "snp_split_hisat2", color = "0.19 0.6 0.85", style="rounded"];
+	191[label = "map_hisat2", color = "0.14 0.6 0.85", style="rounded"];
+	192[label = "trim_galore\nsample: B6CastF1_5", color = "0.38 0.6 0.85", style="rounded"];
+	193[label = "fastq_md5\narchive: B6CastF1_5_R1\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	194[label = "download_rnaseq_B6Cast5\nfile: 1", color = "0.26 0.6 0.85", style="rounded"];
+	195[label = "fastq_md5\narchive: B6CastF1_5_R2\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	196[label = "download_rnaseq_B6Cast5\nfile: 2", color = "0.26 0.6 0.85", style="rounded"];
+	197[label = "snp_split_sort\nallele: 2", color = "0.25 0.6 0.85", style="rounded"];
+	198[label = "snp_split_sort\nallele: 1", color = "0.25 0.6 0.85", style="rounded"];
+	199[label = "snp_split_hisat2", color = "0.19 0.6 0.85", style="rounded"];
+	200[label = "map_hisat2", color = "0.14 0.6 0.85", style="rounded"];
+	201[label = "trim_galore\nsample: CastB6F1_2", color = "0.38 0.6 0.85", style="rounded"];
+	202[label = "fastq_md5\narchive: CastB6F1_2_R1\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	203[label = "download_rnaseq_CastB62\nfile: 1", color = "0.57 0.6 0.85", style="rounded"];
+	204[label = "fastq_md5\narchive: CastB6F1_2_R2\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	205[label = "download_rnaseq_CastB62\nfile: 2", color = "0.57 0.6 0.85", style="rounded"];
+	206[label = "snp_split_sort\nallele: 2", color = "0.25 0.6 0.85", style="rounded"];
+	207[label = "snp_split_sort\nallele: 1", color = "0.25 0.6 0.85", style="rounded"];
+	208[label = "snp_split_hisat2", color = "0.19 0.6 0.85", style="rounded"];
+	209[label = "map_hisat2", color = "0.14 0.6 0.85", style="rounded"];
+	210[label = "trim_galore\nsample: CastB6F1_3", color = "0.38 0.6 0.85", style="rounded"];
+	211[label = "fastq_md5\narchive: CastB6F1_3_R1\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	212[label = "download_rnaseq_CastB63\nfile: 1", color = "0.09 0.6 0.85", style="rounded"];
+	213[label = "fastq_md5\narchive: CastB6F1_3_R2\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	214[label = "download_rnaseq_CastB63\nfile: 2", color = "0.09 0.6 0.85", style="rounded"];
+	215[label = "snp_split_sort\nallele: 2", color = "0.25 0.6 0.85", style="rounded"];
+	216[label = "snp_split_sort\nallele: 1", color = "0.25 0.6 0.85", style="rounded"];
+	217[label = "snp_split_hisat2", color = "0.19 0.6 0.85", style="rounded"];
+	218[label = "map_hisat2", color = "0.14 0.6 0.85", style="rounded"];
+	219[label = "trim_galore\nsample: CastB6F1_4", color = "0.38 0.6 0.85", style="rounded"];
+	220[label = "fastq_md5\narchive: CastB6F1_4_R1\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	221[label = "download_rnaseq_CastB64\nfile: 1", color = "0.07 0.6 0.85", style="rounded"];
+	222[label = "fastq_md5\narchive: CastB6F1_4_R2\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	223[label = "download_rnaseq_CastB64\nfile: 2", color = "0.07 0.6 0.85", style="rounded"];
+	224[label = "snp_split_sort\nallele: 2", color = "0.25 0.6 0.85", style="rounded"];
+	225[label = "snp_split_sort\nallele: 1", color = "0.25 0.6 0.85", style="rounded"];
+	226[label = "snp_split_hisat2", color = "0.19 0.6 0.85", style="rounded"];
+	227[label = "map_hisat2", color = "0.14 0.6 0.85", style="rounded"];
+	228[label = "trim_galore\nsample: CastB6F1_5", color = "0.38 0.6 0.85", style="rounded"];
+	229[label = "fastq_md5\narchive: CastB6F1_5_R1\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	230[label = "download_rnaseq_CastB65\nfile: 1", color = "0.62 0.6 0.85", style="rounded"];
+	231[label = "fastq_md5\narchive: CastB6F1_5_R2\noutdir: rna_seq", color = "0.27 0.6 0.85", style="rounded"];
+	232[label = "download_rnaseq_CastB65\nfile: 2", color = "0.62 0.6 0.85", style="rounded"];
+	233[label = "snp_split_sort\nallele: 2", color = "0.25 0.6 0.85", style="rounded"];
+	234[label = "samtools_index\nfile: ../rna_seq/B6CastF1_2.hisat2.genome1.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	235[label = "samtools_index\nfile: ../rna_seq/B6CastF1_2.hisat2.genome2.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	236[label = "samtools_index\nfile: ../rna_seq/B6CastF1_3.hisat2.genome1.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	237[label = "samtools_index\nfile: ../rna_seq/B6CastF1_3.hisat2.genome2.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	238[label = "samtools_index\nfile: ../rna_seq/B6CastF1_4.hisat2.genome1.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	239[label = "samtools_index\nfile: ../rna_seq/B6CastF1_4.hisat2.genome2.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	240[label = "samtools_index\nfile: ../rna_seq/B6CastF1_5.hisat2.genome1.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	241[label = "samtools_index\nfile: ../rna_seq/B6CastF1_5.hisat2.genome2.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	242[label = "samtools_index\nfile: ../rna_seq/CastB6F1_2.hisat2.genome1.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	243[label = "samtools_index\nfile: ../rna_seq/CastB6F1_2.hisat2.genome2.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	244[label = "samtools_index\nfile: ../rna_seq/CastB6F1_3.hisat2.genome1.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	245[label = "samtools_index\nfile: ../rna_seq/CastB6F1_3.hisat2.genome2.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	246[label = "samtools_index\nfile: ../rna_seq/CastB6F1_4.hisat2.genome1.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	247[label = "samtools_index\nfile: ../rna_seq/CastB6F1_4.hisat2.genome2.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	248[label = "samtools_index\nfile: ../rna_seq/CastB6F1_5.hisat2.genome1.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	249[label = "samtools_index\nfile: ../rna_seq/CastB6F1_5.hisat2.genome2.sorted", color = "0.20 0.6 0.85", style="rounded"];
+	250[label = "dmr_comparison", color = "0.05 0.6 0.85", style="rounded"];
+	251[label = "rnaseq_analysis_notebook", color = "0.34 0.6 0.85", style="rounded"];
+	252[label = "genome_level_methylation_summary", color = "0.24 0.6 0.85", style="rounded"];
+	253[label = "build_methylation_df", color = "0.10 0.6 0.85", style="rounded"];
+	254[label = "merge_matched_bisulfite", color = "0.56 0.6 0.85", style="rounded"];
+	255[label = "bismark_extract\nsample: B6CastF1_1_pe", color = "0.41 0.6 0.85", style="rounded"];
+	256[label = "calculate_methylation_frequency", color = "0.58 0.6 0.85", style="rounded"];
+	257[label = "nanopolish_methylation_validation", color = "0.00 0.6 0.85", style="rounded"];
+	1 -> 0
+	23 -> 0
+	39 -> 0
+	55 -> 0
+	84 -> 0
+	85 -> 0
+	95 -> 0
+	250 -> 0
+	252 -> 0
+	257 -> 0
+	251 -> 0
+	2 -> 1
+	22 -> 1
+	3 -> 2
+	4 -> 3
+	17 -> 3
+	18 -> 3
+	19 -> 3
+	21 -> 3
+	8 -> 3
+	5 -> 4
+	10 -> 4
+	11 -> 4
+	6 -> 5
+	8 -> 5
+	7 -> 6
+	9 -> 8
+	5 -> 10
+	12 -> 11
+	13 -> 12
+	16 -> 12
+	14 -> 13
+	15 -> 13
+	14 -> 15
+	13 -> 16
+	4 -> 17
+	4 -> 18
+	17 -> 18
+	6 -> 19
+	4 -> 19
+	17 -> 19
+	11 -> 19
+	8 -> 19
+	20 -> 19
+	11 -> 20
+	13 -> 20
+	19 -> 21
+	18 -> 22
+	24 -> 23
+	38 -> 23
+	25 -> 24
+	26 -> 25
+	33 -> 25
+	34 -> 25
+	35 -> 25
+	37 -> 25
+	8 -> 25
+	5 -> 26
+	10 -> 26
+	27 -> 26
+	28 -> 27
+	29 -> 28
+	32 -> 28
+	30 -> 29
+	31 -> 29
+	30 -> 31
+	29 -> 32
+	26 -> 33
+	26 -> 34
+	33 -> 34
+	6 -> 35
+	26 -> 35
+	33 -> 35
+	27 -> 35
+	8 -> 35
+	36 -> 35
+	27 -> 36
+	29 -> 36
+	35 -> 37
+	34 -> 38
+	40 -> 39
+	54 -> 39
+	41 -> 40
+	42 -> 41
+	49 -> 41
+	50 -> 41
+	51 -> 41
+	53 -> 41
+	8 -> 41
+	5 -> 42
+	10 -> 42
+	43 -> 42
+	44 -> 43
+	45 -> 44
+	48 -> 44
+	46 -> 45
+	47 -> 45
+	46 -> 47
+	45 -> 48
+	42 -> 49
+	42 -> 50
+	49 -> 50
+	6 -> 51
+	42 -> 51
+	49 -> 51
+	43 -> 51
+	8 -> 51
+	52 -> 51
+	43 -> 52
+	45 -> 52
+	51 -> 53
+	50 -> 54
+	56 -> 55
+	83 -> 55
+	57 -> 56
+	58 -> 57
+	76 -> 57
+	82 -> 57
+	59 -> 58
+	75 -> 58
+	76 -> 58
+	77 -> 58
+	79 -> 58
+	8 -> 58
+	80 -> 58
+	5 -> 59
+	10 -> 59
+	60 -> 59
+	61 -> 60
+	62 -> 61
+	63 -> 62
+	66 -> 62
+	69 -> 62
+	72 -> 62
+	73 -> 62
+	74 -> 62
+	64 -> 63
+	65 -> 63
+	64 -> 65
+	67 -> 66
+	68 -> 66
+	67 -> 68
+	70 -> 69
+	71 -> 69
+	70 -> 71
+	63 -> 72
+	66 -> 73
+	69 -> 74
+	59 -> 75
+	59 -> 76
+	75 -> 76
+	6 -> 77
+	59 -> 77
+	75 -> 77
+	60 -> 77
+	8 -> 77
+	78 -> 77
+	60 -> 78
+	62 -> 78
+	77 -> 79
+	81 -> 80
+	83 -> 82
+	58 -> 82
+	76 -> 83
+	2 -> 84
+	24 -> 84
+	86 -> 85
+	91 -> 85
+	87 -> 86
+	57 -> 86
+	90 -> 86
+	88 -> 87
+	89 -> 87
+	59 -> 88
+	89 -> 88
+	76 -> 88
+	5 -> 89
+	59 -> 89
+	75 -> 89
+	60 -> 89
+	78 -> 89
+	92 -> 91
+	41 -> 91
+	90 -> 91
+	93 -> 92
+	94 -> 92
+	42 -> 93
+	94 -> 93
+	50 -> 93
+	5 -> 94
+	42 -> 94
+	49 -> 94
+	43 -> 94
+	52 -> 94
+	96 -> 95
+	98 -> 95
+	109 -> 95
+	111 -> 95
+	112 -> 95
+	154 -> 95
+	159 -> 95
+	8 -> 95
+	97 -> 96
+	40 -> 96
+	54 -> 96
+	93 -> 97
+	94 -> 97
+	99 -> 98
+	106 -> 98
+	100 -> 99
+	102 -> 99
+	103 -> 99
+	105 -> 99
+	101 -> 100
+	87 -> 101
+	57 -> 101
+	101 -> 102
+	104 -> 103
+	92 -> 104
+	41 -> 104
+	104 -> 105
+	107 -> 106
+	108 -> 107
+	110 -> 109
+	56 -> 109
+	83 -> 109
+	88 -> 110
+	89 -> 110
+	6 -> 111
+	113 -> 112
+	127 -> 112
+	136 -> 112
+	145 -> 112
+	114 -> 113
+	115 -> 114
+	118 -> 114
+	116 -> 115
+	117 -> 116
+	8 -> 116
+	6 -> 117
+	119 -> 118
+	120 -> 119
+	122 -> 119
+	121 -> 120
+	115 -> 121
+	123 -> 122
+	125 -> 122
+	124 -> 122
+	126 -> 122
+	124 -> 123
+	126 -> 125
+	128 -> 127
+	115 -> 128
+	129 -> 128
+	130 -> 129
+	120 -> 130
+	131 -> 130
+	132 -> 131
+	134 -> 131
+	133 -> 131
+	135 -> 131
+	133 -> 132
+	135 -> 134
+	137 -> 136
+	115 -> 137
+	138 -> 137
+	139 -> 138
+	120 -> 139
+	140 -> 139
+	141 -> 140
+	143 -> 140
+	142 -> 140
+	144 -> 140
+	142 -> 141
+	144 -> 143
+	146 -> 145
+	115 -> 146
+	147 -> 146
+	148 -> 147
+	120 -> 148
+	149 -> 148
+	150 -> 149
+	152 -> 149
+	151 -> 149
+	153 -> 149
+	151 -> 150
+	153 -> 152
+	155 -> 154
+	156 -> 154
+	157 -> 154
+	158 -> 154
+	114 -> 155
+	128 -> 156
+	137 -> 157
+	146 -> 158
+	107 -> 159
+	160 -> 159
+	161 -> 160
+	170 -> 160
+	171 -> 160
+	179 -> 160
+	180 -> 160
+	188 -> 160
+	189 -> 160
+	197 -> 160
+	198 -> 160
+	206 -> 160
+	207 -> 160
+	215 -> 160
+	216 -> 160
+	224 -> 160
+	225 -> 160
+	233 -> 160
+	234 -> 160
+	235 -> 160
+	236 -> 160
+	237 -> 160
+	238 -> 160
+	239 -> 160
+	240 -> 160
+	241 -> 160
+	242 -> 160
+	243 -> 160
+	244 -> 160
+	245 -> 160
+	246 -> 160
+	247 -> 160
+	248 -> 160
+	249 -> 160
+	162 -> 161
+	115 -> 162
+	163 -> 162
+	115 -> 163
+	164 -> 163
+	165 -> 163
+	115 -> 164
+	166 -> 165
+	168 -> 165
+	167 -> 165
+	169 -> 165
+	167 -> 166
+	169 -> 168
+	162 -> 170
+	172 -> 171
+	115 -> 172
+	173 -> 172
+	115 -> 173
+	164 -> 173
+	174 -> 173
+	175 -> 174
+	177 -> 174
+	176 -> 174
+	178 -> 174
+	176 -> 175
+	178 -> 177
+	172 -> 179
+	181 -> 180
+	115 -> 181
+	182 -> 181
+	115 -> 182
+	164 -> 182
+	183 -> 182
+	184 -> 183
+	186 -> 183
+	185 -> 183
+	187 -> 183
+	185 -> 184
+	187 -> 186
+	181 -> 188
+	190 -> 189
+	115 -> 190
+	191 -> 190
+	115 -> 191
+	164 -> 191
+	192 -> 191
+	193 -> 192
+	195 -> 192
+	194 -> 192
+	196 -> 192
+	194 -> 193
+	196 -> 195
+	190 -> 197
+	199 -> 198
+	115 -> 199
+	200 -> 199
+	115 -> 200
+	164 -> 200
+	201 -> 200
+	202 -> 201
+	204 -> 201
+	203 -> 201
+	205 -> 201
+	203 -> 202
+	205 -> 204
+	199 -> 206
+	208 -> 207
+	115 -> 208
+	209 -> 208
+	115 -> 209
+	164 -> 209
+	210 -> 209
+	211 -> 210
+	213 -> 210
+	212 -> 210
+	214 -> 210
+	212 -> 211
+	214 -> 213
+	208 -> 215
+	217 -> 216
+	115 -> 217
+	218 -> 217
+	115 -> 218
+	164 -> 218
+	219 -> 218
+	220 -> 219
+	222 -> 219
+	221 -> 219
+	223 -> 219
+	221 -> 220
+	223 -> 222
+	217 -> 224
+	226 -> 225
+	115 -> 226
+	227 -> 226
+	115 -> 227
+	164 -> 227
+	228 -> 227
+	229 -> 228
+	231 -> 228
+	230 -> 228
+	232 -> 228
+	230 -> 229
+	232 -> 231
+	226 -> 233
+	161 -> 234
+	170 -> 235
+	171 -> 236
+	179 -> 237
+	180 -> 238
+	188 -> 239
+	189 -> 240
+	197 -> 241
+	198 -> 242
+	206 -> 243
+	207 -> 244
+	215 -> 245
+	216 -> 246
+	224 -> 247
+	225 -> 248
+	233 -> 249
+	106 -> 250
+	98 -> 250
+	251 -> 250
+	107 -> 251
+	162 -> 251
+	172 -> 251
+	181 -> 251
+	190 -> 251
+	199 -> 251
+	208 -> 251
+	217 -> 251
+	226 -> 251
+	107 -> 252
+	253 -> 252
+	254 -> 253
+	256 -> 253
+	255 -> 254
+	119 -> 255
+	89 -> 256
+	253 -> 257
+}            

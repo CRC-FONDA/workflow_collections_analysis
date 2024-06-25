@@ -1,0 +1,16 @@
+1. Cloned the repository, there are no further instructions
+
+2. Running it with snakemake --cores 1 we run into error:
+    (latest_snakemake) seb@Ras:~/Fonda/notebook_reproduction/tract-fconn-smk$ snakemake --cores 1
+    Building DAG of jobs...
+    MissingInputException in rule convert_to_mif in line 4 of /home/seb/Fonda/notebook_reproduction/tract-fconn-smk/workflow/rules/mrtrix.smk:
+    Missing input files for rule convert_to_mif:
+        output: results/sub-CaseStudy/mrtrix/dwi.mif, results/sub-CaseStudy/mrtrix/b0.mif, results/sub-CaseStudy/mrtrix/mask.mif
+        wildcards: subject=CaseStudy
+        affected files:
+            ../snakedwi_dev/results/sub-CaseStudy/dwi/sub-CaseStudy_space-T1w_res-orig_desc-eddy_dwi.bval
+            ../snakedwi_dev/results/sub-CaseStudy/dwi/sub-CaseStudy_space-T1w_res-orig_desc-brain_mask.nii.gz
+            ../snakedwi_dev/results/sub-CaseStudy/dwi/sub-CaseStudy_space-T1w_res-orig_desc-eddy_dwi.nii.gz
+            ../snakedwi_dev/results/sub-CaseStudy/dwi/sub-CaseStudy_space-T1w_res-orig_desc-eddy_dwi.bvec
+
+3. I have no information about how to get that data

@@ -1,0 +1,678 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.30 0.6 0.85", style="rounded"];
+	1[label = "run_shovill", color = "0.22 0.6 0.85", style="rounded"];
+	2[label = "run_fastp\nprefix: test\nsample: AVC111", color = "0.15 0.6 0.85", style="rounded"];
+	3[label = "run_shovill", color = "0.22 0.6 0.85", style="rounded"];
+	4[label = "run_fastp\nprefix: test\nsample: AVC2", color = "0.15 0.6 0.85", style="rounded"];
+	5[label = "run_shovill", color = "0.22 0.6 0.85", style="rounded"];
+	6[label = "run_fastp\nprefix: test\nsample: AVC209", color = "0.15 0.6 0.85", style="rounded"];
+	7[label = "run_shovill", color = "0.22 0.6 0.85", style="rounded"];
+	8[label = "run_fastp\nprefix: test\nsample: AVC10", color = "0.15 0.6 0.85", style="rounded"];
+	9[label = "run_shovill", color = "0.22 0.6 0.85", style="rounded"];
+	10[label = "run_fastp\nprefix: test\nsample: AVC199", color = "0.15 0.6 0.85", style="rounded"];
+	11[label = "run_assembly_summarise", color = "0.41 0.6 0.85", style="rounded"];
+	12[label = "run_assembly_stats", color = "0.63 0.6 0.85", style="rounded"];
+	13[label = "run_assembly_stats", color = "0.63 0.6 0.85", style="rounded"];
+	14[label = "run_assembly_stats", color = "0.63 0.6 0.85", style="rounded"];
+	15[label = "run_assembly_stats", color = "0.63 0.6 0.85", style="rounded"];
+	16[label = "run_assembly_stats", color = "0.63 0.6 0.85", style="rounded"];
+	17[label = "run_abricate_summarise", color = "0.59 0.6 0.85", style="rounded"];
+	18[label = "abricate_run\ngene_db: ISfinder_Feb_2020", color = "0.19 0.6 0.85", style="rounded"];
+	19[label = "abricate_run\ngene_db: ISfinder_Feb_2020", color = "0.19 0.6 0.85", style="rounded"];
+	20[label = "abricate_run\ngene_db: ISfinder_Feb_2020", color = "0.19 0.6 0.85", style="rounded"];
+	21[label = "abricate_run\ngene_db: ISfinder_Feb_2020", color = "0.19 0.6 0.85", style="rounded"];
+	22[label = "abricate_run\ngene_db: ISfinder_Feb_2020", color = "0.19 0.6 0.85", style="rounded"];
+	23[label = "abricate_run\ngene_db: EC_custom", color = "0.19 0.6 0.85", style="rounded"];
+	24[label = "abricate_run\ngene_db: EC_custom", color = "0.19 0.6 0.85", style="rounded"];
+	25[label = "abricate_run\ngene_db: EC_custom", color = "0.19 0.6 0.85", style="rounded"];
+	26[label = "abricate_run\ngene_db: EC_custom", color = "0.19 0.6 0.85", style="rounded"];
+	27[label = "abricate_run\ngene_db: EC_custom", color = "0.19 0.6 0.85", style="rounded"];
+	28[label = "abricate_run\ngene_db: card", color = "0.19 0.6 0.85", style="rounded"];
+	29[label = "abricate_run\ngene_db: card", color = "0.19 0.6 0.85", style="rounded"];
+	30[label = "abricate_run\ngene_db: card", color = "0.19 0.6 0.85", style="rounded"];
+	31[label = "abricate_run\ngene_db: card", color = "0.19 0.6 0.85", style="rounded"];
+	32[label = "abricate_run\ngene_db: card", color = "0.19 0.6 0.85", style="rounded"];
+	33[label = "abricate_run\ngene_db: plasmidfinder", color = "0.19 0.6 0.85", style="rounded"];
+	34[label = "abricate_run\ngene_db: plasmidfinder", color = "0.19 0.6 0.85", style="rounded"];
+	35[label = "abricate_run\ngene_db: plasmidfinder", color = "0.19 0.6 0.85", style="rounded"];
+	36[label = "abricate_run\ngene_db: plasmidfinder", color = "0.19 0.6 0.85", style="rounded"];
+	37[label = "abricate_run\ngene_db: plasmidfinder", color = "0.19 0.6 0.85", style="rounded"];
+	38[label = "abricate_run\ngene_db: ecoh", color = "0.19 0.6 0.85", style="rounded"];
+	39[label = "abricate_run\ngene_db: ecoh", color = "0.19 0.6 0.85", style="rounded"];
+	40[label = "abricate_run\ngene_db: ecoh", color = "0.19 0.6 0.85", style="rounded"];
+	41[label = "abricate_run\ngene_db: ecoh", color = "0.19 0.6 0.85", style="rounded"];
+	42[label = "abricate_run\ngene_db: ecoh", color = "0.19 0.6 0.85", style="rounded"];
+	43[label = "abricate_run\ngene_db: vfdb", color = "0.19 0.6 0.85", style="rounded"];
+	44[label = "abricate_run\ngene_db: vfdb", color = "0.19 0.6 0.85", style="rounded"];
+	45[label = "abricate_run\ngene_db: vfdb", color = "0.19 0.6 0.85", style="rounded"];
+	46[label = "abricate_run\ngene_db: vfdb", color = "0.19 0.6 0.85", style="rounded"];
+	47[label = "abricate_run\ngene_db: vfdb", color = "0.19 0.6 0.85", style="rounded"];
+	48[label = "abricate_run\ngene_db: colV_zoetis", color = "0.19 0.6 0.85", style="rounded"];
+	49[label = "abricate_run\ngene_db: colV_zoetis", color = "0.19 0.6 0.85", style="rounded"];
+	50[label = "abricate_run\ngene_db: colV_zoetis", color = "0.19 0.6 0.85", style="rounded"];
+	51[label = "abricate_run\ngene_db: colV_zoetis", color = "0.19 0.6 0.85", style="rounded"];
+	52[label = "abricate_run\ngene_db: colV_zoetis", color = "0.19 0.6 0.85", style="rounded"];
+	53[label = "abricate_run\ngene_db: dfrA5_848", color = "0.19 0.6 0.85", style="rounded"];
+	54[label = "abricate_run\ngene_db: dfrA5_848", color = "0.19 0.6 0.85", style="rounded"];
+	55[label = "abricate_run\ngene_db: dfrA5_848", color = "0.19 0.6 0.85", style="rounded"];
+	56[label = "abricate_run\ngene_db: dfrA5_848", color = "0.19 0.6 0.85", style="rounded"];
+	57[label = "abricate_run\ngene_db: dfrA5_848", color = "0.19 0.6 0.85", style="rounded"];
+	58[label = "run_pmlst_summarise", color = "0.09 0.6 0.85", style="rounded"];
+	59[label = "pMLST_run\nscheme: incac", color = "0.48 0.6 0.85", style="rounded"];
+	60[label = "pMLST_run\nscheme: incac", color = "0.48 0.6 0.85", style="rounded"];
+	61[label = "pMLST_run\nscheme: incac", color = "0.48 0.6 0.85", style="rounded"];
+	62[label = "pMLST_run\nscheme: incac", color = "0.48 0.6 0.85", style="rounded"];
+	63[label = "pMLST_run\nscheme: incac", color = "0.48 0.6 0.85", style="rounded"];
+	64[label = "pMLST_run\nscheme: incf", color = "0.48 0.6 0.85", style="rounded"];
+	65[label = "pMLST_run\nscheme: incf", color = "0.48 0.6 0.85", style="rounded"];
+	66[label = "pMLST_run\nscheme: incf", color = "0.48 0.6 0.85", style="rounded"];
+	67[label = "pMLST_run\nscheme: incf", color = "0.48 0.6 0.85", style="rounded"];
+	68[label = "pMLST_run\nscheme: incf", color = "0.48 0.6 0.85", style="rounded"];
+	69[label = "pMLST_run\nscheme: inchi1", color = "0.48 0.6 0.85", style="rounded"];
+	70[label = "pMLST_run\nscheme: inchi1", color = "0.48 0.6 0.85", style="rounded"];
+	71[label = "pMLST_run\nscheme: inchi1", color = "0.48 0.6 0.85", style="rounded"];
+	72[label = "pMLST_run\nscheme: inchi1", color = "0.48 0.6 0.85", style="rounded"];
+	73[label = "pMLST_run\nscheme: inchi1", color = "0.48 0.6 0.85", style="rounded"];
+	74[label = "pMLST_run\nscheme: inchi2", color = "0.48 0.6 0.85", style="rounded"];
+	75[label = "pMLST_run\nscheme: inchi2", color = "0.48 0.6 0.85", style="rounded"];
+	76[label = "pMLST_run\nscheme: inchi2", color = "0.48 0.6 0.85", style="rounded"];
+	77[label = "pMLST_run\nscheme: inchi2", color = "0.48 0.6 0.85", style="rounded"];
+	78[label = "pMLST_run\nscheme: inchi2", color = "0.48 0.6 0.85", style="rounded"];
+	79[label = "pMLST_run\nscheme: inci1", color = "0.48 0.6 0.85", style="rounded"];
+	80[label = "pMLST_run\nscheme: inci1", color = "0.48 0.6 0.85", style="rounded"];
+	81[label = "pMLST_run\nscheme: inci1", color = "0.48 0.6 0.85", style="rounded"];
+	82[label = "pMLST_run\nscheme: inci1", color = "0.48 0.6 0.85", style="rounded"];
+	83[label = "pMLST_run\nscheme: inci1", color = "0.48 0.6 0.85", style="rounded"];
+	84[label = "pMLST_run\nscheme: incn", color = "0.48 0.6 0.85", style="rounded"];
+	85[label = "pMLST_run\nscheme: incn", color = "0.48 0.6 0.85", style="rounded"];
+	86[label = "pMLST_run\nscheme: incn", color = "0.48 0.6 0.85", style="rounded"];
+	87[label = "pMLST_run\nscheme: incn", color = "0.48 0.6 0.85", style="rounded"];
+	88[label = "pMLST_run\nscheme: incn", color = "0.48 0.6 0.85", style="rounded"];
+	89[label = "pMLST_run\nscheme: pbssb1-family", color = "0.48 0.6 0.85", style="rounded"];
+	90[label = "pMLST_run\nscheme: pbssb1-family", color = "0.48 0.6 0.85", style="rounded"];
+	91[label = "pMLST_run\nscheme: pbssb1-family", color = "0.48 0.6 0.85", style="rounded"];
+	92[label = "pMLST_run\nscheme: pbssb1-family", color = "0.48 0.6 0.85", style="rounded"];
+	93[label = "pMLST_run\nscheme: pbssb1-family", color = "0.48 0.6 0.85", style="rounded"];
+	94[label = "run_incf_summarise", color = "0.52 0.6 0.85", style="rounded"];
+	95[label = "run_pointfinder_summarise", color = "0.06 0.6 0.85", style="rounded"];
+	96[label = "name_append", color = "0.46 0.6 0.85", style="rounded"];
+	97[label = "pointfinder_run", color = "0.28 0.6 0.85", style="rounded"];
+	98[label = "name_append", color = "0.46 0.6 0.85", style="rounded"];
+	99[label = "pointfinder_run", color = "0.28 0.6 0.85", style="rounded"];
+	100[label = "name_append", color = "0.46 0.6 0.85", style="rounded"];
+	101[label = "pointfinder_run", color = "0.28 0.6 0.85", style="rounded"];
+	102[label = "name_append", color = "0.46 0.6 0.85", style="rounded"];
+	103[label = "pointfinder_run", color = "0.28 0.6 0.85", style="rounded"];
+	104[label = "name_append", color = "0.46 0.6 0.85", style="rounded"];
+	105[label = "pointfinder_run", color = "0.28 0.6 0.85", style="rounded"];
+	106[label = "mlst_run", color = "0.50 0.6 0.85", style="rounded"];
+	107[label = "mlst_run", color = "0.50 0.6 0.85", style="rounded"];
+	108[label = "mlst_run", color = "0.50 0.6 0.85", style="rounded"];
+	109[label = "mlst_run", color = "0.50 0.6 0.85", style="rounded"];
+	110[label = "mlst_run", color = "0.50 0.6 0.85", style="rounded"];
+	111[label = "run_mlst_summarise", color = "0.11 0.6 0.85", style="rounded"];
+	112[label = "prokka_gff_rename", color = "0.04 0.6 0.85", style="rounded"];
+	113[label = "prokka_run", color = "0.02 0.6 0.85", style="rounded"];
+	114[label = "prokka_gff_rename", color = "0.04 0.6 0.85", style="rounded"];
+	115[label = "prokka_run", color = "0.02 0.6 0.85", style="rounded"];
+	116[label = "prokka_gff_rename", color = "0.04 0.6 0.85", style="rounded"];
+	117[label = "prokka_run", color = "0.02 0.6 0.85", style="rounded"];
+	118[label = "prokka_gff_rename", color = "0.04 0.6 0.85", style="rounded"];
+	119[label = "prokka_run", color = "0.02 0.6 0.85", style="rounded"];
+	120[label = "prokka_gff_rename", color = "0.04 0.6 0.85", style="rounded"];
+	121[label = "prokka_run", color = "0.02 0.6 0.85", style="rounded"];
+	122[label = "abricate_plasmid_run\nplasmid_screen_db: pCERC4", color = "0.13 0.6 0.85", style="rounded"];
+	123[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O1_ColBM", color = "0.13 0.6 0.85", style="rounded"];
+	124[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O2_ColV", color = "0.13 0.6 0.85", style="rounded"];
+	125[label = "abricate_plasmid_run\nplasmid_screen_db: pUTI89", color = "0.13 0.6 0.85", style="rounded"];
+	126[label = "abricate_plasmid_run\nplasmid_screen_db: pBCE049_1", color = "0.13 0.6 0.85", style="rounded"];
+	127[label = "abricate_plasmid_run\nplasmid_screen_db: pSF_088_nores", color = "0.13 0.6 0.85", style="rounded"];
+	128[label = "abricate_plasmid_run\nplasmid_screen_db: pU1_F51_B10", color = "0.13 0.6 0.85", style="rounded"];
+	129[label = "abricate_plasmid_run\nplasmid_screen_db: pEC244_2", color = "0.13 0.6 0.85", style="rounded"];
+	130[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O78_ColV", color = "0.13 0.6 0.85", style="rounded"];
+	131[label = "abricate_plasmid_run\nplasmid_screen_db: pAMSC2", color = "0.13 0.6 0.85", style="rounded"];
+	132[label = "abricate_plasmid_run\nplasmid_screen_db: pACN001_B", color = "0.13 0.6 0.85", style="rounded"];
+	133[label = "abricate_plasmid_run\nplasmid_screen_db: pCERC4", color = "0.13 0.6 0.85", style="rounded"];
+	134[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O1_ColBM", color = "0.13 0.6 0.85", style="rounded"];
+	135[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O2_ColV", color = "0.13 0.6 0.85", style="rounded"];
+	136[label = "abricate_plasmid_run\nplasmid_screen_db: pUTI89", color = "0.13 0.6 0.85", style="rounded"];
+	137[label = "abricate_plasmid_run\nplasmid_screen_db: pBCE049_1", color = "0.13 0.6 0.85", style="rounded"];
+	138[label = "abricate_plasmid_run\nplasmid_screen_db: pSF_088_nores", color = "0.13 0.6 0.85", style="rounded"];
+	139[label = "abricate_plasmid_run\nplasmid_screen_db: pU1_F51_B10", color = "0.13 0.6 0.85", style="rounded"];
+	140[label = "abricate_plasmid_run\nplasmid_screen_db: pEC244_2", color = "0.13 0.6 0.85", style="rounded"];
+	141[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O78_ColV", color = "0.13 0.6 0.85", style="rounded"];
+	142[label = "abricate_plasmid_run\nplasmid_screen_db: pAMSC2", color = "0.13 0.6 0.85", style="rounded"];
+	143[label = "abricate_plasmid_run\nplasmid_screen_db: pACN001_B", color = "0.13 0.6 0.85", style="rounded"];
+	144[label = "abricate_plasmid_run\nplasmid_screen_db: pCERC4", color = "0.13 0.6 0.85", style="rounded"];
+	145[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O1_ColBM", color = "0.13 0.6 0.85", style="rounded"];
+	146[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O2_ColV", color = "0.13 0.6 0.85", style="rounded"];
+	147[label = "abricate_plasmid_run\nplasmid_screen_db: pUTI89", color = "0.13 0.6 0.85", style="rounded"];
+	148[label = "abricate_plasmid_run\nplasmid_screen_db: pBCE049_1", color = "0.13 0.6 0.85", style="rounded"];
+	149[label = "abricate_plasmid_run\nplasmid_screen_db: pSF_088_nores", color = "0.13 0.6 0.85", style="rounded"];
+	150[label = "abricate_plasmid_run\nplasmid_screen_db: pU1_F51_B10", color = "0.13 0.6 0.85", style="rounded"];
+	151[label = "abricate_plasmid_run\nplasmid_screen_db: pEC244_2", color = "0.13 0.6 0.85", style="rounded"];
+	152[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O78_ColV", color = "0.13 0.6 0.85", style="rounded"];
+	153[label = "abricate_plasmid_run\nplasmid_screen_db: pAMSC2", color = "0.13 0.6 0.85", style="rounded"];
+	154[label = "abricate_plasmid_run\nplasmid_screen_db: pACN001_B", color = "0.13 0.6 0.85", style="rounded"];
+	155[label = "abricate_plasmid_run\nplasmid_screen_db: pCERC4", color = "0.13 0.6 0.85", style="rounded"];
+	156[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O1_ColBM", color = "0.13 0.6 0.85", style="rounded"];
+	157[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O2_ColV", color = "0.13 0.6 0.85", style="rounded"];
+	158[label = "abricate_plasmid_run\nplasmid_screen_db: pUTI89", color = "0.13 0.6 0.85", style="rounded"];
+	159[label = "abricate_plasmid_run\nplasmid_screen_db: pBCE049_1", color = "0.13 0.6 0.85", style="rounded"];
+	160[label = "abricate_plasmid_run\nplasmid_screen_db: pSF_088_nores", color = "0.13 0.6 0.85", style="rounded"];
+	161[label = "abricate_plasmid_run\nplasmid_screen_db: pU1_F51_B10", color = "0.13 0.6 0.85", style="rounded"];
+	162[label = "abricate_plasmid_run\nplasmid_screen_db: pEC244_2", color = "0.13 0.6 0.85", style="rounded"];
+	163[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O78_ColV", color = "0.13 0.6 0.85", style="rounded"];
+	164[label = "abricate_plasmid_run\nplasmid_screen_db: pAMSC2", color = "0.13 0.6 0.85", style="rounded"];
+	165[label = "abricate_plasmid_run\nplasmid_screen_db: pACN001_B", color = "0.13 0.6 0.85", style="rounded"];
+	166[label = "abricate_plasmid_run\nplasmid_screen_db: pCERC4", color = "0.13 0.6 0.85", style="rounded"];
+	167[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O1_ColBM", color = "0.13 0.6 0.85", style="rounded"];
+	168[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O2_ColV", color = "0.13 0.6 0.85", style="rounded"];
+	169[label = "abricate_plasmid_run\nplasmid_screen_db: pUTI89", color = "0.13 0.6 0.85", style="rounded"];
+	170[label = "abricate_plasmid_run\nplasmid_screen_db: pBCE049_1", color = "0.13 0.6 0.85", style="rounded"];
+	171[label = "abricate_plasmid_run\nplasmid_screen_db: pSF_088_nores", color = "0.13 0.6 0.85", style="rounded"];
+	172[label = "abricate_plasmid_run\nplasmid_screen_db: pU1_F51_B10", color = "0.13 0.6 0.85", style="rounded"];
+	173[label = "abricate_plasmid_run\nplasmid_screen_db: pEC244_2", color = "0.13 0.6 0.85", style="rounded"];
+	174[label = "abricate_plasmid_run\nplasmid_screen_db: pAPEC_O78_ColV", color = "0.13 0.6 0.85", style="rounded"];
+	175[label = "abricate_plasmid_run\nplasmid_screen_db: pAMSC2", color = "0.13 0.6 0.85", style="rounded"];
+	176[label = "abricate_plasmid_run\nplasmid_screen_db: pACN001_B", color = "0.13 0.6 0.85", style="rounded"];
+	177[label = "run_abritamr_summarise", color = "0.39 0.6 0.85", style="rounded"];
+	178[label = "run_abritamr", color = "0.20 0.6 0.85", style="rounded"];
+	179[label = "update_database\nprefix: test", color = "0.31 0.6 0.85", style="rounded"];
+	180[label = "run_abritamr", color = "0.20 0.6 0.85", style="rounded"];
+	181[label = "run_abritamr", color = "0.20 0.6 0.85", style="rounded"];
+	182[label = "run_abritamr", color = "0.20 0.6 0.85", style="rounded"];
+	183[label = "run_abritamr", color = "0.20 0.6 0.85", style="rounded"];
+	184[label = "run_abritamr_raw_amrfinder_summarise", color = "0.17 0.6 0.85", style="rounded"];
+	185[label = "run_fimtyper_summarise", color = "0.24 0.6 0.85", style="rounded"];
+	186[label = "name_append_fimtyper", color = "0.54 0.6 0.85", style="rounded"];
+	187[label = "fimtyper_run", color = "0.35 0.6 0.85", style="rounded"];
+	188[label = "validate_db\nprefix: test", color = "0.37 0.6 0.85", style="rounded"];
+	189[label = "name_append_fimtyper", color = "0.54 0.6 0.85", style="rounded"];
+	190[label = "fimtyper_run", color = "0.35 0.6 0.85", style="rounded"];
+	191[label = "name_append_fimtyper", color = "0.54 0.6 0.85", style="rounded"];
+	192[label = "fimtyper_run", color = "0.35 0.6 0.85", style="rounded"];
+	193[label = "name_append_fimtyper", color = "0.54 0.6 0.85", style="rounded"];
+	194[label = "fimtyper_run", color = "0.35 0.6 0.85", style="rounded"];
+	195[label = "name_append_fimtyper", color = "0.54 0.6 0.85", style="rounded"];
+	196[label = "fimtyper_run", color = "0.35 0.6 0.85", style="rounded"];
+	197[label = "run_ectyper_summarise", color = "0.43 0.6 0.85", style="rounded"];
+	198[label = "ectyper_run", color = "0.61 0.6 0.85", style="rounded"];
+	199[label = "ectyper_run", color = "0.61 0.6 0.85", style="rounded"];
+	200[label = "ectyper_run", color = "0.61 0.6 0.85", style="rounded"];
+	201[label = "ectyper_run", color = "0.61 0.6 0.85", style="rounded"];
+	202[label = "ectyper_run", color = "0.61 0.6 0.85", style="rounded"];
+	203[label = "run_ezclermont_summarise", color = "0.44 0.6 0.85", style="rounded"];
+	204[label = "ezclermont_run", color = "0.57 0.6 0.85", style="rounded"];
+	205[label = "ezclermont_run", color = "0.57 0.6 0.85", style="rounded"];
+	206[label = "ezclermont_run", color = "0.57 0.6 0.85", style="rounded"];
+	207[label = "ezclermont_run", color = "0.57 0.6 0.85", style="rounded"];
+	208[label = "ezclermont_run", color = "0.57 0.6 0.85", style="rounded"];
+	209[label = "clermontyping_run", color = "0.00 0.6 0.85", style="rounded"];
+	210[label = "clermontyping_download", color = "0.07 0.6 0.85", style="rounded"];
+	211[label = "clermontyping_run", color = "0.00 0.6 0.85", style="rounded"];
+	212[label = "clermontyping_run", color = "0.00 0.6 0.85", style="rounded"];
+	213[label = "clermontyping_run", color = "0.00 0.6 0.85", style="rounded"];
+	214[label = "clermontyping_run", color = "0.00 0.6 0.85", style="rounded"];
+	215[label = "run_clermontyping_summarise", color = "0.26 0.6 0.85", style="rounded"];
+	1 -> 0
+	3 -> 0
+	5 -> 0
+	7 -> 0
+	9 -> 0
+	11 -> 0
+	17 -> 0
+	58 -> 0
+	94 -> 0
+	95 -> 0
+	2 -> 0
+	4 -> 0
+	6 -> 0
+	8 -> 0
+	10 -> 0
+	106 -> 0
+	107 -> 0
+	108 -> 0
+	109 -> 0
+	110 -> 0
+	111 -> 0
+	112 -> 0
+	114 -> 0
+	116 -> 0
+	118 -> 0
+	120 -> 0
+	122 -> 0
+	123 -> 0
+	124 -> 0
+	125 -> 0
+	126 -> 0
+	127 -> 0
+	128 -> 0
+	129 -> 0
+	130 -> 0
+	131 -> 0
+	132 -> 0
+	133 -> 0
+	134 -> 0
+	135 -> 0
+	136 -> 0
+	137 -> 0
+	138 -> 0
+	139 -> 0
+	140 -> 0
+	141 -> 0
+	142 -> 0
+	143 -> 0
+	144 -> 0
+	145 -> 0
+	146 -> 0
+	147 -> 0
+	148 -> 0
+	149 -> 0
+	150 -> 0
+	151 -> 0
+	152 -> 0
+	153 -> 0
+	154 -> 0
+	155 -> 0
+	156 -> 0
+	157 -> 0
+	158 -> 0
+	159 -> 0
+	160 -> 0
+	161 -> 0
+	162 -> 0
+	163 -> 0
+	164 -> 0
+	165 -> 0
+	166 -> 0
+	167 -> 0
+	168 -> 0
+	169 -> 0
+	170 -> 0
+	171 -> 0
+	172 -> 0
+	173 -> 0
+	174 -> 0
+	175 -> 0
+	176 -> 0
+	177 -> 0
+	184 -> 0
+	185 -> 0
+	197 -> 0
+	203 -> 0
+	209 -> 0
+	211 -> 0
+	212 -> 0
+	213 -> 0
+	214 -> 0
+	215 -> 0
+	2 -> 1
+	4 -> 3
+	6 -> 5
+	8 -> 7
+	10 -> 9
+	12 -> 11
+	13 -> 11
+	14 -> 11
+	15 -> 11
+	16 -> 11
+	1 -> 12
+	3 -> 13
+	5 -> 14
+	7 -> 15
+	9 -> 16
+	18 -> 17
+	19 -> 17
+	20 -> 17
+	21 -> 17
+	22 -> 17
+	23 -> 17
+	24 -> 17
+	25 -> 17
+	26 -> 17
+	27 -> 17
+	28 -> 17
+	29 -> 17
+	30 -> 17
+	31 -> 17
+	32 -> 17
+	33 -> 17
+	34 -> 17
+	35 -> 17
+	36 -> 17
+	37 -> 17
+	38 -> 17
+	39 -> 17
+	40 -> 17
+	41 -> 17
+	42 -> 17
+	43 -> 17
+	44 -> 17
+	45 -> 17
+	46 -> 17
+	47 -> 17
+	48 -> 17
+	49 -> 17
+	50 -> 17
+	51 -> 17
+	52 -> 17
+	53 -> 17
+	54 -> 17
+	55 -> 17
+	56 -> 17
+	57 -> 17
+	1 -> 18
+	3 -> 19
+	5 -> 20
+	7 -> 21
+	9 -> 22
+	1 -> 23
+	3 -> 24
+	5 -> 25
+	7 -> 26
+	9 -> 27
+	1 -> 28
+	3 -> 29
+	5 -> 30
+	7 -> 31
+	9 -> 32
+	1 -> 33
+	3 -> 34
+	5 -> 35
+	7 -> 36
+	9 -> 37
+	1 -> 38
+	3 -> 39
+	5 -> 40
+	7 -> 41
+	9 -> 42
+	1 -> 43
+	3 -> 44
+	5 -> 45
+	7 -> 46
+	9 -> 47
+	1 -> 48
+	3 -> 49
+	5 -> 50
+	7 -> 51
+	9 -> 52
+	1 -> 53
+	3 -> 54
+	5 -> 55
+	7 -> 56
+	9 -> 57
+	59 -> 58
+	60 -> 58
+	61 -> 58
+	62 -> 58
+	63 -> 58
+	64 -> 58
+	65 -> 58
+	66 -> 58
+	67 -> 58
+	68 -> 58
+	69 -> 58
+	70 -> 58
+	71 -> 58
+	72 -> 58
+	73 -> 58
+	74 -> 58
+	75 -> 58
+	76 -> 58
+	77 -> 58
+	78 -> 58
+	79 -> 58
+	80 -> 58
+	81 -> 58
+	82 -> 58
+	83 -> 58
+	84 -> 58
+	85 -> 58
+	86 -> 58
+	87 -> 58
+	88 -> 58
+	89 -> 58
+	90 -> 58
+	91 -> 58
+	92 -> 58
+	93 -> 58
+	1 -> 59
+	3 -> 60
+	5 -> 61
+	7 -> 62
+	9 -> 63
+	1 -> 64
+	3 -> 65
+	5 -> 66
+	7 -> 67
+	9 -> 68
+	1 -> 69
+	3 -> 70
+	5 -> 71
+	7 -> 72
+	9 -> 73
+	1 -> 74
+	3 -> 75
+	5 -> 76
+	7 -> 77
+	9 -> 78
+	1 -> 79
+	3 -> 80
+	5 -> 81
+	7 -> 82
+	9 -> 83
+	1 -> 84
+	3 -> 85
+	5 -> 86
+	7 -> 87
+	9 -> 88
+	1 -> 89
+	3 -> 90
+	5 -> 91
+	7 -> 92
+	9 -> 93
+	59 -> 94
+	60 -> 94
+	61 -> 94
+	62 -> 94
+	63 -> 94
+	64 -> 94
+	65 -> 94
+	66 -> 94
+	67 -> 94
+	68 -> 94
+	69 -> 94
+	70 -> 94
+	71 -> 94
+	72 -> 94
+	73 -> 94
+	74 -> 94
+	75 -> 94
+	76 -> 94
+	77 -> 94
+	78 -> 94
+	79 -> 94
+	80 -> 94
+	81 -> 94
+	82 -> 94
+	83 -> 94
+	84 -> 94
+	85 -> 94
+	86 -> 94
+	87 -> 94
+	88 -> 94
+	89 -> 94
+	90 -> 94
+	91 -> 94
+	92 -> 94
+	93 -> 94
+	96 -> 95
+	98 -> 95
+	100 -> 95
+	102 -> 95
+	104 -> 95
+	97 -> 96
+	1 -> 97
+	99 -> 98
+	3 -> 99
+	101 -> 100
+	5 -> 101
+	103 -> 102
+	7 -> 103
+	105 -> 104
+	9 -> 105
+	1 -> 106
+	3 -> 107
+	5 -> 108
+	7 -> 109
+	9 -> 110
+	106 -> 111
+	107 -> 111
+	108 -> 111
+	109 -> 111
+	110 -> 111
+	113 -> 112
+	1 -> 113
+	115 -> 114
+	3 -> 115
+	117 -> 116
+	5 -> 117
+	119 -> 118
+	7 -> 119
+	121 -> 120
+	9 -> 121
+	1 -> 122
+	1 -> 123
+	1 -> 124
+	1 -> 125
+	1 -> 126
+	1 -> 127
+	1 -> 128
+	1 -> 129
+	1 -> 130
+	1 -> 131
+	1 -> 132
+	3 -> 133
+	3 -> 134
+	3 -> 135
+	3 -> 136
+	3 -> 137
+	3 -> 138
+	3 -> 139
+	3 -> 140
+	3 -> 141
+	3 -> 142
+	3 -> 143
+	5 -> 144
+	5 -> 145
+	5 -> 146
+	5 -> 147
+	5 -> 148
+	5 -> 149
+	5 -> 150
+	5 -> 151
+	5 -> 152
+	5 -> 153
+	5 -> 154
+	7 -> 155
+	7 -> 156
+	7 -> 157
+	7 -> 158
+	7 -> 159
+	7 -> 160
+	7 -> 161
+	7 -> 162
+	7 -> 163
+	7 -> 164
+	7 -> 165
+	9 -> 166
+	9 -> 167
+	9 -> 168
+	9 -> 169
+	9 -> 170
+	9 -> 171
+	9 -> 172
+	9 -> 173
+	9 -> 174
+	9 -> 175
+	9 -> 176
+	178 -> 177
+	180 -> 177
+	181 -> 177
+	182 -> 177
+	183 -> 177
+	1 -> 178
+	179 -> 178
+	3 -> 180
+	179 -> 180
+	5 -> 181
+	179 -> 181
+	7 -> 182
+	179 -> 182
+	9 -> 183
+	179 -> 183
+	178 -> 184
+	180 -> 184
+	181 -> 184
+	182 -> 184
+	183 -> 184
+	186 -> 185
+	189 -> 185
+	191 -> 185
+	193 -> 185
+	195 -> 185
+	187 -> 186
+	188 -> 187
+	1 -> 187
+	190 -> 189
+	188 -> 190
+	3 -> 190
+	192 -> 191
+	188 -> 192
+	5 -> 192
+	194 -> 193
+	188 -> 194
+	7 -> 194
+	196 -> 195
+	188 -> 196
+	9 -> 196
+	198 -> 197
+	199 -> 197
+	200 -> 197
+	201 -> 197
+	202 -> 197
+	1 -> 198
+	3 -> 199
+	5 -> 200
+	7 -> 201
+	9 -> 202
+	204 -> 203
+	205 -> 203
+	206 -> 203
+	207 -> 203
+	208 -> 203
+	1 -> 204
+	3 -> 205
+	5 -> 206
+	7 -> 207
+	9 -> 208
+	210 -> 209
+	1 -> 209
+	210 -> 211
+	3 -> 211
+	210 -> 212
+	5 -> 212
+	210 -> 213
+	7 -> 213
+	210 -> 214
+	9 -> 214
+	209 -> 215
+	211 -> 215
+	212 -> 215
+	213 -> 215
+	214 -> 215
+}            

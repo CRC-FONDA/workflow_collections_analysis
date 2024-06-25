@@ -1,0 +1,1090 @@
+digraph "callingcards_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v265 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v266 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v267 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v4 -> v5;
+
+v5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 -> v55 [label="fasta"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v62 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:GTF2BED"];
+v7 -> v62 [label="ch_gtf"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:BEDTOOLS_MASKFASTA"];
+v10 -> v56 [label="regions_mask"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v59 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:CONCATFASTA"];
+v12 -> v59 [label="additional_fasta"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v14 [shape=point];
+v13 -> v14 [label="ch_multiqc_config"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=point];
+v15 -> v16 [label="ch_multiqc_custom_config"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v18 [shape=point];
+v17 -> v18 [label="ch_multiqc_logo"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v19 -> v20;
+
+v20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 [shape=point];
+v21 -> v22 [label="ch_fasta"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 [shape=point];
+v24 -> v25 [label="ch_gtf"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v27 -> v28;
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=point];
+v28 -> v29 [label="ch_regions_mask"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v30 -> v31;
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 [shape=point];
+v31 -> v32 [label="additional_fasta"];
+
+v33 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v33 -> v71 [label="ch_versions"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v35 [shape=point];
+v34 -> v35 [label="ch_fasta_index"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v37 [shape=point];
+v36 -> v37 [label="ch_bam_index"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v39 [shape=point];
+v38 -> v39 [label="ch_samtools_stats"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v41 [shape=point];
+v40 -> v41 [label="ch_samtools_flatstat"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v43 [shape=point];
+v42 -> v43 [label="ch_samtools_idxstats"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1,xlabel="channel.fromSamplesheet"];
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v44 -> v45;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v90 [label="barcode_details"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v81 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:FASTQCRAW"];
+v45 -> v81 [label="reads"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v57 [label="ch_versions"];
+
+v47 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v48 [shape=point];
+v47 -> v48 [label="ch_bwamem2_index"];
+
+v49 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v50 [shape=point];
+v49 -> v50 [label="bwa_aln_index"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v52 [shape=point];
+v51 -> v52 [label="bowtie2_index"];
+
+v53 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v54 [shape=point];
+v53 -> v54 [label="bowtie_index"];
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:BEDTOOLS_MASKFASTA"];
+v55 -> v56;
+
+v56 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:BEDTOOLS_MASKFASTA"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 -> v58;
+
+v56 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:BEDTOOLS_MASKFASTA"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v63 [label="ch_versions"];
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:CONCATFASTA"];
+v58 -> v59 [label="ch_fasta"];
+
+v59 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:CONCATFASTA"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v59 -> v61;
+
+v59 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:CONCATFASTA"];
+v60 [shape=point];
+v59 -> v60;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:BWAMEM2_INDEX"];
+v61 -> v64 [label="ch_fasta"];
+
+v62 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:GTF2BED"];
+v198 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_RSEQC:RSEQC_READDISTRIBUTION"];
+v62 -> v198 [label="ch_bed"];
+
+v62 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:GTF2BED"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v63 -> v65 [label="ch_versions"];
+
+v64 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:BWAMEM2_INDEX"];
+v129 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:ALIGN:BWAMEM2_MEM"];
+v64 -> v129 [label="bwamem2_index"];
+
+v64 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:BWAMEM2_INDEX"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v70 [label="ch_versions"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v61 -> v67 [label="ch_fasta"];
+
+v66 [shape=point,label="",fixedsize=true,width=0.1];
+v67 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v66 -> v67;
+
+v67 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v69 [shape=point];
+v67 -> v69;
+
+v67 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 -> v144 [label="fai"];
+
+v67 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v68 [shape=point];
+v67 -> v68;
+
+v67 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v71 [label="versions"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v125 [label="ch_versions"];
+
+v72 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v85 [label="ch_versions"];
+
+v73 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v74 [shape=point];
+v73 -> v74 [label="fastqc_html"];
+
+v75 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v76 [shape=point];
+v75 -> v76 [label="fastqc_zip"];
+
+v77 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v118 [label="trimmomatic_log"];
+
+v78 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v79 [shape=point];
+v78 -> v79 [label="demux_reads"];
+
+v80 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v120 [label="output_reads"];
+
+v81 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:FASTQCRAW"];
+v83 [shape=point];
+v81 -> v83 [label="raw_fastqc_html"];
+
+v81 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:FASTQCRAW"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 -> v225 [label="raw_fastqc_zip"];
+
+v81 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:FASTQCRAW"];
+v82 [shape=point];
+v81 -> v82;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v84 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:SEQKIT_SPLIT2"];
+v45 -> v84 [label="reads"];
+
+v84 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:SEQKIT_SPLIT2"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v84 -> v86;
+
+v84 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:SEQKIT_SPLIT2"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v96 [label="ch_versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v89 -> v91;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:DEMULTIPLEX"];
+v92 -> v93 [label="split_reads_with_barcode_details"];
+
+v93 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:DEMULTIPLEX"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v93 -> v97;
+
+v93 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:DEMULTIPLEX"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v96;
+
+v93 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:DEMULTIPLEX"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v93 -> v103;
+
+v93 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:DEMULTIPLEX"];
+v95 [shape=point];
+v93 -> v95;
+
+v93 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:DEMULTIPLEX"];
+v94 [shape=point];
+v93 -> v94;
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v102 [label="ch_versions"];
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v97 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v99 -> v100;
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:CONCATFASTQ"];
+v100 -> v101 [label="demux_reads"];
+
+v101 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:CONCATFASTQ"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 -> v110;
+
+v101 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:CONCATFASTQ"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v102 -> v109 [label="ch_versions"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v103 -> v104;
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v104 -> v105;
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v45 -> v105 [label="barcode_details"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v107 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:CONCATQC"];
+v106 -> v107 [label="ch_demux_qc"];
+
+v107 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:CONCATQC"];
+v108 [shape=point];
+v107 -> v108;
+
+v107 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:CONCATQC"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v109;
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v119 [label="ch_versions"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v110 -> v111;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v113 -> v114 [label="demux_concat_reads"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v115 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:TRIMMOMATIC"];
+v114 -> v115 [label="trimmomatic_input"];
+
+v115 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:TRIMMOMATIC"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v120;
+
+v115 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:TRIMMOMATIC"];
+v117 [shape=point];
+v115 -> v117;
+
+v115 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:TRIMMOMATIC"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v118;
+
+v115 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:TRIMMOMATIC"];
+v116 [shape=point];
+v115 -> v116;
+
+v115 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:TRIMMOMATIC"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v119;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v118 -> v231 [label="trimmomatic_log"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v124 [label="ch_versions"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:FASTQCDEMUX"];
+v120 -> v121 [label="reads"];
+
+v121 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:FASTQCDEMUX"];
+v122 [shape=point];
+v121 -> v122 [label="demux_fastqc_html"];
+
+v121 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:FASTQCDEMUX"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v121 -> v228 [label="demux_fastqc_zip"];
+
+v121 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_READS:FASTQCDEMUX"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v121 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v124 -> v125 [label="versions"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v137 [label="ch_versions"];
+
+v126 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v130 [label="ch_versions"];
+
+v127 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v136 [label="ch_bam"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:ALIGN:BWAMEM2_MEM"];
+v120 -> v129 [label="reads"];
+
+v128 [shape=point,label="",fixedsize=true,width=0.1];
+v129 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:ALIGN:BWAMEM2_MEM"];
+v128 -> v129 [label="sort_bam"];
+
+v129 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:ALIGN:BWAMEM2_MEM"];
+v131 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:ALIGN:SAMTOOLS_INDEX"];
+v129 -> v131;
+
+v129 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:ALIGN:BWAMEM2_MEM"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v134 [label="ch_versions"];
+
+v131 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:ALIGN:SAMTOOLS_INDEX"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v131 -> v135;
+
+v131 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:ALIGN:SAMTOOLS_INDEX"];
+v133 [shape=point];
+v131 -> v133;
+
+v131 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:ALIGN:SAMTOOLS_INDEX"];
+v132 [shape=point];
+v131 -> v132;
+
+v131 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:ALIGN:SAMTOOLS_INDEX"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v134;
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v137 [label="versions"];
+
+v129 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:ALIGN:BWAMEM2_MEM"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v129 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v136 [label="ch_tmp"];
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v136 -> v139 [label="bam"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v210 [label="ch_versions"];
+
+v45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v45 -> v138 [label="barcode_details"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v138 -> v140 [label="ch_barcode_details_join"];
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v139 -> v140;
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 -> v141;
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:COUNT_HOPS"];
+v141 -> v145 [label="aln"];
+
+v142 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v142 -> v149 [label="ch_versions"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v143 [label="ch_fasta"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:COUNT_HOPS"];
+v143 -> v145;
+
+v144 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:COUNT_HOPS"];
+v144 -> v145;
+
+v145 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:COUNT_HOPS"];
+v148 [shape=point];
+v145 -> v148;
+
+v145 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:COUNT_HOPS"];
+v147 [shape=point];
+v145 -> v147;
+
+v145 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:COUNT_HOPS"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 -> v150;
+
+v145 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:COUNT_HOPS"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 -> v151;
+
+v145 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:COUNT_HOPS"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v149;
+
+v145 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:COUNT_HOPS"];
+v146 [shape=point];
+v145 -> v146;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v161 [label="ch_versions"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 -> v152 [label="ch_passing_bam"];
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 -> v152 [label="ch_failing_bam"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v155 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v153 -> v155 [label="ch_bam_bai"];
+
+v154 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v154 -> v156 [label="ch_versions"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v155 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v61 -> v155 [label="ch_fasta"];
+
+v155 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 -> v234 [label="samtools_stats"];
+
+v155 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 -> v158 [label="ch_versions"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v157 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v153 -> v157 [label="ch_bam_bai"];
+
+v157 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v157 -> v237 [label="samtools_flagstat"];
+
+v157 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 -> v160 [label="ch_versions"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v159 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v153 -> v159 [label="ch_bam_bai"];
+
+v159 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v159 -> v240 [label="samtools_idxstats"];
+
+v159 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 -> v161 [label="versions"];
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v164 [label="ch_versions"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v162 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:PICARD_COLLECTMULTIPLEMETRICS"];
+v153 -> v162 [label="ch_bam_bai"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v162 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:PICARD_COLLECTMULTIPLEMETRICS"];
+v61 -> v162 [label="ch_fasta"];
+
+v67 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v162 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:PICARD_COLLECTMULTIPLEMETRICS"];
+v67 -> v162 [label="fai"];
+
+v162 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:PICARD_COLLECTMULTIPLEMETRICS"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v162 -> v243 [label="picard_qc"];
+
+v162 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:PICARD_COLLECTMULTIPLEMETRICS"];
+v163 [shape=point];
+v162 -> v163;
+
+v162 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:PICARD_COLLECTMULTIPLEMETRICS"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v164;
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v209 [label="ch_versions"];
+
+v165 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v200 [label="ch_versions"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v153 -> v166 [label="ch_bam_bai"];
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v198 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_RSEQC:RSEQC_READDISTRIBUTION"];
+v166 -> v198 [label="ch_bam"];
+
+v167 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v167 -> v246 [label="rseqc_bamstat"];
+
+v168 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v169 [shape=point];
+v168 -> v169 [label="innerdistance_distance"];
+
+v170 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v170 -> v252 [label="rseqc_innerdistance"];
+
+v171 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v172 [shape=point];
+v171 -> v172 [label="innerdistance_mean"];
+
+v173 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v174 [shape=point];
+v173 -> v174 [label="innerdistance_pdf"];
+
+v175 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v176 [shape=point];
+v175 -> v176 [label="innerdistance_rscript"];
+
+v177 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v177 -> v249 [label="rseqc_inferexperiment"];
+
+v178 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v179 [shape=point];
+v178 -> v179 [label="junctionannotation_bed"];
+
+v180 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v181 [shape=point];
+v180 -> v181 [label="junctionannotation_interact_bed"];
+
+v182 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v183 [shape=point];
+v182 -> v183 [label="junctionannotation_xls"];
+
+v184 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v185 [shape=point];
+v184 -> v185 [label="junctionannotation_pdf"];
+
+v186 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v187 [shape=point];
+v186 -> v187 [label="junctionannotation_events_pdf"];
+
+v188 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v189 [shape=point];
+v188 -> v189 [label="junctionannotation_rscript"];
+
+v190 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v191 [shape=point];
+v190 -> v191 [label="junctionannotation_log"];
+
+v192 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v193 [shape=point];
+v192 -> v193 [label="junctionsaturation_pdf"];
+
+v194 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v195 [shape=point];
+v194 -> v195 [label="junctionsaturation_rscript"];
+
+v196 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v197 [shape=point];
+v196 -> v197 [label="readdistribution_txt"];
+
+v198 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_RSEQC:RSEQC_READDISTRIBUTION"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v198 -> v255 [label="rseqc_readdistribution"];
+
+v198 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:PROCESS_ALIGNMENTS:BAM_RSEQC:RSEQC_READDISTRIBUTION"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v198 -> v199;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 -> v200;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 -> v209 [label="versions"];
+
+v201 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v202 [shape=point];
+v201 -> v202 [label="readduplication_seq_xls"];
+
+v203 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v203 -> v258 [label="rseqc_readduplication"];
+
+v204 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v205 [shape=point];
+v204 -> v205 [label="readduplication_pdf"];
+
+v206 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v207 [shape=point];
+v206 -> v207 [label="readduplication_rscript"];
+
+v208 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v208 -> v261 [label="rseqc_tin"];
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v209 -> v210 [label="versions"];
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v210 -> v211 [label="ch_versions"];
+
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v211 -> v212;
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v213 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v212 -> v213;
+
+v213 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v215 [shape=point];
+v213 -> v215;
+
+v213 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v213 -> v223;
+
+v213 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v214 [shape=point];
+v213 -> v214;
+
+v216 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 -> v219 [label="ch_multiqc_files"];
+
+v217 [shape=point,label="",fixedsize=true,width=0.1];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v217 -> v218 [label="ch_workflow_summary"];
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 -> v219;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 -> v222 [label="ch_multiqc_files"];
+
+v220 [shape=point,label="",fixedsize=true,width=0.1];
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v220 -> v221 [label="ch_methods_description"];
+
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v221 -> v222;
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 -> v224 [label="ch_multiqc_files"];
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 -> v224;
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v224 -> v227 [label="ch_multiqc_files"];
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v225 -> v226;
+
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 -> v227;
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 -> v230 [label="ch_multiqc_files"];
+
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v228 -> v229;
+
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 -> v230;
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v230 -> v233 [label="ch_multiqc_files"];
+
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v231 -> v232;
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v233;
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v236 [label="ch_multiqc_files"];
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v234 -> v235;
+
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v235 -> v236;
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 -> v239 [label="ch_multiqc_files"];
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v237 -> v238;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v238 -> v239;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v239 -> v242 [label="ch_multiqc_files"];
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v241 -> v242;
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v242 -> v245 [label="ch_multiqc_files"];
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v243 -> v244;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v244 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v245 -> v248 [label="ch_multiqc_files"];
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v246 -> v247;
+
+v247 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 -> v248;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v248 -> v251 [label="ch_multiqc_files"];
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v249 -> v250;
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v250 -> v251;
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v251 -> v254 [label="ch_multiqc_files"];
+
+v252 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v252 -> v253;
+
+v253 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v253 -> v254;
+
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v254 -> v257 [label="ch_multiqc_files"];
+
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v255 -> v256;
+
+v256 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v256 -> v257;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v257 -> v260 [label="ch_multiqc_files"];
+
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v258 -> v259;
+
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 -> v260;
+
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v260 -> v263 [label="ch_multiqc_files"];
+
+v261 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v261 -> v262;
+
+v262 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v262 -> v263;
+
+v263 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v263 -> v264 [label="ch_multiqc_files"];
+
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v268 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:MULTIQC"];
+v264 -> v268;
+
+v265 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v268 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:MULTIQC"];
+v265 -> v268;
+
+v266 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v268 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:MULTIQC"];
+v266 -> v268;
+
+v267 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v268 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:MULTIQC"];
+v267 -> v268;
+
+v268 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:MULTIQC"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v268 -> v272;
+
+v268 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:MULTIQC"];
+v271 [shape=point];
+v268 -> v271;
+
+v268 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:MULTIQC"];
+v270 [shape=point];
+v268 -> v270;
+
+v268 [label="NFCORE_CALLINGCARDS_YEAST:CALLINGCARDS_YEAST:MULTIQC"];
+v269 [shape=point];
+v268 -> v269;
+
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v273 [shape=point];
+v272 -> v273;
+
+}

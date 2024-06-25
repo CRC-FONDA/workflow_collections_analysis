@@ -1,0 +1,1802 @@
+digraph "mag_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=point];
+v2 -> v3;
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v4 -> v396 [label="ch_multiqc_config"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v5 -> v397 [label="ch_multiqc_custom_config"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v6 -> v398 [label="ch_multiqc_logo"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=point];
+v7 -> v8 [label="ch_host_fasta"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v10 [shape=point];
+v9 -> v10 [label="ch_gunc_db"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v12 [shape=point];
+v11 -> v12 [label="ch_cat_db_file"];
+
+v13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v14 [shape=point];
+v13 -> v14 [label="ch_krona_db_file"];
+
+v15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v16 [shape=point];
+v15 -> v16 [label="ch_genomad_db"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v18 [shape=point];
+v17 -> v18 [label="ch_metaeuk_db"];
+
+v19 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v19 -> v35 [label="ch_versions"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v21 -> v22;
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v23 [label="ch_input_rows"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 [label="NFCORE_MAG:MAG:FASTQC_RAW"];
+v23 -> v32 [label="ch_raw_short_reads"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v22 -> v24 [label="ch_input_rows"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v71 [label="NFCORE_MAG:MAG:NANOPLOT_RAW"];
+v24 -> v71 [label="ch_raw_long_reads"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v26 [shape=point];
+v25 -> v26 [label="ch_input_assembly_rows"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v28 [shape=point];
+v27 -> v28 [label="ch_input_assemblies"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v22 -> v29 [label="ch_input_rows"];
+
+v29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v29 -> v30;
+
+v30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v31 [shape=point];
+v30 -> v31;
+
+v32 [label="NFCORE_MAG:MAG:FASTQC_RAW"];
+v33 [shape=point];
+v32 -> v33;
+
+v32 [label="NFCORE_MAG:MAG:FASTQC_RAW"];
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v32 -> v362;
+
+v32 [label="NFCORE_MAG:MAG:FASTQC_RAW"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v32 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v47 [label="ch_versions"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v37 [shape=point];
+v36 -> v37 [label="ch_bowtie2_removal_host_multiqc"];
+
+v23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v41 [label="NFCORE_MAG:MAG:FASTP"];
+v23 -> v41 [label="ch_raw_short_reads"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="NFCORE_MAG:MAG:FASTP"];
+v38 -> v41 [label="adapter_fasta"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="NFCORE_MAG:MAG:FASTP"];
+v39 -> v41 [label="save_trimmed_fail"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1];
+v41 [label="NFCORE_MAG:MAG:FASTP"];
+v40 -> v41 [label="save_merged"];
+
+v41 [label="NFCORE_MAG:MAG:FASTP"];
+v53 [label="NFCORE_MAG:MAG:BOWTIE2_PHIX_REMOVAL_ALIGN"];
+v41 -> v53 [label="ch_short_reads_hostremoved"];
+
+v41 [label="NFCORE_MAG:MAG:FASTP"];
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 -> v365;
+
+v41 [label="NFCORE_MAG:MAG:FASTP"];
+v45 [shape=point];
+v41 -> v45;
+
+v41 [label="NFCORE_MAG:MAG:FASTP"];
+v44 [shape=point];
+v41 -> v44;
+
+v41 [label="NFCORE_MAG:MAG:FASTP"];
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v41 -> v46;
+
+v41 [label="NFCORE_MAG:MAG:FASTP"];
+v43 [shape=point];
+v41 -> v43;
+
+v41 [label="NFCORE_MAG:MAG:FASTP"];
+v42 [shape=point];
+v41 -> v42;
+
+v46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v46 -> v47;
+
+v47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v56 [label="ch_versions"];
+
+v48 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v49 [shape=point];
+v48 -> v49 [label="ch_bowtie2_removal_host_multiqc"];
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v51 [label="NFCORE_MAG:MAG:BOWTIE2_PHIX_REMOVAL_BUILD"];
+v50 -> v51 [label="ch_phix_db_file"];
+
+v51 [label="NFCORE_MAG:MAG:BOWTIE2_PHIX_REMOVAL_BUILD"];
+v53 [label="NFCORE_MAG:MAG:BOWTIE2_PHIX_REMOVAL_ALIGN"];
+v51 -> v53;
+
+v51 [label="NFCORE_MAG:MAG:BOWTIE2_PHIX_REMOVAL_BUILD"];
+v52 [shape=point];
+v51 -> v52;
+
+v53 [label="NFCORE_MAG:MAG:BOWTIE2_PHIX_REMOVAL_ALIGN"];
+v57 [label="NFCORE_MAG:MAG:FASTQC_TRIMMED"];
+v53 -> v57 [label="ch_short_reads_phixremoved"];
+
+v53 [label="NFCORE_MAG:MAG:BOWTIE2_PHIX_REMOVAL_ALIGN"];
+v54 [shape=point];
+v53 -> v54;
+
+v53 [label="NFCORE_MAG:MAG:BOWTIE2_PHIX_REMOVAL_ALIGN"];
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 -> v371;
+
+v53 [label="NFCORE_MAG:MAG:BOWTIE2_PHIX_REMOVAL_ALIGN"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v53 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v55 -> v56;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v56 -> v59 [label="ch_versions"];
+
+v57 [label="NFCORE_MAG:MAG:FASTQC_TRIMMED"];
+v58 [shape=point];
+v57 -> v58;
+
+v57 [label="NFCORE_MAG:MAG:FASTQC_TRIMMED"];
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v57 -> v368;
+
+v57 [label="NFCORE_MAG:MAG:FASTQC_TRIMMED"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v59;
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v70 [label="ch_versions"];
+
+v53 [label="NFCORE_MAG:MAG:BOWTIE2_PHIX_REMOVAL_ALIGN"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 -> v60 [label="ch_short_reads_phixremoved"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v67;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 [label="NFCORE_MAG:MAG:CAT_FASTQ"];
+v63 -> v64;
+
+v64 [label="NFCORE_MAG:MAG:CAT_FASTQ"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v64 -> v67;
+
+v64 [label="NFCORE_MAG:MAG:CAT_FASTQ"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v64 -> v69;
+
+v65 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v66 [shape=point];
+v65 -> v66 [label="ch_short_reads"];
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 -> v87 [label="reads"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v76 [label="ch_versions"];
+
+v71 [label="NFCORE_MAG:MAG:NANOPLOT_RAW"];
+v74 [shape=point];
+v71 -> v74;
+
+v71 [label="NFCORE_MAG:MAG:NANOPLOT_RAW"];
+v73 [shape=point];
+v71 -> v73;
+
+v71 [label="NFCORE_MAG:MAG:NANOPLOT_RAW"];
+v72 [shape=point];
+v71 -> v72;
+
+v71 [label="NFCORE_MAG:MAG:NANOPLOT_RAW"];
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v71 -> v75;
+
+v75 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v81 [label="ch_versions"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v77 [label="ch_raw_long_reads"];
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v78 [shape=point];
+v77 -> v78 [label="ch_long_reads"];
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v79 [label="NFCORE_MAG:MAG:PORECHOP"];
+v24 -> v79 [label="ch_raw_long_reads"];
+
+v79 [label="NFCORE_MAG:MAG:PORECHOP"];
+v83 [label="NFCORE_MAG:MAG:NANOLYSE"];
+v79 -> v83 [label="ch_long_reads"];
+
+v79 [label="NFCORE_MAG:MAG:PORECHOP"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v86 [label="ch_versions"];
+
+v82 [shape=point,label="",fixedsize=true,width=0.1];
+v83 [label="NFCORE_MAG:MAG:NANOLYSE"];
+v82 -> v83 [label="ch_nanolyse_db"];
+
+v83 [label="NFCORE_MAG:MAG:NANOLYSE"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 -> v88 [label="ch_long_reads"];
+
+v83 [label="NFCORE_MAG:MAG:NANOLYSE"];
+v84 [shape=point];
+v83 -> v84;
+
+v83 [label="NFCORE_MAG:MAG:NANOLYSE"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v83 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v93 [label="ch_versions"];
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v87 -> v89 [label="ch_short_reads_tmp"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [label="NFCORE_MAG:MAG:FILTLONG"];
+v90 -> v91 [label="ch_short_and_long_reads"];
+
+v91 [label="NFCORE_MAG:MAG:FILTLONG"];
+v94 [label="NFCORE_MAG:MAG:NANOPLOT_FILTERED"];
+v91 -> v94 [label="ch_long_reads_grouped"];
+
+v91 [label="NFCORE_MAG:MAG:FILTLONG"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v91 -> v92;
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v108 [label="ch_versions"];
+
+v94 [label="NFCORE_MAG:MAG:NANOPLOT_FILTERED"];
+v98 [shape=point];
+v94 -> v98;
+
+v94 [label="NFCORE_MAG:MAG:NANOPLOT_FILTERED"];
+v97 [shape=point];
+v94 -> v97;
+
+v94 [label="NFCORE_MAG:MAG:NANOPLOT_FILTERED"];
+v96 [shape=point];
+v94 -> v96;
+
+v94 [label="NFCORE_MAG:MAG:NANOPLOT_FILTERED"];
+v95 [shape=point];
+v94 -> v95;
+
+v99 [shape=point,label="",fixedsize=true,width=0.1];
+v100 [label="NFCORE_MAG:MAG:CENTRIFUGE_DB_PREPARATION"];
+v99 -> v100 [label="db"];
+
+v100 [label="NFCORE_MAG:MAG:CENTRIFUGE_DB_PREPARATION"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v100 -> v102 [label="ch_db_for_centrifuge"];
+
+v100 [label="NFCORE_MAG:MAG:CENTRIFUGE_DB_PREPARATION"];
+v101 [shape=point];
+v100 -> v101;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v102 -> v103;
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [label="NFCORE_MAG:MAG:CENTRIFUGE"];
+v103 -> v104 [label="ch_db_for_centrifuge"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [label="NFCORE_MAG:MAG:CENTRIFUGE"];
+v68 -> v104 [label="reads"];
+
+v104 [label="NFCORE_MAG:MAG:CENTRIFUGE"];
+v106 [shape=point];
+v104 -> v106;
+
+v104 [label="NFCORE_MAG:MAG:CENTRIFUGE"];
+v105 [shape=point];
+v104 -> v105;
+
+v104 [label="NFCORE_MAG:MAG:CENTRIFUGE"];
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 -> v374;
+
+v104 [label="NFCORE_MAG:MAG:CENTRIFUGE"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v104 -> v107;
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v115 [label="ch_versions"];
+
+v109 [shape=point,label="",fixedsize=true,width=0.1];
+v110 [label="NFCORE_MAG:MAG:KRAKEN2_DB_PREPARATION"];
+v109 -> v110 [label="db"];
+
+v110 [label="NFCORE_MAG:MAG:KRAKEN2_DB_PREPARATION"];
+v112 [label="NFCORE_MAG:MAG:KRAKEN2"];
+v110 -> v112 [label="ch_db_for_kraken2"];
+
+v110 [label="NFCORE_MAG:MAG:KRAKEN2_DB_PREPARATION"];
+v111 [shape=point];
+v110 -> v111;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v112 [label="NFCORE_MAG:MAG:KRAKEN2"];
+v68 -> v112 [label="reads"];
+
+v112 [label="NFCORE_MAG:MAG:KRAKEN2"];
+v113 [shape=point];
+v112 -> v113;
+
+v112 [label="NFCORE_MAG:MAG:KRAKEN2"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v112 -> v377;
+
+v112 [label="NFCORE_MAG:MAG:KRAKEN2"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v112 -> v114;
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v115;
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v115 -> v128 [label="ch_versions"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v68 -> v116 [label="reads"];
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 -> v117;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v120;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v68 -> v118 [label="reads"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v118 -> v119;
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v120;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [label="NFCORE_MAG:MAG:MEGAHIT"];
+v120 -> v122 [label="ch_short_reads_grouped"];
+
+v121 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v126 [label="ch_assemblies"];
+
+v122 [label="NFCORE_MAG:MAG:MEGAHIT"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v122 -> v125;
+
+v122 [label="NFCORE_MAG:MAG:MEGAHIT"];
+v124 [shape=point];
+v122 -> v124;
+
+v122 [label="NFCORE_MAG:MAG:MEGAHIT"];
+v123 [shape=point];
+v122 -> v123;
+
+v122 [label="NFCORE_MAG:MAG:MEGAHIT"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v122 -> v127;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v126 [label="ch_megahit_assemblies"];
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v137 [label="ch_assemblies"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v128;
+
+v128 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v139 [label="ch_versions"];
+
+v91 [label="NFCORE_MAG:MAG:FILTLONG"];
+v129 [label="NFCORE_MAG:MAG:POOL_LONG_READS"];
+v91 -> v129 [label="ch_long_reads_grouped"];
+
+v129 [label="NFCORE_MAG:MAG:POOL_LONG_READS"];
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v129 -> v141 [label="ch_long_reads_spades"];
+
+v129 [label="NFCORE_MAG:MAG:POOL_LONG_READS"];
+v130 [shape=point];
+v129 -> v130;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v131 [label="NFCORE_MAG:MAG:SPADES"];
+v68 -> v131 [label="reads"];
+
+v131 [label="NFCORE_MAG:MAG:SPADES"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v131 -> v136;
+
+v131 [label="NFCORE_MAG:MAG:SPADES"];
+v135 [shape=point];
+v131 -> v135;
+
+v131 [label="NFCORE_MAG:MAG:SPADES"];
+v134 [shape=point];
+v131 -> v134;
+
+v131 [label="NFCORE_MAG:MAG:SPADES"];
+v133 [shape=point];
+v131 -> v133;
+
+v131 [label="NFCORE_MAG:MAG:SPADES"];
+v132 [shape=point];
+v131 -> v132;
+
+v131 [label="NFCORE_MAG:MAG:SPADES"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v131 -> v138;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v137 [label="ch_spades_assemblies"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v150 [label="ch_assemblies"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v139 -> v152 [label="ch_versions"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 -> v140 [label="reads"];
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v140 -> v142 [label="ch_short_reads_spades_tmp"];
+
+v141 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v141 -> v142;
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v144 [label="NFCORE_MAG:MAG:SPADESHYBRID"];
+v143 -> v144 [label="ch_reads_spadeshybrid"];
+
+v144 [label="NFCORE_MAG:MAG:SPADESHYBRID"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v144 -> v149;
+
+v144 [label="NFCORE_MAG:MAG:SPADESHYBRID"];
+v148 [shape=point];
+v144 -> v148;
+
+v144 [label="NFCORE_MAG:MAG:SPADESHYBRID"];
+v147 [shape=point];
+v144 -> v147;
+
+v144 [label="NFCORE_MAG:MAG:SPADESHYBRID"];
+v146 [shape=point];
+v144 -> v146;
+
+v144 [label="NFCORE_MAG:MAG:SPADESHYBRID"];
+v145 [shape=point];
+v144 -> v145;
+
+v144 [label="NFCORE_MAG:MAG:SPADESHYBRID"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v144 -> v151;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v150 [label="ch_spadeshybrid_assemblies"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 [label="NFCORE_MAG:MAG:QUAST"];
+v150 -> v155 [label="assemblies"];
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 -> v152;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v158 [label="ch_versions"];
+
+v153 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v154 [shape=point];
+v153 -> v154 [label="ch_quast_multiqc"];
+
+v155 [label="NFCORE_MAG:MAG:QUAST"];
+v156 [shape=point];
+v155 -> v156;
+
+v155 [label="NFCORE_MAG:MAG:QUAST"];
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 -> v380;
+
+v155 [label="NFCORE_MAG:MAG:QUAST"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v155 -> v157;
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 -> v166 [label="ch_versions"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v160 [label="NFCORE_MAG:MAG:PRODIGAL"];
+v150 -> v160 [label="assemblies"];
+
+v159 [shape=point,label="",fixedsize=true,width=0.1];
+v160 [label="NFCORE_MAG:MAG:PRODIGAL"];
+v159 -> v160 [label="output_format"];
+
+v160 [label="NFCORE_MAG:MAG:PRODIGAL"];
+v164 [shape=point];
+v160 -> v164;
+
+v160 [label="NFCORE_MAG:MAG:PRODIGAL"];
+v163 [shape=point];
+v160 -> v163;
+
+v160 [label="NFCORE_MAG:MAG:PRODIGAL"];
+v162 [shape=point];
+v160 -> v162;
+
+v160 [label="NFCORE_MAG:MAG:PRODIGAL"];
+v161 [shape=point];
+v160 -> v161;
+
+v160 [label="NFCORE_MAG:MAG:PRODIGAL"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v160 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v166;
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v166 -> v181 [label="ch_versions"];
+
+v167 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v168 [shape=point];
+v167 -> v168 [label="ch_busco_summary"];
+
+v169 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v169 -> v323 [label="ch_checkm_summary"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 [label="NFCORE_MAG:MAG:BINNING_PREPARATION:BOWTIE2_ASSEMBLY_BUILD"];
+v150 -> v170 [label="assemblies"];
+
+v170 [label="NFCORE_MAG:MAG:BINNING_PREPARATION:BOWTIE2_ASSEMBLY_BUILD"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v170 -> v173;
+
+v170 [label="NFCORE_MAG:MAG:BINNING_PREPARATION:BOWTIE2_ASSEMBLY_BUILD"];
+v171 [shape=point];
+v170 -> v171;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 -> v172 [label="reads"];
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v172 -> v174 [label="ch_reads_bowtie2"];
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v173 -> v174;
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v174 -> v175;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v176 [label="NFCORE_MAG:MAG:BINNING_PREPARATION:BOWTIE2_ASSEMBLY_ALIGN"];
+v175 -> v176 [label="ch_bowtie2_input"];
+
+v176 [label="NFCORE_MAG:MAG:BINNING_PREPARATION:BOWTIE2_ASSEMBLY_ALIGN"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v176 -> v177;
+
+v176 [label="NFCORE_MAG:MAG:BINNING_PREPARATION:BOWTIE2_ASSEMBLY_ALIGN"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v176 -> v179;
+
+v176 [label="NFCORE_MAG:MAG:BINNING_PREPARATION:BOWTIE2_ASSEMBLY_ALIGN"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v176 -> v180 [label="bowtie2_version"];
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v177 -> v178;
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v178 -> v183 [label="assemblies"];
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v179 -> v386 [label="bowtie2_assembly_multiqc"];
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v181;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v233 [label="ch_versions"];
+
+v182 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v182 -> v187 [label="ch_versions"];
+
+v183 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v184 [label="NFCORE_MAG:MAG:BINNING:METABAT2_JGISUMMARIZEBAMCONTIGDEPTHS"];
+v183 -> v184 [label="ch_summarizedepth_input"];
+
+v184 [label="NFCORE_MAG:MAG:BINNING:METABAT2_JGISUMMARIZEBAMCONTIGDEPTHS"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v184 -> v185 [label="depths"];
+
+v184 [label="NFCORE_MAG:MAG:BINNING:METABAT2_JGISUMMARIZEBAMCONTIGDEPTHS"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v184 -> v186;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v185 -> v189 [label="ch_metabat_depths"];
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v186 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v187 -> v194 [label="ch_versions"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v178 -> v188 [label="assemblies"];
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v188 -> v189;
+
+v189 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v189 -> v190;
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v191 [label="NFCORE_MAG:MAG:BINNING:CONVERT_DEPTHS"];
+v190 -> v191 [label="ch_metabat2_input"];
+
+v191 [label="NFCORE_MAG:MAG:BINNING:CONVERT_DEPTHS"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v191 -> v192;
+
+v191 [label="NFCORE_MAG:MAG:BINNING:CONVERT_DEPTHS"];
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v191 -> v193;
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v206 [label="NFCORE_MAG:MAG:BINNING:MAXBIN2"];
+v192 -> v206 [label="ch_maxbin2_input"];
+
+v193 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v193 -> v194;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v205 [label="ch_versions"];
+
+v195 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 -> v202 [label="ch_final_bins_for_gunzip"];
+
+v196 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v203 [label="ch_binning_results_gzipped_final"];
+
+v190 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v197 [label="NFCORE_MAG:MAG:BINNING:METABAT2_METABAT2"];
+v190 -> v197 [label="ch_metabat2_input"];
+
+v197 [label="NFCORE_MAG:MAG:BINNING:METABAT2_METABAT2"];
+v200 [shape=point];
+v197 -> v200;
+
+v197 [label="NFCORE_MAG:MAG:BINNING:METABAT2_METABAT2"];
+v199 [shape=point];
+v197 -> v199;
+
+v197 [label="NFCORE_MAG:MAG:BINNING:METABAT2_METABAT2"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 -> v219;
+
+v197 [label="NFCORE_MAG:MAG:BINNING:METABAT2_METABAT2"];
+v198 [shape=point];
+v197 -> v198;
+
+v197 [label="NFCORE_MAG:MAG:BINNING:METABAT2_METABAT2"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v197 -> v201;
+
+v197 [label="NFCORE_MAG:MAG:BINNING:METABAT2_METABAT2"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v197 -> v204;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 -> v202;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v202 -> v215 [label="ch_final_bins_for_gunzip"];
+
+v197 [label="NFCORE_MAG:MAG:BINNING:METABAT2_METABAT2"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 -> v203;
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v203 -> v216 [label="ch_binning_results_gzipped_final"];
+
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v204 -> v205;
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v205 -> v218 [label="ch_versions"];
+
+v206 [label="NFCORE_MAG:MAG:BINNING:MAXBIN2"];
+v213 [label="NFCORE_MAG:MAG:BINNING:ADJUST_MAXBIN2_EXT"];
+v206 -> v213;
+
+v206 [label="NFCORE_MAG:MAG:BINNING:MAXBIN2"];
+v212 [shape=point];
+v206 -> v212;
+
+v206 [label="NFCORE_MAG:MAG:BINNING:MAXBIN2"];
+v211 [shape=point];
+v206 -> v211;
+
+v206 [label="NFCORE_MAG:MAG:BINNING:MAXBIN2"];
+v210 [shape=point];
+v206 -> v210;
+
+v206 [label="NFCORE_MAG:MAG:BINNING:MAXBIN2"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v219;
+
+v206 [label="NFCORE_MAG:MAG:BINNING:MAXBIN2"];
+v209 [shape=point];
+v206 -> v209;
+
+v206 [label="NFCORE_MAG:MAG:BINNING:MAXBIN2"];
+v208 [shape=point];
+v206 -> v208;
+
+v206 [label="NFCORE_MAG:MAG:BINNING:MAXBIN2"];
+v207 [shape=point];
+v206 -> v207;
+
+v206 [label="NFCORE_MAG:MAG:BINNING:MAXBIN2"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v218;
+
+v213 [label="NFCORE_MAG:MAG:BINNING:ADJUST_MAXBIN2_EXT"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v213 -> v214;
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v214 -> v215;
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v225 [label="NFCORE_MAG:MAG:BINNING:GUNZIP_BINS"];
+v215 -> v225 [label="ch_final_bins_for_gunzip"];
+
+v213 [label="NFCORE_MAG:MAG:BINNING:ADJUST_MAXBIN2_EXT"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 -> v216;
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 [shape=point];
+v216 -> v217 [label="bins_gz"];
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v218 -> v224 [label="ch_versions"];
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 [label="NFCORE_MAG:MAG:BINNING:SPLIT_FASTA"];
+v219 -> v220 [label="ch_input_splitfasta"];
+
+v220 [label="NFCORE_MAG:MAG:BINNING:SPLIT_FASTA"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v220 -> v223 [label="unbinned_gz"];
+
+v220 [label="NFCORE_MAG:MAG:BINNING:SPLIT_FASTA"];
+v222 [shape=point];
+v220 -> v222;
+
+v220 [label="NFCORE_MAG:MAG:BINNING:SPLIT_FASTA"];
+v221 [shape=point];
+v220 -> v221;
+
+v220 [label="NFCORE_MAG:MAG:BINNING:SPLIT_FASTA"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 -> v224;
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v227 [label="NFCORE_MAG:MAG:BINNING:GUNZIP_UNBINS"];
+v223 -> v227 [label="ch_split_fasta_results_transposed"];
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v224 -> v230 [label="ch_versions"];
+
+v225 [label="NFCORE_MAG:MAG:BINNING:GUNZIP_BINS"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v225 -> v226;
+
+v225 [label="NFCORE_MAG:MAG:BINNING:GUNZIP_BINS"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v225 -> v229;
+
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v226 -> v234 [label="bins"];
+
+v227 [label="NFCORE_MAG:MAG:BINNING:GUNZIP_UNBINS"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v227 -> v228;
+
+v227 [label="NFCORE_MAG:MAG:BINNING:GUNZIP_UNBINS"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v227 -> v231;
+
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v228 -> v235 [label="unbinned"];
+
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 -> v230;
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v230 -> v232 [label="ch_versions"];
+
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v231 -> v232;
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v233 [label="versions"];
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v259 [label="ch_versions"];
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v234 -> v236 [label="ch_binning_results_bins"];
+
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v235 -> v237 [label="ch_binning_results_unbins"];
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 -> v238 [label="ch_input_for_postbinning_bins"];
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v237 -> v238 [label="ch_binning_results_unbins"];
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v238 -> v240 [label="bins_unbins"];
+
+v239 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v239 -> v248 [label="ch_versions"];
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v240 -> v241;
+
+v241 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v241 -> v242;
+
+v184 [label="NFCORE_MAG:MAG:BINNING:METABAT2_JGISUMMARIZEBAMCONTIGDEPTHS"];
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v184 -> v242 [label="depths"];
+
+v242 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v242 -> v243;
+
+v243 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v243 -> v244;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v244 -> v245;
+
+v245 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v245 -> v246;
+
+v246 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v247 [label="NFCORE_MAG:MAG:DEPTHS:MAG_DEPTHS"];
+v246 -> v247 [label="ch_depth_input"];
+
+v247 [label="NFCORE_MAG:MAG:DEPTHS:MAG_DEPTHS"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v247 -> v250;
+
+v247 [label="NFCORE_MAG:MAG:DEPTHS:MAG_DEPTHS"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v247 -> v248;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v248 -> v257 [label="ch_versions"];
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v68 -> v249 [label="reads"];
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v249 -> v251 [label="ch_sample_groups"];
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v252 [label="NFCORE_MAG:MAG:DEPTHS:MAG_DEPTHS_PLOT"];
+v250 -> v252 [label="ch_mag_depths_plot"];
+
+v251 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v252 [label="NFCORE_MAG:MAG:DEPTHS:MAG_DEPTHS_PLOT"];
+v251 -> v252;
+
+v252 [label="NFCORE_MAG:MAG:DEPTHS:MAG_DEPTHS_PLOT"];
+v253 [shape=point];
+v252 -> v253;
+
+v252 [label="NFCORE_MAG:MAG:DEPTHS:MAG_DEPTHS_PLOT"];
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v252 -> v257;
+
+v247 [label="NFCORE_MAG:MAG:DEPTHS:MAG_DEPTHS"];
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v247 -> v254;
+
+v254 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v254 -> v255;
+
+v255 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v256 [label="NFCORE_MAG:MAG:DEPTHS:MAG_DEPTHS_SUMMARY"];
+v255 -> v256;
+
+v256 [label="NFCORE_MAG:MAG:DEPTHS:MAG_DEPTHS_SUMMARY"];
+v326 [label="NFCORE_MAG:MAG:BIN_SUMMARY"];
+v256 -> v326 [label="ch_input_for_binsummary"];
+
+v256 [label="NFCORE_MAG:MAG:DEPTHS:MAG_DEPTHS_SUMMARY"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v256 -> v258;
+
+v257 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v257 -> v258 [label="ch_versions"];
+
+v258 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v258 -> v259 [label="versions"];
+
+v259 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v259 -> v293 [label="ch_versions"];
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v238 -> v260 [label="bins_unbins"];
+
+v260 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v260 -> v265 [label="bins"];
+
+v261 [shape=point,label="",fixedsize=true,width=0.1];
+v262 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO_DB_PREPARATION"];
+v261 -> v262 [label="database"];
+
+v262 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO_DB_PREPARATION"];
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v262 -> v264;
+
+v262 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO_DB_PREPARATION"];
+v263 [shape=point];
+v262 -> v263;
+
+v264 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v264 -> v265 [label="ch_db_for_busco"];
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v265 -> v272;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v265 -> v274;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v271 [shape=point];
+v265 -> v271;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v270 [shape=point];
+v265 -> v270;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v269 [shape=point];
+v265 -> v269;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v268 [shape=point];
+v265 -> v268;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v267 [shape=point];
+v265 -> v267;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v266 [shape=point];
+v265 -> v266;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v265 -> v276;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v265 -> v292 [label="versions"];
+
+v272 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v273 [shape=point];
+v272 -> v273 [label="busco_summary_domain"];
+
+v274 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v275 [shape=point];
+v274 -> v275 [label="busco_summary_specific"];
+
+v276 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v277 [shape=point];
+v276 -> v277 [label="busco_failed_bin"];
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v265 -> v278;
+
+v278 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v278 -> v279;
+
+v279 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v279 -> v280;
+
+v280 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v287 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO_SUMMARY"];
+v280 -> v287;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v265 -> v281;
+
+v281 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v281 -> v282;
+
+v282 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v282 -> v283;
+
+v283 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v287 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO_SUMMARY"];
+v283 -> v287;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v265 -> v284;
+
+v284 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v284 -> v285;
+
+v285 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v285 -> v286;
+
+v286 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v287 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO_SUMMARY"];
+v286 -> v287;
+
+v287 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO_SUMMARY"];
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v287 -> v322 [label="ch_busco_summary"];
+
+v287 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO_SUMMARY"];
+v288 [shape=point];
+v287 -> v288;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v265 -> v289;
+
+v289 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v289 -> v294 [label="failed_bin"];
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 -> v290;
+
+v265 [label="NFCORE_MAG:MAG:BUSCO_QC:BUSCO"];
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v265 -> v290;
+
+v290 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v290 -> v291;
+
+v291 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v291 -> v392 [label="multiqc"];
+
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v292 -> v293;
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v293 -> v303 [label="ch_versions"];
+
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v294 -> v295;
+
+v295 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v296 [shape=point];
+v295 -> v296;
+
+v297 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v298 [shape=point];
+v297 -> v298 [label="ch_quast_bins_summary"];
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v238 -> v299 [label="bins_unbins"];
+
+v299 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v299 -> v300;
+
+v300 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v301 [label="NFCORE_MAG:MAG:QUAST_BINS"];
+v300 -> v301 [label="ch_input_for_quast_bins"];
+
+v301 [label="NFCORE_MAG:MAG:QUAST_BINS"];
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v301 -> v383;
+
+v301 [label="NFCORE_MAG:MAG:QUAST_BINS"];
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v301 -> v304;
+
+v301 [label="NFCORE_MAG:MAG:QUAST_BINS"];
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v301 -> v302;
+
+v302 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v302 -> v303;
+
+v303 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v303 -> v319 [label="ch_versions"];
+
+v304 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v305 [label="NFCORE_MAG:MAG:QUAST_BINS_SUMMARY"];
+v304 -> v305;
+
+v305 [label="NFCORE_MAG:MAG:QUAST_BINS_SUMMARY"];
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v305 -> v324 [label="ch_quast_bins_summary"];
+
+v305 [label="NFCORE_MAG:MAG:QUAST_BINS_SUMMARY"];
+v306 [shape=point];
+v305 -> v306;
+
+v307 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v308 [label="NFCORE_MAG:MAG:CAT"];
+v307 -> v308 [label="ch_cat_db"];
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v308 [label="NFCORE_MAG:MAG:CAT"];
+v238 -> v308 [label="bins_unbins"];
+
+v308 [label="NFCORE_MAG:MAG:CAT"];
+v314 [shape=point];
+v308 -> v314;
+
+v308 [label="NFCORE_MAG:MAG:CAT"];
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v308 -> v315;
+
+v308 [label="NFCORE_MAG:MAG:CAT"];
+v313 [shape=point];
+v308 -> v313;
+
+v308 [label="NFCORE_MAG:MAG:CAT"];
+v312 [shape=point];
+v308 -> v312;
+
+v308 [label="NFCORE_MAG:MAG:CAT"];
+v311 [shape=point];
+v308 -> v311;
+
+v308 [label="NFCORE_MAG:MAG:CAT"];
+v310 [shape=point];
+v308 -> v310;
+
+v308 [label="NFCORE_MAG:MAG:CAT"];
+v309 [shape=point];
+v308 -> v309;
+
+v308 [label="NFCORE_MAG:MAG:CAT"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v308 -> v318;
+
+v315 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v316 [label="NFCORE_MAG:MAG:CAT_SUMMARY"];
+v315 -> v316;
+
+v316 [label="NFCORE_MAG:MAG:CAT_SUMMARY"];
+v317 [shape=point];
+v316 -> v317;
+
+v316 [label="NFCORE_MAG:MAG:CAT_SUMMARY"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v316 -> v320;
+
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v318 -> v319;
+
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 -> v320 [label="ch_versions"];
+
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 -> v347 [label="ch_versions"];
+
+v321 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v321 -> v325 [label="ch_gtdbtk_summary"];
+
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v326 [label="NFCORE_MAG:MAG:BIN_SUMMARY"];
+v322 -> v326;
+
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v326 [label="NFCORE_MAG:MAG:BIN_SUMMARY"];
+v323 -> v326;
+
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v326 [label="NFCORE_MAG:MAG:BIN_SUMMARY"];
+v324 -> v326;
+
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v326 [label="NFCORE_MAG:MAG:BIN_SUMMARY"];
+v325 -> v326;
+
+v326 [label="NFCORE_MAG:MAG:BIN_SUMMARY"];
+v328 [shape=point];
+v326 -> v328;
+
+v326 [label="NFCORE_MAG:MAG:BIN_SUMMARY"];
+v327 [shape=point];
+v326 -> v327;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v238 -> v329 [label="bins_unbins"];
+
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v329 -> v330;
+
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v330 -> v331;
+
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v331 -> v334 [label="ch_bins_for_prokka"];
+
+v332 [shape=point,label="",fixedsize=true,width=0.1];
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v332 -> v334 [label="proteins"];
+
+v333 [shape=point,label="",fixedsize=true,width=0.1];
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v333 -> v334 [label="prodigal_tf"];
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v345 [shape=point];
+v334 -> v345;
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v344 [shape=point];
+v334 -> v344;
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v343 [shape=point];
+v334 -> v343;
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v342 [shape=point];
+v334 -> v342;
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v341 [shape=point];
+v334 -> v341;
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v340 [shape=point];
+v334 -> v340;
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v339 [shape=point];
+v334 -> v339;
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v338 [shape=point];
+v334 -> v338;
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v337 [shape=point];
+v334 -> v337;
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v336 [shape=point];
+v334 -> v336;
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v334 -> v389;
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v335 [shape=point];
+v334 -> v335;
+
+v334 [label="NFCORE_MAG:MAG:PROKKA"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v334 -> v346;
+
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v346 -> v347;
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v347 -> v348 [label="ch_versions"];
+
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v348 -> v349;
+
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v350 [label="NFCORE_MAG:MAG:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v349 -> v350;
+
+v350 [label="NFCORE_MAG:MAG:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v352 [shape=point];
+v350 -> v352;
+
+v350 [label="NFCORE_MAG:MAG:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v350 -> v357;
+
+v350 [label="NFCORE_MAG:MAG:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v351 [shape=point];
+v350 -> v351;
+
+v353 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v353 -> v356 [label="ch_multiqc_files"];
+
+v354 [shape=point,label="",fixedsize=true,width=0.1];
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v354 -> v355 [label="ch_workflow_summary"];
+
+v355 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v355 -> v356;
+
+v356 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v358 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v356 -> v358 [label="ch_multiqc_files"];
+
+v357 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v358 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v357 -> v358;
+
+v358 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v358 -> v361 [label="ch_multiqc_files"];
+
+v359 [shape=point,label="",fixedsize=true,width=0.1];
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v359 -> v360 [label="ch_methods_description"];
+
+v360 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v360 -> v361;
+
+v361 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v361 -> v364 [label="ch_multiqc_files"];
+
+v362 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v362 -> v363;
+
+v363 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v363 -> v364;
+
+v364 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v364 -> v367 [label="ch_multiqc_files"];
+
+v365 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v365 -> v366;
+
+v366 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v366 -> v367;
+
+v367 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v367 -> v370 [label="ch_multiqc_files"];
+
+v368 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v368 -> v369;
+
+v369 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v369 -> v370;
+
+v370 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v370 -> v373 [label="ch_multiqc_files"];
+
+v371 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v371 -> v372;
+
+v372 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v372 -> v373;
+
+v373 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v373 -> v376 [label="ch_multiqc_files"];
+
+v374 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v374 -> v375;
+
+v375 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v375 -> v376;
+
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v376 -> v379 [label="ch_multiqc_files"];
+
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v377 -> v378;
+
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v378 -> v379;
+
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v379 -> v382 [label="ch_multiqc_files"];
+
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v380 -> v381;
+
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v381 -> v382;
+
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v382 -> v385 [label="ch_multiqc_files"];
+
+v383 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v383 -> v384;
+
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v384 -> v385;
+
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v385 -> v388 [label="ch_multiqc_files"];
+
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v386 -> v387;
+
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v387 -> v388;
+
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v388 -> v391 [label="ch_multiqc_files"];
+
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v390 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v389 -> v390;
+
+v390 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v390 -> v391;
+
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v391 -> v394 [label="ch_multiqc_files"];
+
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v392 -> v393;
+
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v393 -> v394;
+
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v395 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v394 -> v395 [label="ch_multiqc_files"];
+
+v395 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v399 [label="NFCORE_MAG:MAG:MULTIQC"];
+v395 -> v399;
+
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v399 [label="NFCORE_MAG:MAG:MULTIQC"];
+v396 -> v399;
+
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v399 [label="NFCORE_MAG:MAG:MULTIQC"];
+v397 -> v399;
+
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v399 [label="NFCORE_MAG:MAG:MULTIQC"];
+v398 -> v399;
+
+v399 [label="NFCORE_MAG:MAG:MULTIQC"];
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v399 -> v403;
+
+v399 [label="NFCORE_MAG:MAG:MULTIQC"];
+v402 [shape=point];
+v399 -> v402;
+
+v399 [label="NFCORE_MAG:MAG:MULTIQC"];
+v401 [shape=point];
+v399 -> v401;
+
+v399 [label="NFCORE_MAG:MAG:MULTIQC"];
+v400 [shape=point];
+v399 -> v400;
+
+v403 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v404 [shape=point];
+v403 -> v404;
+
+}

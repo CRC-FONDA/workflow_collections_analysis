@@ -1,0 +1,10 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.32 0.6 0.85", style="rounded"];
+	1[label = "plot_oncoprint", color = "0.38 0.6 0.85", style="rounded"];
+	2[label = "build_oncoprint_table\nevent: present", color = "0.51 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 1
+}            

@@ -1,0 +1,24 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.23 0.6 0.85", style="rounded"];
+	1[label = "bgzip_files_all", color = "0.64 0.6 0.85", style="rounded"];
+	2[label = "snpeff_annotate_all", color = "0.14 0.6 0.85", style="rounded"];
+	3[label = "merge_vcf", color = "0.09 0.6 0.85", style="rounded"];
+	4[label = "index_files_all", color = "0.29 0.6 0.85", style="rounded"];
+	5[label = "bgzip_files_all_highq", color = "0.55 0.6 0.85", style="rounded"];
+	6[label = "snpeff_annotate_all_highq", color = "0.49 0.6 0.85", style="rounded"];
+	7[label = "merge_vcf_highQ", color = "0.26 0.6 0.85", style="rounded"];
+	8[label = "index_files_all_highq", color = "0.03 0.6 0.85", style="rounded"];
+	1 -> 0
+	4 -> 0
+	5 -> 0
+	8 -> 0
+	2 -> 1
+	3 -> 2
+	1 -> 4
+	6 -> 5
+	7 -> 6
+	5 -> 8
+}            

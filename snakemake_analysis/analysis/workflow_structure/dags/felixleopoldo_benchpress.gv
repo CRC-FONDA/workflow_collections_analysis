@@ -1,0 +1,1261 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.43 0.6 0.85", style="rounded"];
+	1[label = "benchmarks", color = "0.39 0.6 0.85", style="rounded"];
+	2[label = "benchmarks_combine_data", color = "0.07 0.6 0.85", style="rounded"];
+	3[label = "bidag_itsearch_joined_benchmarks", color = "0.66 0.6 0.85", style="rounded"];
+	4[label = "bidag_itsearch_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: itsearch-bge", color = "0.36 0.6 0.85", style="rounded"];
+	5[label = "standardize\ndata_alg: iid\ndata_params: n=300\nmodel: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1\nseed: 1\nstandardized: True", color = "0.32 0.6 0.85", style="rounded"];
+	6[label = "sample_sem_data\nmax: 1/seed=1\nn: 300\nreplicate: 1", color = "0.03 0.6 0.85", style="rounded"];
+	7[label = "sample_sem_params\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nmax: 1\nmin: 0.25\nseed: 1", color = "0.51 0.6 0.85", style="rounded"];
+	8[label = "sample_adjmat\nDAG: True\nd: 4\nmax_parents: 5\nmethod: er\nn: 20\noutput_dir: results\npar1: None\npar2: None\nreplicate: 1", color = "0.00 0.6 0.85", style="rounded"];
+	9[label = "bidag_iterative_search\nMAP: False\nalpha: 0.01\nam: 0.01\naw: None\nchi: None\ncpdag: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\nedgepf: 2\nestimate: map\ngamma: 1\nhardlimit: 14\nmergetype: skeleton\nplus1it: 2\nposterior: 0.5\nreplicate: 1\nscoretype: bge\nsoftlimit: 9\ntimeout: None", color = "0.33 0.6 0.85", style="rounded"];
+	10[label = "bidag_itsearch_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: itsearch-bge", color = "0.36 0.6 0.85", style="rounded"];
+	11[label = "bidag_iterative_search\nMAP: False\nalpha: 0.01\nam: 0.1\naw: None\nchi: None\ncpdag: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\nedgepf: 2\nestimate: map\ngamma: 1\nhardlimit: 14\nmergetype: skeleton\nplus1it: 2\nposterior: 0.5\nreplicate: 1\nscoretype: bge\nsoftlimit: 9\ntimeout: None", color = "0.33 0.6 0.85", style="rounded"];
+	12[label = "bidag_itsearch_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: itsearch-bge", color = "0.36 0.6 0.85", style="rounded"];
+	13[label = "bidag_iterative_search\nMAP: False\nalpha: 0.01\nam: 1\naw: None\nchi: None\ncpdag: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\nedgepf: 2\nestimate: map\ngamma: 1\nhardlimit: 14\nmergetype: skeleton\nplus1it: 2\nposterior: 0.5\nreplicate: 1\nscoretype: bge\nsoftlimit: 9\ntimeout: None", color = "0.33 0.6 0.85", style="rounded"];
+	14[label = "bidag_itsearch_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: itsearch-bge", color = "0.36 0.6 0.85", style="rounded"];
+	15[label = "standardize\ndata_alg: iid\ndata_params: n=300\nmodel: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2\nseed: 2\nstandardized: True", color = "0.32 0.6 0.85", style="rounded"];
+	16[label = "sample_sem_data\nmax: 1/seed=2\nn: 300\nreplicate: 2", color = "0.03 0.6 0.85", style="rounded"];
+	17[label = "sample_sem_params\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nmax: 1\nmin: 0.25\nseed: 2", color = "0.51 0.6 0.85", style="rounded"];
+	18[label = "sample_adjmat\nDAG: True\nd: 4\nmax_parents: 5\nmethod: er\nn: 20\noutput_dir: results\npar1: None\npar2: None\nreplicate: 2", color = "0.00 0.6 0.85", style="rounded"];
+	19[label = "bidag_iterative_search\nMAP: False\nalpha: 0.01\nam: 0.01\naw: None\nchi: None\ncpdag: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\nedgepf: 2\nestimate: map\ngamma: 1\nhardlimit: 14\nmergetype: skeleton\nplus1it: 2\nposterior: 0.5\nreplicate: 2\nscoretype: bge\nsoftlimit: 9\ntimeout: None", color = "0.33 0.6 0.85", style="rounded"];
+	20[label = "bidag_itsearch_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: itsearch-bge", color = "0.36 0.6 0.85", style="rounded"];
+	21[label = "bidag_iterative_search\nMAP: False\nalpha: 0.01\nam: 0.1\naw: None\nchi: None\ncpdag: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\nedgepf: 2\nestimate: map\ngamma: 1\nhardlimit: 14\nmergetype: skeleton\nplus1it: 2\nposterior: 0.5\nreplicate: 2\nscoretype: bge\nsoftlimit: 9\ntimeout: None", color = "0.33 0.6 0.85", style="rounded"];
+	22[label = "bidag_itsearch_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: itsearch-bge", color = "0.36 0.6 0.85", style="rounded"];
+	23[label = "bidag_iterative_search\nMAP: False\nalpha: 0.01\nam: 1\naw: None\nchi: None\ncpdag: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\nedgepf: 2\nestimate: map\ngamma: 1\nhardlimit: 14\nmergetype: skeleton\nplus1it: 2\nposterior: 0.5\nreplicate: 2\nscoretype: bge\nsoftlimit: 9\ntimeout: None", color = "0.33 0.6 0.85", style="rounded"];
+	24[label = "bidag_itsearch_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: itsearch-bge", color = "0.36 0.6 0.85", style="rounded"];
+	25[label = "standardize\ndata_alg: iid\ndata_params: n=300\nmodel: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3\nseed: 3\nstandardized: True", color = "0.32 0.6 0.85", style="rounded"];
+	26[label = "sample_sem_data\nmax: 1/seed=3\nn: 300\nreplicate: 3", color = "0.03 0.6 0.85", style="rounded"];
+	27[label = "sample_sem_params\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nmax: 1\nmin: 0.25\nseed: 3", color = "0.51 0.6 0.85", style="rounded"];
+	28[label = "sample_adjmat\nDAG: True\nd: 4\nmax_parents: 5\nmethod: er\nn: 20\noutput_dir: results\npar1: None\npar2: None\nreplicate: 3", color = "0.00 0.6 0.85", style="rounded"];
+	29[label = "bidag_iterative_search\nMAP: False\nalpha: 0.01\nam: 0.01\naw: None\nchi: None\ncpdag: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\nedgepf: 2\nestimate: map\ngamma: 1\nhardlimit: 14\nmergetype: skeleton\nplus1it: 2\nposterior: 0.5\nreplicate: 3\nscoretype: bge\nsoftlimit: 9\ntimeout: None", color = "0.33 0.6 0.85", style="rounded"];
+	30[label = "bidag_itsearch_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: itsearch-bge", color = "0.36 0.6 0.85", style="rounded"];
+	31[label = "bidag_iterative_search\nMAP: False\nalpha: 0.01\nam: 0.1\naw: None\nchi: None\ncpdag: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\nedgepf: 2\nestimate: map\ngamma: 1\nhardlimit: 14\nmergetype: skeleton\nplus1it: 2\nposterior: 0.5\nreplicate: 3\nscoretype: bge\nsoftlimit: 9\ntimeout: None", color = "0.33 0.6 0.85", style="rounded"];
+	32[label = "bidag_itsearch_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: itsearch-bge", color = "0.36 0.6 0.85", style="rounded"];
+	33[label = "bidag_iterative_search\nMAP: False\nalpha: 0.01\nam: 1\naw: None\nchi: None\ncpdag: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\nedgepf: 2\nestimate: map\ngamma: 1\nhardlimit: 14\nmergetype: skeleton\nplus1it: 2\nposterior: 0.5\nreplicate: 3\nscoretype: bge\nsoftlimit: 9\ntimeout: None", color = "0.33 0.6 0.85", style="rounded"];
+	34[label = "bnlearn_tabu_joined_benchmarks", color = "0.63 0.6 0.85", style="rounded"];
+	35[label = "bnlearn_tabu_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: tabu-bge", color = "0.15 0.6 0.85", style="rounded"];
+	36[label = "bnlearn_tabu\nbeta: 1\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\niss: 1\nissmu: 0.0001\nissw: None\nk: 1\nl: 5\nprior: uniform\nreplicate: 1\nscore: bge\ntimeout: None", color = "0.12 0.6 0.85", style="rounded"];
+	37[label = "bnlearn_tabu_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: tabu-bge", color = "0.15 0.6 0.85", style="rounded"];
+	38[label = "bnlearn_tabu\nbeta: 1\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\niss: 1\nissmu: 0.001\nissw: None\nk: 1\nl: 5\nprior: uniform\nreplicate: 1\nscore: bge\ntimeout: None", color = "0.12 0.6 0.85", style="rounded"];
+	39[label = "bnlearn_tabu_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: tabu-bge", color = "0.15 0.6 0.85", style="rounded"];
+	40[label = "bnlearn_tabu\nbeta: 1\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\niss: 1\nissmu: 0.01\nissw: None\nk: 1\nl: 5\nprior: uniform\nreplicate: 1\nscore: bge\ntimeout: None", color = "0.12 0.6 0.85", style="rounded"];
+	41[label = "bnlearn_tabu_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: tabu-bge", color = "0.15 0.6 0.85", style="rounded"];
+	42[label = "bnlearn_tabu\nbeta: 1\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\niss: 1\nissmu: 0.05\nissw: None\nk: 1\nl: 5\nprior: uniform\nreplicate: 1\nscore: bge\ntimeout: None", color = "0.12 0.6 0.85", style="rounded"];
+	43[label = "bnlearn_tabu_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: tabu-bge", color = "0.15 0.6 0.85", style="rounded"];
+	44[label = "bnlearn_tabu\nbeta: 1\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\niss: 1\nissmu: 0.0001\nissw: None\nk: 1\nl: 5\nprior: uniform\nreplicate: 2\nscore: bge\ntimeout: None", color = "0.12 0.6 0.85", style="rounded"];
+	45[label = "bnlearn_tabu_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: tabu-bge", color = "0.15 0.6 0.85", style="rounded"];
+	46[label = "bnlearn_tabu\nbeta: 1\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\niss: 1\nissmu: 0.001\nissw: None\nk: 1\nl: 5\nprior: uniform\nreplicate: 2\nscore: bge\ntimeout: None", color = "0.12 0.6 0.85", style="rounded"];
+	47[label = "bnlearn_tabu_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: tabu-bge", color = "0.15 0.6 0.85", style="rounded"];
+	48[label = "bnlearn_tabu\nbeta: 1\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\niss: 1\nissmu: 0.01\nissw: None\nk: 1\nl: 5\nprior: uniform\nreplicate: 2\nscore: bge\ntimeout: None", color = "0.12 0.6 0.85", style="rounded"];
+	49[label = "bnlearn_tabu_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: tabu-bge", color = "0.15 0.6 0.85", style="rounded"];
+	50[label = "bnlearn_tabu\nbeta: 1\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\niss: 1\nissmu: 0.05\nissw: None\nk: 1\nl: 5\nprior: uniform\nreplicate: 2\nscore: bge\ntimeout: None", color = "0.12 0.6 0.85", style="rounded"];
+	51[label = "bnlearn_tabu_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: tabu-bge", color = "0.15 0.6 0.85", style="rounded"];
+	52[label = "bnlearn_tabu\nbeta: 1\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\niss: 1\nissmu: 0.0001\nissw: None\nk: 1\nl: 5\nprior: uniform\nreplicate: 3\nscore: bge\ntimeout: None", color = "0.12 0.6 0.85", style="rounded"];
+	53[label = "bnlearn_tabu_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: tabu-bge", color = "0.15 0.6 0.85", style="rounded"];
+	54[label = "bnlearn_tabu\nbeta: 1\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\niss: 1\nissmu: 0.001\nissw: None\nk: 1\nl: 5\nprior: uniform\nreplicate: 3\nscore: bge\ntimeout: None", color = "0.12 0.6 0.85", style="rounded"];
+	55[label = "bnlearn_tabu_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: tabu-bge", color = "0.15 0.6 0.85", style="rounded"];
+	56[label = "bnlearn_tabu\nbeta: 1\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\niss: 1\nissmu: 0.01\nissw: None\nk: 1\nl: 5\nprior: uniform\nreplicate: 3\nscore: bge\ntimeout: None", color = "0.12 0.6 0.85", style="rounded"];
+	57[label = "bnlearn_tabu_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: tabu-bge", color = "0.15 0.6 0.85", style="rounded"];
+	58[label = "bnlearn_tabu\nbeta: 1\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\niss: 1\nissmu: 0.05\nissw: None\nk: 1\nl: 5\nprior: uniform\nreplicate: 3\nscore: bge\ntimeout: None", color = "0.12 0.6 0.85", style="rounded"];
+	59[label = "pcalg_pc_joined_benchmarks", color = "0.19 0.6 0.85", style="rounded"];
+	60[label = "pcalg_pc_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: pc-gaussCItest", color = "0.40 0.6 0.85", style="rounded"];
+	61[label = "pcalg_pc\nNAdelete: True\nalpha: 0.001\nconservative: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\nindepTest: gaussCItest\nmajrule: False\nmmax: Inf\nnumCores: 1\nreplicate: 1\nskelmethod: stable\nsolveconfl: False\ntimeout: None\nu2pd: relaxed\nverbose: False", color = "0.26 0.6 0.85", style="rounded"];
+	62[label = "pcalg_pc_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: pc-gaussCItest", color = "0.40 0.6 0.85", style="rounded"];
+	63[label = "pcalg_pc\nNAdelete: True\nalpha: 0.01\nconservative: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\nindepTest: gaussCItest\nmajrule: False\nmmax: Inf\nnumCores: 1\nreplicate: 1\nskelmethod: stable\nsolveconfl: False\ntimeout: None\nu2pd: relaxed\nverbose: False", color = "0.26 0.6 0.85", style="rounded"];
+	64[label = "pcalg_pc_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: pc-gaussCItest", color = "0.40 0.6 0.85", style="rounded"];
+	65[label = "pcalg_pc\nNAdelete: True\nalpha: 0.05\nconservative: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\nindepTest: gaussCItest\nmajrule: False\nmmax: Inf\nnumCores: 1\nreplicate: 1\nskelmethod: stable\nsolveconfl: False\ntimeout: None\nu2pd: relaxed\nverbose: False", color = "0.26 0.6 0.85", style="rounded"];
+	66[label = "pcalg_pc_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: pc-gaussCItest", color = "0.40 0.6 0.85", style="rounded"];
+	67[label = "pcalg_pc\nNAdelete: True\nalpha: 0.1\nconservative: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\nindepTest: gaussCItest\nmajrule: False\nmmax: Inf\nnumCores: 1\nreplicate: 1\nskelmethod: stable\nsolveconfl: False\ntimeout: None\nu2pd: relaxed\nverbose: False", color = "0.26 0.6 0.85", style="rounded"];
+	68[label = "pcalg_pc_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: pc-gaussCItest", color = "0.40 0.6 0.85", style="rounded"];
+	69[label = "pcalg_pc\nNAdelete: True\nalpha: 0.001\nconservative: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\nindepTest: gaussCItest\nmajrule: False\nmmax: Inf\nnumCores: 1\nreplicate: 2\nskelmethod: stable\nsolveconfl: False\ntimeout: None\nu2pd: relaxed\nverbose: False", color = "0.26 0.6 0.85", style="rounded"];
+	70[label = "pcalg_pc_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: pc-gaussCItest", color = "0.40 0.6 0.85", style="rounded"];
+	71[label = "pcalg_pc\nNAdelete: True\nalpha: 0.01\nconservative: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\nindepTest: gaussCItest\nmajrule: False\nmmax: Inf\nnumCores: 1\nreplicate: 2\nskelmethod: stable\nsolveconfl: False\ntimeout: None\nu2pd: relaxed\nverbose: False", color = "0.26 0.6 0.85", style="rounded"];
+	72[label = "pcalg_pc_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: pc-gaussCItest", color = "0.40 0.6 0.85", style="rounded"];
+	73[label = "pcalg_pc\nNAdelete: True\nalpha: 0.05\nconservative: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\nindepTest: gaussCItest\nmajrule: False\nmmax: Inf\nnumCores: 1\nreplicate: 2\nskelmethod: stable\nsolveconfl: False\ntimeout: None\nu2pd: relaxed\nverbose: False", color = "0.26 0.6 0.85", style="rounded"];
+	74[label = "pcalg_pc_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: pc-gaussCItest", color = "0.40 0.6 0.85", style="rounded"];
+	75[label = "pcalg_pc\nNAdelete: True\nalpha: 0.1\nconservative: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\nindepTest: gaussCItest\nmajrule: False\nmmax: Inf\nnumCores: 1\nreplicate: 2\nskelmethod: stable\nsolveconfl: False\ntimeout: None\nu2pd: relaxed\nverbose: False", color = "0.26 0.6 0.85", style="rounded"];
+	76[label = "pcalg_pc_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: pc-gaussCItest", color = "0.40 0.6 0.85", style="rounded"];
+	77[label = "pcalg_pc\nNAdelete: True\nalpha: 0.001\nconservative: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\nindepTest: gaussCItest\nmajrule: False\nmmax: Inf\nnumCores: 1\nreplicate: 3\nskelmethod: stable\nsolveconfl: False\ntimeout: None\nu2pd: relaxed\nverbose: False", color = "0.26 0.6 0.85", style="rounded"];
+	78[label = "pcalg_pc_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: pc-gaussCItest", color = "0.40 0.6 0.85", style="rounded"];
+	79[label = "pcalg_pc\nNAdelete: True\nalpha: 0.01\nconservative: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\nindepTest: gaussCItest\nmajrule: False\nmmax: Inf\nnumCores: 1\nreplicate: 3\nskelmethod: stable\nsolveconfl: False\ntimeout: None\nu2pd: relaxed\nverbose: False", color = "0.26 0.6 0.85", style="rounded"];
+	80[label = "pcalg_pc_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: pc-gaussCItest", color = "0.40 0.6 0.85", style="rounded"];
+	81[label = "pcalg_pc\nNAdelete: True\nalpha: 0.05\nconservative: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\nindepTest: gaussCItest\nmajrule: False\nmmax: Inf\nnumCores: 1\nreplicate: 3\nskelmethod: stable\nsolveconfl: False\ntimeout: None\nu2pd: relaxed\nverbose: False", color = "0.26 0.6 0.85", style="rounded"];
+	82[label = "pcalg_pc_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: pc-gaussCItest", color = "0.40 0.6 0.85", style="rounded"];
+	83[label = "pcalg_pc\nNAdelete: True\nalpha: 0.1\nconservative: False\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\nindepTest: gaussCItest\nmajrule: False\nmmax: Inf\nnumCores: 1\nreplicate: 3\nskelmethod: stable\nsolveconfl: False\ntimeout: None\nu2pd: relaxed\nverbose: False", color = "0.26 0.6 0.85", style="rounded"];
+	84[label = "tetrad_fges_joined_benchmarks", color = "0.56 0.6 0.85", style="rounded"];
+	85[label = "tetrad_fges_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: fges-sem-bic", color = "0.09 0.6 0.85", style="rounded"];
+	86[label = "tetrad_fges\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\ndatatype: continuous\nfaithfulnessAssumed: True\npenaltyDiscount: 0.75\nreplicate: 1\nsamplePrior: 1\nscore: sem-bic\nstructurePrior: 1\ntimeout: None", color = "0.14 0.6 0.85", style="rounded"];
+	87[label = "tetrad_fges_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: fges-sem-bic", color = "0.09 0.6 0.85", style="rounded"];
+	88[label = "tetrad_fges\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\ndatatype: continuous\nfaithfulnessAssumed: True\npenaltyDiscount: 0.8\nreplicate: 1\nsamplePrior: 1\nscore: sem-bic\nstructurePrior: 1\ntimeout: None", color = "0.14 0.6 0.85", style="rounded"];
+	89[label = "tetrad_fges_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: fges-sem-bic", color = "0.09 0.6 0.85", style="rounded"];
+	90[label = "tetrad_fges\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\ndatatype: continuous\nfaithfulnessAssumed: True\npenaltyDiscount: 1\nreplicate: 1\nsamplePrior: 1\nscore: sem-bic\nstructurePrior: 1\ntimeout: None", color = "0.14 0.6 0.85", style="rounded"];
+	91[label = "tetrad_fges_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nid: fges-sem-bic", color = "0.09 0.6 0.85", style="rounded"];
+	92[label = "tetrad_fges\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300\ndatatype: continuous\nfaithfulnessAssumed: True\npenaltyDiscount: 1.5\nreplicate: 1\nsamplePrior: 1\nscore: sem-bic\nstructurePrior: 1\ntimeout: None", color = "0.14 0.6 0.85", style="rounded"];
+	93[label = "tetrad_fges_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: fges-sem-bic", color = "0.09 0.6 0.85", style="rounded"];
+	94[label = "tetrad_fges\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\ndatatype: continuous\nfaithfulnessAssumed: True\npenaltyDiscount: 0.75\nreplicate: 2\nsamplePrior: 1\nscore: sem-bic\nstructurePrior: 1\ntimeout: None", color = "0.14 0.6 0.85", style="rounded"];
+	95[label = "tetrad_fges_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: fges-sem-bic", color = "0.09 0.6 0.85", style="rounded"];
+	96[label = "tetrad_fges\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\ndatatype: continuous\nfaithfulnessAssumed: True\npenaltyDiscount: 0.8\nreplicate: 2\nsamplePrior: 1\nscore: sem-bic\nstructurePrior: 1\ntimeout: None", color = "0.14 0.6 0.85", style="rounded"];
+	97[label = "tetrad_fges_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: fges-sem-bic", color = "0.09 0.6 0.85", style="rounded"];
+	98[label = "tetrad_fges\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\ndatatype: continuous\nfaithfulnessAssumed: True\npenaltyDiscount: 1\nreplicate: 2\nsamplePrior: 1\nscore: sem-bic\nstructurePrior: 1\ntimeout: None", color = "0.14 0.6 0.85", style="rounded"];
+	99[label = "tetrad_fges_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nid: fges-sem-bic", color = "0.09 0.6 0.85", style="rounded"];
+	100[label = "tetrad_fges\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300\ndatatype: continuous\nfaithfulnessAssumed: True\npenaltyDiscount: 1.5\nreplicate: 2\nsamplePrior: 1\nscore: sem-bic\nstructurePrior: 1\ntimeout: None", color = "0.14 0.6 0.85", style="rounded"];
+	101[label = "tetrad_fges_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: fges-sem-bic", color = "0.09 0.6 0.85", style="rounded"];
+	102[label = "tetrad_fges\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\ndatatype: continuous\nfaithfulnessAssumed: True\npenaltyDiscount: 0.75\nreplicate: 3\nsamplePrior: 1\nscore: sem-bic\nstructurePrior: 1\ntimeout: None", color = "0.14 0.6 0.85", style="rounded"];
+	103[label = "tetrad_fges_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: fges-sem-bic", color = "0.09 0.6 0.85", style="rounded"];
+	104[label = "tetrad_fges\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\ndatatype: continuous\nfaithfulnessAssumed: True\npenaltyDiscount: 0.8\nreplicate: 3\nsamplePrior: 1\nscore: sem-bic\nstructurePrior: 1\ntimeout: None", color = "0.14 0.6 0.85", style="rounded"];
+	105[label = "tetrad_fges_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: fges-sem-bic", color = "0.09 0.6 0.85", style="rounded"];
+	106[label = "tetrad_fges\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\ndatatype: continuous\nfaithfulnessAssumed: True\npenaltyDiscount: 1\nreplicate: 3\nsamplePrior: 1\nscore: sem-bic\nstructurePrior: 1\ntimeout: None", color = "0.14 0.6 0.85", style="rounded"];
+	107[label = "tetrad_fges_summary\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nid: fges-sem-bic", color = "0.09 0.6 0.85", style="rounded"];
+	108[label = "tetrad_fges\ndata: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300\ndatatype: continuous\nfaithfulnessAssumed: True\npenaltyDiscount: 1.5\nreplicate: 3\nsamplePrior: 1\nscore: sem-bic\nstructurePrior: 1\ntimeout: None", color = "0.14 0.6 0.85", style="rounded"];
+	109[label = "graph_true_plots", color = "0.10 0.6 0.85", style="rounded"];
+	110[label = "plot_dot", color = "0.62 0.6 0.85", style="rounded"];
+	111[label = "true_adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1", color = "0.57 0.6 0.85", style="rounded"];
+	112[label = "plot_dot", color = "0.62 0.6 0.85", style="rounded"];
+	113[label = "true_adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2", color = "0.57 0.6 0.85", style="rounded"];
+	114[label = "plot_dot", color = "0.62 0.6 0.85", style="rounded"];
+	115[label = "true_adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3", color = "0.57 0.6 0.85", style="rounded"];
+	116[label = "adjmat_true_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1", color = "0.45 0.6 0.85", style="rounded"];
+	117[label = "adjmat_true_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2", color = "0.45 0.6 0.85", style="rounded"];
+	118[label = "adjmat_true_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3", color = "0.45 0.6 0.85", style="rounded"];
+	119[label = "plot_adjmat_stats", color = "0.50 0.6 0.85", style="rounded"];
+	120[label = "join_adjmat_stats", color = "0.61 0.6 0.85", style="rounded"];
+	121[label = "adjmat_true_stats\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1", color = "0.01 0.6 0.85", style="rounded"];
+	122[label = "adjmat_true_stats\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2", color = "0.01 0.6 0.85", style="rounded"];
+	123[label = "adjmat_true_stats\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3", color = "0.01 0.6 0.85", style="rounded"];
+	124[label = "ggally_ggpairs", color = "0.52 0.6 0.85", style="rounded"];
+	125[label = "plot_pairs\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nreplicate: 1", color = "0.31 0.6 0.85", style="rounded"];
+	126[label = "plot_pairs\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nreplicate: 2", color = "0.31 0.6 0.85", style="rounded"];
+	127[label = "plot_pairs\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nreplicate: 3", color = "0.31 0.6 0.85", style="rounded"];
+	128[label = "graph_plots", color = "0.59 0.6 0.85", style="rounded"];
+	129[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	130[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	131[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	132[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	133[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	134[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	135[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	136[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	137[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	138[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	139[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	140[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	141[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	142[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	143[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	144[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	145[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	146[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	147[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	148[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	149[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	150[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	151[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	152[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	153[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	154[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	155[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	156[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	157[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	158[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	159[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	160[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	161[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	162[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	163[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	164[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	165[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	166[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	167[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	168[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	169[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	170[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	171[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	172[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	173[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	174[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	175[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	176[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	177[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	178[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	179[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	180[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	181[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	182[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	183[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	184[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	185[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	186[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	187[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	188[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	189[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	190[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	191[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	192[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	193[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	194[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	195[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	196[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	197[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	198[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	199[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	200[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	201[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None/seed=1", color = "0.62 0.6 0.85", style="rounded"];
+	202[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1/parameters=/sem_params/min=0.25/max=1/seed=1/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None/seed=1", color = "0.54 0.6 0.85", style="rounded"];
+	203[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	204[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	205[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	206[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	207[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	208[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	209[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None/seed=2", color = "0.62 0.6 0.85", style="rounded"];
+	210[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2/parameters=/sem_params/min=0.25/max=1/seed=2/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None/seed=2", color = "0.54 0.6 0.85", style="rounded"];
+	211[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	212[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	213[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	214[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	215[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	216[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	217[label = "plot_dot\nsomething: adjmat=/pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None/seed=3", color = "0.62 0.6 0.85", style="rounded"];
+	218[label = "adjmat_to_dot\nsomething: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3/parameters=/sem_params/min=0.25/max=1/seed=3/data=/iid/standardized=True/n=300/algorithm=/tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None/seed=3", color = "0.54 0.6 0.85", style="rounded"];
+	219[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	220[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	221[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	222[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	223[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	224[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	225[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	226[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	227[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	228[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	229[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	230[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	231[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	232[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	233[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	234[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	235[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	236[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	237[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	238[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	239[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	240[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	241[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	242[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	243[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	244[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	245[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	246[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	247[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	248[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	249[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	250[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	251[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	252[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	253[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	254[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	255[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=1\nseed: 1", color = "0.48 0.6 0.85", style="rounded"];
+	256[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	257[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	258[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	259[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=2\nseed: 2", color = "0.48 0.6 0.85", style="rounded"];
+	260[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	261[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	262[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	263[label = "adjmat_plot\nadjmat_string: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None\ndata_string: iid/standardized=True/n=300\nparam_string: sem_params/min=0.25/max=1/seed=3\nseed: 3", color = "0.48 0.6 0.85", style="rounded"];
+	264[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	265[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	266[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	267[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	268[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	269[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	270[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	271[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	272[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	273[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	274[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	275[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	276[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	277[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	278[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	279[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	280[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	281[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	282[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	283[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	284[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	285[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	286[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	287[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	288[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	289[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	290[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	291[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	292[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	293[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	294[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	295[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	296[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	297[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	298[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	299[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	300[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	301[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	302[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	303[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	304[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	305[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	306[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	307[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	308[label = "adjmat_diffplot\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: adjmat_diffplot.png", color = "0.21 0.6 0.85", style="rounded"];
+	309[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	310[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	311[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	312[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	313[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	314[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	315[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.01/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	316[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=0.1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	317[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bidag_itsearch/alg_params=/timeout=None/estimate=map/MAP=False/plus1it=2/posterior=0.5/scoretype=bge/chi=None/edgepf=2/am=1/aw=None/softlimit=9/hardlimit=14/alpha=0.01/gamma=1/cpdag=False/mergetype=skeleton\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	318[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	319[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	320[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	321[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	322[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	323[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	324[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	325[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	326[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.0001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	327[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.001/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	328[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.01/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	329[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: bnlearn_tabu/alg_params=/score=bge/iss=1/issmu=0.05/issw=None/l=5/k=1/prior=uniform/beta=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	330[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	331[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	332[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	333[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	334[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	335[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	336[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	337[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	338[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: pcalg_pc/alg_params=/alpha=0.001/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	339[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: pcalg_pc/alg_params=/alpha=0.01/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	340[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: pcalg_pc/alg_params=/alpha=0.05/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	341[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: pcalg_pc/alg_params=/alpha=0.1/NAdelete=True/mmax=Inf/u2pd=relaxed/skelmethod=stable/conservative=False/majrule=False/solveconfl=False/numCores=1/verbose=False/indepTest=gaussCItest/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	342[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	343[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	344[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	345[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=1\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None\nbn: sem_params/min=0.25/max=1/seed=1\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	346[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	347[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	348[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	349[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=2\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None\nbn: sem_params/min=0.25/max=1/seed=2\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	350[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.75/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	351[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=0.8/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	352[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	353[label = "bnlearn_graphvizcompare\nadjmat: pcalg_randdag/max_parents=5/n=20/d=4/par1=None/par2=None/method=er/DAG=True/seed=3\nalg_string: tetrad_fges/alg_params=/faithfulnessAssumed=True/score=sem-bic/datatype=continuous/samplePrior=1/structurePrior=1/penaltyDiscount=1.5/timeout=None\nbn: sem_params/min=0.25/max=1/seed=3\ndata: iid/standardized=True/n=300\nfilename: graphvizcompare.pdf\nlayout: True", color = "0.24 0.6 0.85", style="rounded"];
+	1 -> 0
+	109 -> 0
+	119 -> 0
+	124 -> 0
+	128 -> 0
+	2 -> 1
+	3 -> 2
+	34 -> 2
+	59 -> 2
+	84 -> 2
+	4 -> 3
+	10 -> 3
+	12 -> 3
+	14 -> 3
+	20 -> 3
+	22 -> 3
+	24 -> 3
+	30 -> 3
+	32 -> 3
+	5 -> 4
+	8 -> 4
+	9 -> 4
+	6 -> 5
+	7 -> 6
+	8 -> 7
+	5 -> 9
+	5 -> 10
+	8 -> 10
+	11 -> 10
+	5 -> 11
+	5 -> 12
+	8 -> 12
+	13 -> 12
+	5 -> 13
+	15 -> 14
+	18 -> 14
+	19 -> 14
+	16 -> 15
+	17 -> 16
+	18 -> 17
+	15 -> 19
+	15 -> 20
+	18 -> 20
+	21 -> 20
+	15 -> 21
+	15 -> 22
+	18 -> 22
+	23 -> 22
+	15 -> 23
+	25 -> 24
+	28 -> 24
+	29 -> 24
+	26 -> 25
+	27 -> 26
+	28 -> 27
+	25 -> 29
+	25 -> 30
+	28 -> 30
+	31 -> 30
+	25 -> 31
+	25 -> 32
+	28 -> 32
+	33 -> 32
+	25 -> 33
+	35 -> 34
+	37 -> 34
+	39 -> 34
+	41 -> 34
+	43 -> 34
+	45 -> 34
+	47 -> 34
+	49 -> 34
+	51 -> 34
+	53 -> 34
+	55 -> 34
+	57 -> 34
+	5 -> 35
+	8 -> 35
+	36 -> 35
+	5 -> 36
+	5 -> 37
+	8 -> 37
+	38 -> 37
+	5 -> 38
+	5 -> 39
+	8 -> 39
+	40 -> 39
+	5 -> 40
+	5 -> 41
+	8 -> 41
+	42 -> 41
+	5 -> 42
+	15 -> 43
+	18 -> 43
+	44 -> 43
+	15 -> 44
+	15 -> 45
+	18 -> 45
+	46 -> 45
+	15 -> 46
+	15 -> 47
+	18 -> 47
+	48 -> 47
+	15 -> 48
+	15 -> 49
+	18 -> 49
+	50 -> 49
+	15 -> 50
+	25 -> 51
+	28 -> 51
+	52 -> 51
+	25 -> 52
+	25 -> 53
+	28 -> 53
+	54 -> 53
+	25 -> 54
+	25 -> 55
+	28 -> 55
+	56 -> 55
+	25 -> 56
+	25 -> 57
+	28 -> 57
+	58 -> 57
+	25 -> 58
+	60 -> 59
+	62 -> 59
+	64 -> 59
+	66 -> 59
+	68 -> 59
+	70 -> 59
+	72 -> 59
+	74 -> 59
+	76 -> 59
+	78 -> 59
+	80 -> 59
+	82 -> 59
+	5 -> 60
+	8 -> 60
+	61 -> 60
+	5 -> 61
+	5 -> 62
+	8 -> 62
+	63 -> 62
+	5 -> 63
+	5 -> 64
+	8 -> 64
+	65 -> 64
+	5 -> 65
+	5 -> 66
+	8 -> 66
+	67 -> 66
+	5 -> 67
+	15 -> 68
+	18 -> 68
+	69 -> 68
+	15 -> 69
+	15 -> 70
+	18 -> 70
+	71 -> 70
+	15 -> 71
+	15 -> 72
+	18 -> 72
+	73 -> 72
+	15 -> 73
+	15 -> 74
+	18 -> 74
+	75 -> 74
+	15 -> 75
+	25 -> 76
+	28 -> 76
+	77 -> 76
+	25 -> 77
+	25 -> 78
+	28 -> 78
+	79 -> 78
+	25 -> 79
+	25 -> 80
+	28 -> 80
+	81 -> 80
+	25 -> 81
+	25 -> 82
+	28 -> 82
+	83 -> 82
+	25 -> 83
+	85 -> 84
+	87 -> 84
+	89 -> 84
+	91 -> 84
+	93 -> 84
+	95 -> 84
+	97 -> 84
+	99 -> 84
+	101 -> 84
+	103 -> 84
+	105 -> 84
+	107 -> 84
+	5 -> 85
+	8 -> 85
+	86 -> 85
+	5 -> 86
+	5 -> 87
+	8 -> 87
+	88 -> 87
+	5 -> 88
+	5 -> 89
+	8 -> 89
+	90 -> 89
+	5 -> 90
+	5 -> 91
+	8 -> 91
+	92 -> 91
+	5 -> 92
+	15 -> 93
+	18 -> 93
+	94 -> 93
+	15 -> 94
+	15 -> 95
+	18 -> 95
+	96 -> 95
+	15 -> 96
+	15 -> 97
+	18 -> 97
+	98 -> 97
+	15 -> 98
+	15 -> 99
+	18 -> 99
+	100 -> 99
+	15 -> 100
+	25 -> 101
+	28 -> 101
+	102 -> 101
+	25 -> 102
+	25 -> 103
+	28 -> 103
+	104 -> 103
+	25 -> 104
+	25 -> 105
+	28 -> 105
+	106 -> 105
+	25 -> 106
+	25 -> 107
+	28 -> 107
+	108 -> 107
+	25 -> 108
+	110 -> 109
+	112 -> 109
+	114 -> 109
+	116 -> 109
+	117 -> 109
+	118 -> 109
+	111 -> 110
+	8 -> 111
+	113 -> 112
+	18 -> 113
+	115 -> 114
+	28 -> 115
+	8 -> 116
+	18 -> 117
+	28 -> 118
+	120 -> 119
+	121 -> 120
+	122 -> 120
+	123 -> 120
+	8 -> 121
+	18 -> 122
+	28 -> 123
+	125 -> 124
+	126 -> 124
+	127 -> 124
+	5 -> 125
+	15 -> 126
+	25 -> 127
+	129 -> 128
+	131 -> 128
+	133 -> 128
+	135 -> 128
+	137 -> 128
+	139 -> 128
+	141 -> 128
+	143 -> 128
+	145 -> 128
+	147 -> 128
+	149 -> 128
+	151 -> 128
+	153 -> 128
+	155 -> 128
+	157 -> 128
+	159 -> 128
+	161 -> 128
+	163 -> 128
+	165 -> 128
+	167 -> 128
+	169 -> 128
+	171 -> 128
+	173 -> 128
+	175 -> 128
+	177 -> 128
+	179 -> 128
+	181 -> 128
+	183 -> 128
+	185 -> 128
+	187 -> 128
+	189 -> 128
+	191 -> 128
+	193 -> 128
+	195 -> 128
+	197 -> 128
+	199 -> 128
+	201 -> 128
+	203 -> 128
+	205 -> 128
+	207 -> 128
+	209 -> 128
+	211 -> 128
+	213 -> 128
+	215 -> 128
+	217 -> 128
+	219 -> 128
+	220 -> 128
+	221 -> 128
+	222 -> 128
+	223 -> 128
+	224 -> 128
+	225 -> 128
+	226 -> 128
+	227 -> 128
+	228 -> 128
+	229 -> 128
+	230 -> 128
+	231 -> 128
+	232 -> 128
+	233 -> 128
+	234 -> 128
+	235 -> 128
+	236 -> 128
+	237 -> 128
+	238 -> 128
+	239 -> 128
+	240 -> 128
+	241 -> 128
+	242 -> 128
+	243 -> 128
+	244 -> 128
+	245 -> 128
+	246 -> 128
+	247 -> 128
+	248 -> 128
+	249 -> 128
+	250 -> 128
+	251 -> 128
+	252 -> 128
+	253 -> 128
+	254 -> 128
+	255 -> 128
+	256 -> 128
+	257 -> 128
+	258 -> 128
+	259 -> 128
+	260 -> 128
+	261 -> 128
+	262 -> 128
+	263 -> 128
+	264 -> 128
+	265 -> 128
+	266 -> 128
+	267 -> 128
+	268 -> 128
+	269 -> 128
+	270 -> 128
+	271 -> 128
+	272 -> 128
+	273 -> 128
+	274 -> 128
+	275 -> 128
+	276 -> 128
+	277 -> 128
+	278 -> 128
+	279 -> 128
+	280 -> 128
+	281 -> 128
+	282 -> 128
+	283 -> 128
+	284 -> 128
+	285 -> 128
+	286 -> 128
+	287 -> 128
+	288 -> 128
+	289 -> 128
+	290 -> 128
+	291 -> 128
+	292 -> 128
+	293 -> 128
+	294 -> 128
+	295 -> 128
+	296 -> 128
+	297 -> 128
+	298 -> 128
+	299 -> 128
+	300 -> 128
+	301 -> 128
+	302 -> 128
+	303 -> 128
+	304 -> 128
+	305 -> 128
+	306 -> 128
+	307 -> 128
+	308 -> 128
+	309 -> 128
+	310 -> 128
+	311 -> 128
+	312 -> 128
+	313 -> 128
+	314 -> 128
+	315 -> 128
+	316 -> 128
+	317 -> 128
+	318 -> 128
+	319 -> 128
+	320 -> 128
+	321 -> 128
+	322 -> 128
+	323 -> 128
+	324 -> 128
+	325 -> 128
+	326 -> 128
+	327 -> 128
+	328 -> 128
+	329 -> 128
+	330 -> 128
+	331 -> 128
+	332 -> 128
+	333 -> 128
+	334 -> 128
+	335 -> 128
+	336 -> 128
+	337 -> 128
+	338 -> 128
+	339 -> 128
+	340 -> 128
+	341 -> 128
+	342 -> 128
+	343 -> 128
+	344 -> 128
+	345 -> 128
+	346 -> 128
+	347 -> 128
+	348 -> 128
+	349 -> 128
+	350 -> 128
+	351 -> 128
+	352 -> 128
+	353 -> 128
+	9 -> 128
+	11 -> 128
+	13 -> 128
+	19 -> 128
+	21 -> 128
+	23 -> 128
+	29 -> 128
+	31 -> 128
+	33 -> 128
+	36 -> 128
+	38 -> 128
+	40 -> 128
+	42 -> 128
+	44 -> 128
+	46 -> 128
+	48 -> 128
+	50 -> 128
+	52 -> 128
+	54 -> 128
+	56 -> 128
+	58 -> 128
+	61 -> 128
+	63 -> 128
+	65 -> 128
+	67 -> 128
+	69 -> 128
+	71 -> 128
+	73 -> 128
+	75 -> 128
+	77 -> 128
+	79 -> 128
+	81 -> 128
+	83 -> 128
+	86 -> 128
+	88 -> 128
+	90 -> 128
+	92 -> 128
+	94 -> 128
+	96 -> 128
+	98 -> 128
+	100 -> 128
+	102 -> 128
+	104 -> 128
+	106 -> 128
+	108 -> 128
+	130 -> 129
+	9 -> 130
+	132 -> 131
+	11 -> 132
+	134 -> 133
+	13 -> 134
+	136 -> 135
+	19 -> 136
+	138 -> 137
+	21 -> 138
+	140 -> 139
+	23 -> 140
+	142 -> 141
+	29 -> 142
+	144 -> 143
+	31 -> 144
+	146 -> 145
+	33 -> 146
+	148 -> 147
+	36 -> 148
+	150 -> 149
+	38 -> 150
+	152 -> 151
+	40 -> 152
+	154 -> 153
+	42 -> 154
+	156 -> 155
+	44 -> 156
+	158 -> 157
+	46 -> 158
+	160 -> 159
+	48 -> 160
+	162 -> 161
+	50 -> 162
+	164 -> 163
+	52 -> 164
+	166 -> 165
+	54 -> 166
+	168 -> 167
+	56 -> 168
+	170 -> 169
+	58 -> 170
+	172 -> 171
+	61 -> 172
+	174 -> 173
+	63 -> 174
+	176 -> 175
+	65 -> 176
+	178 -> 177
+	67 -> 178
+	180 -> 179
+	69 -> 180
+	182 -> 181
+	71 -> 182
+	184 -> 183
+	73 -> 184
+	186 -> 185
+	75 -> 186
+	188 -> 187
+	77 -> 188
+	190 -> 189
+	79 -> 190
+	192 -> 191
+	81 -> 192
+	194 -> 193
+	83 -> 194
+	196 -> 195
+	86 -> 196
+	198 -> 197
+	88 -> 198
+	200 -> 199
+	90 -> 200
+	202 -> 201
+	92 -> 202
+	204 -> 203
+	94 -> 204
+	206 -> 205
+	96 -> 206
+	208 -> 207
+	98 -> 208
+	210 -> 209
+	100 -> 210
+	212 -> 211
+	102 -> 212
+	214 -> 213
+	104 -> 214
+	216 -> 215
+	106 -> 216
+	218 -> 217
+	108 -> 218
+	9 -> 219
+	11 -> 220
+	13 -> 221
+	19 -> 222
+	21 -> 223
+	23 -> 224
+	29 -> 225
+	31 -> 226
+	33 -> 227
+	36 -> 228
+	38 -> 229
+	40 -> 230
+	42 -> 231
+	44 -> 232
+	46 -> 233
+	48 -> 234
+	50 -> 235
+	52 -> 236
+	54 -> 237
+	56 -> 238
+	58 -> 239
+	61 -> 240
+	63 -> 241
+	65 -> 242
+	67 -> 243
+	69 -> 244
+	71 -> 245
+	73 -> 246
+	75 -> 247
+	77 -> 248
+	79 -> 249
+	81 -> 250
+	83 -> 251
+	86 -> 252
+	88 -> 253
+	90 -> 254
+	92 -> 255
+	94 -> 256
+	96 -> 257
+	98 -> 258
+	100 -> 259
+	102 -> 260
+	104 -> 261
+	106 -> 262
+	108 -> 263
+	5 -> 264
+	8 -> 264
+	9 -> 264
+	5 -> 265
+	8 -> 265
+	11 -> 265
+	5 -> 266
+	8 -> 266
+	13 -> 266
+	15 -> 267
+	18 -> 267
+	19 -> 267
+	15 -> 268
+	18 -> 268
+	21 -> 268
+	15 -> 269
+	18 -> 269
+	23 -> 269
+	25 -> 270
+	28 -> 270
+	29 -> 270
+	25 -> 271
+	28 -> 271
+	31 -> 271
+	25 -> 272
+	28 -> 272
+	33 -> 272
+	5 -> 273
+	8 -> 273
+	36 -> 273
+	5 -> 274
+	8 -> 274
+	38 -> 274
+	5 -> 275
+	8 -> 275
+	40 -> 275
+	5 -> 276
+	8 -> 276
+	42 -> 276
+	15 -> 277
+	18 -> 277
+	44 -> 277
+	15 -> 278
+	18 -> 278
+	46 -> 278
+	15 -> 279
+	18 -> 279
+	48 -> 279
+	15 -> 280
+	18 -> 280
+	50 -> 280
+	25 -> 281
+	28 -> 281
+	52 -> 281
+	25 -> 282
+	28 -> 282
+	54 -> 282
+	25 -> 283
+	28 -> 283
+	56 -> 283
+	25 -> 284
+	28 -> 284
+	58 -> 284
+	5 -> 285
+	8 -> 285
+	61 -> 285
+	5 -> 286
+	8 -> 286
+	63 -> 286
+	5 -> 287
+	8 -> 287
+	65 -> 287
+	5 -> 288
+	8 -> 288
+	67 -> 288
+	15 -> 289
+	18 -> 289
+	69 -> 289
+	15 -> 290
+	18 -> 290
+	71 -> 290
+	15 -> 291
+	18 -> 291
+	73 -> 291
+	15 -> 292
+	18 -> 292
+	75 -> 292
+	25 -> 293
+	28 -> 293
+	77 -> 293
+	25 -> 294
+	28 -> 294
+	79 -> 294
+	25 -> 295
+	28 -> 295
+	81 -> 295
+	25 -> 296
+	28 -> 296
+	83 -> 296
+	5 -> 297
+	8 -> 297
+	86 -> 297
+	5 -> 298
+	8 -> 298
+	88 -> 298
+	5 -> 299
+	8 -> 299
+	90 -> 299
+	5 -> 300
+	8 -> 300
+	92 -> 300
+	15 -> 301
+	18 -> 301
+	94 -> 301
+	15 -> 302
+	18 -> 302
+	96 -> 302
+	15 -> 303
+	18 -> 303
+	98 -> 303
+	15 -> 304
+	18 -> 304
+	100 -> 304
+	25 -> 305
+	28 -> 305
+	102 -> 305
+	25 -> 306
+	28 -> 306
+	104 -> 306
+	25 -> 307
+	28 -> 307
+	106 -> 307
+	25 -> 308
+	28 -> 308
+	108 -> 308
+	5 -> 309
+	8 -> 309
+	9 -> 309
+	5 -> 310
+	8 -> 310
+	11 -> 310
+	5 -> 311
+	8 -> 311
+	13 -> 311
+	15 -> 312
+	18 -> 312
+	19 -> 312
+	15 -> 313
+	18 -> 313
+	21 -> 313
+	15 -> 314
+	18 -> 314
+	23 -> 314
+	25 -> 315
+	28 -> 315
+	29 -> 315
+	25 -> 316
+	28 -> 316
+	31 -> 316
+	25 -> 317
+	28 -> 317
+	33 -> 317
+	5 -> 318
+	8 -> 318
+	36 -> 318
+	5 -> 319
+	8 -> 319
+	38 -> 319
+	5 -> 320
+	8 -> 320
+	40 -> 320
+	5 -> 321
+	8 -> 321
+	42 -> 321
+	15 -> 322
+	18 -> 322
+	44 -> 322
+	15 -> 323
+	18 -> 323
+	46 -> 323
+	15 -> 324
+	18 -> 324
+	48 -> 324
+	15 -> 325
+	18 -> 325
+	50 -> 325
+	25 -> 326
+	28 -> 326
+	52 -> 326
+	25 -> 327
+	28 -> 327
+	54 -> 327
+	25 -> 328
+	28 -> 328
+	56 -> 328
+	25 -> 329
+	28 -> 329
+	58 -> 329
+	5 -> 330
+	8 -> 330
+	61 -> 330
+	5 -> 331
+	8 -> 331
+	63 -> 331
+	5 -> 332
+	8 -> 332
+	65 -> 332
+	5 -> 333
+	8 -> 333
+	67 -> 333
+	15 -> 334
+	18 -> 334
+	69 -> 334
+	15 -> 335
+	18 -> 335
+	71 -> 335
+	15 -> 336
+	18 -> 336
+	73 -> 336
+	15 -> 337
+	18 -> 337
+	75 -> 337
+	25 -> 338
+	28 -> 338
+	77 -> 338
+	25 -> 339
+	28 -> 339
+	79 -> 339
+	25 -> 340
+	28 -> 340
+	81 -> 340
+	25 -> 341
+	28 -> 341
+	83 -> 341
+	5 -> 342
+	8 -> 342
+	86 -> 342
+	5 -> 343
+	8 -> 343
+	88 -> 343
+	5 -> 344
+	8 -> 344
+	90 -> 344
+	5 -> 345
+	8 -> 345
+	92 -> 345
+	15 -> 346
+	18 -> 346
+	94 -> 346
+	15 -> 347
+	18 -> 347
+	96 -> 347
+	15 -> 348
+	18 -> 348
+	98 -> 348
+	15 -> 349
+	18 -> 349
+	100 -> 349
+	25 -> 350
+	28 -> 350
+	102 -> 350
+	25 -> 351
+	28 -> 351
+	104 -> 351
+	25 -> 352
+	28 -> 352
+	106 -> 352
+	25 -> 353
+	28 -> 353
+	108 -> 353
+}            

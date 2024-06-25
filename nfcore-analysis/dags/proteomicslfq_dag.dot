@@ -1,0 +1,362 @@
+digraph "proteomicslfq_dag" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+p0 -> p1 [label="ch_spectra"];
+
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p1 -> p25;
+
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p1 -> p20;
+
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p1 -> p4;
+
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+p29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p1 -> p29;
+
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+p50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p1 -> p50;
+
+p2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p16 [label="generate_decoy_database"];
+p2 -> p16 [label="ch_db_for_decoy_creation"];
+
+p3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p59 [label="proteomicslfq"];
+p3 -> p59 [label="ch_expdesign"];
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p4 -> p5;
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p6 [label="raw_file_conversion"];
+p4 -> p6;
+
+p5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p7 [label="mzml_indexing"];
+p5 -> p7;
+
+p5 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p5 -> p8;
+
+p6 [label="raw_file_conversion"];
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p6 -> p8 [label="mzmls_converted"];
+
+p7 [label="mzml_indexing"];
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p7 -> p9 [label="mzmls_indexed"];
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p8 -> p9;
+
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p9 -> p10;
+
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p10 -> p52 [label="mzmls_plfq"];
+
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p10 -> p49 [label="mzmls_luciphor"];
+
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p10 -> p24 [label="mzmls_comet"];
+
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p10 -> p19 [label="mzmls_msgf"];
+
+p11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p17 [label="openms_peakpicker"];
+p11 -> p17 [label="mzmls_pp"];
+
+p12 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p12 -> p18 [label="searchengine_in_db_msgf"];
+
+p13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p13 -> p23 [label="searchengine_in_db_comet"];
+
+p14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p14 -> p30 [label="pepidx_in_db"];
+
+p15 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p15 -> p58 [label="plfq_in_db"];
+
+p16 [label="generate_decoy_database"];
+p18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p16 -> p18 [label="searchengine_in_db_decoy_msgf"];
+
+p16 [label="generate_decoy_database"];
+p23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p16 -> p23 [label="searchengine_in_db_decoy_comet"];
+
+p16 [label="generate_decoy_database"];
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p16 -> p30 [label="pepidx_in_db_decoy"];
+
+p16 [label="generate_decoy_database"];
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p16 -> p58 [label="plfq_in_db_decoy"];
+
+p17 [label="openms_peakpicker"];
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p17 -> p24 [label="mzmls_comet_picked"];
+
+p17 [label="openms_peakpicker"];
+p19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p17 -> p19 [label="mzmls_msgf_picked"];
+
+p17 [label="openms_peakpicker"];
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p17 -> p52 [label="mzmls_plfq_picked"];
+
+p18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p18 -> p21;
+
+p19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p19 -> p20;
+
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p20 -> p21;
+
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p22 [label="search_engine_msgf"];
+p21 -> p22;
+
+p22 [label="search_engine_msgf"];
+p28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p22 -> p28 [label="id_files_msgf"];
+
+p23 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p23 -> p26;
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p24 -> p25;
+
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p25 -> p26;
+
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p27 [label="search_engine_comet"];
+p26 -> p27;
+
+p27 [label="search_engine_comet"];
+p28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p27 -> p28 [label="id_files_comet"];
+
+p28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p28 -> p29;
+
+p29 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p29 -> p31;
+
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p30 -> p31;
+
+p31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+p32 [label="index_peptides"];
+p31 -> p32;
+
+p32 [label="index_peptides"];
+p34 [label="extract_percolator_features"];
+p32 -> p34 [label="id_files_idx_ForPerc"];
+
+p32 [label="index_peptides"];
+p37 [label="fdr_idpep"];
+p32 -> p37 [label="id_files_idx_ForIDPEP"];
+
+p32 [label="index_peptides"];
+p33 [shape=point];
+p32 -> p33;
+
+p34 [label="extract_percolator_features"];
+p35 [label="percolator"];
+p34 -> p35 [label="id_files_idx_feat"];
+
+p35 [label="percolator"];
+p40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p35 -> p40 [label="id_files_perc"];
+
+p35 [label="percolator"];
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p35 -> p42 [label="id_files_perc_consID"];
+
+p36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p36 -> p38 [label="id_files_idx_ForIDPEP_noFDR"];
+
+p37 [label="fdr_idpep"];
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p37 -> p38 [label="id_files_idx_ForIDPEP_FDR"];
+
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p39 [label="idpep"];
+p38 -> p39;
+
+p39 [label="idpep"];
+p40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p39 -> p40 [label="id_files_idpep"];
+
+p39 [label="idpep"];
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p39 -> p42 [label="id_files_idpep_consID"];
+
+p40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p41 [label="idscoreswitcher_to_qval"];
+p40 -> p41;
+
+p41 [label="idscoreswitcher_to_qval"];
+p46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p41 -> p46 [label="id_files_noConsID_qval"];
+
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p42 -> p43;
+
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p44 [label="consensusid"];
+p43 -> p44;
+
+p44 [label="consensusid"];
+p45 [label="fdr_consensusid"];
+p44 -> p45 [label="consensusids"];
+
+p45 [label="fdr_consensusid"];
+p46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p45 -> p46 [label="consensusids_fdr"];
+
+p46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p47 [label="idfilter"];
+p46 -> p47;
+
+p47 [label="idfilter"];
+p53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p47 -> p53 [label="id_filtered"];
+
+p47 [label="idfilter"];
+p48 [label="idscoreswitcher_for_luciphor"];
+p47 -> p48 [label="id_filtered_luciphor"];
+
+p48 [label="idscoreswitcher_for_luciphor"];
+p49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p48 -> p49 [label="id_filtered_luciphor_pep"];
+
+p49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p49 -> p50;
+
+p50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p51 [label="luciphor"];
+p50 -> p51;
+
+p51 [label="luciphor"];
+p53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p51 -> p53 [label="plfq_in_id_luciphor"];
+
+p52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p52 -> p54;
+
+p53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p53 -> p54;
+
+p54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+p54 -> p55;
+
+p55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+p56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p55 -> p56;
+
+p55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="multiMap"];
+p57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p55 -> p57;
+
+p56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p59 [label="proteomicslfq"];
+p56 -> p59;
+
+p57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p59 [label="proteomicslfq"];
+p57 -> p59;
+
+p58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+p59 [label="proteomicslfq"];
+p58 -> p59;
+
+p59 [label="proteomicslfq"];
+p62 [label="ptxqc"];
+p59 -> p62 [label="out_mztab_plfq"];
+
+p59 [label="proteomicslfq"];
+p61 [label="msstats"];
+p59 -> p61 [label="out_mztab_msstats"];
+
+p59 [label="proteomicslfq"];
+p60 [shape=point];
+p59 -> p60 [label="out_consensusXML"];
+
+p59 [label="proteomicslfq"];
+p61 [label="msstats"];
+p59 -> p61 [label="out_msstats"];
+
+p62 [label="ptxqc"];
+p63 [shape=point];
+p62 -> p63 [label="ch_ptxqc_report"];
+
+p64 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p64 -> p65;
+
+p65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p65 -> p66;
+
+p66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p66 -> p67;
+
+p67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p68 [shape=point];
+p67 -> p68 [label="ch_workflow_summary"];
+
+p69 [label="get_software_versions"];
+p70 [shape=point];
+p69 -> p70 [label="ch_software_versions_yaml"];
+
+p71 [shape=point,label="",fixedsize=true,width=0.1];
+p73 [label="output_documentation"];
+p71 -> p73 [label="output_docs"];
+
+p72 [shape=point,label="",fixedsize=true,width=0.1];
+p73 [label="output_documentation"];
+p72 -> p73 [label="images"];
+
+}

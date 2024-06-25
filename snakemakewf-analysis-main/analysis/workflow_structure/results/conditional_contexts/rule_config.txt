@@ -1,0 +1,2054 @@
+repo=KonstantinBurkin/cbai, file=workflow/rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=CVUA-RRW/FooDMe, file=workflow/rules/blast.smk
+context_key: ['rule blast_otus', 'input', 'if config["cluster_method"] == "otu']
+    (118, '        if config["cluster_method"] == "otu"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=CVUA-RRW/FooDMe, file=workflow/rules/blast.smk
+context_key: ['rule blast_stats', 'input', 'if config["cluster_method"] == "otu']
+    (203, '        if config["cluster_method"] == "otu"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=snakemake-workflows/dna-seq-gatk-variant-calling, file=workflow/rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=snakemake-workflows/dna-seq-gatk-variant-calling, file=workflow/rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (47, '            if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=TLenfers/multispecies_mitochondrial_variant_analysis, file=workflow/rules/reference.smk
+context_key: ['rule get_ref', 'run', 'if config["reference"] == "mouse"']
+    (7, '        if config["reference"] == "mouse":')
+    (8, '            shell(')
+    (9, '                "wget -O- http://ftp.ensembl.org/pub/current_fasta/mus_musculus/dna/Mus_musculus.GRCm39.dna.chromosome.MT.fa.gz | zcat > {output}"')
+    (10, '            )')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=TLenfers/multispecies_mitochondrial_variant_analysis, file=workflow/rules/reference.smk
+context_key: ['rule get_ref', 'run', 'if config["reference"] == "dog"']
+    (11, '        if config["reference"] == "dog":')
+    (12, '            shell(')
+    (13, '                "wget -O- \\\'https://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?id=U96639.2&db=nuccore&report=fasta\\\' > {output}"')
+    (14, '            )')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=TLenfers/multispecies_mitochondrial_variant_analysis, file=workflow/rules/reference.smk
+context_key: ['rule get_ref', 'run', 'if config["reference"] == "human"']
+    (15, '        if config["reference"] == "human":')
+    (16, '            shell(')
+    (17, '                "wget -O- http://ftp.ensembl.org/pub/current_fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.chromosome.MT.fa.gz |zcat > {output} && sed -i \\\'1c\\\\>chrM\\\' {output}"')
+    (18, '            )')
+    (19, '')
+    (20, '')
+    (21, '# creates the index for the reference genome')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=zavolanlab/polyAsite_workflow, file=Snakefile
+context_key: ['rule get_filtered_annotation', 'params', 'if config[\\\'transcript_support_level_id\\\'] is not None else ""']
+    (353, '                                                 if config[\\\'transcript_support_level_id\\\'] is not None else "",')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=zavolanlab/polyAsite_workflow, file=Snakefile
+context_key: ['rule get_filtered_annotation', 'params', 'if config[\\\'transcript_support_level\\\'] is not None else ""']
+    (355, '                                           if config[\\\'transcript_support_level\\\'] is not None else "",')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=williamjeong2/snakemake_DNA-seq, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=williamjeong2/snakemake_DNA-seq, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (47, '            if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=ravimore8386/gatk, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=Adrianzo/dna-seq-variant-calling, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=ttumkaya/snakemake_variant_calling, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=wenliangz/wgs-variant-calling, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=sheucke/dna-seq-gatk-variant-calling, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NCI-CGR/Nanopore_DNA-seq, file=modules/Snakefile_VC
+context_key: ['rule snpsift2', 'run', 'if config["snpsift2"] == "yes"']
+    (78, '           if config["snpsift2"] == "yes":')
+    (79, '              shell("""cat {input} | java -jar $SNPSIFT_JAR filter "{params.filter}" > {output} 2>log/{wildcards.sample}_snpsift2.err""")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NCI-CGR/Nanopore_DNA-seq, file=modules/Snakefile_SV
+context_key: ['rule snpsift', 'run', 'if config["snpsift"] == "yes"']
+    (166, '           if config["snpsift"] == "yes":')
+    (167, '              shell("""cat {input.VCF} | java -jar $SNPSIFT_JAR filter "{params.filter}" > {output.VCF} 2>log/{wildcards.sample}_snpsift.err""")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=eriqande/dna-seq-gatk-variant-calling, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule all', 'input', 'if config["ANALYSIS_TYPE"]=="OTU" els']
+    (22, '        if config["ANALYSIS_TYPE"]=="OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule all', 'input', 'if config["ANALYSIS_TYPE"]=="OTU" els']
+    (26, '        if config["ANALYSIS_TYPE"]=="OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule validatePear', 'if config["fastQCPear"] == "T" and config["UNPAIRED_DATA_PIPELINE"] != "T"', 'rule fastQCPear', 'input']
+    (220, '    if config["fastQCPear"] == "T" and config["UNPAIRED_DATA_PIPELINE"] != "T":')
+    (221, '        rule fastQCPear:')
+    (222, '            input:')
+    (223, '                r1="{PROJECT}/runs/{run}/{sample}_data/peared/seqs.assembled.fastq"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule validatePear', 'if config["fastQCPear"] == "T" and config["UNPAIRED_DATA_PIPELINE"] != "T"', 'rule fastQCPear', 'output']
+    (224, '            output:')
+    (225, '                o1="{PROJECT}/runs/{run}/{sample}_data/peared/qc/seqs.assembled_fastqc.html",')
+    (226, '                s2="{PROJECT}/runs/{run}/{sample}_data/peared/qc/seqs.assembled_fastqc/summary.txt"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule validatePear', 'if config["fastQCPear"] == "T" and config["UNPAIRED_DATA_PIPELINE"] != "T"', 'rule fastQCPear', 'params']
+    (227, '            params:')
+    (228, '                "{PROJECT}/runs/{run}/{sample}_data/peared/qc/"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule validatePear', 'if config["fastQCPear"] == "T" and config["UNPAIRED_DATA_PIPELINE"] != "T"', 'rule fastQCPear', 'benchmark']
+    (229, '            benchmark:')
+    (230, '                "{PROJECT}/runs/{run}/{sample}_data/peared/qc/fq.benchmark"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule validatePear', 'if config["fastQCPear"] == "T" and config["UNPAIRED_DATA_PIPELINE"] != "T"', 'rule fastQCPear', 'shell']
+    (231, '            shell:')
+    (232, '                "{config[fastQC][command]} {input.r1} -t 10  --extract -o {params}"')
+    (233, '')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule validatePear', 'if config["fastQCPear"] == "T" and config["UNPAIRED_DATA_PIPELINE"] != "T"', 'rule validateFastQCPear', 'input']
+    (234, '        rule validateFastQCPear:')
+    (235, '            input:')
+    (236, '                "{PROJECT}/runs/{run}/{sample}_data/peared/qc/seqs.assembled_fastqc/summary.txt",')
+    (237, '                "{PROJECT}/runs/{run}/{sample}_data/peared/qc/seqs.assembled_fastqc.html",')
+    (238, '                "{PROJECT}/runs/{run}/{sample}_data/peared/seqs.assembled.fastq"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule validatePear', 'if config["fastQCPear"] == "T" and config["UNPAIRED_DATA_PIPELINE"] != "T"', 'rule validateFastQCPear', 'output']
+    (239, '            output:')
+    (240, '                "{PROJECT}/runs/{run}/{sample}_data/peared/qc/fq_fw_internal_validation.txt"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule validatePear', 'if config["fastQCPear"] == "T" and config["UNPAIRED_DATA_PIPELINE"] != "T"', 'rule validateFastQCPear', 'script']
+    (241, '            script:')
+    (242, '                "Scripts/validatePearedQC.py"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['else', 'rule skip_demultiplexing_fq2fasta', 'input', 'else "{PROJECT}/runs/{run}/{sample}_data/peared/seqs.assembled.UNPAIRED.fastq" if config["UNPAIRED_DATA_PIPELINE"] == "T" and config["LIBRARY_LAYOUT"] != "SE']
+    (760, '            else "{PROJECT}/runs/{run}/{sample}_data/peared/seqs.assembled.UNPAIRED.fastq" if config["UNPAIRED_DATA_PIPELINE"] == "T" and config["LIBRARY_LAYOUT"] != "SE"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['else', 'rule skip_demultiplexing_fq2fasta', 'input', 'else "{PROJECT}/samples/{sample}/rawdata/fw.fastq" if config["gzip_input"] == "F" else "{PROJECT}/samples/{sample}/rawdata/fw.fastq.gz']
+    (761, '            else "{PROJECT}/samples/{sample}/rawdata/fw.fastq" if config["gzip_input"] == "F" else "{PROJECT}/samples/{sample}/rawdata/fw.fastq.gz"')
+    (762, '            #tmp_pear_validation="{PROJECT}/runs/{run}/{sample}_data/peared/pear.log.validation",')
+    (763, '            #tmp_pear_fq_validation="{PROJECT}/runs/{run}/{sample}_data/peared/qc/fq_fw_internal_validation.txt"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['else', 'else', 'rule skip_dmx_file_creation', 'output', 'if config["demultiplexing"]["primers"]["remove"].lower() != "f" els']
+    (910, '                if config["demultiplexing"]["primers"]["remove"].lower() != "f" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule pick_representatives', 'input', 'else "{PROJECT}/runs/{run}/otu/seqs_fw_rev_combined_remapped_otus.txt" if config["pickOTU"]["m"] == "swarm"']
+    (1453, '        else "{PROJECT}/runs/{run}/otu/seqs_fw_rev_combined_remapped_otus.txt" if config["pickOTU"]["m"] == "swarm" ')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule summarize_taxa', 'input', 'if config["ANALYSIS_TYPE"] == "OTU" els']
+    (1705, '        if config["ANALYSIS_TYPE"] == "OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule summarize_taxa', 'output', 'if config["ANALYSIS_TYPE"] == "OTU" els']
+    (1709, '        if config["ANALYSIS_TYPE"] == "OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule summarize_taxa', 'params', 'if config["ANALYSIS_TYPE"] == "OTU" els']
+    (1713, '        if config["ANALYSIS_TYPE"] == "OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule summarize_taxa_no_singletons', 'input', 'if config["ANALYSIS_TYPE"] == "OTU" els']
+    (1783, '        if config["ANALYSIS_TYPE"] == "OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule summarize_taxa_no_singletons', 'output', 'if config["ANALYSIS_TYPE"] == "OTU" els']
+    (1787, '        if config["ANALYSIS_TYPE"] == "OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule summarize_taxa_no_singletons', 'params', 'if config["ANALYSIS_TYPE"] == "OTU" els']
+    (1791, '        if config["ANALYSIS_TYPE"] == "OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule filter_rep_seqs', 'input', 'if config["ANALYSIS_TYPE"] == "ASV" els']
+    (1828, '        if config["ANALYSIS_TYPE"] == "ASV" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule filter_rep_seqs', 'input', 'if config["ANALYSIS_TYPE"] == "ASV" els']
+    (1831, '        if config["ANALYSIS_TYPE"] == "ASV" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule filter_rep_seqs', 'output', 'if config["ANALYSIS_TYPE"] == "ASV" els']
+    (1835, '         if config["ANALYSIS_TYPE"] == "ASV" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule filter_rep_seqs', 'benchmark', 'if config["ANALYSIS_TYPE"] == "ASV" els']
+    (1839, '        if config["ANALYSIS_TYPE"] == "ASV" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['else', 'rule report_all_asv', 'input', 'if config["alignRep"]["align"] == "T']
+    (1930, '            if config["alignRep"]["align"] == "T"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['else', 'rule report_all_asv', 'input', 'if config["krona"]["report"] == "T" els']
+    (1939, '            if config["krona"]["report"] == "T" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule tune_report_all', 'output', 'if config["ANALYSIS_TYPE"] == "OTU" els']
+    (1955, '        if config["ANALYSIS_TYPE"] == "OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule report', 'input', 'if config["ANALYSIS_TYPE"] == "OTU" els']
+    (1975, '        if config["ANALYSIS_TYPE"] == "OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule report', 'script', 'else "Scripts/report_v2_SE.py" if config["ANALYSIS_TYPE"] == "OTU" and config["LIBRARY_LAYOUT"] == "SE"']
+    (1983, '        else "Scripts/report_v2_SE.py" if config["ANALYSIS_TYPE"] == "OTU" and config["LIBRARY_LAYOUT"] == "SE"  ')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule tune_report', 'output', 'if config["ANALYSIS_TYPE"] == "OTU" els']
+    (1990, '        if config["ANALYSIS_TYPE"] == "OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule create_portable_report', 'input', 'if config["ANALYSIS_TYPE"] == "OTU" els']
+    (2013, '        if config["ANALYSIS_TYPE"] == "OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule create_portable_report', 'input', 'if config["ANALYSIS_TYPE"] == "OTU" els']
+    (2016, '        if config["ANALYSIS_TYPE"] == "OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AlejandroAb/CASCABEL, file=Snakefile
+context_key: ['rule create_portable_report', 'output', 'if config["ANALYSIS_TYPE"] == "OTU" els']
+    (2020, '        if config["ANALYSIS_TYPE"] == "OTU" else')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=imgag/ont_tools, file=workflow/rules/variant_calling.smk
+context_key: ['rule pepper_marging_deepvariant', 'run', "if config[\\'use_gpu\\']"]
+    (19, "        if config[\\'use_gpu\\']:")
+    (20, '            shell(')
+    (21, '                """')
+    (22, '                docker run \\\\')
+    (23, '                -v "$(dirname $(realpath {input.bam}))":"/mnt/input_bam" \\\\')
+    (24, '                -v "$(dirname $(realpath {input.ref}))":"/mnt/input_ref" \\\\')
+    (25, '                -v "$(dirname $(realpath {output.vcf}))":"/mnt/output" \\\\')
+    (26, '                --user $(id -u):$(id -g) \\\\')
+    (27, '                --gpus device={params.gpu_id} \\\\')
+    (28, '                kishwars/pepper_deepvariant:r0.8-gpu \\\\')
+    (29, '                run_pepper_margin_deepvariant call_variant \\\\')
+    (30, '                --bam "/mnt/input_bam/$(basename {input.bam})" \\\\')
+    (31, '                --fasta "/mnt/input_ref/$(basename {input.ref})" \\\\')
+    (32, '                --threads 8 \\\\')
+    (33, '                --gpu \\\\')
+    (34, '                --output_dir "/mnt/output" \\\\')
+    (35, '                {params.target_region} {params.keep_supp} {params.phased_output} {params.model} \\\\')
+    (36, '                >{log} 2>&1')
+    (37, '                """')
+    (38, '            )')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=imgag/ont_tools, file=workflow/rules/variant_calling.smk
+context_key: ['rule copy_vcf_pepper', 'run', "if config[\\'vc\\'][\\'phased_output\\']"]
+    (64, "        if config[\\'vc\\'][\\'phased_output\\']:")
+    (65, '            shell(')
+    (66, '                """')
+    (67, '                cp {input.vcf} {output.vcf}')
+    (68, '                cp {input.vcf}.tbi {output.vcf}.tbi')
+    (69, '                cp variant_calling/{wildcards.sample}_pepper/PEPPER_MARGIN_DEEPVARIANT_FINAL_OUTPUT.phased.vcf.gz Sample_{wildcards.sample}/{wildcards.sample}.pepper_margin_dv.phased.vcf.gz')
+    (70, '                cp variant_calling/{wildcards.sample}_pepper/PEPPER_MARGIN_DEEPVARIANT_FINAL_OUTPUT.phased.vcf.gz.tbi Sample_{wildcards.sample}/{wildcards.sample}.pepper_margin_dv.phased.vcf.gz.tbi')
+    (71, '                """)')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=imgag/ont_tools, file=workflow/rules/variant_calling.smk
+context_key: ['rule copy_vcf_clair', 'run', "if config[\\'vc\\'][\\'phased_output\\']"]
+    (131, "        if config[\\'vc\\'][\\'phased_output\\']:")
+    (132, '            shell(')
+    (133, '                """')
+    (134, '                tabix ')
+    (135, '                cp {input.vcf} {output.vcf} >{log} 2>&1')
+    (136, '                cp {input.vcf}.tbi {output.vcf}.tbi >{log} 2>&1')
+    (137, '                cp variant_calling/{wildcards.sample}_clair3/phased_merge_output.vcf.gz Sample_{wildcards.sample}/{wildcards.sample}.clair3.phased.vcf.gz > {log} 2>&1')
+    (138, '                cp variant_calling/{wildcards.sample}_clair3/phased_merge_output.vcf.gz.tbi Sample_{wildcards.sample}/{wildcards.sample}.clair3.phased.vcf.gz.tbi > {log} 2>&1')
+    (139, '                """)')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=ocisse/dna-seq-gatk-variant-calling, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=tjgibson/NGS-workflow-ATACseq, file=workflow/rules/ref.smk
+context_key: ['rule rename_genome', 'if config["filter_chroms"]', 'rule bowtie2_index']
+    (27, 'if config["filter_chroms"]:')
+    (28, '\\trule define_keep_chroms:')
+    (29, '\\t\\tinput:')
+    (30, '\\t\\t\\tgenome="resources/genome.fasta.gz",')
+    (31, '\\t\\t\\tkeep_chroms=config["keep_chroms"]')
+    (32, '\\t\\toutput:')
+    (33, '\\t\\t\\t"resources/keep_chroms.bed",')
+    (34, '\\t\\tlog:')
+    (35, '\\t\\t\\t"logs/define_keep_chroms.log",')
+    (36, '\\t\\tconda:')
+    (37, '\\t\\t\\t"../envs/seqkit.yaml"')
+    (38, '\\t\\tcache: True')
+    (39, '\\t\\tshell:')
+    (40, '\\t\\t\\t"seqkit grep -f {input.keep_chroms} {input.genome}"')
+    (41, '\\t\\t\\t" | seqkit fx2tab -nil"')
+    (42, '\\t\\t\\t" |  awk -v OFS=\\\'\\\\t\\\' \\\'{{print $1, 1, $2}}\\\' > {output}"')
+    (43, '\\t\\t\\t\\t')
+    (44, 'rule bowtie2_index:')
+    (45, '\\tinput:')
+    (46, '\\t\\treference="resources/genome.fasta.gz"')
+    (47, '\\toutput:')
+    (48, '\\t\\tmultiext(')
+    (49, '\\t\\t\\t"resources/genome",')
+    (50, '\\t\\t\\t".1.bt2", ".2.bt2", ".3.bt2", ".4.bt2", ".rev.1.bt2", ".rev.2.bt2",')
+    (51, '\\t\\t),')
+    (52, '\\tlog:')
+    (53, '\\t\\t"logs/bowtie2_build/build.log"')
+    (54, '\\tparams:')
+    (55, '\\t\\textra="" # optional parameters')
+    (56, '\\tthreads: 8')
+    (57, '\\twrapper:')
+    (58, '\\t\\t"v1.1.0/bio/bowtie2/build"')
+    (59, '\\t\\t')
+    (60, "'")
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=lqsae/vcf-tools, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=maniakk2000/Cbai, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NCI-CGR/Nanopore_RNA-seq, file=modules/Snakefile_map
+context_key: ['rule pychopper', 'run', 'if config["py"] == "yes"']
+    (25, '          if config["py"] == "yes":')
+    (26, '             shell("""cd {out}reads/{wildcards.sample}/;cdna_classifier.py -r report.pdf -S statistics.tsv -u unclassified.fq -w rescued.fq -t 16 {input[1]} {output} 2>{run}log/{wildcards.sample}_pychopper.err""")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=1709mrd/1_school_dna-seq-gatk-variant-calling, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=open2c/quaich, file=workflow/Snakefile
+context_key: ['rule make_differential_insulation', 'run', 'if config["insulation"]["strength_threshold"] == "Li"']
+    (550, '        if config["insulation"]["strength_threshold"] == "Li":')
+    (551, '            thresholding_fun = threshold_li')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=open2c/quaich, file=workflow/Snakefile
+context_key: ['rule make_differential_insulation', 'run', 'elif config["insulation"]["strength_threshold"] == "Otsu"']
+    (552, '        elif config["insulation"]["strength_threshold"] == "Otsu":')
+    (553, '            thresholding_fun = threshold_otsu')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=crazyhottommy/Genrich_compare, file=Snakefile
+context_key: ['rule down_sample', 'run', 'if config["downsample"]', 'if total_reads > target_reads']
+    (249, '        if config["downsample"]:')
+    (250, '            target_reads = config["target_reads"] # 15million reads  by default, set up in the config.yaml file')
+    (251, '            if total_reads > target_reads:')
+    (252, '                down_rate = target_reads/total_reads')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=crazyhottommy/Genrich_compare, file=Snakefile
+context_key: ['rule down_sample', 'run', 'if config["downsample"]', 'else']
+    (253, '            else:')
+    (254, '                down_rate = 1')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=crazyhottommy/Genrich_compare, file=Snakefile
+context_key: ['rule down_sample', 'run', 'if config["downsample"]']
+    (255, '            shell("sambamba view -f bam -t 5 --subsampling-seed=3 -s {rate} {inbam} | samtools sort -m 2G -@ 5 -T {outbam}.tmp > {outbam} 2> {log}".format(rate = down_rate, inbam = input[0], outbam = output[0], log = log))')
+    (256, '            shell("samtools index {outbam}".format(outbam = output[0]))')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=jereiard/msto, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=1709mrd/school_dna-seq-gatk-variant-calling, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=danab9/asa-finalProject, file=workflow/rules/qc.smk
+context_key: ['rule multiqc', 'input', 'if config["qc"]["short"] == "True" else []']
+    (148, '            if config["qc"]["short"] == "True" else [],')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=danab9/asa-finalProject, file=workflow/rules/qc.smk
+context_key: ['rule multiqc', 'input', "if config[\\'qc\\'][\\'short\\'] == \\'True\\' and config[\\'trimming\\'][\\'short\\'] == \\'True\\' else [], # Unpaired samples for read 2 result don\\'t exist. Since we are also not involved in the later analysis."]
+    (150, "            if config[\\'qc\\'][\\'short\\'] == \\'True\\' and config[\\'trimming\\'][\\'short\\'] == \\'True\\' else [], # Unpaired samples for read 2 result don\\'t exist. Since we are also not involved in the later analysis. ")
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=danab9/asa-finalProject, file=workflow/rules/qc.smk
+context_key: ['rule multiqc', 'input', 'if config["qc"]["long"] =="True" else []']
+    (152, '            if config["qc"]["long"] =="True" else [],')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=danab9/asa-finalProject, file=workflow/rules/qc.smk
+context_key: ['rule multiqc', 'input', 'if config["qc"]["long"] =="True" and config[\\\'trimming\\\'][\\\'long\\\'] == \\\'True\\\' else []']
+    (154, '            if config["qc"]["long"] =="True" and config[\\\'trimming\\\'][\\\'long\\\'] == \\\'True\\\' else [],')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=danab9/asa-finalProject, file=workflow/rules/decontamination.smk
+context_key: ['rule long_kraken_contaminated', 'input', 'if config["trimming"]["long"]==\\\'False\\\' else "results/fastq/trimmed/long/{sample}.fastq.gz"']
+    (59, '            if config["trimming"]["long"]==\\\'False\\\' else "results/fastq/trimmed/long/{sample}.fastq.gz",')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=danab9/asa-finalProject, file=workflow/rules/decontamination.smk
+context_key: ['rule screen', 'input', 'if config["screening"]["short"] == "True" else [],']
+    (104, '            if config["screening"]["short"] == "True" else [], ')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=danab9/asa-finalProject, file=workflow/rules/decontamination.smk
+context_key: ['rule screen', 'input', 'if config["screening"]["long"] == "True" else []']
+    (106, '            if config["screening"]["long"] == "True" else [],')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=danab9/asa-finalProject, file=workflow/rules/decontamination.smk
+context_key: ['rule screen', 'input', 'if config["screening"]["short"] == "True" and config["decontamination"]["short"] == "True" else [],']
+    (108, '            if config["screening"]["short"] == "True" and config["decontamination"]["short"] == "True" else [], ')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=danab9/asa-finalProject, file=workflow/rules/decontamination.smk
+context_key: ['rule screen', 'input', 'if config["screening"]["long"] == "True" and config["decontamination"]["long"] == "True" else []']
+    (110, '            if config["screening"]["long"] == "True" and config["decontamination"]["long"] == "True" else [],')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=danab9/asa-finalProject, file=workflow/rules/decontamination.smk
+context_key: ['rule short_bowtie_map_contaminations', 'input', 'if config["trimming"]["short"]==\\\'False\\\' else "results/fastq/trimmed/short/{sample}_1_P.fastq.gz"']
+    (155, '                if config["trimming"]["short"]==\\\'False\\\' else "results/fastq/trimmed/short/{sample}_1_P.fastq.gz",')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=danab9/asa-finalProject, file=workflow/rules/decontamination.smk
+context_key: ['rule short_bowtie_map_contaminations', 'input', 'if config["trimming"]["short"]==\\\'False\\\' else "results/fastq/trimmed/short/{sample}_2_P.fastq.gz']
+    (157, '                if config["trimming"]["short"]==\\\'False\\\' else "results/fastq/trimmed/short/{sample}_2_P.fastq.gz"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=1709mrd/New_school_dna-seq-gatk-variant-calling, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=AnneSoBen/obitools_workflow, file=workflow/Snakefile
+context_key: ['rule all', 'rule pairing', 'rule merge_paired', 'rule alifilt', 'rule demultiplex', 'if config["tomerge"]', 'if config["tomerge"]', 'else', 'rule derepl']
+    (131, 'if config["tomerge"]:')
+    (132, '\\t# MERGE LIBRARIES')
+    (133, '\\trule merge_demultiplex:')
+    (134, '\\t\\tinput:')
+    (135, '\\t\\t\\texpand(config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed.fasta", run=config["fastqfiles"])')
+    (136, '\\t\\toutput:')
+    (137, '\\t\\t\\tconfig["resultsfolder"]+config["mergedfile"]+"/"+config["mergedfile"]+"_R1R2_good_demultiplexed.fasta"')
+    (138, '\\t\\tlog:')
+    (139, '\\t\\t\\t"../log/merge_demultiplex_"+config["mergedfile"]+".log"')
+    (140, '\\t\\tshell:')
+    (141, '\\t\\t\\t"""')
+    (142, '\\t\\t\\tcat {input} > {output} 2> {log}')
+    (143, '\\t\\t\\t"""')
+    (144, '')
+    (145, '')
+    (146, 'if config["tomerge"]:')
+    (147, '\\tfolder_prefix=config["resultsfolder"]+config["mergedfile"]+"/"')
+    (148, '\\tfolder_prefix2=folder_prefix')
+    (149, '\\tfiles_prefix=config["mergedfile"]')
+    (150, 'else:')
+    (151, '\\tfolder_prefix=config["resultsfolder"]+"{run}/"')
+    (152, '\\tfolder_prefix2=config["resultsfolder"]+"{{run}}/"')
+    (153, '\\tfiles_prefix="{run}"')
+    (154, '')
+    (155, '')
+    (156, '# SPLIT FASTA FILES TO SPEED UP DEREPLICATION')
+    (157, 'checkpoint split_fasta:')
+    (158, '\\tinput:')
+    (159, '\\t\\tfolder_prefix+files_prefix+"_R1R2_good_demultiplexed.fasta"')
+    (160, '\\toutput:')
+    (161, '\\t\\tdirectory(folder_prefix+"derepl_tmp")')
+    (162, '\\tparams:')
+    (163, '\\t\\tfolder=folder_prefix+"derepl_tmp",')
+    (164, '\\t\\tnfiles=config["split_fasta"]["nfiles"],')
+    (165, '\\t\\ttmp=folder_prefix+"derepl_tmp/tmp"')
+    (166, '\\tconda:')
+    (167, '\\t\\t"envs/obi_env.yaml"')
+    (168, '\\tshell:')
+    (169, '\\t\\t"""')
+    (170, '\\t\\tmkdir {params.folder}')
+    (171, '\\t\\tobiannotate -S start:"hash(str(sequence))%{params.nfiles}" {input} | obisplit -t start -p {params.tmp}')
+    (172, '\\t\\t"""')
+    (173, '')
+    (174, '')
+    (175, '# DEREPLICATION')
+    (176, 'rule derepl:')
+    (177, '\\tinput:')
+    (178, '\\t\\tfolder_prefix+"derepl_tmp/tmp{t}.fasta"')
+    (179, '\\toutput:')
+    (180, '\\t\\tfolder_prefix+"uniq/tmp_uniq{t}.fasta"')
+    (181, '\\tconda:')
+    (182, '\\t\\t"envs/obi_env.yaml"')
+    (183, '\\tshell:')
+    (184, '\\t\\t"""')
+    (185, '\\t\\tobiuniq -m sample {input} > {output}')
+    (186, '\\t\\t"""')
+    (187, '')
+    (188, '')
+    (189, '# AGGREGATE')
+    (190, 'def aggregate_derepl(wildcards):')
+    (191, '        checkpoint_output=checkpoints.split_fasta.get(**wildcards).output[0]')
+    (192, '        file_names=expand(folder_prefix2+"uniq/tmp_uniq{t}.fasta", t=glob_wildcards(os.path.join(checkpoint_output, "tmp{t}.fasta")).t)')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=Albinam1/day5, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=akhanf/ants_build_template_smk, file=workflow/Snakefile
+context_key: ['rule set_init_template', 'params', 'if config[\\\'resample_init_template\\\'] else f"cp -v {input} {output}']
+    (61, '                     if config[\\\'resample_init_template\\\'] else f"cp -v {input} {output}"')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule construct_chr', 'run', "if config[\\'s3save\\']"]
+    (77, "        if config[\\'s3save\\']:")
+    (78, '            shell("aws s3 cp --quiet {output} {SROOT}/")')
+    (79, '')
+    (80, '# join ids across the multiple .vg files.')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule join_ids', 'run', "if config[\\'s3save\\']"]
+    (90, "        if config[\\'s3save\\']:")
+    (91, '            shell("for ff in {input}; do aws s3 cp --quiet $ff {SROOT}/; done")')
+    (92, '            shell("aws s3 cp --quiet {output.mapping} {SROOT}/")')
+    (93, '')
+    (94, '# make xg index containing the alts paths')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule index_xg', 'run', "if config[\\'s3save\\']"]
+    (107, "        if config[\\'s3save\\']:")
+    (108, '            shell("aws s3 cp --quiet {output} {SROOT}/")')
+    (109, '')
+    (110, '# prepare the snarls index')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule index_snarls', 'run', "if config[\\'s3save\\']"]
+    (121, "        if config[\\'s3save\\']:")
+    (122, '            shell("aws s3 cp --quiet {output} {SROOT}/")')
+    (123, '')
+    (124, '# pruning is used before constructing the GSCA index')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule prune_vg', 'run', "if config[\\'s3save\\']"]
+    (135, "        if config[\\'s3save\\']:")
+    (136, '            shell("aws s3 cp --quiet {output} {SROOT}/")        ')
+    (137, '')
+    (138, '# GCSA index construction from the pruned graphs')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule index_gcsa', 'run', "if config[\\'s3save\\']"]
+    (155, "        if config[\\'s3save\\']:")
+    (156, '            shell("aws s3 cp --quiet {output.gcsa} {SROOT}/")')
+    (157, '            shell("aws s3 cp --quiet {output.gcsalcp} {SROOT}/")')
+    (158, '')
+    (159, '## GBWT with greedy path cover')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule index_gbwt_greedy', 'run', "if config[\\'s3save\\']"]
+    (172, "        if config[\\'s3save\\']:")
+    (173, '            shell("aws s3 cp --quiet {output.gbwt} {SROOT}/")')
+    (174, '            shell("aws s3 cp --quiet {output.gg} {SROOT}/")')
+    (175, '')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule index_minimizer', 'run', "if config[\\'s3save\\']"]
+    (188, "        if config[\\'s3save\\']:")
+    (189, '            shell("aws s3 cp --quiet {output} {SROOT}/")')
+    (190, '')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule index_trivial_snarls', 'run', "if config[\\'s3save\\']"]
+    (201, "        if config[\\'s3save\\']:")
+    (202, '            shell("aws s3 cp --quiet {output} {SROOT}/")')
+    (203, '')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule index_distance', 'run', "if config[\\'s3save\\']"]
+    (216, "        if config[\\'s3save\\']:")
+    (217, '            shell("aws s3 cp --quiet {output} {SROOT}/")')
+    (218, '')
+    (219, '#')
+    (220, '# Map reads from a sample and call variants')
+    (221, '#')
+    (222, '')
+    (223, '# Eventually split the reads into chunk to map in parallel')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule map', 'run', "if config[\\'s3save\\']"]
+    (274, "        if config[\\'s3save\\']:")
+    (275, '            shell("aws s3 cp --quiet {output} {SROOT}/{output}")')
+    (276, '')
+    (277, '# map reads to the graph using mpmap in single-path mode')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule map_mpmap', 'run', "if config[\\'s3save\\']"]
+    (293, "        if config[\\'s3save\\']:")
+    (294, '            shell("aws s3 cp --quiet {output} {SROOT}/{output}")')
+    (295, '')
+    (296, '# map reads to the graph using giraffe')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule map_gaffe', 'run', "if config[\\'s3save\\']"]
+    (313, "        if config[\\'s3save\\']:")
+    (314, '            shell("aws s3 cp --quiet {output} {SROOT}/{output}")')
+    (315, '')
+    (316, '')
+    (317, '# If the reads were split, they need to be merged back after alignment')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule pack', 'run', "if config[\\'s3save\\']"]
+    (349, "        if config[\\'s3save\\']:")
+    (350, '            shell("aws s3 cp --quiet {output} {SROOT}/{wildcards.sample}/")')
+    (351, '')
+    (352, '# call variants from the packed read coverage')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule call_novcf', 'run', "if config[\\'s3save\\']"]
+    (373, "        if config[\\'s3save\\']:")
+    (374, '            shell("aws s3 cp --quiet {output.vcf} {SROOT}/{wildcards.sample}/")')
+    (375, '            shell("aws s3 cp --quiet {output.idx} {SROOT}/{wildcards.sample}/")')
+    (376, '')
+    (377, '# genotype variants from the packed read coverage')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule call_vcf', 'run', "if config[\\'s3save\\']"]
+    (400, "        if config[\\'s3save\\']:")
+    (401, '            shell("aws s3 cp --quiet {output.vcf} {SROOT}/{wildcards.sample}/")')
+    (402, '            shell("aws s3 cp --quiet {output.idx} {SROOT}/{wildcards.sample}/")')
+    (403, '')
+    (404, '#')
+    (405, '# Augment graph and call variants')
+    (406, '#')
+    (407, '')
+    (408, '# convert a XG index to a PG index')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule pgconvert', 'run', "if config[\\'s3save\\']"]
+    (419, "        if config[\\'s3save\\']:")
+    (420, '            shell("aws s3 cp --quiet {output} {SROOT}/")')
+    (421, '')
+    (422, '# augment a graph with aligned reads')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule augment', 'run', "if config[\\'s3save\\']"]
+    (437, "        if config[\\'s3save\\']:")
+    (438, '            shell("aws s3 cp --quiet {output.gam} {SROOT}/{wildcards.sample}/")')
+    (439, '            shell("aws s3 cp --quiet {output.pg} {SROOT}/{wildcards.sample}/")')
+    (440, '')
+    (441, '# prepare the snarls index for the augmented graph')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule index_snarls_aug', 'run', "if config[\\'s3save\\']"]
+    (452, "        if config[\\'s3save\\']:")
+    (453, '            shell("aws s3 cp --quiet {output} {SROOT}/{wildcards.sample}/")')
+    (454, '')
+    (455, '# compute packed coverage on augmented graph')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule pack_aug', 'run', "if config[\\'s3save\\']"]
+    (468, "        if config[\\'s3save\\']:")
+    (469, '            shell("aws s3 cp --quiet {output} {SROOT}/{wildcards.sample}/")')
+    (470, '')
+    (471, '# call variants from the packed read coverage')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vgteam/vg_snakemake, file=Snakefile
+context_key: ['rule call_aug', 'run', "if config[\\'s3save\\']"]
+    (492, "        if config[\\'s3save\\']:")
+    (493, '            shell("aws s3 cp --quiet {output.vcf} {SROOT}/{wildcards.sample}/")')
+    (494, '            shell("aws s3 cp --quiet {output.idx} {SROOT}/{wildcards.sample}/")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=Monia234/admixMap, file=workflow/Snakefile
+context_key: ['rule IBD_filter', 'run', "if config[\\'IBD\\'][\\'filter_relateds\\'] == \\'true\\'"]
+    (355, "        if config[\\'IBD\\'][\\'filter_relateds\\'] == \\'true\\':")
+    (356, '            shell(f"zcat {{input[1]}} | awk {{params.awk_string}}; {CMD_PREFIX} Rscript {CODE}/filter_relateds.R -r accessory/related_IBS_results.txt -o accessory/excluded_related_samples.txt; "')
+    (357, '                  f"{CMD_PREFIX} plink --bfile plink/{BASE}_LDp_sHWE --remove accessory/excluded_related_samples.txt --keep-allele-order --make-bed --out plink/{BASE}_LDp_sHWE_IBDflt {plnk_rsrc(rule, plink_run_specs)}")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_csi', 'input']
+    (8, 'if config["rules"]["requantification"]==True:')
+    (9, '    rule sirius_csi:')
+    (10, '        input: ')
+    (11, '            var1= join("results", "Interim", "mzML", "Aligned_{samples}.mzML"),')
+    (12, '            var2= join("results", "Interim", "Requantified", "MFD_{samples}.featureXML") ')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_csi', 'output']
+    (13, '        output:')
+    (14, '            out1= join("results", "Interim", "SiriusCSI", "formulas_{samples}.mzTab"),')
+    (15, '            out2= join("results", "Interim", "SiriusCSI", "structures_{samples}.mzTab")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_csi', 'conda']
+    (16, '        conda:')
+    (17, '            join("..", "envs", "openms.yaml")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_csi', 'log']
+    (18, '        log: join("workflow", "report", "logs", "sirius_csi", "SiriusAdapter_{samples}.log")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_csi', 'params']
+    (19, '        params:')
+    (20, '            exec_path = find_exec("resources", "sirius"),')
+    (21, '            email= "",')
+    (22, '            password= "" ')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_csi', 'threads']
+    (23, '        threads: 4')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_csi', 'shell']
+    (24, '        shell:')
+    (25, '            """')
+    (26, '            SiriusAdapter -sirius_executable {params.exec_path} -sirius_user_email {params.email} -sirius_user_password {params.password} -in {input.var1} -in_featureinfo {input.var2} -out_sirius {output.out1}  -out_fingerid {output.out2} -preprocessing:filter_by_num_masstraces 2 -preprocessing:feature_only -sirius:profile orbitrap -sirius:db none -sirius:ions_considered "[M+H]+, [M-H2O+H]+, [M+Na]+, [M+NH4]+" -sirius:elements_enforced CHN[15]OS[4]Cl[2]P[2] -sirius:compound_timeout 100 -debug 3 -threads {threads} -log {log} 2>> {log}')
+    (27, '            """')
+    (28, '')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule siriuscsi_annotations', 'input']
+    (69, 'if config["rules"]["requantification"]==True:')
+    (70, '    rule siriuscsi_annotations:')
+    (71, '        input:')
+    (72, '            matrix= join("results", "Requantified", "FeatureMatrix.tsv"),')
+    (73, '            sirius= expand(join("results", "SiriusCSI", "formulas_{samples}.tsv"), samples=SAMPLES),')
+    (74, '            csi= expand(join("results", "SiriusCSI", "structures_{samples}.tsv"), samples=SAMPLES)')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule siriuscsi_annotations', 'output']
+    (75, '        output:')
+    (76, '            annotated= join("results", "annotations", "FeatureTable_siriuscsi.tsv")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule siriuscsi_annotations', 'log']
+    (77, '        log: join("workflow", "report", "logs", "annotate", "sirius_annotations.log")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule siriuscsi_annotations', 'threads']
+    (78, '        threads: 4')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule siriuscsi_annotations', 'conda']
+    (79, '        conda:')
+    (80, '            join("..", "envs", "openms.yaml")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius_csi.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule siriuscsi_annotations', 'shell']
+    (81, '        shell:')
+    (82, '            """')
+    (83, '            python workflow/scripts/SIRIUS_CSI_annotations.py {input.matrix} {output.annotated} 2>> {log}')
+    (84, '            """')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/fbmn_integration.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule graphml', 'input']
+    (6, 'if config["rules"]["requantification"]==True:')
+    (7, '    rule graphml:')
+    (8, '        input:')
+    (9, '            input_matrix= join("results", "Requantified", "FeatureMatrix.tsv"),')
+    (10, '            input_mgf= join("results", "GNPSexport", "MSMS.mgf"),')
+    (11, '            input_graphml= glob.glob(join("results", "GNPSexport", "*.graphml"))')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/fbmn_integration.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule graphml', 'output']
+    (12, '        output:    ')
+    (13, '            output_graphml= join("results", "GNPSexport", "fbmn_network_sirius.graphml")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/fbmn_integration.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule graphml', 'log']
+    (14, '        log: join("workflow", "report", "logs", "GNPSexport", "fbmn_sirius.log")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/fbmn_integration.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule graphml', 'threads']
+    (15, '        threads: 4')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/fbmn_integration.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule graphml', 'conda']
+    (16, '        conda:')
+    (17, '            join("..", "envs", "openms.yaml")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/fbmn_integration.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule graphml', 'shell']
+    (18, '        shell:')
+    (19, '            """')
+    (20, '            python workflow/scripts/FBMN_SIRIUS.py {input.input_matrix} {input.input_mgf} {input.input_graphml} {output.output_graphml} 2>> {log}')
+    (21, '            """')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius', 'input']
+    (5, 'if config["rules"]["requantification"]==True:')
+    (6, '    rule sirius:')
+    (7, '        input: ')
+    (8, '            var1= join("results", "Interim", "mzML", "Aligned_{samples}.mzML"),')
+    (9, '            var2= join("results", "Interim", "Requantified", "MFD_{samples}.featureXML") ')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius', 'output']
+    (10, '        output:')
+    (11, '            join("results", "Interim", "Sirius", "formulas_{samples}.mzTab")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius', 'log']
+    (12, '        log: join("workflow", "report", "logs", "sirius", "SiriusAdapter_{samples}.log")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius', 'conda']
+    (13, '        conda:')
+    (14, '            join("..", "envs", "openms.yaml")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius', 'params']
+    (15, '        params:')
+    (16, '            exec_path = find_exec("resources", "sirius"),')
+    (17, '            email= "",')
+    (18, '            password= "" ')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius', 'threads']
+    (19, '        threads: 4')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius', 'shell']
+    (20, '        shell:')
+    (21, '            """')
+    (22, '            SiriusAdapter -sirius_executable {params.exec_path} -sirius_user_email {params.email} -sirius_user_password {params.password} -in {input.var1} -in_featureinfo {input.var2} -out_sirius {output} -preprocessing:filter_by_num_masstraces 2 -preprocessing:feature_only -sirius:profile orbitrap -sirius:db none -sirius:ions_considered "[M+H]+, [M-H2O+H]+, [M+Na]+, [M+NH4]+" -sirius:elements_enforced CHN[15]OS[4]Cl[2]P[2] -sirius:compound_timeout 100 -debug 3 -threads {threads} -log {log} 2>> {log}')
+    (23, '            """')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_annotations', 'input']
+    (61, 'if config["rules"]["requantification"]==True:')
+    (62, '    rule sirius_annotations:')
+    (63, '        input:')
+    (64, '            matrix= join("results", "Requantified", "FeatureMatrix.tsv"),')
+    (65, '            sirius= expand(join("results", "Sirius", "formulas_{samples}.tsv"), samples=SAMPLES)')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_annotations', 'output']
+    (66, '        output:')
+    (67, '            annotated= join("results", "annotations", "FeatureTable_sirius.tsv")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_annotations', 'log']
+    (68, '        log: join("workflow", "report", "logs", "annotate", "sirius_annotations.log")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_annotations', 'threads']
+    (69, '        threads: 4')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_annotations', 'conda']
+    (70, '        conda:')
+    (71, '            join("..", "envs", "openms.yaml")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=NBChub/snakemake-UmetaFlow, file=workflow/rules/sirius.smk
+context_key: ['if config["rules"]["requantification"]==True', 'rule sirius_annotations', 'shell']
+    (72, '        shell:')
+    (73, '            """')
+    (74, '            python workflow/scripts/SIRIUS_annotations.py {input.matrix} {output.annotated} 2>> {log}')
+    (75, '            """')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=sam0per/gatk-variant-calling, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=Albinam1/12, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=vojtab84/ACGT_snakemake, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=weizhu365/gatk-variant-calling, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=fuzhiliang/dna-seq-gatk-variant-calling, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=JieqiongDai/SIngle-Cell-Nuclei-RNAseq, file=modules/Snakefile_cellranger
+context_key: ['rule cellranger_count', 'run', 'if config["snRNA"]=="yes"']
+    (26, '          if config["snRNA"]=="yes":')
+    (27, '             shell("""ulimit -Su 10240 -n 16384; cd {out}; rm -r {wildcards.sample}; cellranger count --id={wildcards.sample} --transcriptome={scRNA_ref} --fastqs={fastq}{flowcell}/{wildcards.sample} --localcores=6 --localmem=128 --include-introns 2>{run}log/{wildcards.sample}_count.err""")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=JieqiongDai/SIngle-Cell-Nuclei-RNAseq, file=modules/Snakefile_cellranger
+context_key: ['rule cellranger_count', 'run', 'elif config["snRNA"]=="no"']
+    (28, '          elif config["snRNA"]=="no":')
+    (29, '               shell("""ulimit -Su 10240 -n 16384; cd {out}; rm -r {wildcards.sample}; cellranger count --id={wildcards.sample} --transcriptome={scRNA_ref} --fastqs={fastq}{flowcell}/{wildcards.sample} --localcores=6 --localmem=128 2>{run}log/{wildcards.sample}_count.err""")')
+    (30, '')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=nextstrain/monkeypox, file=workflow/snakemake_rules/core.smk
+context_key: ['rule refine', 'input', 'if config["fix_tree"']
+    (231, '        if config["fix_tree"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=nextstrain/monkeypox, file=workflow/snakemake_rules/core.smk
+context_key: ['rule export', 'input', 'if config.get("timetree", False']
+    (435, '        if config.get("timetree", False)')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=nextstrain/monkeypox, file=workflow/snakemake_rules/core.smk
+context_key: ['rule export', 'input', 'if config.get("recency", False']
+    (443, '        if config.get("recency", False)')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=Faitero/rna-seq-gatk-variant-calling, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=maniakk2000/School_cbai, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=1709mrd/12345, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=ZunsongHu/pipeline, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=shukwong/dna-seq-gatk-variant-calling-test, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=xiangyugits/wgs, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=xiangyugits/wgs, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (47, '            if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=babramso/vcf_snake, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=ibebio/tiger-pipeline, file=workflow/Snakefile
+context_key: ['rule all', 'input', "if config[\\'debug\\'][\\'call_variants_f2\\'][\\'create_vcf_for_f2\\'] == \\'yes\\' else []"]
+    (35, "               if config[\\'debug\\'][\\'call_variants_f2\\'][\\'create_vcf_for_f2\\'] == \\'yes\\' else [])")
+    (36, '')
+    (37, '        ')
+    (38, '')
+    (39, '# The first rule should define the default target files')
+    (40, '# Subsequent target rules can be specified below. They should start with all_*.')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=christacaggiano/GATK_exome_seq, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=david-a-parry/vase_family_filtering_workflow, file=workflow/rules/vase.smk
+context_key: ['rule vase_annotate', 'output', 'if config.get("splice_ai_files") or config.get("splice_ai_dir"']
+    (50, '                if config.get("splice_ai_files") or config.get("splice_ai_dir")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=open2c/inspectro, file=Snakefile
+context_key: ['rule eigdecomp', 'run', 'if config["samples"][sample].get("blacklist_path") is not None']
+    (133, '        if config["samples"][sample].get("blacklist_path") is not None:')
+    (134, '            # no header')
+    (135, '            blacklist = pd.read_csv(')
+    (136, '                config["samples"][sample]["blacklist_path"],')
+    (137, "                sep=\\'\\\\t\\',")
+    (138, "                names=[\\'chrom\\', \\'start\\', \\'end\\']")
+    (139, '            )')
+    (140, '            ref_track = (')
+    (141, '                bioframe.count_overlaps(ref_track, blacklist)')
+    (142, "                .rename(columns={\\'count\\': \\'is_bad\\'})")
+    (143, '            )')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=khalillab/coop-TF-chipseq, file=Snakefile
+context_key: ['rule all', 'input', 'if config["differential_occupancy"]["annotations"] else [])+["peaks"]']
+    (190, '                       if config["differential_occupancy"]["annotations"] else [])+["peaks"],')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=khalillab/coop-TF-chipseq, file=Snakefile
+context_key: ['rule all', 'input', 'if config["differential_occupancy"]["annotations"] else [])+["peaks"]']
+    (198, '                       if config["differential_occupancy"]["annotations"] else [])+["peaks"],')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=khalillab/coop-TF-chipseq, file=Snakefile
+context_key: ['rule all', 'input', 'if config["differential_occupancy"]["annotations"] else [])+["peaks"]']
+    (206, '                       if config["differential_occupancy"]["annotations"] else [])+["peaks"],')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=khalillab/coop-TF-chipseq, file=Snakefile
+context_key: ['rule all', 'input', 'if config["differential_occupancy"]["annotations"] else [])+["peaks"]']
+    (214, '                       if config["differential_occupancy"]["annotations"] else [])+["peaks"],')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=Monia234/admix-map, file=workflow/Snakefile
+context_key: ['rule IBD_filter', 'run', "if config[\\'IBD\\'][\\'filter_relateds\\'] == \\'true\\'"]
+    (355, "        if config[\\'IBD\\'][\\'filter_relateds\\'] == \\'true\\':")
+    (356, '            shell(f"zcat {{input[1]}} | awk {{params.awk_string}}; {CMD_PREFIX} Rscript {CODE}/filter_relateds.R -r accessory/related_IBS_results.txt -o accessory/excluded_related_samples.txt; "')
+    (357, '                  f"{CMD_PREFIX} plink --bfile plink/{BASE}_LDp_sHWE --remove accessory/excluded_related_samples.txt --keep-allele-order --make-bed --out plink/{BASE}_LDp_sHWE_IBDflt {plnk_rsrc(rule, plink_run_specs)}")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=1709mrd/MY, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=1709mrd/THISschool_dna-seq-gatk-variant-calling, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=fuzhiliang/dna-seq-gatk-variant-calling_test, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=ctmrbio/stag-mwc, file=rules/taxonomic_profiling/strainphlan.smk
+context_key: ['localrules', 'if config["strain_level_profiling"]["strainphlan"]', 'if not mpa_config["bt2_db_dir"] or not Path(mpa_config["bt2_db_dir"]).exists()']
+    (10, 'if config["strain_level_profiling"]["strainphlan"]:')
+    (11, '    if not mpa_config["bt2_db_dir"] or not Path(mpa_config["bt2_db_dir"]).exists():')
+    (12, '        err_message = "No MetaPhlAn database dir found at: \\\'{}\\\'!\\')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=ctmrbio/stag-mwc, file=rules/assembly/metawrap.smk
+context_key: ['localrules', 'if config["assembly"]']
+    (13, 'if config["assembly"]:')
+    (14, '    assemblies = expand(f"{OUTDIR}/metawrap/assembly/{mw_config[\\\'assembler\\\']}/{{sample}}/final_assembly.fasta", sample=SAMPLES)')
+    (15, '    all_outputs.extend(assemblies)')
+    (16, '')
+    (17, '    citations.add(publications["MetaWRAP"])')
+    (18, '    citations.add(publications["MEGAHIT"])')
+    (19, '')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/deduplication.smk
+context_key: ['rule deduplication_SE', 'input', 'if config["RUN_TRIMMING"']
+    (13, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/deduplication.smk
+context_key: ['rule deduplication_SE', 'output', 'if config["RUN_TRIMMING"']
+    (17, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/deduplication.smk
+context_key: ['rule deduplication_PE', 'input', 'if config["RUN_TRIMMING"']
+    (37, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/deduplication.smk
+context_key: ['rule deduplication_PE', 'output', 'if config["RUN_TRIMMING"']
+    (41, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bismark_alignment_SE_control', 'input', 'if config["RUN_TRIMMING"']
+    (97, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bismark_alignment_SE_control', 'output', 'if config["RUN_TRIMMING"']
+    (101, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bismark_alignment_SE_control', 'output', 'if config["RUN_TRIMMING"']
+    (104, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bismark_alignment_PE_control', 'input', 'if config["RUN_TRIMMING"']
+    (128, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bismark_alignment_PE_control', 'input', 'if config["RUN_TRIMMING"']
+    (131, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bismark_alignment_PE_control', 'output', 'if config["RUN_TRIMMING"']
+    (135, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bismark_alignment_PE_control', 'output', 'if config["RUN_TRIMMING"']
+    (138, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_p1', 'input', 'if config["IS_PAIRED"] and config["RUN_TRIMMING"']
+    (164, '        if config["IS_PAIRED"] and config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_p1', 'input', 'if config["IS_PAIRED"']
+    (166, '        if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_p1', 'input', 'if config["RUN_TRIMMING"']
+    (168, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_p1', 'output', 'if config["IS_PAIRED"] and config["RUN_TRIMMING"']
+    (172, '        if config["IS_PAIRED"] and config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_p1', 'output', 'if config["IS_PAIRED"']
+    (174, '        if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_p1', 'output', 'if config["RUN_TRIMMING"']
+    (176, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_p2', 'input', 'if config["IS_PAIRED"] and config["RUN_TRIMMING"']
+    (192, '        if config["IS_PAIRED"] and config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_p2', 'input', 'if config["IS_PAIRED"']
+    (194, '        if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_p2', 'input', 'if config["RUN_TRIMMING"']
+    (196, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_p2', 'output', 'if config["IS_PAIRED"] and config["RUN_TRIMMING"']
+    (200, '        if config["IS_PAIRED"] and config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_p2', 'output', 'if config["IS_PAIRED"']
+    (202, '        if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_p2', 'output', 'if config["RUN_TRIMMING"']
+    (204, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_allo', 'input', 'if config["RUN_READ_SORTING"] and config["IS_PAIRED"']
+    (220, '        if config["RUN_READ_SORTING"] and config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_allo', 'input', 'if config["IS_PAIRED"] and config["RUN_TRIMMING"']
+    (222, '        if config["IS_PAIRED"] and config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_allo', 'input', 'if config["IS_PAIRED"']
+    (224, '        if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_allo', 'input', 'if config["RUN_READ_SORTING"']
+    (226, '        if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_allo', 'input', 'if config["RUN_TRIMMING"']
+    (228, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_allo', 'output', 'if config["RUN_READ_SORTING"] and config["IS_PAIRED"']
+    (232, '        if config["RUN_READ_SORTING"] and config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_allo', 'output', 'if config["IS_PAIRED"] and config["RUN_TRIMMING"']
+    (234, '        if config["IS_PAIRED"] and config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_allo', 'output', 'if config["IS_PAIRED"']
+    (236, '        if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_allo', 'output', 'if config["RUN_READ_SORTING"']
+    (238, '        if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule bam_sorting_allo', 'output', 'if config["RUN_TRIMMING"']
+    (240, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule qualimap_p1', 'input', 'if config["IS_PAIRED"] and config["RUN_TRIMMING"']
+    (256, '        if config["IS_PAIRED"] and config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule qualimap_p1', 'input', 'if config["IS_PAIRED"']
+    (258, '        if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule qualimap_p1', 'input', 'if config["RUN_TRIMMING"']
+    (261, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule qualimap_p2', 'input', 'if config["IS_PAIRED"] and config["RUN_TRIMMING"']
+    (285, '        if config["IS_PAIRED"] and config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule qualimap_p2', 'input', 'if config["IS_PAIRED"']
+    (287, '        if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule qualimap_p2', 'input', 'if config["RUN_TRIMMING"']
+    (290, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule qualimap_allo_se', 'input', 'if config["RUN_READ_SORTING"']
+    (314, '        if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule qualimap_allo_se', 'input', 'if config["RUN_TRIMMING"']
+    (316, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule qualimap_allo_pe', 'input', 'if config["RUN_READ_SORTING"']
+    (339, '        if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/quality_check.smk
+context_key: ['rule qualimap_allo_pe', 'input', 'if config["RUN_TRIMMING"']
+    (341, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/differential_methylation_analysis.smk
+context_key: ['rule dmrseq_CG_special', 'output', 'if config["DIPLOID_ONLY"']
+    (236, '        if config["DIPLOID_ONLY"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/differential_methylation_analysis.smk
+context_key: ['rule dmrseq_CHG_special', 'output', 'if config["DIPLOID_ONLY"']
+    (258, '        if config["DIPLOID_ONLY"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/differential_methylation_analysis.smk
+context_key: ['rule dmrseq_CHH_special', 'output', 'if config["DIPLOID_ONLY"']
+    (280, '        if config["DIPLOID_ONLY"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/read_sorting.smk
+context_key: ['rule read_sorting_SE', 'input', 'if config["RUN_TRIMMING"']
+    (16, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/read_sorting.smk
+context_key: ['rule read_sorting_SE', 'input', 'if config["RUN_TRIMMING"']
+    (19, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/read_sorting.smk
+context_key: ['rule read_sorting_PE', 'input', 'if config["RUN_TRIMMING"']
+    (47, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/read_sorting.smk
+context_key: ['rule read_sorting_PE', 'input', 'if config["RUN_TRIMMING"']
+    (50, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_parent_1', 'input', 'if config["RUN_TRIMMING"']
+    (14, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_parent_1', 'output', 'if config["RUN_TRIMMING"']
+    (21, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_parent_1', 'output', 'if config["RUN_TRIMMING"']
+    (30, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_parent_1', 'output', 'if config["RUN_TRIMMING"']
+    (41, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_parent_1', 'output', 'if config["RUN_TRIMMING"']
+    (52, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_parent_2', 'input', 'if config["RUN_TRIMMING"']
+    (84, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_parent_2', 'output', 'if config["RUN_TRIMMING"']
+    (91, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_parent_2', 'output', 'if config["RUN_TRIMMING"']
+    (100, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_parent_2', 'output', 'if config["RUN_TRIMMING"']
+    (111, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_parent_2', 'output', 'if config["RUN_TRIMMING"']
+    (122, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_1', 'input', 'if config["RUN_READ_SORTING"']
+    (154, '        if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_1', 'input', 'if config["RUN_TRIMMING"']
+    (157, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_1', 'output', 'if config["RUN_READ_SORTING"']
+    (165, '            if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_1', 'output', 'if config["RUN_TRIMMING"']
+    (168, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_1', 'output', 'if config["RUN_READ_SORTING"']
+    (178, '            if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_1', 'output', 'if config["RUN_TRIMMING"']
+    (183, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_1', 'output', 'if config["RUN_READ_SORTING"']
+    (195, '            if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_1', 'output', 'if config["RUN_TRIMMING"']
+    (200, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_1', 'output', 'if config["RUN_READ_SORTING"']
+    (212, '            if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_1', 'output', 'if config["RUN_TRIMMING"']
+    (217, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_2', 'input', 'if config["RUN_READ_SORTING"']
+    (250, '        if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_2', 'input', 'if config["RUN_TRIMMING"']
+    (253, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_2', 'output', 'if config["RUN_READ_SORTING"']
+    (261, '            if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_2', 'output', 'if config["RUN_TRIMMING"']
+    (264, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_2', 'output', 'if config["RUN_READ_SORTING"']
+    (274, '            if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_2', 'output', 'if config["RUN_TRIMMING"']
+    (279, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_2', 'output', 'if config["RUN_READ_SORTING"']
+    (291, '            if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_2', 'output', 'if config["RUN_TRIMMING"']
+    (296, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_2', 'output', 'if config["RUN_READ_SORTING"']
+    (308, '            if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_SE_allo_2', 'output', 'if config["RUN_TRIMMING"']
+    (313, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_parent_1', 'input', 'if config["RUN_TRIMMING"']
+    (346, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_parent_1', 'output', 'if config["RUN_TRIMMING"']
+    (353, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_parent_1', 'output', 'if config["RUN_TRIMMING"']
+    (360, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_parent_1', 'output', 'if config["RUN_TRIMMING"']
+    (369, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_parent_1', 'output', 'if config["RUN_TRIMMING"']
+    (380, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_parent_1', 'output', 'if config["RUN_TRIMMING"']
+    (391, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_parent_2', 'input', 'if config["RUN_TRIMMING"']
+    (423, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_parent_2', 'output', 'if config["RUN_TRIMMING"']
+    (430, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_parent_2', 'output', 'if config["RUN_TRIMMING"']
+    (437, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_parent_2', 'output', 'if config["RUN_TRIMMING"']
+    (446, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_parent_2', 'output', 'if config["RUN_TRIMMING"']
+    (457, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_parent_2', 'output', 'if config["RUN_TRIMMING"']
+    (468, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_1', 'input', 'if config["RUN_READ_SORTING"] and config["IS_PAIRED"']
+    (500, '        if config["RUN_READ_SORTING"] and config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_1', 'input', 'if config["RUN_TRIMMING"']
+    (503, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_1', 'output', 'if config["RUN_READ_SORTING"']
+    (511, '            if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_1', 'output', 'if config["RUN_TRIMMING"']
+    (514, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_1', 'output', 'if config["RUN_READ_SORTING"']
+    (522, '            if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_1', 'output', 'if config["RUN_TRIMMING"']
+    (525, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_1', 'output', 'if config["IS_PAIRED"']
+    (535, '            if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_1', 'output', 'if config["RUN_TRIMMING"']
+    (540, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_1', 'output', 'if config["IS_PAIRED"']
+    (552, '            if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_1', 'output', 'if config["RUN_TRIMMING"']
+    (557, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_1', 'output', 'if config["IS_PAIRED"']
+    (569, '            if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_1', 'output', 'if config["RUN_TRIMMING"']
+    (574, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_2', 'input', 'if config["RUN_READ_SORTING"] and config["IS_PAIRED"']
+    (607, '        if config["RUN_READ_SORTING"] and config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_2', 'input', 'if config["RUN_TRIMMING"']
+    (610, '            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_2', 'output', 'if config["RUN_READ_SORTING"']
+    (618, '            if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_2', 'output', 'if config["RUN_TRIMMING"']
+    (621, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_2', 'output', 'if config["RUN_READ_SORTING"']
+    (629, '            if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_2', 'output', 'if config["RUN_TRIMMING"']
+    (632, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_2', 'output', 'if config["IS_PAIRED"']
+    (642, '            if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_2', 'output', 'if config["RUN_TRIMMING"']
+    (647, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_2', 'output', 'if config["IS_PAIRED"']
+    (659, '            if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_2', 'output', 'if config["RUN_TRIMMING"']
+    (664, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_2', 'output', 'if config["IS_PAIRED"']
+    (676, '            if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule methylation_extraction_PE_allo_2', 'output', 'if config["RUN_TRIMMING"']
+    (681, '                if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_1', 'input', 'if config["IS_PAIRED"] and config["RUN_TRIMMING"']
+    (715, '            if config["IS_PAIRED"] and config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_1', 'input', 'if config["IS_PAIRED"']
+    (718, '                if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_1', 'input', 'if config["RUN_TRIMMING"']
+    (721, '                    if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_2', 'input', 'if config["IS_PAIRED"] and config["RUN_TRIMMING"']
+    (750, '            if config["IS_PAIRED"] and config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_2', 'input', 'if config["IS_PAIRED"']
+    (753, '                if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_2', 'input', 'if config["RUN_TRIMMING"']
+    (756, '                    if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_allo_1', 'input', 'if config["RUN_READ_SORTING"] and config["IS_PAIRED"']
+    (785, '            if config["RUN_READ_SORTING"] and config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_allo_1', 'input', 'if config["IS_PAIRED"] and config["RUN_TRIMMING"']
+    (788, '                if config["IS_PAIRED"] and config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_allo_1', 'input', 'if config["IS_PAIRED"']
+    (791, '                    if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_allo_1', 'input', 'if config["RUN_READ_SORTING"']
+    (794, '                        if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_allo_1', 'input', 'if config["RUN_TRIMMING"']
+    (797, '                            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_allo_2', 'input', 'if config["RUN_READ_SORTING"] and config["IS_PAIRED"']
+    (828, '            if config["RUN_READ_SORTING"] and config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_allo_2', 'input', 'if config["IS_PAIRED"] and config["RUN_TRIMMING"']
+    (831, '                if config["IS_PAIRED"] and config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_allo_2', 'input', 'if config["IS_PAIRED"']
+    (834, '                    if config["IS_PAIRED"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_allo_2', 'input', 'if config["RUN_READ_SORTING"']
+    (837, '                        if config["RUN_READ_SORTING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/methylation_extraction.smk
+context_key: ['rule coverage2cytosine_allo_2', 'input', 'if config["RUN_TRIMMING"']
+    (840, '                            if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/downstream.smk
+context_key: ['rule dm_regions_bed_special', 'input', 'if config["DIPLOID_ONLY"']
+    (32, '        if config["DIPLOID_ONLY"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/downstream.smk
+context_key: ['rule dm_regions_bed_special', 'output', 'if config["DIPLOID_ONLY"']
+    (36, '        if config["DIPLOID_ONLY"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/downstream.smk
+context_key: ['rule dm_regions_bed_special', 'params', 'if config["DIPLOID_ONLY"']
+    (44, '        if config["DIPLOID_ONLY"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_SE_1', 'input', 'if config["RUN_TRIMMING"']
+    (54, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_SE_1', 'output', 'if config["RUN_TRIMMING"']
+    (58, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_SE_1', 'output', 'if config["RUN_TRIMMING"']
+    (61, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_SE_2', 'input', 'if config["RUN_TRIMMING"']
+    (88, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_SE_2', 'output', 'if config["RUN_TRIMMING"']
+    (92, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_SE_2', 'output', 'if config["RUN_TRIMMING"']
+    (95, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_PE_1', 'input', 'if config["RUN_TRIMMING"']
+    (122, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_PE_1', 'input', 'if config["RUN_TRIMMING"']
+    (125, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_PE_1', 'output', 'if config["RUN_TRIMMING"']
+    (129, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_PE_1', 'output', 'if config["RUN_TRIMMING"']
+    (132, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_PE_2', 'input', 'if config["RUN_TRIMMING"']
+    (159, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_PE_2', 'input', 'if config["RUN_TRIMMING"']
+    (162, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_PE_2', 'output', 'if config["RUN_TRIMMING"']
+    (166, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=supermaxiste/ARPEGGIO, file=rules/alignment.smk
+context_key: ['rule bismark_alignment_PE_2', 'output', 'if config["RUN_TRIMMING"']
+    (169, '        if config["RUN_TRIMMING"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=Albinam1/bio_inf, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=singleron-RD/Dna-seq_Analysis, file=workflow/rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=singleron-RD/Dna-seq_Analysis, file=workflow/rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (53, '            if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=mptrsen/gatk-variant-calling, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=Albinam1/day_7, file=rules/calling.smk
+context_key: ['rule call_variants', 'input', 'if config["processing"].get("restrict-regions"']
+    (22, '            if config["processing"].get("restrict-regions")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=cnio-bu/varca, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (80, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=nkimoto/GATK_pipeline, file=rules/filtering.smk
+context_key: ['rule merge_calls', 'input', 'if config["filtering"]["vqsr"']
+    (57, '                              if config["filtering"]["vqsr"]')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=LUMC/HAMLET, file=includes/snv-indels/Snakefile
+context_key: ['rule annotate_vars', 'params', 'if config.get("cache_vep"']
+    (310, '        if config.get("cache_vep")')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=tjgibson/NGS-workflow-RNAseq, file=workflow/rules/ref.smk
+context_key: ['rule get_genome_annotation', 'if config["use_spikeIn"]', 'else', 'if config["filter_chroms"]', 'rule hisat2_index']
+    (30, 'if config["use_spikeIn"]:')
+    (31, '\\trule get_spikeIn_genome:')
+    (32, '\\t\\toutput:')
+    (33, '\\t\\t\\ttemp("resources/spikeIn_genome.fasta"),')
+    (34, '\\t\\tlog:')
+    (35, '\\t\\t\\t"logs/get_spikeIn_genome.log",')
+    (36, '\\t\\tconda:')
+    (37, '\\t\\t\\t"../envs/curl.yaml"')
+    (38, '\\t\\tparams:')
+    (39, '\\t\\t\\tlink=config["spikeIn_genome"]["link"],')
+    (40, '\\t\\tcache: True')
+    (41, '\\t\\tshell:')
+    (42, '\\t\\t\\t"""')
+    (43, '\\t\\t\\tcurl {params.link} > {output}.gz 2> {log}')
+    (44, '\\t\\t\\tunpigz {output}.gz 2>> {log}')
+    (45, '\\t\\t\\t"""')
+    (46, '')
+    (47, '\\trule combine_genomes:')
+    (48, '\\t\\tinput:')
+    (49, '\\t\\t\\tref="resources/ref_genome.fasta",')
+    (50, '\\t\\t\\tspikeIn="resources/spikeIn_genome.fasta",')
+    (51, '\\t\\toutput:')
+    (52, '\\t\\t\\ttemp("resources/genome.fasta.gz"),')
+    (53, '\\t\\tlog:')
+    (54, '\\t\\t\\t"logs/combine_genomes.log",')
+    (55, '\\t\\tconda:')
+    (56, '\\t\\t\\t"../envs/seqkit.yaml"')
+    (57, '\\t\\tcache: True')
+    (58, '\\t\\tshell:')
+    (59, '\\t\\t\\t"""')
+    (60, '\\t\\t\\tseqkit replace -p "(.+)" -r "spikeIn_\\\\$1" -o resources/tmp_spikeIn.fasta {input.spikeIn} 2> {log}')
+    (61, '\\t\\t\\tcat {input.ref} resources/tmp_spikeIn.fasta > {output} 2>> {log}')
+    (62, '\\t\\t\\trm resources/tmp_spikeIn.fasta')
+    (63, '\\t\\t\\t"""')
+    (64, 'else:')
+    (65, '\\t\\trule rename_genome:')
+    (66, '\\t\\t\\tinput:')
+    (67, '\\t\\t\\t\\t"resources/ref_genome.fasta",')
+    (68, '\\t\\t\\toutput:')
+    (69, '\\t\\t\\t\\ttemp("resources/genome.fasta"),')
+    (70, '\\t\\t\\tlog:')
+    (71, '\\t\\t\\t\\t"logs/rename_genome.log",')
+    (72, '\\t\\t\\tcache: True')
+    (73, '\\t\\t\\tshell:')
+    (74, '\\t\\t\\t\\t"mv {input} {output} 2> {log}"')
+    (75, '')
+    (76, '\\t\\t\\t\\t')
+    (77, 'if config["filter_chroms"]:')
+    (78, '\\trule define_keep_chroms:')
+    (79, '\\t\\tinput:')
+    (80, '\\t\\t\\tgenome="resources/genome.fasta",')
+    (81, '\\t\\t\\tkeep_chroms=config["keep_chroms"]')
+    (82, '\\t\\toutput:')
+    (83, '\\t\\t\\t"resources/keep_chroms.bed",')
+    (84, '\\t\\tlog:')
+    (85, '\\t\\t\\t"logs/define_keep_chroms.log",')
+    (86, '\\t\\tconda:')
+    (87, '\\t\\t\\t"../envs/seqkit.yaml"')
+    (88, '\\t\\tcache: True')
+    (89, '\\t\\tshell:')
+    (90, '\\t\\t\\t"seqkit grep -f {input.keep_chroms} {input.genome}"')
+    (91, '\\t\\t\\t" | seqkit fx2tab -nil"')
+    (92, '\\t\\t\\t" |  awk -v OFS=\\\'\\\\t\\\' \\\'{{print $1, 1, $2}}\\\' > {output}"')
+    (93, '\\t\\t\\t\\t')
+    (94, 'rule hisat2_index:')
+    (95, '\\tinput:')
+    (96, '\\t\\tfasta="resources/genome.fasta"')
+    (97, '\\toutput:')
+    (98, '\\t\\tdirectory("resources/hisat2_index"),')
+    (99, '\\tlog:')
+    (100, '\\t\\t"logs/hisat2_index_genome.log"')
+    (101, '\\tparams:')
+    (102, '\\t\\tprefix = lambda wildcards, output: output[0],')
+    (103, '\\t\\textra=config["params"]["hisat2_index"] # optional parameters')
+    (104, '\\tthreads: 8')
+    (105, '\\twrapper:')
+    (106, '\\t\\t"v1.3.2/bio/hisat2/index"')
+    (107, '\\t\\t')
+    (108, "'")
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=kircherlab/MPRAsnakeflow, file=workflow/rules/assignment.smk
+context_key: ['rule assignment_filter', 'params', 'if config["assignments"][wc.assignment]["configs"][wc.assignment_config]']
+    (291, '        if config["assignments"][wc.assignment]["configs"][wc.assignment_config][')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+
+repo=kircherlab/MPRAsnakeflow, file=workflow/rules/assignment.smk
+context_key: ['rule assignment_filter', 'params', 'if config["assignments"][wc.assignment]["configs"][wc.assignment_config]']
+    (296, '        if config["assignments"][wc.assignment]["configs"][wc.assignment_config][')
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+

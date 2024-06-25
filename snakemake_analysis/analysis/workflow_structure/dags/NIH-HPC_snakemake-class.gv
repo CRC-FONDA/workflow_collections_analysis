@@ -1,0 +1,60 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "setup", color = "0.12 0.6 0.85", style="rounded"];
+	1[label = "fetch_container", color = "0.29 0.6 0.85", style="rounded"];
+	2[label = "fetch_sample_desc", color = "0.04 0.6 0.85", style="rounded"];
+	3[label = "sample_table", color = "0.58 0.6 0.85", style="rounded"];
+	4[label = "fetch_fastq\nsample: ERR458495", color = "0.33 0.6 0.85", style="rounded"];
+	5[label = "fetch_fastq\nsample: ERR458502", color = "0.33 0.6 0.85", style="rounded"];
+	6[label = "fetch_fastq\nsample: ERR458509", color = "0.33 0.6 0.85", style="rounded"];
+	7[label = "fetch_fastq\nsample: ERR458516", color = "0.33 0.6 0.85", style="rounded"];
+	8[label = "fetch_fastq\nsample: ERR458880", color = "0.33 0.6 0.85", style="rounded"];
+	9[label = "fetch_fastq\nsample: ERR458887", color = "0.33 0.6 0.85", style="rounded"];
+	10[label = "config_yml\nprefix: exercise04", color = "0.54 0.6 0.85", style="rounded"];
+	11[label = "ref_yaml", color = "0.50 0.6 0.85", style="rounded"];
+	12[label = "config_yml\nprefix: exercise05", color = "0.54 0.6 0.85", style="rounded"];
+	13[label = "config_yml\nprefix: exercise06", color = "0.54 0.6 0.85", style="rounded"];
+	14[label = "wrapper\nex: exercise00", color = "0.08 0.6 0.85", style="rounded"];
+	15[label = "wrapper\nex: exercise01", color = "0.08 0.6 0.85", style="rounded"];
+	16[label = "fetch_genome", color = "0.00 0.6 0.85", style="rounded"];
+	17[label = "make_hisat_index", color = "0.62 0.6 0.85", style="rounded"];
+	18[label = "fetch_transcriptome", color = "0.25 0.6 0.85", style="rounded"];
+	19[label = "fetch_gtf", color = "0.46 0.6 0.85", style="rounded"];
+	20[label = "make_transcript_gene_map", color = "0.42 0.6 0.85", style="rounded"];
+	21[label = "gtf2bed12", color = "0.38 0.6 0.85", style="rounded"];
+	22[label = "chroms", color = "0.17 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 0
+	3 -> 0
+	4 -> 0
+	5 -> 0
+	6 -> 0
+	7 -> 0
+	8 -> 0
+	9 -> 0
+	10 -> 0
+	12 -> 0
+	13 -> 0
+	14 -> 0
+	15 -> 0
+	16 -> 0
+	17 -> 0
+	18 -> 0
+	19 -> 0
+	11 -> 0
+	20 -> 0
+	21 -> 0
+	22 -> 0
+	2 -> 3
+	3 -> 10
+	11 -> 10
+	3 -> 12
+	11 -> 12
+	3 -> 13
+	11 -> 13
+	16 -> 17
+	19 -> 20
+	19 -> 21
+}            

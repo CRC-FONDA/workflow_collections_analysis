@@ -1,0 +1,1158 @@
+digraph "smrnaseq_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v0 -> v237 [label="ch_multiqc_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v1 -> v238 [label="ch_multiqc_custom_config"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v2 -> v239 [label="ch_multiqc_logo"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v3 -> v4;
+
+v4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v4 -> v44 [label="adapter_list"];
+
+v5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v11 [label="ch_versions"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v7 [label="NFCORE_SMRNASEQ:SMRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v6 -> v7 [label="samplesheet"];
+
+v7 [label="NFCORE_SMRNASEQ:SMRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 -> v8;
+
+v7 [label="NFCORE_SMRNASEQ:SMRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v7 -> v11 [label="versions"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v8 -> v9;
+
+v9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v9 -> v10 [label="reads"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v13;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v12 [label="NFCORE_SMRNASEQ:SMRNASEQ:CAT_FASTQ"];
+v10 -> v12;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v16 [label="ch_versions"];
+
+v12 [label="NFCORE_SMRNASEQ:SMRNASEQ:CAT_FASTQ"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v12 -> v13;
+
+v12 [label="NFCORE_SMRNASEQ:SMRNASEQ:CAT_FASTQ"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v12 -> v14;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v13 -> v22 [label="trim_reads"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v16;
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v60 [label="ch_versions"];
+
+v17 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v17 -> v27 [label="ch_versions"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v19 [shape=point];
+v18 -> v19 [label="fastqc_raw_html"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v21 [shape=point];
+v20 -> v21 [label="fastqc_raw_zip"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 [shape=point];
+v22 -> v23 [label="adapterseq"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v24 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW"];
+v13 -> v24 [label="trim_reads"];
+
+v24 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW"];
+v25 [shape=point];
+v24 -> v25 [label="fastqc_raw_html"];
+
+v24 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v24 -> v212 [label="fastqc_raw_zip"];
+
+v24 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v24 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v27;
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v27 -> v50 [label="ch_versions"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=point];
+v28 -> v29 [label="trim_json"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v31 [shape=point];
+v30 -> v31 [label="trim_html"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v33 [shape=point];
+v32 -> v33 [label="trim_log"];
+
+v34 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v35 [shape=point];
+v34 -> v35 [label="trim_reads_fail"];
+
+v36 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v37 [shape=point];
+v36 -> v37 [label="trim_reads_merged"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v39 [shape=point];
+v38 -> v39 [label="fastqc_trim_html"];
+
+v40 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v41 [shape=point];
+v40 -> v41 [label="fastqc_trim_zip"];
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v13 -> v44 [label="trim_reads"];
+
+v42 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v42 -> v44 [label="save_trimmed_fail"];
+
+v43 [shape=point,label="",fixedsize=true,width=0.1];
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v43 -> v44 [label="save_merged"];
+
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v44 -> v51 [label="trim_reads"];
+
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v44 -> v51 [label="trim_json"];
+
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v48 [shape=point];
+v44 -> v48 [label="trim_html"];
+
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v47 [shape=point];
+v44 -> v47 [label="trim_log"];
+
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v44 -> v49;
+
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v46 [shape=point];
+v44 -> v46 [label="trim_reads_fail"];
+
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v45 [shape=point];
+v44 -> v45 [label="trim_reads_merged"];
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v58 [label="ch_versions"];
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 -> v52;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM"];
+v52 -> v54 [label="reads"];
+
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v44 -> v53 [label="trim_json"];
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v53 -> v61 [label="adapterseq"];
+
+v54 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM"];
+v56 [shape=point];
+v54 -> v56 [label="fastqc_trim_html"];
+
+v54 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM"];
+v55 [shape=point];
+v54 -> v55 [label="fastqc_trim_zip"];
+
+v54 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v54 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v57 -> v58;
+
+v58 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v58 -> v59 [label="ch_versions"];
+
+v59 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v59 -> v60 [label="versions"];
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v60 -> v66 [label="ch_versions"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v52 -> v61 [label="reads"];
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v61 -> v62;
+
+v62 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v62 -> v63;
+
+v63 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v64 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRTRACE:MIRTRACE_RUN"];
+v63 -> v64 [label="reads"];
+
+v64 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRTRACE:MIRTRACE_RUN"];
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 -> v233 [label="results"];
+
+v64 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRTRACE:MIRTRACE_RUN"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v64 -> v65 [label="versions"];
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v65 -> v66;
+
+v66 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v164 [label="ch_versions"];
+
+v67 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v67 -> v218 [label="contamination_stats"];
+
+v68 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v71 [label="ch_versions"];
+
+v69 [shape=point,label="",fixedsize=true,width=0.1];
+v70 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_MATURE"];
+v69 -> v70;
+
+v70 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_MATURE"];
+v72 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_MATURE"];
+v70 -> v72 [label="mirna_parsed"];
+
+v70 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_MATURE"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v71;
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v73 [label="ch_versions"];
+
+v72 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_MATURE"];
+v79 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_MATURE"];
+v72 -> v79 [label="fasta_mature"];
+
+v72 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_MATURE"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v73 -> v76 [label="ch_versions"];
+
+v74 [shape=point,label="",fixedsize=true,width=0.1];
+v75 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_HAIRPIN"];
+v74 -> v75;
+
+v75 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_HAIRPIN"];
+v77 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_HAIRPIN"];
+v75 -> v77 [label="hairpin_parsed"];
+
+v75 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_HAIRPIN"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v76;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v78 [label="ch_versions"];
+
+v77 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_HAIRPIN"];
+v81 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_HAIRPIN"];
+v77 -> v81 [label="fasta_hairpin"];
+
+v77 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_HAIRPIN"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v80 [label="ch_versions"];
+
+v79 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_MATURE"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v84 [label="mature_bowtie"];
+
+v79 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_MATURE"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v82 [label="ch_versions"];
+
+v81 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_HAIRPIN"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 -> v88 [label="hairpin_bowtie"];
+
+v81 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_HAIRPIN"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v82;
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v86 [label="ch_versions"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v83 [label="reads"];
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_MATURE"];
+v83 -> v85 [label="reads_mirna"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v85 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_MATURE"];
+v84 -> v85;
+
+v85 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_MATURE"];
+v92 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_SORT"];
+v85 -> v92 [label="ch_bam"];
+
+v85 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_MATURE"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v85 -> v87;
+
+v85 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_MATURE"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v86;
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v90 [label="ch_versions"];
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_HAIRPIN"];
+v87 -> v89 [label="reads_hairpin"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v89 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_HAIRPIN"];
+v88 -> v89;
+
+v89 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_HAIRPIN"];
+v114 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_SORT"];
+v89 -> v114 [label="ch_bam"];
+
+v89 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_HAIRPIN"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v162;
+
+v89 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_HAIRPIN"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v90;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v112 [label="ch_versions"];
+
+v91 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v95 [label="ch_versions"];
+
+v92 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_SORT"];
+v96 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_INDEX"];
+v92 -> v96 [label="bam"];
+
+v92 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_SORT"];
+v93 [shape=point];
+v92 -> v93;
+
+v92 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_SORT"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v92 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v99 [label="ch_versions"];
+
+v96 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_INDEX"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 -> v100 [label="bai"];
+
+v96 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_INDEX"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v96 -> v101 [label="csi"];
+
+v96 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_INDEX"];
+v97 [shape=point];
+v96 -> v97;
+
+v96 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_INDEX"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v96 -> v98;
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v111 [label="ch_versions"];
+
+v92 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_SORT"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v92 -> v100 [label="bam"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v101 -> v102;
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v104 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v102 -> v104 [label="ch_bam_bai"];
+
+v103 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v105 [label="ch_versions"];
+
+v72 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_MATURE"];
+v104 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v72 -> v104 [label="fasta_mature"];
+
+v104 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v104 -> v224 [label="mature_stats"];
+
+v104 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v108 [label="ch_versions"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v106 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v102 -> v106 [label="ch_bam_bai"];
+
+v106 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v107 [shape=point];
+v106 -> v107 [label="flagstat"];
+
+v106 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v108;
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v110 [label="ch_versions"];
+
+v102 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v109 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v102 -> v109 [label="ch_bam_bai"];
+
+v109 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v109 -> v135 [label="idxstats"];
+
+v109 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v110;
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v111 [label="versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v112 [label="versions"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v134 [label="ch_versions"];
+
+v113 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v117 [label="ch_versions"];
+
+v114 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_SORT"];
+v118 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_INDEX"];
+v114 -> v118 [label="bam"];
+
+v114 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_SORT"];
+v115 [shape=point];
+v114 -> v115;
+
+v114 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_SORT"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v114 -> v116;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v116 -> v117;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v121 [label="ch_versions"];
+
+v118 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_INDEX"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v118 -> v122 [label="bai"];
+
+v118 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_INDEX"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v118 -> v123 [label="csi"];
+
+v118 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_INDEX"];
+v119 [shape=point];
+v118 -> v119;
+
+v118 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_INDEX"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v118 -> v120;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 -> v121;
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v133 [label="ch_versions"];
+
+v114 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_SORT"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v114 -> v122 [label="bam"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v122 -> v123;
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v124 -> v126 [label="ch_bam_bai"];
+
+v125 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v125 -> v127 [label="ch_versions"];
+
+v77 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_HAIRPIN"];
+v126 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v77 -> v126 [label="fasta_hairpin"];
+
+v126 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 -> v227 [label="hairpin_stats"];
+
+v126 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v127 -> v130 [label="ch_versions"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v128 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v124 -> v128 [label="ch_bam_bai"];
+
+v128 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v129 [shape=point];
+v128 -> v129 [label="flagstat"];
+
+v128 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v128 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v132 [label="ch_versions"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v131 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v124 -> v131 [label="ch_bam_bai"];
+
+v131 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v131 -> v136 [label="idxstats"];
+
+v131 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v132;
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v132 -> v133 [label="versions"];
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v133 -> v134 [label="versions"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v134 -> v145 [label="ch_versions"];
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v135 -> v137;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v137 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v140 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:EDGER_QC"];
+v139 -> v140 [label="edger_input"];
+
+v140 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:EDGER_QC"];
+v142 [shape=point];
+v140 -> v142;
+
+v140 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:EDGER_QC"];
+v141 [shape=point];
+v140 -> v141;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v143 [label="reads"];
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v144 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:SEQCLUSTER_SEQUENCES"];
+v143 -> v144 [label="reads_seqcluster"];
+
+v144 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:SEQCLUSTER_SEQUENCES"];
+v147 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_SEQCLUSTER"];
+v144 -> v147 [label="reads_collapsed"];
+
+v144 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:SEQCLUSTER_SEQUENCES"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v149 [label="ch_versions"];
+
+v81 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_HAIRPIN"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 -> v146 [label="hairpin_bowtie"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v147 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_SEQCLUSTER"];
+v146 -> v147;
+
+v147 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_SEQCLUSTER"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v147 -> v152;
+
+v147 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_SEQCLUSTER"];
+v148 [shape=point];
+v147 -> v148;
+
+v147 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_SEQCLUSTER"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v149 -> v158 [label="ch_versions"];
+
+v150 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v151 [shape=point];
+v150 -> v151 [label="ch_mirtop_logs"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:MIRTOP_QUANT"];
+v152 -> v155;
+
+v77 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_HAIRPIN"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 -> v153 [label="fasta_hairpin"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:MIRTOP_QUANT"];
+v153 -> v155;
+
+v154 [shape=point,label="",fixedsize=true,width=0.1];
+v155 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:MIRTOP_QUANT"];
+v154 -> v155 [label="gtf"];
+
+v155 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:MIRTOP_QUANT"];
+v157 [shape=point];
+v155 -> v157;
+
+v155 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:MIRTOP_QUANT"];
+v159 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:TABLE_MERGE"];
+v155 -> v159;
+
+v155 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:MIRTOP_QUANT"];
+v156 [shape=point];
+v155 -> v156;
+
+v155 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:MIRTOP_QUANT"];
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 -> v230 [label="mirtop_logs"];
+
+v155 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:MIRTOP_QUANT"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 -> v161 [label="ch_versions"];
+
+v159 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:TABLE_MERGE"];
+v160 [shape=point];
+v159 -> v160;
+
+v159 [label="NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:TABLE_MERGE"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v161 -> v163 [label="versions"];
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v173 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BOWTIE_MAP_GENOME"];
+v162 -> v173 [label="reads"];
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v163 -> v164;
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v200 [label="ch_versions"];
+
+v165 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v166 [shape=point];
+v165 -> v166 [label="genome_stats"];
+
+v167 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v171 [label="ch_versions"];
+
+v168 [shape=point,label="",fixedsize=true,width=0.1];
+v169 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:INDEX_GENOME"];
+v168 -> v169;
+
+v169 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:INDEX_GENOME"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v169 -> v172 [label="index"];
+
+v169 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:INDEX_GENOME"];
+v170 [shape=point];
+v169 -> v170 [label="fasta"];
+
+v169 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:INDEX_GENOME"];
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 -> v171;
+
+v171 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v171 -> v175 [label="ch_versions"];
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v173 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BOWTIE_MAP_GENOME"];
+v172 -> v173;
+
+v173 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BOWTIE_MAP_GENOME"];
+v178 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v173 -> v178 [label="ch_bam"];
+
+v173 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BOWTIE_MAP_GENOME"];
+v174 [shape=point];
+v173 -> v174;
+
+v173 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BOWTIE_MAP_GENOME"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v173 -> v175;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 -> v199 [label="ch_versions"];
+
+v176 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v190 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v176 -> v190 [label="ch_fasta"];
+
+v177 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v177 -> v181 [label="ch_versions"];
+
+v178 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v182 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v178 -> v182 [label="bam"];
+
+v178 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v179 [shape=point];
+v178 -> v179;
+
+v178 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v178 -> v180;
+
+v180 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v180 -> v181;
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v181 -> v185 [label="ch_versions"];
+
+v182 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v182 -> v186 [label="bai"];
+
+v182 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v182 -> v187 [label="csi"];
+
+v182 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v183 [shape=point];
+v182 -> v183;
+
+v182 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX"];
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v182 -> v184;
+
+v184 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v185;
+
+v185 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v185 -> v198 [label="ch_versions"];
+
+v178 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT"];
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v178 -> v186 [label="bam"];
+
+v186 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v186 -> v187;
+
+v187 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v187 -> v188;
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v190 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v188 -> v190 [label="ch_bam_bai"];
+
+v189 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v189 -> v191 [label="ch_versions"];
+
+v190 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v190 -> v221 [label="genome_stats"];
+
+v190 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS"];
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v190 -> v191;
+
+v191 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v191 -> v194 [label="ch_versions"];
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v192 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v188 -> v192 [label="ch_bam_bai"];
+
+v192 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v193 [shape=point];
+v192 -> v193 [label="flagstat"];
+
+v192 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT"];
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v192 -> v194;
+
+v194 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v194 -> v197 [label="ch_versions"];
+
+v188 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v195 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v188 -> v195 [label="ch_bam_bai"];
+
+v195 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v196 [shape=point];
+v195 -> v196 [label="idxstats"];
+
+v195 [label="NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 -> v197;
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v197 -> v198 [label="versions"];
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v198 -> v199 [label="versions"];
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v199 -> v200 [label="versions"];
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v200 -> v201 [label="ch_versions"];
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v201 -> v202;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v203 [label="NFCORE_SMRNASEQ:SMRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v202 -> v203;
+
+v203 [label="NFCORE_SMRNASEQ:SMRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v205 [shape=point];
+v203 -> v205;
+
+v203 [label="NFCORE_SMRNASEQ:SMRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v203 -> v207;
+
+v203 [label="NFCORE_SMRNASEQ:SMRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v204 [shape=point];
+v203 -> v204;
+
+v206 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v206 -> v208 [label="ch_multiqc_files"];
+
+v207 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v208;
+
+v208 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v208 -> v211 [label="ch_multiqc_files"];
+
+v209 [shape=point,label="",fixedsize=true,width=0.1];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v209 -> v210 [label="ch_workflow_summary"];
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v210 -> v211;
+
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v211 -> v214 [label="ch_multiqc_files"];
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v212 -> v213;
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 -> v214;
+
+v214 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v214 -> v217 [label="ch_multiqc_files"];
+
+v44 [label="NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP"];
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v44 -> v215 [label="trim_json"];
+
+v215 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v215 -> v216;
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 -> v217;
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v217 -> v220 [label="ch_multiqc_files"];
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v218 -> v219;
+
+v219 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v219 -> v220;
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v220 -> v223 [label="ch_multiqc_files"];
+
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v221 -> v222;
+
+v222 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v222 -> v223;
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v223 -> v226 [label="ch_multiqc_files"];
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v224 -> v225;
+
+v225 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v225 -> v226;
+
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 -> v229 [label="ch_multiqc_files"];
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v227 -> v228;
+
+v228 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 -> v229;
+
+v229 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 -> v232 [label="ch_multiqc_files"];
+
+v230 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v230 -> v231;
+
+v231 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v231 -> v232;
+
+v232 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v235 [label="ch_multiqc_files"];
+
+v233 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v233 -> v234;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v234 -> v235;
+
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v235 -> v236 [label="ch_multiqc_files"];
+
+v236 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v240 [label="NFCORE_SMRNASEQ:SMRNASEQ:MULTIQC"];
+v236 -> v240;
+
+v237 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v240 [label="NFCORE_SMRNASEQ:SMRNASEQ:MULTIQC"];
+v237 -> v240;
+
+v238 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v240 [label="NFCORE_SMRNASEQ:SMRNASEQ:MULTIQC"];
+v238 -> v240;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v240 [label="NFCORE_SMRNASEQ:SMRNASEQ:MULTIQC"];
+v239 -> v240;
+
+v240 [label="NFCORE_SMRNASEQ:SMRNASEQ:MULTIQC"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v240 -> v244;
+
+v240 [label="NFCORE_SMRNASEQ:SMRNASEQ:MULTIQC"];
+v243 [shape=point];
+v240 -> v243;
+
+v240 [label="NFCORE_SMRNASEQ:SMRNASEQ:MULTIQC"];
+v242 [shape=point];
+v240 -> v242;
+
+v240 [label="NFCORE_SMRNASEQ:SMRNASEQ:MULTIQC"];
+v241 [shape=point];
+v240 -> v241;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v245 [shape=point];
+v244 -> v245;
+
+}

@@ -1,0 +1,32 @@
+1. The repo mentions that 60GB disk space is needed to run this workflow.
+    I will try it on gruenau first. We'll see about the notebooks later.
+
+2. repo cloned, creating conda environment, which takes a long time; trying to also install mamba on gruenau
+
+3. In parallel I downloaded GPWV4 data from the NASA source and created an account for it
+    account name sebastian_huberlin
+
+4. I registered with https://cds.climate.copernicus.eu/#!/home, installed they key and api
+    still waiting for the conda environment
+
+5. I continue to be stuck at waiting for the creation of the conda environment
+    I have installed micromamba and simultaneously 'am trying to install the environment using micromamba now
+
+6. I was able to create the environment using micromamba
+    then as instructed: pip install -e .
+
+7. Off to try the workflow with snakemake --n 3; that seems deprectated
+    instead tried snakemake --cores 3
+
+8. I'm running into errors of missing output files;
+    this could be because the whole workflow requires more storage than I have available on gruenau
+
+9. I will retry by cloning all of this into the bigger gruenau memory location
+    Here the workflow seems to be able to run
+    i had to accept terms at: https://cds.climate.copernicus.eu/cdsapp/#!/terms/licence-to-use-copernicus-products
+    currently the workflow is running
+    but if it really requires 60GB of data this can take a while
+
+    it is taking a while
+
+10. Is it really responsible to do all this computation and incur all of this web traffic?

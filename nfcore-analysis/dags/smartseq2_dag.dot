@@ -1,0 +1,238 @@
+digraph "smartseq2_dag" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p0 -> p38 [label="ch_multiqc_custom_config"];
+
+p1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p1 -> p2;
+
+p2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p2 -> p3;
+
+p3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p3 -> p4;
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p17 [label="fastqc"];
+p4 -> p17 [label="read_files_fastqc"];
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p6 [shape=point];
+p4 -> p6 [label="read_files_bracer"];
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p5 [shape=point];
+p4 -> p5 [label="read_files_tracer"];
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p19 [label="STAR"];
+p4 -> p19 [label="read_files_star"];
+
+p7 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p7 -> p8;
+
+p8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p8 -> p9;
+
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="reduce"];
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p9 -> p10;
+
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+p10 -> p49 [label="ch_workflow_summary"];
+
+p11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p11 -> p12;
+
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p15 [label="makeSTARindex"];
+p12 -> p15 [label="fasta_star_idx"];
+
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p16 [label="make_rsem_reference"];
+p12 -> p16 [label="fasta_rsem_ref"];
+
+p13 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p13 -> p14;
+
+p14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p15 [label="makeSTARindex"];
+p14 -> p15 [label="gtf_star_idx"];
+
+p14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p14 -> p20 [label="gtf_feature_counts"];
+
+p14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p16 [label="make_rsem_reference"];
+p14 -> p16 [label="gtf_rsem_ref"];
+
+p15 [label="makeSTARindex"];
+p18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p15 -> p18 [label="star_index"];
+
+p16 [label="make_rsem_reference"];
+p28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p16 -> p28 [label="rsem_ref"];
+
+p17 [label="fastqc"];
+p40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p17 -> p40 [label="fastqc_files"];
+
+p18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p19 [label="STAR"];
+p18 -> p19;
+
+p19 [label="STAR"];
+p21 [label="featureCounts"];
+p19 -> p21 [label="bam_sort_filesgz"];
+
+p19 [label="STAR"];
+p29 [label="rsem"];
+p19 -> p29 [label="bam_trans_filesgz"];
+
+p19 [label="STAR"];
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p19 -> p42 [label="bam_mqc"];
+
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p21 [label="featureCounts"];
+p20 -> p21;
+
+p21 [label="featureCounts"];
+p22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+p21 -> p22 [label="count_files1"];
+
+p21 [label="featureCounts"];
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p21 -> p25 [label="count_files2"];
+
+p21 [label="featureCounts"];
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p21 -> p44 [label="count_mqc"];
+
+p22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+p23 [label="summarize_FC"];
+p22 -> p23;
+
+p23 [label="summarize_FC"];
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p23 -> p24 [label="result_files_fc"];
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p26 [label="make_matrices_fc"];
+p24 -> p26;
+
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p26 [label="make_matrices_fc"];
+p25 -> p26;
+
+p26 [label="make_matrices_fc"];
+p27 [shape=point];
+p26 -> p27 [label="fc_cr"];
+
+p28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p29 [label="rsem"];
+p28 -> p29;
+
+p29 [label="rsem"];
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+p29 -> p30 [label="tpm_files1"];
+
+p29 [label="rsem"];
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p29 -> p33 [label="tpm_files2"];
+
+p29 [label="rsem"];
+p46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p29 -> p46 [label="rsem_mqc"];
+
+p30 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+p31 [label="summmarize_TPM"];
+p30 -> p31;
+
+p31 [label="summmarize_TPM"];
+p32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p31 -> p32 [label="result_files_tpm"];
+
+p32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p34 [label="make_matrices_tpm"];
+p32 -> p34;
+
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p34 [label="make_matrices_tpm"];
+p33 -> p34;
+
+p34 [label="make_matrices_tpm"];
+p35 [shape=point];
+p34 -> p35 [label="tpm_cr"];
+
+p36 [shape=point,label="",fixedsize=true,width=0.1];
+p37 [label="get_software_versions"];
+p36 -> p37 [label="output_docs"];
+
+p37 [label="get_software_versions"];
+p48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p37 -> p48 [label="ch_software_versions_yaml"];
+
+p38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p38 -> p39;
+
+p39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p50 [label="multiqc"];
+p39 -> p50;
+
+p40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p40 -> p41;
+
+p41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p50 [label="multiqc"];
+p41 -> p50;
+
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p42 -> p43;
+
+p43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p50 [label="multiqc"];
+p43 -> p50;
+
+p44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p44 -> p45;
+
+p45 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p50 [label="multiqc"];
+p45 -> p50;
+
+p46 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p46 -> p47;
+
+p47 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p50 [label="multiqc"];
+p47 -> p50;
+
+p48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p50 [label="multiqc"];
+p48 -> p50;
+
+p49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+p50 [label="multiqc"];
+p49 -> p50;
+
+p50 [label="multiqc"];
+p51 [shape=point];
+p50 -> p51 [label="multiqc_report"];
+
+}

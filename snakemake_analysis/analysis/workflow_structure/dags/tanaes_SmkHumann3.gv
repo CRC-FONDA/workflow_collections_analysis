@@ -1,0 +1,51 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.48 0.6 0.85", style="rounded"];
+	1[label = "cutadapt_pe\nsample: A", color = "0.18 0.6 0.85", style="rounded"];
+	2[label = "cutadapt_pe\nsample: B", color = "0.18 0.6 0.85", style="rounded"];
+	3[label = "host_filter", color = "0.24 0.6 0.85", style="rounded"];
+	4[label = "host_filter", color = "0.24 0.6 0.85", style="rounded"];
+	5[label = "multiqc", color = "0.00 0.6 0.85", style="rounded"];
+	6[label = "pre_fastqc_rev\nsample: A", color = "0.61 0.6 0.85", style="rounded"];
+	7[label = "pre_fastqc_rev\nsample: B", color = "0.61 0.6 0.85", style="rounded"];
+	8[label = "pre_fastqc_fwd\nsample: A", color = "0.12 0.6 0.85", style="rounded"];
+	9[label = "pre_fastqc_fwd\nsample: B", color = "0.12 0.6 0.85", style="rounded"];
+	10[label = "humann3", color = "0.06 0.6 0.85", style="rounded"];
+	11[label = "humann_setup", color = "0.42 0.6 0.85", style="rounded"];
+	12[label = "combine_metaphlan", color = "0.36 0.6 0.85", style="rounded"];
+	13[label = "metaphlan3", color = "0.55 0.6 0.85", style="rounded"];
+	14[label = "metaphlan3_setup", color = "0.30 0.6 0.85", style="rounded"];
+	15[label = "metaphlan3", color = "0.55 0.6 0.85", style="rounded"];
+	16[label = "humann3", color = "0.06 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 0
+	3 -> 0
+	4 -> 0
+	5 -> 0
+	10 -> 0
+	16 -> 0
+	1 -> 3
+	2 -> 4
+	6 -> 5
+	7 -> 5
+	8 -> 5
+	9 -> 5
+	1 -> 5
+	2 -> 5
+	3 -> 5
+	4 -> 5
+	11 -> 10
+	12 -> 10
+	3 -> 10
+	13 -> 12
+	15 -> 12
+	14 -> 13
+	3 -> 13
+	14 -> 15
+	4 -> 15
+	11 -> 16
+	12 -> 16
+	4 -> 16
+}            

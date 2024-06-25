@@ -1,0 +1,36 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "target_default", color = "0.30 0.6 0.85", style="rounded"];
+	1[label = "mafft_align", color = "0.04 0.6 0.85", style="rounded"];
+	2[label = "fasta_condense", color = "0.56 0.6 0.85", style="rounded"];
+	3[label = "helper_condense", color = "0.11 0.6 0.85", style="rounded"];
+	4[label = "blasttogff", color = "0.26 0.6 0.85", style="rounded"];
+	5[label = "blast_mkblastdb", color = "0.59 0.6 0.85", style="rounded"];
+	6[label = "spades_assembly", color = "0.07 0.6 0.85", style="rounded"];
+	7[label = "trimmomatic_trim\nsample: EXAMPLE1", color = "0.15 0.6 0.85", style="rounded"];
+	8[label = "blast_search\nquery: EXAMPLE-QUERY", color = "0.00 0.6 0.85", style="rounded"];
+	9[label = "blasttogff", color = "0.26 0.6 0.85", style="rounded"];
+	10[label = "blast_mkblastdb", color = "0.59 0.6 0.85", style="rounded"];
+	11[label = "spades_assembly", color = "0.07 0.6 0.85", style="rounded"];
+	12[label = "trimmomatic_trim_lanes", color = "0.22 0.6 0.85", style="rounded"];
+	13[label = "file_append\nsample: EXAMPLE2", color = "0.48 0.6 0.85", style="rounded"];
+	14[label = "blast_search\nquery: EXAMPLE-QUERY", color = "0.00 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 1
+	3 -> 2
+	4 -> 3
+	9 -> 3
+	5 -> 4
+	8 -> 4
+	6 -> 5
+	7 -> 6
+	5 -> 8
+	10 -> 9
+	14 -> 9
+	11 -> 10
+	12 -> 11
+	13 -> 12
+	10 -> 14
+}            

@@ -1,0 +1,297 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.57 0.6 0.85", style="rounded"];
+	1[label = "timestamp_backup\ntimestr: 2023-01-18_19.29.23_v1", color = "0.22 0.6 0.85", style="rounded"];
+	2[label = "download_basic_genes_gtf\nspecies_id: mm10_gencode", color = "0.48 0.6 0.85", style="rounded"];
+	3[label = "download_basic_genes_gtf\nspecies_id: hg38_gencode", color = "0.48 0.6 0.85", style="rounded"];
+	4[label = "download_tx_fasta\nspecies_id: mm10_gencode", color = "0.54 0.6 0.85", style="rounded"];
+	5[label = "download_tx_fasta\nspecies_id: hg38_gencode", color = "0.54 0.6 0.85", style="rounded"];
+	6[label = "download_tx_fasta\nspecies_id: e.coli-K12-mg1665_ensembl", color = "0.54 0.6 0.85", style="rounded"];
+	7[label = "download_tx_fasta\nspecies_id: hg19_gencode", color = "0.54 0.6 0.85", style="rounded"];
+	8[label = "download_tx_fasta\nspecies_id: dm6_BDGP6.28.100", color = "0.54 0.6 0.85", style="rounded"];
+	9[label = "download_tx_fasta\nspecies_id: c.elegans-WBcel235", color = "0.54 0.6 0.85", style="rounded"];
+	10[label = "download_tx_fasta\nspecies_id: mm_BALB_CJ", color = "0.54 0.6 0.85", style="rounded"];
+	11[label = "download_tx_fasta\nspecies_id: mm_FVB_NJ", color = "0.54 0.6 0.85", style="rounded"];
+	12[label = "download_tx_fasta\nspecies_id: rnor6_ensembl", color = "0.54 0.6 0.85", style="rounded"];
+	13[label = "fai_and_dict", color = "0.60 0.6 0.85", style="rounded"];
+	14[label = "download_genome_fasta\nspecies_id: mm10_gencode", color = "0.41 0.6 0.85", style="rounded"];
+	15[label = "fai_and_dict", color = "0.60 0.6 0.85", style="rounded"];
+	16[label = "download_genome_fasta\nspecies_id: hg38_gencode", color = "0.41 0.6 0.85", style="rounded"];
+	17[label = "fai_and_dict", color = "0.60 0.6 0.85", style="rounded"];
+	18[label = "download_genome_fasta\nspecies_id: e.coli-K12-mg1665_ensembl", color = "0.41 0.6 0.85", style="rounded"];
+	19[label = "fai_and_dict", color = "0.60 0.6 0.85", style="rounded"];
+	20[label = "download_genome_fasta\nspecies_id: hg19_gencode", color = "0.41 0.6 0.85", style="rounded"];
+	21[label = "fai_and_dict", color = "0.60 0.6 0.85", style="rounded"];
+	22[label = "download_genome_fasta\nspecies_id: dm6_BDGP6.28.100", color = "0.41 0.6 0.85", style="rounded"];
+	23[label = "fai_and_dict", color = "0.60 0.6 0.85", style="rounded"];
+	24[label = "download_genome_fasta\nspecies_id: c.elegans-WBcel235", color = "0.41 0.6 0.85", style="rounded"];
+	25[label = "fai_and_dict", color = "0.60 0.6 0.85", style="rounded"];
+	26[label = "download_genome_fasta\nspecies_id: mm_BALB_CJ", color = "0.41 0.6 0.85", style="rounded"];
+	27[label = "fai_and_dict", color = "0.60 0.6 0.85", style="rounded"];
+	28[label = "download_genome_fasta\nspecies_id: mm_FVB_NJ", color = "0.41 0.6 0.85", style="rounded"];
+	29[label = "fai_and_dict", color = "0.60 0.6 0.85", style="rounded"];
+	30[label = "download_genome_fasta\nspecies_id: rnor6_ensembl", color = "0.41 0.6 0.85", style="rounded"];
+	31[label = "star_idx", color = "0.03 0.6 0.85", style="rounded"];
+	32[label = "download_genes_gtf\nspecies_id: mm10_gencode", color = "0.16 0.6 0.85", style="rounded"];
+	33[label = "star_idx", color = "0.03 0.6 0.85", style="rounded"];
+	34[label = "download_genes_gtf\nspecies_id: hg38_gencode", color = "0.16 0.6 0.85", style="rounded"];
+	35[label = "star_idx", color = "0.03 0.6 0.85", style="rounded"];
+	36[label = "download_genes_gtf\nspecies_id: e.coli-K12-mg1665_ensembl", color = "0.16 0.6 0.85", style="rounded"];
+	37[label = "star_idx", color = "0.03 0.6 0.85", style="rounded"];
+	38[label = "download_genes_gtf\nspecies_id: hg19_gencode", color = "0.16 0.6 0.85", style="rounded"];
+	39[label = "star_idx", color = "0.03 0.6 0.85", style="rounded"];
+	40[label = "download_genes_gtf\nspecies_id: dm6_BDGP6.28.100", color = "0.16 0.6 0.85", style="rounded"];
+	41[label = "star_idx", color = "0.03 0.6 0.85", style="rounded"];
+	42[label = "download_genes_gtf\nspecies_id: c.elegans-WBcel235", color = "0.16 0.6 0.85", style="rounded"];
+	43[label = "star_idx", color = "0.03 0.6 0.85", style="rounded"];
+	44[label = "download_genes_gtf\nspecies_id: mm_BALB_CJ", color = "0.16 0.6 0.85", style="rounded"];
+	45[label = "star_idx", color = "0.03 0.6 0.85", style="rounded"];
+	46[label = "download_genes_gtf\nspecies_id: mm_FVB_NJ", color = "0.16 0.6 0.85", style="rounded"];
+	47[label = "star_idx", color = "0.03 0.6 0.85", style="rounded"];
+	48[label = "download_genes_gtf\nspecies_id: rnor6_ensembl", color = "0.16 0.6 0.85", style="rounded"];
+	49[label = "bwa_idx", color = "0.35 0.6 0.85", style="rounded"];
+	50[label = "bwa_idx", color = "0.35 0.6 0.85", style="rounded"];
+	51[label = "bwa_idx", color = "0.35 0.6 0.85", style="rounded"];
+	52[label = "bwa_idx", color = "0.35 0.6 0.85", style="rounded"];
+	53[label = "bwa_idx", color = "0.35 0.6 0.85", style="rounded"];
+	54[label = "bwa_idx", color = "0.35 0.6 0.85", style="rounded"];
+	55[label = "bwa_idx", color = "0.35 0.6 0.85", style="rounded"];
+	56[label = "bwa_idx", color = "0.35 0.6 0.85", style="rounded"];
+	57[label = "bwa_idx", color = "0.35 0.6 0.85", style="rounded"];
+	58[label = "bowtie2_idx", color = "0.29 0.6 0.85", style="rounded"];
+	59[label = "bowtie2_idx", color = "0.29 0.6 0.85", style="rounded"];
+	60[label = "bowtie2_idx", color = "0.29 0.6 0.85", style="rounded"];
+	61[label = "bowtie2_idx", color = "0.29 0.6 0.85", style="rounded"];
+	62[label = "bowtie2_idx", color = "0.29 0.6 0.85", style="rounded"];
+	63[label = "bowtie2_idx", color = "0.29 0.6 0.85", style="rounded"];
+	64[label = "bowtie2_idx", color = "0.29 0.6 0.85", style="rounded"];
+	65[label = "bowtie2_idx", color = "0.29 0.6 0.85", style="rounded"];
+	66[label = "bowtie2_idx", color = "0.29 0.6 0.85", style="rounded"];
+	67[label = "bismark_idx", color = "0.51 0.6 0.85", style="rounded"];
+	68[label = "bismark_idx", color = "0.51 0.6 0.85", style="rounded"];
+	69[label = "bismark_idx", color = "0.51 0.6 0.85", style="rounded"];
+	70[label = "bismark_idx", color = "0.51 0.6 0.85", style="rounded"];
+	71[label = "bismark_idx", color = "0.51 0.6 0.85", style="rounded"];
+	72[label = "bismark_idx", color = "0.51 0.6 0.85", style="rounded"];
+	73[label = "bismark_idx", color = "0.51 0.6 0.85", style="rounded"];
+	74[label = "bismark_idx", color = "0.51 0.6 0.85", style="rounded"];
+	75[label = "bismark_idx", color = "0.51 0.6 0.85", style="rounded"];
+	76[label = "download_gatk_resource_bundle\nspecies_id: hg38_gencode", color = "0.44 0.6 0.85", style="rounded"];
+	77[label = "download_blacklist\nblacklist_id: mm10_encode_v2", color = "0.63 0.6 0.85", style="rounded"];
+	78[label = "download_blacklist\nblacklist_id: hg38_encode_v3", color = "0.63 0.6 0.85", style="rounded"];
+	79[label = "download_blacklist\nblacklist_id: hg19_encode_v2", color = "0.63 0.6 0.85", style="rounded"];
+	80[label = "download_blacklist\nblacklist_id: dm6", color = "0.63 0.6 0.85", style="rounded"];
+	81[label = "bwa_idx\nspecies_id: mm10_gencode_plus_ERCC92", color = "0.35 0.6 0.85", style="rounded"];
+	82[label = "cat_hybrid_seq\nhybrid_id: mm10_gencode_plus_ERCC92", color = "0.19 0.6 0.85", style="rounded"];
+	83[label = "bwa_idx\nspecies_id: mm10_gencode_plus_e.coli-K12-mg1665_ensembl", color = "0.35 0.6 0.85", style="rounded"];
+	84[label = "cat_hybrid_seq\nhybrid_id: mm10_gencode_plus_e.coli-K12-mg1665_ensembl", color = "0.19 0.6 0.85", style="rounded"];
+	85[label = "add_species_prefs_for_hybrid_fa\nspecies_pref: ec", color = "0.25 0.6 0.85", style="rounded"];
+	86[label = "bwa_idx\nspecies_id: mm10_gencode_plus_viruses_and_cfmedips", color = "0.35 0.6 0.85", style="rounded"];
+	87[label = "cat_hybrid_seq\nhybrid_id: mm10_gencode_plus_viruses_and_cfmedips", color = "0.19 0.6 0.85", style="rounded"];
+	88[label = "bwa_idx\nspecies_id: mm_BALB_CJ_plus_viruses_and_cfmedips", color = "0.35 0.6 0.85", style="rounded"];
+	89[label = "cat_hybrid_seq\nhybrid_id: mm_BALB_CJ_plus_viruses_and_cfmedips", color = "0.19 0.6 0.85", style="rounded"];
+	90[label = "bwa_idx\nspecies_id: mm_FVB_NJ_plus_viruses_and_cfmedips", color = "0.35 0.6 0.85", style="rounded"];
+	91[label = "cat_hybrid_seq\nhybrid_id: mm_FVB_NJ_plus_viruses_and_cfmedips", color = "0.19 0.6 0.85", style="rounded"];
+	92[label = "fai_and_dict\nspecies_id: mm10_gencode_plus_ERCC92", color = "0.60 0.6 0.85", style="rounded"];
+	93[label = "fai_and_dict\nspecies_id: mm10_gencode_plus_e.coli-K12-mg1665_ensembl", color = "0.60 0.6 0.85", style="rounded"];
+	94[label = "fai_and_dict\nspecies_id: mm10_gencode_plus_viruses_and_cfmedips", color = "0.60 0.6 0.85", style="rounded"];
+	95[label = "fai_and_dict\nspecies_id: mm_BALB_CJ_plus_viruses_and_cfmedips", color = "0.60 0.6 0.85", style="rounded"];
+	96[label = "fai_and_dict\nspecies_id: mm_FVB_NJ_plus_viruses_and_cfmedips", color = "0.60 0.6 0.85", style="rounded"];
+	97[label = "star_idx\nspecies_id: mm10_gencode_plus_ERCC92", color = "0.03 0.6 0.85", style="rounded"];
+	98[label = "cat_hybrid_gtf\nhybrid_id: mm10_gencode_plus_ERCC92", color = "0.06 0.6 0.85", style="rounded"];
+	99[label = "star_idx\nspecies_id: mm10_gencode_plus_e.coli-K12-mg1665_ensembl", color = "0.03 0.6 0.85", style="rounded"];
+	100[label = "cat_hybrid_gtf\nhybrid_id: mm10_gencode_plus_e.coli-K12-mg1665_ensembl", color = "0.06 0.6 0.85", style="rounded"];
+	101[label = "add_species_prefs_for_hybrid_gtf\nspecies_pref: ec", color = "0.32 0.6 0.85", style="rounded"];
+	102[label = "star_idx\nspecies_id: mm10_gencode_plus_viruses_and_cfmedips", color = "0.03 0.6 0.85", style="rounded"];
+	103[label = "cat_hybrid_gtf\nhybrid_id: mm10_gencode_plus_viruses_and_cfmedips", color = "0.06 0.6 0.85", style="rounded"];
+	104[label = "star_idx\nspecies_id: mm_BALB_CJ_plus_viruses_and_cfmedips", color = "0.03 0.6 0.85", style="rounded"];
+	105[label = "cat_hybrid_gtf\nhybrid_id: mm_BALB_CJ_plus_viruses_and_cfmedips", color = "0.06 0.6 0.85", style="rounded"];
+	106[label = "star_idx\nspecies_id: mm_FVB_NJ_plus_viruses_and_cfmedips", color = "0.03 0.6 0.85", style="rounded"];
+	107[label = "cat_hybrid_gtf\nhybrid_id: mm_FVB_NJ_plus_viruses_and_cfmedips", color = "0.06 0.6 0.85", style="rounded"];
+	108[label = "bowtie2_idx\nspecies_id: mm10_gencode_plus_ERCC92", color = "0.29 0.6 0.85", style="rounded"];
+	109[label = "bowtie2_idx\nspecies_id: mm10_gencode_plus_e.coli-K12-mg1665_ensembl", color = "0.29 0.6 0.85", style="rounded"];
+	110[label = "bowtie2_idx\nspecies_id: mm10_gencode_plus_viruses_and_cfmedips", color = "0.29 0.6 0.85", style="rounded"];
+	111[label = "bowtie2_idx\nspecies_id: mm_BALB_CJ_plus_viruses_and_cfmedips", color = "0.29 0.6 0.85", style="rounded"];
+	112[label = "bowtie2_idx\nspecies_id: mm_FVB_NJ_plus_viruses_and_cfmedips", color = "0.29 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 1
+	3 -> 1
+	4 -> 1
+	5 -> 1
+	6 -> 1
+	7 -> 1
+	8 -> 1
+	9 -> 1
+	10 -> 1
+	11 -> 1
+	12 -> 1
+	13 -> 1
+	15 -> 1
+	17 -> 1
+	19 -> 1
+	21 -> 1
+	23 -> 1
+	25 -> 1
+	27 -> 1
+	29 -> 1
+	31 -> 1
+	33 -> 1
+	35 -> 1
+	37 -> 1
+	39 -> 1
+	41 -> 1
+	43 -> 1
+	45 -> 1
+	47 -> 1
+	49 -> 1
+	50 -> 1
+	51 -> 1
+	52 -> 1
+	53 -> 1
+	54 -> 1
+	55 -> 1
+	56 -> 1
+	57 -> 1
+	58 -> 1
+	59 -> 1
+	60 -> 1
+	61 -> 1
+	62 -> 1
+	63 -> 1
+	64 -> 1
+	65 -> 1
+	66 -> 1
+	67 -> 1
+	68 -> 1
+	69 -> 1
+	70 -> 1
+	71 -> 1
+	72 -> 1
+	73 -> 1
+	74 -> 1
+	75 -> 1
+	76 -> 1
+	77 -> 1
+	78 -> 1
+	79 -> 1
+	80 -> 1
+	81 -> 1
+	83 -> 1
+	86 -> 1
+	88 -> 1
+	90 -> 1
+	92 -> 1
+	93 -> 1
+	94 -> 1
+	95 -> 1
+	96 -> 1
+	97 -> 1
+	99 -> 1
+	102 -> 1
+	104 -> 1
+	106 -> 1
+	108 -> 1
+	109 -> 1
+	110 -> 1
+	111 -> 1
+	112 -> 1
+	14 -> 13
+	16 -> 15
+	18 -> 17
+	20 -> 19
+	22 -> 21
+	24 -> 23
+	26 -> 25
+	28 -> 27
+	30 -> 29
+	14 -> 31
+	32 -> 31
+	16 -> 33
+	34 -> 33
+	18 -> 35
+	36 -> 35
+	20 -> 37
+	38 -> 37
+	22 -> 39
+	40 -> 39
+	24 -> 41
+	42 -> 41
+	26 -> 43
+	44 -> 43
+	28 -> 45
+	46 -> 45
+	30 -> 47
+	48 -> 47
+	14 -> 49
+	16 -> 50
+	18 -> 51
+	20 -> 52
+	22 -> 53
+	24 -> 54
+	26 -> 55
+	28 -> 56
+	30 -> 57
+	14 -> 58
+	16 -> 59
+	18 -> 60
+	20 -> 61
+	22 -> 62
+	24 -> 63
+	26 -> 64
+	28 -> 65
+	30 -> 66
+	14 -> 67
+	16 -> 68
+	18 -> 69
+	20 -> 70
+	22 -> 71
+	24 -> 72
+	26 -> 73
+	28 -> 74
+	30 -> 75
+	13 -> 77
+	15 -> 78
+	19 -> 79
+	21 -> 80
+	82 -> 81
+	14 -> 82
+	84 -> 83
+	14 -> 84
+	85 -> 84
+	18 -> 85
+	87 -> 86
+	14 -> 87
+	89 -> 88
+	26 -> 89
+	91 -> 90
+	28 -> 91
+	82 -> 92
+	84 -> 93
+	87 -> 94
+	89 -> 95
+	91 -> 96
+	82 -> 97
+	98 -> 97
+	32 -> 98
+	84 -> 99
+	100 -> 99
+	32 -> 100
+	101 -> 100
+	36 -> 101
+	87 -> 102
+	103 -> 102
+	32 -> 103
+	89 -> 104
+	105 -> 104
+	44 -> 105
+	91 -> 106
+	107 -> 106
+	46 -> 107
+	82 -> 108
+	84 -> 109
+	87 -> 110
+	89 -> 111
+	91 -> 112
+}            

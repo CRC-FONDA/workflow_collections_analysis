@@ -1,0 +1,194 @@
+digraph "imcyto_dag" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p0 -> p1;
+
+p1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p1 -> p2;
+
+p2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p8 [label="IMCTOOLS"];
+p2 -> p8 [label="ch_mcd"];
+
+p3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p3 -> p4;
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p4 -> p24 [label="ch_compensation_ilastik_stack"];
+
+p4 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p4 -> p19 [label="ch_compensation_full_stack"];
+
+p5 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p5 -> p6;
+
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p6 -> p21 [label="ch_preprocess_full_stack_plugin"];
+
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p6 -> p26 [label="ch_preprocess_ilastik_stack_plugin"];
+
+p6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="into"];
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p6 -> p33 [label="ch_segmentation_plugin"];
+
+p7 [shape=point,label="",fixedsize=true,width=0.1];
+p8 [label="IMCTOOLS"];
+p7 -> p8 [label="metadata"];
+
+p8 [label="IMCTOOLS"];
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p8 -> p9;
+
+p8 [label="IMCTOOLS"];
+p14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p8 -> p14;
+
+p8 [label="IMCTOOLS"];
+p39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p8 -> p39 [label="ch_imctools_version"];
+
+p9 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p9 -> p10;
+
+p10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+p10 -> p11;
+
+p11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p11 -> p12;
+
+p12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p12 -> p13;
+
+p13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p23 [label="PREPROCESS_FULL_STACK"];
+p13 -> p23 [label="ch_full_stack_tiff"];
+
+p14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p14 -> p15;
+
+p15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+p16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+p15 -> p16;
+
+p16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+p17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p16 -> p17;
+
+p17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+p18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p17 -> p18;
+
+p18 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p28 [label="PREPROCESS_ILASTIK_STACK"];
+p18 -> p28 [label="ch_ilastik_stack_tiff"];
+
+p19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p19 -> p20;
+
+p20 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p23 [label="PREPROCESS_FULL_STACK"];
+p20 -> p23;
+
+p21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p23 [label="PREPROCESS_FULL_STACK"];
+p21 -> p23;
+
+p22 [shape=point,label="",fixedsize=true,width=0.1];
+p23 [label="PREPROCESS_FULL_STACK"];
+p22 -> p23 [label="cppipe"];
+
+p23 [label="PREPROCESS_FULL_STACK"];
+p31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p23 -> p31;
+
+p23 [label="PREPROCESS_FULL_STACK"];
+p40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p23 -> p40 [label="ch_cellprofiler_version"];
+
+p24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p24 -> p25;
+
+p25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p28 [label="PREPROCESS_ILASTIK_STACK"];
+p25 -> p28;
+
+p26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p28 [label="PREPROCESS_ILASTIK_STACK"];
+p26 -> p28;
+
+p27 [shape=point,label="",fixedsize=true,width=0.1];
+p28 [label="PREPROCESS_ILASTIK_STACK"];
+p27 -> p28 [label="cppipe"];
+
+p28 [label="PREPROCESS_ILASTIK_STACK"];
+p30 [label="ILASTIK"];
+p28 -> p30 [label="ch_preprocess_ilastik_stack_tiff"];
+
+p29 [shape=point,label="",fixedsize=true,width=0.1];
+p30 [label="ILASTIK"];
+p29 -> p30 [label="ilastik_training_ilp"];
+
+p30 [label="ILASTIK"];
+p31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p30 -> p31 [label="ch_ilastik_tiff"];
+
+p30 [label="ILASTIK"];
+p41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p30 -> p41 [label="ch_ilastik_version"];
+
+p31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+p32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p31 -> p32;
+
+p32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+p35 [label="SEGMENTATION"];
+p32 -> p35 [label="ch_preprocess_full_stack_tiff"];
+
+p33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+p35 [label="SEGMENTATION"];
+p33 -> p35;
+
+p34 [shape=point,label="",fixedsize=true,width=0.1];
+p35 [label="SEGMENTATION"];
+p34 -> p35 [label="cppipe"];
+
+p36 [shape=point,label="",fixedsize=true,width=0.1];
+p38 [label="output_documentation"];
+p36 -> p38 [label="output_docs"];
+
+p37 [shape=point,label="",fixedsize=true,width=0.1];
+p38 [label="output_documentation"];
+p37 -> p38 [label="images"];
+
+p39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p43 [label="get_software_versions"];
+p39 -> p43;
+
+p40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p43 [label="get_software_versions"];
+p40 -> p43;
+
+p41 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p41 -> p42;
+
+p42 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+p43 [label="get_software_versions"];
+p42 -> p43;
+
+}

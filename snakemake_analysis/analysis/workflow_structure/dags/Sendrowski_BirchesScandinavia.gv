@@ -1,0 +1,1150 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.38 0.6 0.85", style="rounded"];
+	1[label = "trim_reads\nname: ASP01", color = "0.02 0.6 0.85", style="rounded"];
+	2[label = "resource_reads_birch", color = "0.07 0.6 0.85", style="rounded"];
+	3[label = "trim_reads\nname: ASP02", color = "0.02 0.6 0.85", style="rounded"];
+	4[label = "trim_reads\nname: ASP03", color = "0.02 0.6 0.85", style="rounded"];
+	5[label = "trim_reads\nname: ASP04", color = "0.02 0.6 0.85", style="rounded"];
+	6[label = "trim_reads\nname: ASP05", color = "0.02 0.6 0.85", style="rounded"];
+	7[label = "trim_reads\nname: ASP06", color = "0.02 0.6 0.85", style="rounded"];
+	8[label = "trim_reads\nname: ASP07", color = "0.02 0.6 0.85", style="rounded"];
+	9[label = "trim_reads\nname: ASP08", color = "0.02 0.6 0.85", style="rounded"];
+	10[label = "trim_reads\nname: ASP09", color = "0.02 0.6 0.85", style="rounded"];
+	11[label = "trim_reads\nname: ASP10", color = "0.02 0.6 0.85", style="rounded"];
+	12[label = "trim_reads\nname: ASP11", color = "0.02 0.6 0.85", style="rounded"];
+	13[label = "trim_reads\nname: ASP12", color = "0.02 0.6 0.85", style="rounded"];
+	14[label = "trim_reads\nname: ASP13", color = "0.02 0.6 0.85", style="rounded"];
+	15[label = "trim_reads\nname: ASP14", color = "0.02 0.6 0.85", style="rounded"];
+	16[label = "trim_reads\nname: ASP15", color = "0.02 0.6 0.85", style="rounded"];
+	17[label = "trim_reads\nname: ASP16", color = "0.02 0.6 0.85", style="rounded"];
+	18[label = "trim_reads\nname: ASP17", color = "0.02 0.6 0.85", style="rounded"];
+	19[label = "trim_reads\nname: ASP18", color = "0.02 0.6 0.85", style="rounded"];
+	20[label = "trim_reads\nname: ASP19", color = "0.02 0.6 0.85", style="rounded"];
+	21[label = "trim_reads\nname: ASP20", color = "0.02 0.6 0.85", style="rounded"];
+	22[label = "trim_reads\nname: ASP21", color = "0.02 0.6 0.85", style="rounded"];
+	23[label = "trim_reads\nname: ASP22", color = "0.02 0.6 0.85", style="rounded"];
+	24[label = "trim_reads\nname: ASP50", color = "0.02 0.6 0.85", style="rounded"];
+	25[label = "trim_reads\nname: ASP55", color = "0.02 0.6 0.85", style="rounded"];
+	26[label = "trim_reads\nname: ASP56", color = "0.02 0.6 0.85", style="rounded"];
+	27[label = "trim_reads\nname: BRA01", color = "0.02 0.6 0.85", style="rounded"];
+	28[label = "trim_reads\nname: BRA02", color = "0.02 0.6 0.85", style="rounded"];
+	29[label = "trim_reads\nname: BRA04", color = "0.02 0.6 0.85", style="rounded"];
+	30[label = "trim_reads\nname: BRA05", color = "0.02 0.6 0.85", style="rounded"];
+	31[label = "trim_reads\nname: BRA06", color = "0.02 0.6 0.85", style="rounded"];
+	32[label = "trim_reads\nname: BRA08", color = "0.02 0.6 0.85", style="rounded"];
+	33[label = "trim_reads\nname: BRA09", color = "0.02 0.6 0.85", style="rounded"];
+	34[label = "trim_reads\nname: BRA10", color = "0.02 0.6 0.85", style="rounded"];
+	35[label = "trim_reads\nname: BRA11", color = "0.02 0.6 0.85", style="rounded"];
+	36[label = "trim_reads\nname: BRA12", color = "0.02 0.6 0.85", style="rounded"];
+	37[label = "trim_reads\nname: BRA13", color = "0.02 0.6 0.85", style="rounded"];
+	38[label = "trim_reads\nname: BRA14", color = "0.02 0.6 0.85", style="rounded"];
+	39[label = "trim_reads\nname: BRA15", color = "0.02 0.6 0.85", style="rounded"];
+	40[label = "trim_reads\nname: BRA16", color = "0.02 0.6 0.85", style="rounded"];
+	41[label = "trim_reads\nname: BRA17", color = "0.02 0.6 0.85", style="rounded"];
+	42[label = "trim_reads\nname: BRA18", color = "0.02 0.6 0.85", style="rounded"];
+	43[label = "trim_reads\nname: BRA19", color = "0.02 0.6 0.85", style="rounded"];
+	44[label = "trim_reads\nname: BRA20", color = "0.02 0.6 0.85", style="rounded"];
+	45[label = "trim_reads\nname: BRA22", color = "0.02 0.6 0.85", style="rounded"];
+	46[label = "trim_reads\nname: BRA23", color = "0.02 0.6 0.85", style="rounded"];
+	47[label = "trim_reads\nname: BRA24", color = "0.02 0.6 0.85", style="rounded"];
+	48[label = "trim_reads\nname: BRA25", color = "0.02 0.6 0.85", style="rounded"];
+	49[label = "trim_reads\nname: BRA26", color = "0.02 0.6 0.85", style="rounded"];
+	50[label = "trim_reads\nname: BRA27", color = "0.02 0.6 0.85", style="rounded"];
+	51[label = "trim_reads\nname: BRA30", color = "0.02 0.6 0.85", style="rounded"];
+	52[label = "trim_reads\nname: BUR01", color = "0.02 0.6 0.85", style="rounded"];
+	53[label = "trim_reads\nname: BUR02", color = "0.02 0.6 0.85", style="rounded"];
+	54[label = "trim_reads\nname: BUR03", color = "0.02 0.6 0.85", style="rounded"];
+	55[label = "trim_reads\nname: BUR04", color = "0.02 0.6 0.85", style="rounded"];
+	56[label = "trim_reads\nname: BUR05", color = "0.02 0.6 0.85", style="rounded"];
+	57[label = "trim_reads\nname: BUR06", color = "0.02 0.6 0.85", style="rounded"];
+	58[label = "trim_reads\nname: BUR07", color = "0.02 0.6 0.85", style="rounded"];
+	59[label = "trim_reads\nname: BUR08", color = "0.02 0.6 0.85", style="rounded"];
+	60[label = "trim_reads\nname: BUR10", color = "0.02 0.6 0.85", style="rounded"];
+	61[label = "trim_reads\nname: BUR11", color = "0.02 0.6 0.85", style="rounded"];
+	62[label = "trim_reads\nname: BUR12", color = "0.02 0.6 0.85", style="rounded"];
+	63[label = "trim_reads\nname: BUR13", color = "0.02 0.6 0.85", style="rounded"];
+	64[label = "trim_reads\nname: BUR14", color = "0.02 0.6 0.85", style="rounded"];
+	65[label = "trim_reads\nname: BUR15", color = "0.02 0.6 0.85", style="rounded"];
+	66[label = "trim_reads\nname: BUR16", color = "0.02 0.6 0.85", style="rounded"];
+	67[label = "trim_reads\nname: BUR17", color = "0.02 0.6 0.85", style="rounded"];
+	68[label = "trim_reads\nname: BUR18", color = "0.02 0.6 0.85", style="rounded"];
+	69[label = "trim_reads\nname: BUR19", color = "0.02 0.6 0.85", style="rounded"];
+	70[label = "trim_reads\nname: BUR20", color = "0.02 0.6 0.85", style="rounded"];
+	71[label = "trim_reads\nname: BUR21", color = "0.02 0.6 0.85", style="rounded"];
+	72[label = "trim_reads\nname: BUR22", color = "0.02 0.6 0.85", style="rounded"];
+	73[label = "trim_reads\nname: BUR23", color = "0.02 0.6 0.85", style="rounded"];
+	74[label = "trim_reads\nname: BUR24", color = "0.02 0.6 0.85", style="rounded"];
+	75[label = "trim_reads\nname: BUR25a", color = "0.02 0.6 0.85", style="rounded"];
+	76[label = "trim_reads\nname: BUR25b", color = "0.02 0.6 0.85", style="rounded"];
+	77[label = "trim_reads\nname: BUR27a", color = "0.02 0.6 0.85", style="rounded"];
+	78[label = "trim_reads\nname: BUR27b", color = "0.02 0.6 0.85", style="rounded"];
+	79[label = "trim_reads\nname: DJU01", color = "0.02 0.6 0.85", style="rounded"];
+	80[label = "trim_reads\nname: DJU02", color = "0.02 0.6 0.85", style="rounded"];
+	81[label = "trim_reads\nname: DJU04", color = "0.02 0.6 0.85", style="rounded"];
+	82[label = "trim_reads\nname: DJU06", color = "0.02 0.6 0.85", style="rounded"];
+	83[label = "trim_reads\nname: DJU07", color = "0.02 0.6 0.85", style="rounded"];
+	84[label = "trim_reads\nname: DJU09", color = "0.02 0.6 0.85", style="rounded"];
+	85[label = "trim_reads\nname: DJU10", color = "0.02 0.6 0.85", style="rounded"];
+	86[label = "trim_reads\nname: DJU11", color = "0.02 0.6 0.85", style="rounded"];
+	87[label = "trim_reads\nname: DJU12", color = "0.02 0.6 0.85", style="rounded"];
+	88[label = "trim_reads\nname: DJU13", color = "0.02 0.6 0.85", style="rounded"];
+	89[label = "trim_reads\nname: DJU53", color = "0.02 0.6 0.85", style="rounded"];
+	90[label = "trim_reads\nname: DJU57", color = "0.02 0.6 0.85", style="rounded"];
+	91[label = "trim_reads\nname: DJU59", color = "0.02 0.6 0.85", style="rounded"];
+	92[label = "trim_reads\nname: DJU60", color = "0.02 0.6 0.85", style="rounded"];
+	93[label = "trim_reads\nname: DJU63", color = "0.02 0.6 0.85", style="rounded"];
+	94[label = "trim_reads\nname: DJU69", color = "0.02 0.6 0.85", style="rounded"];
+	95[label = "trim_reads\nname: DJU70", color = "0.02 0.6 0.85", style="rounded"];
+	96[label = "trim_reads\nname: DJU73", color = "0.02 0.6 0.85", style="rounded"];
+	97[label = "trim_reads\nname: DJU74", color = "0.02 0.6 0.85", style="rounded"];
+	98[label = "trim_reads\nname: DJU78", color = "0.02 0.6 0.85", style="rounded"];
+	99[label = "trim_reads\nname: DJU80", color = "0.02 0.6 0.85", style="rounded"];
+	100[label = "trim_reads\nname: DJU81", color = "0.02 0.6 0.85", style="rounded"];
+	101[label = "trim_reads\nname: DJU82", color = "0.02 0.6 0.85", style="rounded"];
+	102[label = "trim_reads\nname: DJU84", color = "0.02 0.6 0.85", style="rounded"];
+	103[label = "trim_reads\nname: DJU87", color = "0.02 0.6 0.85", style="rounded"];
+	104[label = "trim_reads\nname: DOK01", color = "0.02 0.6 0.85", style="rounded"];
+	105[label = "trim_reads\nname: DOK02", color = "0.02 0.6 0.85", style="rounded"];
+	106[label = "trim_reads\nname: DOK03", color = "0.02 0.6 0.85", style="rounded"];
+	107[label = "trim_reads\nname: DOK04", color = "0.02 0.6 0.85", style="rounded"];
+	108[label = "trim_reads\nname: DOK06", color = "0.02 0.6 0.85", style="rounded"];
+	109[label = "trim_reads\nname: DOK07", color = "0.02 0.6 0.85", style="rounded"];
+	110[label = "trim_reads\nname: DOK08", color = "0.02 0.6 0.85", style="rounded"];
+	111[label = "trim_reads\nname: DOK09", color = "0.02 0.6 0.85", style="rounded"];
+	112[label = "trim_reads\nname: DOK11", color = "0.02 0.6 0.85", style="rounded"];
+	113[label = "trim_reads\nname: DOK13", color = "0.02 0.6 0.85", style="rounded"];
+	114[label = "trim_reads\nname: DOK14", color = "0.02 0.6 0.85", style="rounded"];
+	115[label = "trim_reads\nname: DOK15", color = "0.02 0.6 0.85", style="rounded"];
+	116[label = "trim_reads\nname: DOK16", color = "0.02 0.6 0.85", style="rounded"];
+	117[label = "trim_reads\nname: DOK18", color = "0.02 0.6 0.85", style="rounded"];
+	118[label = "trim_reads\nname: DOK19", color = "0.02 0.6 0.85", style="rounded"];
+	119[label = "trim_reads\nname: DOK20", color = "0.02 0.6 0.85", style="rounded"];
+	120[label = "trim_reads\nname: DOK21", color = "0.02 0.6 0.85", style="rounded"];
+	121[label = "trim_reads\nname: DOK22", color = "0.02 0.6 0.85", style="rounded"];
+	122[label = "trim_reads\nname: DOK24", color = "0.02 0.6 0.85", style="rounded"];
+	123[label = "trim_reads\nname: DOK25", color = "0.02 0.6 0.85", style="rounded"];
+	124[label = "trim_reads\nname: DOK26", color = "0.02 0.6 0.85", style="rounded"];
+	125[label = "trim_reads\nname: DOK27", color = "0.02 0.6 0.85", style="rounded"];
+	126[label = "trim_reads\nname: DOK28", color = "0.02 0.6 0.85", style="rounded"];
+	127[label = "trim_reads\nname: DOK29", color = "0.02 0.6 0.85", style="rounded"];
+	128[label = "trim_reads\nname: DOK30", color = "0.02 0.6 0.85", style="rounded"];
+	129[label = "trim_reads\nname: GNA01", color = "0.02 0.6 0.85", style="rounded"];
+	130[label = "trim_reads\nname: GNA02", color = "0.02 0.6 0.85", style="rounded"];
+	131[label = "trim_reads\nname: GNA03", color = "0.02 0.6 0.85", style="rounded"];
+	132[label = "trim_reads\nname: GNA04", color = "0.02 0.6 0.85", style="rounded"];
+	133[label = "trim_reads\nname: GNA05", color = "0.02 0.6 0.85", style="rounded"];
+	134[label = "trim_reads\nname: GNA06", color = "0.02 0.6 0.85", style="rounded"];
+	135[label = "trim_reads\nname: GNA07", color = "0.02 0.6 0.85", style="rounded"];
+	136[label = "trim_reads\nname: GNA08", color = "0.02 0.6 0.85", style="rounded"];
+	137[label = "trim_reads\nname: GNA09", color = "0.02 0.6 0.85", style="rounded"];
+	138[label = "trim_reads\nname: GNA10", color = "0.02 0.6 0.85", style="rounded"];
+	139[label = "trim_reads\nname: GNA11", color = "0.02 0.6 0.85", style="rounded"];
+	140[label = "trim_reads\nname: GNA13", color = "0.02 0.6 0.85", style="rounded"];
+	141[label = "trim_reads\nname: GNA14", color = "0.02 0.6 0.85", style="rounded"];
+	142[label = "trim_reads\nname: GNA15", color = "0.02 0.6 0.85", style="rounded"];
+	143[label = "trim_reads\nname: GNA16", color = "0.02 0.6 0.85", style="rounded"];
+	144[label = "trim_reads\nname: GNA17", color = "0.02 0.6 0.85", style="rounded"];
+	145[label = "trim_reads\nname: GNA19", color = "0.02 0.6 0.85", style="rounded"];
+	146[label = "trim_reads\nname: GNA20", color = "0.02 0.6 0.85", style="rounded"];
+	147[label = "trim_reads\nname: GNA22", color = "0.02 0.6 0.85", style="rounded"];
+	148[label = "trim_reads\nname: GNA24", color = "0.02 0.6 0.85", style="rounded"];
+	149[label = "trim_reads\nname: GNA25", color = "0.02 0.6 0.85", style="rounded"];
+	150[label = "trim_reads\nname: GNA26", color = "0.02 0.6 0.85", style="rounded"];
+	151[label = "trim_reads\nname: GNA27", color = "0.02 0.6 0.85", style="rounded"];
+	152[label = "trim_reads\nname: GNA29", color = "0.02 0.6 0.85", style="rounded"];
+	153[label = "trim_reads\nname: GNA30", color = "0.02 0.6 0.85", style="rounded"];
+	154[label = "trim_reads\nname: JOKK01", color = "0.02 0.6 0.85", style="rounded"];
+	155[label = "trim_reads\nname: JOKK02", color = "0.02 0.6 0.85", style="rounded"];
+	156[label = "trim_reads\nname: JOKK04", color = "0.02 0.6 0.85", style="rounded"];
+	157[label = "trim_reads\nname: JOKK05", color = "0.02 0.6 0.85", style="rounded"];
+	158[label = "trim_reads\nname: JOKK06", color = "0.02 0.6 0.85", style="rounded"];
+	159[label = "trim_reads\nname: JOKK07", color = "0.02 0.6 0.85", style="rounded"];
+	160[label = "trim_reads\nname: JOKK08", color = "0.02 0.6 0.85", style="rounded"];
+	161[label = "trim_reads\nname: JOKK09", color = "0.02 0.6 0.85", style="rounded"];
+	162[label = "trim_reads\nname: JOKK11", color = "0.02 0.6 0.85", style="rounded"];
+	163[label = "trim_reads\nname: JOKK13", color = "0.02 0.6 0.85", style="rounded"];
+	164[label = "trim_reads\nname: JOKK14", color = "0.02 0.6 0.85", style="rounded"];
+	165[label = "trim_reads\nname: JOKK15", color = "0.02 0.6 0.85", style="rounded"];
+	166[label = "trim_reads\nname: JOKK16", color = "0.02 0.6 0.85", style="rounded"];
+	167[label = "trim_reads\nname: JOKK17", color = "0.02 0.6 0.85", style="rounded"];
+	168[label = "trim_reads\nname: JOKK18", color = "0.02 0.6 0.85", style="rounded"];
+	169[label = "trim_reads\nname: JOKK19", color = "0.02 0.6 0.85", style="rounded"];
+	170[label = "trim_reads\nname: JOKK20", color = "0.02 0.6 0.85", style="rounded"];
+	171[label = "trim_reads\nname: JOKK21", color = "0.02 0.6 0.85", style="rounded"];
+	172[label = "trim_reads\nname: JOKK23", color = "0.02 0.6 0.85", style="rounded"];
+	173[label = "trim_reads\nname: JOKK24", color = "0.02 0.6 0.85", style="rounded"];
+	174[label = "trim_reads\nname: JOKK25", color = "0.02 0.6 0.85", style="rounded"];
+	175[label = "trim_reads\nname: JOKK27", color = "0.02 0.6 0.85", style="rounded"];
+	176[label = "trim_reads\nname: JOKK28", color = "0.02 0.6 0.85", style="rounded"];
+	177[label = "trim_reads\nname: JOKK30", color = "0.02 0.6 0.85", style="rounded"];
+	178[label = "trim_reads\nname: JOKK31", color = "0.02 0.6 0.85", style="rounded"];
+	179[label = "trim_reads\nname: KAU01", color = "0.02 0.6 0.85", style="rounded"];
+	180[label = "trim_reads\nname: KAU02", color = "0.02 0.6 0.85", style="rounded"];
+	181[label = "trim_reads\nname: KAU03", color = "0.02 0.6 0.85", style="rounded"];
+	182[label = "trim_reads\nname: KAU05", color = "0.02 0.6 0.85", style="rounded"];
+	183[label = "trim_reads\nname: KAU06", color = "0.02 0.6 0.85", style="rounded"];
+	184[label = "trim_reads\nname: KAU07", color = "0.02 0.6 0.85", style="rounded"];
+	185[label = "trim_reads\nname: KAU08", color = "0.02 0.6 0.85", style="rounded"];
+	186[label = "trim_reads\nname: KAU09", color = "0.02 0.6 0.85", style="rounded"];
+	187[label = "trim_reads\nname: KAU10", color = "0.02 0.6 0.85", style="rounded"];
+	188[label = "trim_reads\nname: KAU15", color = "0.02 0.6 0.85", style="rounded"];
+	189[label = "trim_reads\nname: KAU16", color = "0.02 0.6 0.85", style="rounded"];
+	190[label = "trim_reads\nname: KAU19", color = "0.02 0.6 0.85", style="rounded"];
+	191[label = "trim_reads\nname: KAU20", color = "0.02 0.6 0.85", style="rounded"];
+	192[label = "trim_reads\nname: KAU22", color = "0.02 0.6 0.85", style="rounded"];
+	193[label = "trim_reads\nname: KAU23", color = "0.02 0.6 0.85", style="rounded"];
+	194[label = "trim_reads\nname: KAU24", color = "0.02 0.6 0.85", style="rounded"];
+	195[label = "trim_reads\nname: KAU25", color = "0.02 0.6 0.85", style="rounded"];
+	196[label = "trim_reads\nname: KAU26", color = "0.02 0.6 0.85", style="rounded"];
+	197[label = "trim_reads\nname: KAU27", color = "0.02 0.6 0.85", style="rounded"];
+	198[label = "trim_reads\nname: KAU28", color = "0.02 0.6 0.85", style="rounded"];
+	199[label = "trim_reads\nname: KAU29", color = "0.02 0.6 0.85", style="rounded"];
+	200[label = "trim_reads\nname: KAU30", color = "0.02 0.6 0.85", style="rounded"];
+	201[label = "trim_reads\nname: KAU31", color = "0.02 0.6 0.85", style="rounded"];
+	202[label = "trim_reads\nname: KAU32", color = "0.02 0.6 0.85", style="rounded"];
+	203[label = "trim_reads\nname: KAU33", color = "0.02 0.6 0.85", style="rounded"];
+	204[label = "trim_reads\nname: LIN01", color = "0.02 0.6 0.85", style="rounded"];
+	205[label = "trim_reads\nname: LIN02", color = "0.02 0.6 0.85", style="rounded"];
+	206[label = "trim_reads\nname: LIN03", color = "0.02 0.6 0.85", style="rounded"];
+	207[label = "trim_reads\nname: LIN06", color = "0.02 0.6 0.85", style="rounded"];
+	208[label = "trim_reads\nname: LIN07", color = "0.02 0.6 0.85", style="rounded"];
+	209[label = "trim_reads\nname: LIN08", color = "0.02 0.6 0.85", style="rounded"];
+	210[label = "trim_reads\nname: LIN10", color = "0.02 0.6 0.85", style="rounded"];
+	211[label = "trim_reads\nname: LIN13", color = "0.02 0.6 0.85", style="rounded"];
+	212[label = "trim_reads\nname: LIN14", color = "0.02 0.6 0.85", style="rounded"];
+	213[label = "trim_reads\nname: LIN15", color = "0.02 0.6 0.85", style="rounded"];
+	214[label = "trim_reads\nname: LIN16", color = "0.02 0.6 0.85", style="rounded"];
+	215[label = "trim_reads\nname: LIN18", color = "0.02 0.6 0.85", style="rounded"];
+	216[label = "trim_reads\nname: LIN19", color = "0.02 0.6 0.85", style="rounded"];
+	217[label = "trim_reads\nname: LIN21", color = "0.02 0.6 0.85", style="rounded"];
+	218[label = "trim_reads\nname: LIN22", color = "0.02 0.6 0.85", style="rounded"];
+	219[label = "trim_reads\nname: LIN23", color = "0.02 0.6 0.85", style="rounded"];
+	220[label = "trim_reads\nname: LIN24", color = "0.02 0.6 0.85", style="rounded"];
+	221[label = "trim_reads\nname: LIN25", color = "0.02 0.6 0.85", style="rounded"];
+	222[label = "trim_reads\nname: LIN26", color = "0.02 0.6 0.85", style="rounded"];
+	223[label = "trim_reads\nname: LIN27", color = "0.02 0.6 0.85", style="rounded"];
+	224[label = "trim_reads\nname: LIN28", color = "0.02 0.6 0.85", style="rounded"];
+	225[label = "trim_reads\nname: LIN29", color = "0.02 0.6 0.85", style="rounded"];
+	226[label = "trim_reads\nname: LIN32", color = "0.02 0.6 0.85", style="rounded"];
+	227[label = "trim_reads\nname: LIN33", color = "0.02 0.6 0.85", style="rounded"];
+	228[label = "trim_reads\nname: LIN34", color = "0.02 0.6 0.85", style="rounded"];
+	229[label = "trim_reads\nname: MOK01", color = "0.02 0.6 0.85", style="rounded"];
+	230[label = "trim_reads\nname: MOK04", color = "0.02 0.6 0.85", style="rounded"];
+	231[label = "trim_reads\nname: MOK07", color = "0.02 0.6 0.85", style="rounded"];
+	232[label = "trim_reads\nname: MOK10", color = "0.02 0.6 0.85", style="rounded"];
+	233[label = "trim_reads\nname: MOK11", color = "0.02 0.6 0.85", style="rounded"];
+	234[label = "trim_reads\nname: MOK12", color = "0.02 0.6 0.85", style="rounded"];
+	235[label = "trim_reads\nname: MOK13", color = "0.02 0.6 0.85", style="rounded"];
+	236[label = "trim_reads\nname: MOK23", color = "0.02 0.6 0.85", style="rounded"];
+	237[label = "trim_reads\nname: MOK25", color = "0.02 0.6 0.85", style="rounded"];
+	238[label = "trim_reads\nname: MOK26", color = "0.02 0.6 0.85", style="rounded"];
+	239[label = "trim_reads\nname: MOK28", color = "0.02 0.6 0.85", style="rounded"];
+	240[label = "trim_reads\nname: MOK29", color = "0.02 0.6 0.85", style="rounded"];
+	241[label = "trim_reads\nname: MOK30", color = "0.02 0.6 0.85", style="rounded"];
+	242[label = "trim_reads\nname: MOK31", color = "0.02 0.6 0.85", style="rounded"];
+	243[label = "trim_reads\nname: MOK32", color = "0.02 0.6 0.85", style="rounded"];
+	244[label = "trim_reads\nname: MOK33", color = "0.02 0.6 0.85", style="rounded"];
+	245[label = "trim_reads\nname: MOK35", color = "0.02 0.6 0.85", style="rounded"];
+	246[label = "trim_reads\nname: MOK36", color = "0.02 0.6 0.85", style="rounded"];
+	247[label = "trim_reads\nname: MOK37", color = "0.02 0.6 0.85", style="rounded"];
+	248[label = "trim_reads\nname: MOK38", color = "0.02 0.6 0.85", style="rounded"];
+	249[label = "trim_reads\nname: MOK39", color = "0.02 0.6 0.85", style="rounded"];
+	250[label = "trim_reads\nname: MOK40", color = "0.02 0.6 0.85", style="rounded"];
+	251[label = "trim_reads\nname: MOK41", color = "0.02 0.6 0.85", style="rounded"];
+	252[label = "trim_reads\nname: MOK42", color = "0.02 0.6 0.85", style="rounded"];
+	253[label = "trim_reads\nname: MOK43", color = "0.02 0.6 0.85", style="rounded"];
+	254[label = "trim_reads\nname: NED01", color = "0.02 0.6 0.85", style="rounded"];
+	255[label = "trim_reads\nname: NED02", color = "0.02 0.6 0.85", style="rounded"];
+	256[label = "trim_reads\nname: NED04", color = "0.02 0.6 0.85", style="rounded"];
+	257[label = "trim_reads\nname: NED06", color = "0.02 0.6 0.85", style="rounded"];
+	258[label = "trim_reads\nname: NED07", color = "0.02 0.6 0.85", style="rounded"];
+	259[label = "trim_reads\nname: NED08", color = "0.02 0.6 0.85", style="rounded"];
+	260[label = "trim_reads\nname: NED09", color = "0.02 0.6 0.85", style="rounded"];
+	261[label = "trim_reads\nname: NED11", color = "0.02 0.6 0.85", style="rounded"];
+	262[label = "trim_reads\nname: NED13", color = "0.02 0.6 0.85", style="rounded"];
+	263[label = "trim_reads\nname: NED14", color = "0.02 0.6 0.85", style="rounded"];
+	264[label = "trim_reads\nname: NED15", color = "0.02 0.6 0.85", style="rounded"];
+	265[label = "trim_reads\nname: NED16", color = "0.02 0.6 0.85", style="rounded"];
+	266[label = "trim_reads\nname: NED17", color = "0.02 0.6 0.85", style="rounded"];
+	267[label = "trim_reads\nname: NED18", color = "0.02 0.6 0.85", style="rounded"];
+	268[label = "trim_reads\nname: NED19", color = "0.02 0.6 0.85", style="rounded"];
+	269[label = "trim_reads\nname: NED20", color = "0.02 0.6 0.85", style="rounded"];
+	270[label = "trim_reads\nname: NED21", color = "0.02 0.6 0.85", style="rounded"];
+	271[label = "trim_reads\nname: NED23", color = "0.02 0.6 0.85", style="rounded"];
+	272[label = "trim_reads\nname: NED24", color = "0.02 0.6 0.85", style="rounded"];
+	273[label = "trim_reads\nname: NED25", color = "0.02 0.6 0.85", style="rounded"];
+	274[label = "trim_reads\nname: NED26", color = "0.02 0.6 0.85", style="rounded"];
+	275[label = "trim_reads\nname: NED27", color = "0.02 0.6 0.85", style="rounded"];
+	276[label = "trim_reads\nname: NED28", color = "0.02 0.6 0.85", style="rounded"];
+	277[label = "trim_reads\nname: NED30", color = "0.02 0.6 0.85", style="rounded"];
+	278[label = "trim_reads\nname: NED31", color = "0.02 0.6 0.85", style="rounded"];
+	279[label = "trim_reads\nname: NOR01", color = "0.02 0.6 0.85", style="rounded"];
+	280[label = "trim_reads\nname: NOR02", color = "0.02 0.6 0.85", style="rounded"];
+	281[label = "trim_reads\nname: NOR04", color = "0.02 0.6 0.85", style="rounded"];
+	282[label = "trim_reads\nname: NOR06", color = "0.02 0.6 0.85", style="rounded"];
+	283[label = "trim_reads\nname: NOR07", color = "0.02 0.6 0.85", style="rounded"];
+	284[label = "trim_reads\nname: NOR08", color = "0.02 0.6 0.85", style="rounded"];
+	285[label = "trim_reads\nname: NOR09", color = "0.02 0.6 0.85", style="rounded"];
+	286[label = "trim_reads\nname: NOR11", color = "0.02 0.6 0.85", style="rounded"];
+	287[label = "trim_reads\nname: NOR12", color = "0.02 0.6 0.85", style="rounded"];
+	288[label = "trim_reads\nname: NOR13", color = "0.02 0.6 0.85", style="rounded"];
+	289[label = "trim_reads\nname: NOR14", color = "0.02 0.6 0.85", style="rounded"];
+	290[label = "trim_reads\nname: NOR15", color = "0.02 0.6 0.85", style="rounded"];
+	291[label = "trim_reads\nname: NOR16", color = "0.02 0.6 0.85", style="rounded"];
+	292[label = "trim_reads\nname: NOR17", color = "0.02 0.6 0.85", style="rounded"];
+	293[label = "trim_reads\nname: NOR18", color = "0.02 0.6 0.85", style="rounded"];
+	294[label = "trim_reads\nname: NOR19", color = "0.02 0.6 0.85", style="rounded"];
+	295[label = "trim_reads\nname: NOR21", color = "0.02 0.6 0.85", style="rounded"];
+	296[label = "trim_reads\nname: NOR25", color = "0.02 0.6 0.85", style="rounded"];
+	297[label = "trim_reads\nname: NOR26", color = "0.02 0.6 0.85", style="rounded"];
+	298[label = "trim_reads\nname: NOR27", color = "0.02 0.6 0.85", style="rounded"];
+	299[label = "trim_reads\nname: NOR28", color = "0.02 0.6 0.85", style="rounded"];
+	300[label = "trim_reads\nname: NOR29", color = "0.02 0.6 0.85", style="rounded"];
+	301[label = "trim_reads\nname: NOR30", color = "0.02 0.6 0.85", style="rounded"];
+	302[label = "trim_reads\nname: NOR31", color = "0.02 0.6 0.85", style="rounded"];
+	303[label = "trim_reads\nname: NOR32", color = "0.02 0.6 0.85", style="rounded"];
+	304[label = "trim_reads\nname: PIT01", color = "0.02 0.6 0.85", style="rounded"];
+	305[label = "trim_reads\nname: PIT02", color = "0.02 0.6 0.85", style="rounded"];
+	306[label = "trim_reads\nname: PIT03", color = "0.02 0.6 0.85", style="rounded"];
+	307[label = "trim_reads\nname: PIT04", color = "0.02 0.6 0.85", style="rounded"];
+	308[label = "trim_reads\nname: PIT05", color = "0.02 0.6 0.85", style="rounded"];
+	309[label = "trim_reads\nname: PIT06", color = "0.02 0.6 0.85", style="rounded"];
+	310[label = "trim_reads\nname: PIT07", color = "0.02 0.6 0.85", style="rounded"];
+	311[label = "trim_reads\nname: PIT08", color = "0.02 0.6 0.85", style="rounded"];
+	312[label = "trim_reads\nname: PIT09", color = "0.02 0.6 0.85", style="rounded"];
+	313[label = "trim_reads\nname: PIT10", color = "0.02 0.6 0.85", style="rounded"];
+	314[label = "trim_reads\nname: PIT11", color = "0.02 0.6 0.85", style="rounded"];
+	315[label = "trim_reads\nname: PIT12", color = "0.02 0.6 0.85", style="rounded"];
+	316[label = "trim_reads\nname: PIT13D", color = "0.02 0.6 0.85", style="rounded"];
+	317[label = "trim_reads\nname: PIT14", color = "0.02 0.6 0.85", style="rounded"];
+	318[label = "trim_reads\nname: PIT16", color = "0.02 0.6 0.85", style="rounded"];
+	319[label = "trim_reads\nname: PIT17", color = "0.02 0.6 0.85", style="rounded"];
+	320[label = "trim_reads\nname: PIT18", color = "0.02 0.6 0.85", style="rounded"];
+	321[label = "trim_reads\nname: PIT19", color = "0.02 0.6 0.85", style="rounded"];
+	322[label = "trim_reads\nname: PIT23", color = "0.02 0.6 0.85", style="rounded"];
+	323[label = "trim_reads\nname: PIT24", color = "0.02 0.6 0.85", style="rounded"];
+	324[label = "trim_reads\nname: PIT25", color = "0.02 0.6 0.85", style="rounded"];
+	325[label = "trim_reads\nname: PIT26", color = "0.02 0.6 0.85", style="rounded"];
+	326[label = "trim_reads\nname: PIT28", color = "0.02 0.6 0.85", style="rounded"];
+	327[label = "trim_reads\nname: PIT29", color = "0.02 0.6 0.85", style="rounded"];
+	328[label = "trim_reads\nname: PIT30", color = "0.02 0.6 0.85", style="rounded"];
+	329[label = "trim_reads\nname: SKA02", color = "0.02 0.6 0.85", style="rounded"];
+	330[label = "trim_reads\nname: SKA06", color = "0.02 0.6 0.85", style="rounded"];
+	331[label = "trim_reads\nname: SKA08", color = "0.02 0.6 0.85", style="rounded"];
+	332[label = "trim_reads\nname: SKA10", color = "0.02 0.6 0.85", style="rounded"];
+	333[label = "trim_reads\nname: SKA13", color = "0.02 0.6 0.85", style="rounded"];
+	334[label = "trim_reads\nname: SKA19", color = "0.02 0.6 0.85", style="rounded"];
+	335[label = "trim_reads\nname: SKA20", color = "0.02 0.6 0.85", style="rounded"];
+	336[label = "trim_reads\nname: SKA22", color = "0.02 0.6 0.85", style="rounded"];
+	337[label = "trim_reads\nname: SKA23", color = "0.02 0.6 0.85", style="rounded"];
+	338[label = "trim_reads\nname: SKA24", color = "0.02 0.6 0.85", style="rounded"];
+	339[label = "trim_reads\nname: SKA28", color = "0.02 0.6 0.85", style="rounded"];
+	340[label = "trim_reads\nname: SKA30", color = "0.02 0.6 0.85", style="rounded"];
+	341[label = "trim_reads\nname: SKA34", color = "0.02 0.6 0.85", style="rounded"];
+	342[label = "trim_reads\nname: SKA35", color = "0.02 0.6 0.85", style="rounded"];
+	343[label = "trim_reads\nname: SKA39", color = "0.02 0.6 0.85", style="rounded"];
+	344[label = "trim_reads\nname: SKA40", color = "0.02 0.6 0.85", style="rounded"];
+	345[label = "trim_reads\nname: SKA42", color = "0.02 0.6 0.85", style="rounded"];
+	346[label = "trim_reads\nname: SKA43", color = "0.02 0.6 0.85", style="rounded"];
+	347[label = "trim_reads\nname: SKA44", color = "0.02 0.6 0.85", style="rounded"];
+	348[label = "trim_reads\nname: SKA45", color = "0.02 0.6 0.85", style="rounded"];
+	349[label = "trim_reads\nname: SKA46", color = "0.02 0.6 0.85", style="rounded"];
+	350[label = "trim_reads\nname: SKA49", color = "0.02 0.6 0.85", style="rounded"];
+	351[label = "trim_reads\nname: SKA51", color = "0.02 0.6 0.85", style="rounded"];
+	352[label = "trim_reads\nname: SKA55", color = "0.02 0.6 0.85", style="rounded"];
+	353[label = "trim_reads\nname: SKA57", color = "0.02 0.6 0.85", style="rounded"];
+	354[label = "trim_reads\nname: VAL04", color = "0.02 0.6 0.85", style="rounded"];
+	355[label = "trim_reads\nname: VAL05", color = "0.02 0.6 0.85", style="rounded"];
+	356[label = "trim_reads\nname: VAL06", color = "0.02 0.6 0.85", style="rounded"];
+	357[label = "trim_reads\nname: VAL07", color = "0.02 0.6 0.85", style="rounded"];
+	358[label = "trim_reads\nname: VAL51", color = "0.02 0.6 0.85", style="rounded"];
+	359[label = "trim_reads\nname: VAL52", color = "0.02 0.6 0.85", style="rounded"];
+	360[label = "trim_reads\nname: VAL53", color = "0.02 0.6 0.85", style="rounded"];
+	361[label = "trim_reads\nname: VAL54", color = "0.02 0.6 0.85", style="rounded"];
+	362[label = "trim_reads\nname: VAL55", color = "0.02 0.6 0.85", style="rounded"];
+	363[label = "trim_reads\nname: VAL57", color = "0.02 0.6 0.85", style="rounded"];
+	364[label = "trim_reads\nname: VAL58", color = "0.02 0.6 0.85", style="rounded"];
+	365[label = "trim_reads\nname: VAL64", color = "0.02 0.6 0.85", style="rounded"];
+	366[label = "trim_reads\nname: VAL68", color = "0.02 0.6 0.85", style="rounded"];
+	367[label = "trim_reads\nname: VAL71", color = "0.02 0.6 0.85", style="rounded"];
+	368[label = "trim_reads\nname: VAL72", color = "0.02 0.6 0.85", style="rounded"];
+	369[label = "trim_reads\nname: VAL74", color = "0.02 0.6 0.85", style="rounded"];
+	370[label = "trim_reads\nname: VAL75", color = "0.02 0.6 0.85", style="rounded"];
+	371[label = "trim_reads\nname: VAL77", color = "0.02 0.6 0.85", style="rounded"];
+	372[label = "trim_reads\nname: VAL78", color = "0.02 0.6 0.85", style="rounded"];
+	373[label = "trim_reads\nname: VAL82", color = "0.02 0.6 0.85", style="rounded"];
+	374[label = "trim_reads\nname: VAL83", color = "0.02 0.6 0.85", style="rounded"];
+	375[label = "trim_reads\nname: VAL92", color = "0.02 0.6 0.85", style="rounded"];
+	376[label = "trim_reads\nname: VAL93", color = "0.02 0.6 0.85", style="rounded"];
+	377[label = "trim_reads\nname: VAL94", color = "0.02 0.6 0.85", style="rounded"];
+	378[label = "trim_reads\nname: VAL97", color = "0.02 0.6 0.85", style="rounded"];
+	379[label = "trim_reads", color = "0.02 0.6 0.85", style="rounded"];
+	380[label = "resource_reads_outgroup\nn: 1\nname: ERR2103730", color = "0.10 0.6 0.85", style="rounded"];
+	381[label = "resource_reads_outgroup\nn: 2\nname: ERR2103730", color = "0.10 0.6 0.85", style="rounded"];
+	382[label = "trim_reads", color = "0.02 0.6 0.85", style="rounded"];
+	383[label = "resource_reads_outgroup\nn: 1\nname: ERR2103731", color = "0.10 0.6 0.85", style="rounded"];
+	384[label = "resource_reads_outgroup\nn: 2\nname: ERR2103731", color = "0.10 0.6 0.85", style="rounded"];
+	1 -> 0
+	3 -> 0
+	4 -> 0
+	5 -> 0
+	6 -> 0
+	7 -> 0
+	8 -> 0
+	9 -> 0
+	10 -> 0
+	11 -> 0
+	12 -> 0
+	13 -> 0
+	14 -> 0
+	15 -> 0
+	16 -> 0
+	17 -> 0
+	18 -> 0
+	19 -> 0
+	20 -> 0
+	21 -> 0
+	22 -> 0
+	23 -> 0
+	24 -> 0
+	25 -> 0
+	26 -> 0
+	27 -> 0
+	28 -> 0
+	29 -> 0
+	30 -> 0
+	31 -> 0
+	32 -> 0
+	33 -> 0
+	34 -> 0
+	35 -> 0
+	36 -> 0
+	37 -> 0
+	38 -> 0
+	39 -> 0
+	40 -> 0
+	41 -> 0
+	42 -> 0
+	43 -> 0
+	44 -> 0
+	45 -> 0
+	46 -> 0
+	47 -> 0
+	48 -> 0
+	49 -> 0
+	50 -> 0
+	51 -> 0
+	52 -> 0
+	53 -> 0
+	54 -> 0
+	55 -> 0
+	56 -> 0
+	57 -> 0
+	58 -> 0
+	59 -> 0
+	60 -> 0
+	61 -> 0
+	62 -> 0
+	63 -> 0
+	64 -> 0
+	65 -> 0
+	66 -> 0
+	67 -> 0
+	68 -> 0
+	69 -> 0
+	70 -> 0
+	71 -> 0
+	72 -> 0
+	73 -> 0
+	74 -> 0
+	75 -> 0
+	76 -> 0
+	77 -> 0
+	78 -> 0
+	79 -> 0
+	80 -> 0
+	81 -> 0
+	82 -> 0
+	83 -> 0
+	84 -> 0
+	85 -> 0
+	86 -> 0
+	87 -> 0
+	88 -> 0
+	89 -> 0
+	90 -> 0
+	91 -> 0
+	92 -> 0
+	93 -> 0
+	94 -> 0
+	95 -> 0
+	96 -> 0
+	97 -> 0
+	98 -> 0
+	99 -> 0
+	100 -> 0
+	101 -> 0
+	102 -> 0
+	103 -> 0
+	104 -> 0
+	105 -> 0
+	106 -> 0
+	107 -> 0
+	108 -> 0
+	109 -> 0
+	110 -> 0
+	111 -> 0
+	112 -> 0
+	113 -> 0
+	114 -> 0
+	115 -> 0
+	116 -> 0
+	117 -> 0
+	118 -> 0
+	119 -> 0
+	120 -> 0
+	121 -> 0
+	122 -> 0
+	123 -> 0
+	124 -> 0
+	125 -> 0
+	126 -> 0
+	127 -> 0
+	128 -> 0
+	129 -> 0
+	130 -> 0
+	131 -> 0
+	132 -> 0
+	133 -> 0
+	134 -> 0
+	135 -> 0
+	136 -> 0
+	137 -> 0
+	138 -> 0
+	139 -> 0
+	140 -> 0
+	141 -> 0
+	142 -> 0
+	143 -> 0
+	144 -> 0
+	145 -> 0
+	146 -> 0
+	147 -> 0
+	148 -> 0
+	149 -> 0
+	150 -> 0
+	151 -> 0
+	152 -> 0
+	153 -> 0
+	154 -> 0
+	155 -> 0
+	156 -> 0
+	157 -> 0
+	158 -> 0
+	159 -> 0
+	160 -> 0
+	161 -> 0
+	162 -> 0
+	163 -> 0
+	164 -> 0
+	165 -> 0
+	166 -> 0
+	167 -> 0
+	168 -> 0
+	169 -> 0
+	170 -> 0
+	171 -> 0
+	172 -> 0
+	173 -> 0
+	174 -> 0
+	175 -> 0
+	176 -> 0
+	177 -> 0
+	178 -> 0
+	179 -> 0
+	180 -> 0
+	181 -> 0
+	182 -> 0
+	183 -> 0
+	184 -> 0
+	185 -> 0
+	186 -> 0
+	187 -> 0
+	188 -> 0
+	189 -> 0
+	190 -> 0
+	191 -> 0
+	192 -> 0
+	193 -> 0
+	194 -> 0
+	195 -> 0
+	196 -> 0
+	197 -> 0
+	198 -> 0
+	199 -> 0
+	200 -> 0
+	201 -> 0
+	202 -> 0
+	203 -> 0
+	204 -> 0
+	205 -> 0
+	206 -> 0
+	207 -> 0
+	208 -> 0
+	209 -> 0
+	210 -> 0
+	211 -> 0
+	212 -> 0
+	213 -> 0
+	214 -> 0
+	215 -> 0
+	216 -> 0
+	217 -> 0
+	218 -> 0
+	219 -> 0
+	220 -> 0
+	221 -> 0
+	222 -> 0
+	223 -> 0
+	224 -> 0
+	225 -> 0
+	226 -> 0
+	227 -> 0
+	228 -> 0
+	229 -> 0
+	230 -> 0
+	231 -> 0
+	232 -> 0
+	233 -> 0
+	234 -> 0
+	235 -> 0
+	236 -> 0
+	237 -> 0
+	238 -> 0
+	239 -> 0
+	240 -> 0
+	241 -> 0
+	242 -> 0
+	243 -> 0
+	244 -> 0
+	245 -> 0
+	246 -> 0
+	247 -> 0
+	248 -> 0
+	249 -> 0
+	250 -> 0
+	251 -> 0
+	252 -> 0
+	253 -> 0
+	254 -> 0
+	255 -> 0
+	256 -> 0
+	257 -> 0
+	258 -> 0
+	259 -> 0
+	260 -> 0
+	261 -> 0
+	262 -> 0
+	263 -> 0
+	264 -> 0
+	265 -> 0
+	266 -> 0
+	267 -> 0
+	268 -> 0
+	269 -> 0
+	270 -> 0
+	271 -> 0
+	272 -> 0
+	273 -> 0
+	274 -> 0
+	275 -> 0
+	276 -> 0
+	277 -> 0
+	278 -> 0
+	279 -> 0
+	280 -> 0
+	281 -> 0
+	282 -> 0
+	283 -> 0
+	284 -> 0
+	285 -> 0
+	286 -> 0
+	287 -> 0
+	288 -> 0
+	289 -> 0
+	290 -> 0
+	291 -> 0
+	292 -> 0
+	293 -> 0
+	294 -> 0
+	295 -> 0
+	296 -> 0
+	297 -> 0
+	298 -> 0
+	299 -> 0
+	300 -> 0
+	301 -> 0
+	302 -> 0
+	303 -> 0
+	304 -> 0
+	305 -> 0
+	306 -> 0
+	307 -> 0
+	308 -> 0
+	309 -> 0
+	310 -> 0
+	311 -> 0
+	312 -> 0
+	313 -> 0
+	314 -> 0
+	315 -> 0
+	316 -> 0
+	317 -> 0
+	318 -> 0
+	319 -> 0
+	320 -> 0
+	321 -> 0
+	322 -> 0
+	323 -> 0
+	324 -> 0
+	325 -> 0
+	326 -> 0
+	327 -> 0
+	328 -> 0
+	329 -> 0
+	330 -> 0
+	331 -> 0
+	332 -> 0
+	333 -> 0
+	334 -> 0
+	335 -> 0
+	336 -> 0
+	337 -> 0
+	338 -> 0
+	339 -> 0
+	340 -> 0
+	341 -> 0
+	342 -> 0
+	343 -> 0
+	344 -> 0
+	345 -> 0
+	346 -> 0
+	347 -> 0
+	348 -> 0
+	349 -> 0
+	350 -> 0
+	351 -> 0
+	352 -> 0
+	353 -> 0
+	354 -> 0
+	355 -> 0
+	356 -> 0
+	357 -> 0
+	358 -> 0
+	359 -> 0
+	360 -> 0
+	361 -> 0
+	362 -> 0
+	363 -> 0
+	364 -> 0
+	365 -> 0
+	366 -> 0
+	367 -> 0
+	368 -> 0
+	369 -> 0
+	370 -> 0
+	371 -> 0
+	372 -> 0
+	373 -> 0
+	374 -> 0
+	375 -> 0
+	376 -> 0
+	377 -> 0
+	378 -> 0
+	379 -> 0
+	382 -> 0
+	2 -> 1
+	2 -> 3
+	2 -> 4
+	2 -> 5
+	2 -> 6
+	2 -> 7
+	2 -> 8
+	2 -> 9
+	2 -> 10
+	2 -> 11
+	2 -> 12
+	2 -> 13
+	2 -> 14
+	2 -> 15
+	2 -> 16
+	2 -> 17
+	2 -> 18
+	2 -> 19
+	2 -> 20
+	2 -> 21
+	2 -> 22
+	2 -> 23
+	2 -> 24
+	2 -> 25
+	2 -> 26
+	2 -> 27
+	2 -> 28
+	2 -> 29
+	2 -> 30
+	2 -> 31
+	2 -> 32
+	2 -> 33
+	2 -> 34
+	2 -> 35
+	2 -> 36
+	2 -> 37
+	2 -> 38
+	2 -> 39
+	2 -> 40
+	2 -> 41
+	2 -> 42
+	2 -> 43
+	2 -> 44
+	2 -> 45
+	2 -> 46
+	2 -> 47
+	2 -> 48
+	2 -> 49
+	2 -> 50
+	2 -> 51
+	2 -> 52
+	2 -> 53
+	2 -> 54
+	2 -> 55
+	2 -> 56
+	2 -> 57
+	2 -> 58
+	2 -> 59
+	2 -> 60
+	2 -> 61
+	2 -> 62
+	2 -> 63
+	2 -> 64
+	2 -> 65
+	2 -> 66
+	2 -> 67
+	2 -> 68
+	2 -> 69
+	2 -> 70
+	2 -> 71
+	2 -> 72
+	2 -> 73
+	2 -> 74
+	2 -> 75
+	2 -> 76
+	2 -> 77
+	2 -> 78
+	2 -> 79
+	2 -> 80
+	2 -> 81
+	2 -> 82
+	2 -> 83
+	2 -> 84
+	2 -> 85
+	2 -> 86
+	2 -> 87
+	2 -> 88
+	2 -> 89
+	2 -> 90
+	2 -> 91
+	2 -> 92
+	2 -> 93
+	2 -> 94
+	2 -> 95
+	2 -> 96
+	2 -> 97
+	2 -> 98
+	2 -> 99
+	2 -> 100
+	2 -> 101
+	2 -> 102
+	2 -> 103
+	2 -> 104
+	2 -> 105
+	2 -> 106
+	2 -> 107
+	2 -> 108
+	2 -> 109
+	2 -> 110
+	2 -> 111
+	2 -> 112
+	2 -> 113
+	2 -> 114
+	2 -> 115
+	2 -> 116
+	2 -> 117
+	2 -> 118
+	2 -> 119
+	2 -> 120
+	2 -> 121
+	2 -> 122
+	2 -> 123
+	2 -> 124
+	2 -> 125
+	2 -> 126
+	2 -> 127
+	2 -> 128
+	2 -> 129
+	2 -> 130
+	2 -> 131
+	2 -> 132
+	2 -> 133
+	2 -> 134
+	2 -> 135
+	2 -> 136
+	2 -> 137
+	2 -> 138
+	2 -> 139
+	2 -> 140
+	2 -> 141
+	2 -> 142
+	2 -> 143
+	2 -> 144
+	2 -> 145
+	2 -> 146
+	2 -> 147
+	2 -> 148
+	2 -> 149
+	2 -> 150
+	2 -> 151
+	2 -> 152
+	2 -> 153
+	2 -> 154
+	2 -> 155
+	2 -> 156
+	2 -> 157
+	2 -> 158
+	2 -> 159
+	2 -> 160
+	2 -> 161
+	2 -> 162
+	2 -> 163
+	2 -> 164
+	2 -> 165
+	2 -> 166
+	2 -> 167
+	2 -> 168
+	2 -> 169
+	2 -> 170
+	2 -> 171
+	2 -> 172
+	2 -> 173
+	2 -> 174
+	2 -> 175
+	2 -> 176
+	2 -> 177
+	2 -> 178
+	2 -> 179
+	2 -> 180
+	2 -> 181
+	2 -> 182
+	2 -> 183
+	2 -> 184
+	2 -> 185
+	2 -> 186
+	2 -> 187
+	2 -> 188
+	2 -> 189
+	2 -> 190
+	2 -> 191
+	2 -> 192
+	2 -> 193
+	2 -> 194
+	2 -> 195
+	2 -> 196
+	2 -> 197
+	2 -> 198
+	2 -> 199
+	2 -> 200
+	2 -> 201
+	2 -> 202
+	2 -> 203
+	2 -> 204
+	2 -> 205
+	2 -> 206
+	2 -> 207
+	2 -> 208
+	2 -> 209
+	2 -> 210
+	2 -> 211
+	2 -> 212
+	2 -> 213
+	2 -> 214
+	2 -> 215
+	2 -> 216
+	2 -> 217
+	2 -> 218
+	2 -> 219
+	2 -> 220
+	2 -> 221
+	2 -> 222
+	2 -> 223
+	2 -> 224
+	2 -> 225
+	2 -> 226
+	2 -> 227
+	2 -> 228
+	2 -> 229
+	2 -> 230
+	2 -> 231
+	2 -> 232
+	2 -> 233
+	2 -> 234
+	2 -> 235
+	2 -> 236
+	2 -> 237
+	2 -> 238
+	2 -> 239
+	2 -> 240
+	2 -> 241
+	2 -> 242
+	2 -> 243
+	2 -> 244
+	2 -> 245
+	2 -> 246
+	2 -> 247
+	2 -> 248
+	2 -> 249
+	2 -> 250
+	2 -> 251
+	2 -> 252
+	2 -> 253
+	2 -> 254
+	2 -> 255
+	2 -> 256
+	2 -> 257
+	2 -> 258
+	2 -> 259
+	2 -> 260
+	2 -> 261
+	2 -> 262
+	2 -> 263
+	2 -> 264
+	2 -> 265
+	2 -> 266
+	2 -> 267
+	2 -> 268
+	2 -> 269
+	2 -> 270
+	2 -> 271
+	2 -> 272
+	2 -> 273
+	2 -> 274
+	2 -> 275
+	2 -> 276
+	2 -> 277
+	2 -> 278
+	2 -> 279
+	2 -> 280
+	2 -> 281
+	2 -> 282
+	2 -> 283
+	2 -> 284
+	2 -> 285
+	2 -> 286
+	2 -> 287
+	2 -> 288
+	2 -> 289
+	2 -> 290
+	2 -> 291
+	2 -> 292
+	2 -> 293
+	2 -> 294
+	2 -> 295
+	2 -> 296
+	2 -> 297
+	2 -> 298
+	2 -> 299
+	2 -> 300
+	2 -> 301
+	2 -> 302
+	2 -> 303
+	2 -> 304
+	2 -> 305
+	2 -> 306
+	2 -> 307
+	2 -> 308
+	2 -> 309
+	2 -> 310
+	2 -> 311
+	2 -> 312
+	2 -> 313
+	2 -> 314
+	2 -> 315
+	2 -> 316
+	2 -> 317
+	2 -> 318
+	2 -> 319
+	2 -> 320
+	2 -> 321
+	2 -> 322
+	2 -> 323
+	2 -> 324
+	2 -> 325
+	2 -> 326
+	2 -> 327
+	2 -> 328
+	2 -> 329
+	2 -> 330
+	2 -> 331
+	2 -> 332
+	2 -> 333
+	2 -> 334
+	2 -> 335
+	2 -> 336
+	2 -> 337
+	2 -> 338
+	2 -> 339
+	2 -> 340
+	2 -> 341
+	2 -> 342
+	2 -> 343
+	2 -> 344
+	2 -> 345
+	2 -> 346
+	2 -> 347
+	2 -> 348
+	2 -> 349
+	2 -> 350
+	2 -> 351
+	2 -> 352
+	2 -> 353
+	2 -> 354
+	2 -> 355
+	2 -> 356
+	2 -> 357
+	2 -> 358
+	2 -> 359
+	2 -> 360
+	2 -> 361
+	2 -> 362
+	2 -> 363
+	2 -> 364
+	2 -> 365
+	2 -> 366
+	2 -> 367
+	2 -> 368
+	2 -> 369
+	2 -> 370
+	2 -> 371
+	2 -> 372
+	2 -> 373
+	2 -> 374
+	2 -> 375
+	2 -> 376
+	2 -> 377
+	2 -> 378
+	380 -> 379
+	381 -> 379
+	383 -> 382
+	384 -> 382
+}            

@@ -1,0 +1,30 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.13 0.6 0.85", style="rounded"];
+	1[label = "create_final_count_tables\ngene: tRNA", color = "0.27 0.6 0.85", style="rounded"];
+	2[label = "create_final_count_tables\ngene: miRNA_precursor", color = "0.27 0.6 0.85", style="rounded"];
+	3[label = "create_final_count_tables\ngene: piRNA", color = "0.27 0.6 0.85", style="rounded"];
+	4[label = "create_final_count_tables\ngene: miRNA", color = "0.27 0.6 0.85", style="rounded"];
+	5[label = "separate_gene_types", color = "0.25 0.6 0.85", style="rounded"];
+	6[label = "create_final_count_tables\ngene: gencode", color = "0.27 0.6 0.85", style="rounded"];
+	7[label = "prepare_gene_type", color = "0.63 0.6 0.85", style="rounded"];
+	8[label = "combine_file_stats", color = "0.32 0.6 0.85", style="rounded"];
+	9[label = "multiqc", color = "0.15 0.6 0.85", style="rounded"];
+	10[label = "create_tRF_count_tables", color = "0.46 0.6 0.85", style="rounded"];
+	11[label = "mirtrace", color = "0.02 0.6 0.85", style="rounded"];
+	12[label = "create_isomirmap_count_tables", color = "0.65 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 0
+	3 -> 0
+	4 -> 0
+	5 -> 0
+	8 -> 0
+	9 -> 0
+	10 -> 0
+	11 -> 0
+	12 -> 0
+	6 -> 5
+	7 -> 5
+}            

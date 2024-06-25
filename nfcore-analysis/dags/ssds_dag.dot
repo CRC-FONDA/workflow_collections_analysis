@@ -1,0 +1,830 @@
+digraph "ssds_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v0 -> v146 [label="ch_multiqc_custom_config"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v125;
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v3 -> v8 [label="ch_versions"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1];
+v5 [label="NFCORE_SSDS:SSDS:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v4 -> v5 [label="samplesheet"];
+
+v5 [label="NFCORE_SSDS:SSDS:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v5 -> v6;
+
+v5 [label="NFCORE_SSDS:SSDS:INPUT_CHECK:SAMPLESHEET_CHECK"];
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v8 [label="versions"];
+
+v6 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v9 [label="NFCORE_SSDS:SSDS:FASTQC"];
+v7 -> v9 [label="fastq"];
+
+v8 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v8 -> v11 [label="ch_versions"];
+
+v9 [label="NFCORE_SSDS:SSDS:FASTQC"];
+v10 [shape=point];
+v9 -> v10;
+
+v9 [label="NFCORE_SSDS:SSDS:FASTQC"];
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v154;
+
+v9 [label="NFCORE_SSDS:SSDS:FASTQC"];
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v9 -> v11;
+
+v11 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v11 -> v15 [label="ch_versions"];
+
+v12 [shape=point,label="",fixedsize=true,width=0.1];
+v13 [label="NFCORE_SSDS:SSDS:BWA_INDEX"];
+v12 -> v13 [label="fasta"];
+
+v13 [label="NFCORE_SSDS:SSDS:BWA_INDEX"];
+v21 [label="NFCORE_SSDS:SSDS:ALIGN_SS:BWA_MEM"];
+v13 -> v21 [label="bwa"];
+
+v13 [label="NFCORE_SSDS:SSDS:BWA_INDEX"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v13 -> v14;
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v15 -> v101 [label="ch_versions"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v16 -> v81 [label="ch_versions"];
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v17 [label="NFCORE_SSDS:SSDS:ALIGN_SS:TRIMGALORE"];
+v7 -> v17 [label="fastq"];
+
+v17 [label="NFCORE_SSDS:SSDS:ALIGN_SS:TRIMGALORE"];
+v21 [label="NFCORE_SSDS:SSDS:ALIGN_SS:BWA_MEM"];
+v17 -> v21;
+
+v17 [label="NFCORE_SSDS:SSDS:ALIGN_SS:TRIMGALORE"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v17 -> v76;
+
+v17 [label="NFCORE_SSDS:SSDS:ALIGN_SS:TRIMGALORE"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v17 -> v80;
+
+v17 [label="NFCORE_SSDS:SSDS:ALIGN_SS:TRIMGALORE"];
+v19 [shape=point];
+v17 -> v19;
+
+v17 [label="NFCORE_SSDS:SSDS:ALIGN_SS:TRIMGALORE"];
+v18 [shape=point];
+v17 -> v18;
+
+v20 [shape=point,label="",fixedsize=true,width=0.1];
+v21 [label="NFCORE_SSDS:SSDS:ALIGN_SS:BWA_MEM"];
+v20 -> v21 [label="sort_bam"];
+
+v21 [label="NFCORE_SSDS:SSDS:ALIGN_SS:BWA_MEM"];
+v23 [label="NFCORE_SSDS:SSDS:ALIGN_SS:FILTER_SUPP_ALIGNMENTS"];
+v21 -> v23;
+
+v21 [label="NFCORE_SSDS:SSDS:ALIGN_SS:BWA_MEM"];
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v21 -> v82;
+
+v22 [shape=point,label="",fixedsize=true,width=0.1];
+v23 [label="NFCORE_SSDS:SSDS:ALIGN_SS:FILTER_SUPP_ALIGNMENTS"];
+v22 -> v23 [label="fasta"];
+
+v23 [label="NFCORE_SSDS:SSDS:ALIGN_SS:FILTER_SUPP_ALIGNMENTS"];
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v25;
+
+v23 [label="NFCORE_SSDS:SSDS:ALIGN_SS:FILTER_SUPP_ALIGNMENTS"];
+v24 [shape=point];
+v23 -> v24;
+
+v23 [label="NFCORE_SSDS:SSDS:ALIGN_SS:FILTER_SUPP_ALIGNMENTS"];
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v23 -> v84;
+
+v25 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v28 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:PICARD_SORTSAM"];
+v25 -> v28 [label="ch_bam"];
+
+v26 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v26 -> v36 [label="ch_versions"];
+
+v27 [shape=point,label="",fixedsize=true,width=0.1];
+v28 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:PICARD_SORTSAM"];
+v27 -> v28 [label="sort_order"];
+
+v28 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:PICARD_SORTSAM"];
+v29 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:PICARD_MARKDUPLICATES"];
+v28 -> v29;
+
+v28 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:PICARD_SORTSAM"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v28 -> v35;
+
+v29 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:PICARD_MARKDUPLICATES"];
+v31 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:SAMTOOLS_INDEX"];
+v29 -> v31 [label="bam"];
+
+v29 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:PICARD_MARKDUPLICATES"];
+v30 [shape=point];
+v29 -> v30;
+
+v29 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:PICARD_MARKDUPLICATES"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v29 -> v78 [label="mdmetrics"];
+
+v29 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:PICARD_MARKDUPLICATES"];
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v29 -> v37;
+
+v31 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:SAMTOOLS_INDEX"];
+v34 [shape=point];
+v31 -> v34 [label="bai"];
+
+v31 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:SAMTOOLS_INDEX"];
+v33 [shape=point];
+v31 -> v33;
+
+v31 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:SAMTOOLS_INDEX"];
+v32 [shape=point];
+v31 -> v32;
+
+v31 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:SAMTOOLS_INDEX"];
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v31 -> v39;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v36 -> v38 [label="ch_versions"];
+
+v37 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v38;
+
+v38 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v40 [label="ch_versions"];
+
+v39 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v40;
+
+v40 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v40 -> v86 [label="versions"];
+
+v29 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX_RAW:PICARD_MARKDUPLICATES"];
+v42 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PICARD_COLLECTMULTIPLEMETRICS"];
+v29 -> v42 [label="bam"];
+
+v41 [shape=point,label="",fixedsize=true,width=0.1];
+v42 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PICARD_COLLECTMULTIPLEMETRICS"];
+v41 -> v42 [label="fasta"];
+
+v42 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PICARD_COLLECTMULTIPLEMETRICS"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v77;
+
+v42 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PICARD_COLLECTMULTIPLEMETRICS"];
+v43 [shape=point];
+v42 -> v43;
+
+v42 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PICARD_COLLECTMULTIPLEMETRICS"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v42 -> v88;
+
+v23 [label="NFCORE_SSDS:SSDS:ALIGN_SS:FILTER_SUPP_ALIGNMENTS"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v23 -> v44;
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v46 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PICARD_SORTSAM_QRY"];
+v44 -> v46;
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v46 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PICARD_SORTSAM_QRY"];
+v45 -> v46 [label="sort_order"];
+
+v46 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PICARD_SORTSAM_QRY"];
+v47 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PARSESSDS"];
+v46 -> v47;
+
+v46 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PICARD_SORTSAM_QRY"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v46 -> v90;
+
+v47 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PARSESSDS"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v48;
+
+v47 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PARSESSDS"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v47 -> v52;
+
+v47 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PARSESSDS"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v47 -> v79;
+
+v47 [label="NFCORE_SSDS:SSDS:ALIGN_SS:PARSESSDS"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v47 -> v92;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v49 -> v50;
+
+v50 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v50 -> v51;
+
+v51 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v60 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:PICARD_SORTSAM"];
+v51 -> v60 [label="ch_bam"];
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v53 -> v54;
+
+v54 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v54 -> v55;
+
+v55 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v57 [label="NFCORE_SSDS:SSDS:ALIGN_SS:BEDTOOLS_SORT"];
+v55 -> v57 [label="ch_ssds_bed_unsorted"];
+
+v56 [shape=point,label="",fixedsize=true,width=0.1];
+v57 [label="NFCORE_SSDS:SSDS:ALIGN_SS:BEDTOOLS_SORT"];
+v56 -> v57 [label="extension"];
+
+v57 [label="NFCORE_SSDS:SSDS:ALIGN_SS:BEDTOOLS_SORT"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v57 -> v107 [label="bed"];
+
+v57 [label="NFCORE_SSDS:SSDS:ALIGN_SS:BEDTOOLS_SORT"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v57 -> v94;
+
+v58 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v68 [label="ch_versions"];
+
+v59 [shape=point,label="",fixedsize=true,width=0.1];
+v60 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:PICARD_SORTSAM"];
+v59 -> v60 [label="sort_order"];
+
+v60 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:PICARD_SORTSAM"];
+v61 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:PICARD_MARKDUPLICATES"];
+v60 -> v61;
+
+v60 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:PICARD_SORTSAM"];
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v60 -> v67;
+
+v61 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:PICARD_MARKDUPLICATES"];
+v64 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:SAMTOOLS_INDEX"];
+v61 -> v64 [label="bam"];
+
+v61 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:PICARD_MARKDUPLICATES"];
+v63 [shape=point];
+v61 -> v63;
+
+v61 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:PICARD_MARKDUPLICATES"];
+v62 [shape=point];
+v61 -> v62 [label="mdmetrics"];
+
+v61 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:PICARD_MARKDUPLICATES"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v61 -> v69;
+
+v64 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:SAMTOOLS_INDEX"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v64 -> v73 [label="bai"];
+
+v64 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:SAMTOOLS_INDEX"];
+v66 [shape=point];
+v64 -> v66;
+
+v64 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:SAMTOOLS_INDEX"];
+v65 [shape=point];
+v64 -> v65;
+
+v64 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:SAMTOOLS_INDEX"];
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v64 -> v71;
+
+v67 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v67 -> v68;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v68 -> v70 [label="ch_versions"];
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v69 -> v70;
+
+v70 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v72 [label="ch_versions"];
+
+v71 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v71 -> v72;
+
+v72 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v72 -> v96 [label="versions"];
+
+v61 [label="NFCORE_SSDS:SSDS:ALIGN_SS:MD_AND_INDEX:PICARD_MARKDUPLICATES"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v61 -> v73 [label="bam"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v74 [label="NFCORE_SSDS:SSDS:ALIGN_SS:SAMTOOLS_IDXSTATS"];
+v73 -> v74 [label="bam"];
+
+v74 [label="NFCORE_SSDS:SSDS:ALIGN_SS:SAMTOOLS_IDXSTATS"];
+v75 [shape=point];
+v74 -> v75;
+
+v74 [label="NFCORE_SSDS:SSDS:ALIGN_SS:SAMTOOLS_IDXSTATS"];
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v74 -> v98;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v76 -> v77;
+
+v77 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v77 -> v78;
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v79;
+
+v79 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v157 [label="reports"];
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v81 -> v83 [label="ch_versions"];
+
+v82 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v83;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v83 -> v85 [label="ch_versions"];
+
+v84 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v84 -> v85;
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v87 [label="ch_versions"];
+
+v86 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v87 -> v89 [label="ch_versions"];
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v88 -> v89;
+
+v89 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v91 [label="ch_versions"];
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v90 -> v91;
+
+v91 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v91 -> v93 [label="ch_versions"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v93;
+
+v93 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v93 -> v95 [label="ch_versions"];
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v95 -> v97 [label="ch_versions"];
+
+v96 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v97;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v97 -> v99 [label="ch_versions"];
+
+v98 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v98 -> v99;
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v99 -> v100 [label="versions"];
+
+v100 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v101 -> v106 [label="ch_versions"];
+
+v102 [shape=point,label="",fixedsize=true,width=0.1];
+v104 [label="NFCORE_SSDS:SSDS:BEDTOOLS_MAKEWINDOWS"];
+v102 -> v104;
+
+v103 [shape=point,label="",fixedsize=true,width=0.1];
+v104 [label="NFCORE_SSDS:SSDS:BEDTOOLS_MAKEWINDOWS"];
+v103 -> v104 [label="use_bed"];
+
+v104 [label="NFCORE_SSDS:SSDS:BEDTOOLS_MAKEWINDOWS"];
+v110 [label="NFCORE_SSDS:SSDS:MAKE_SSDS_BIGWIGS:GENERATE_SSDS_COVERAGE"];
+v104 -> v110 [label="genome_windows"];
+
+v104 [label="NFCORE_SSDS:SSDS:BEDTOOLS_MAKEWINDOWS"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v104 -> v105;
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v106;
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v122 [label="ch_versions"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v110 [label="NFCORE_SSDS:SSDS:MAKE_SSDS_BIGWIGS:GENERATE_SSDS_COVERAGE"];
+v107 -> v110 [label="ssds_beds"];
+
+v108 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v118 [label="ch_versions"];
+
+v109 [shape=point,label="",fixedsize=true,width=0.1];
+v110 [label="NFCORE_SSDS:SSDS:MAKE_SSDS_BIGWIGS:GENERATE_SSDS_COVERAGE"];
+v109 -> v110 [label="genome_index"];
+
+v110 [label="NFCORE_SSDS:SSDS:MAKE_SSDS_BIGWIGS:GENERATE_SSDS_COVERAGE"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v110 -> v111;
+
+v110 [label="NFCORE_SSDS:SSDS:MAKE_SSDS_BIGWIGS:GENERATE_SSDS_COVERAGE"];
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v110 -> v117;
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v111 -> v112;
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v112 -> v113;
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v115 [label="NFCORE_SSDS:SSDS:MAKE_SSDS_BIGWIGS:UCSC_BEDGRAPHTOBIGWIG"];
+v113 -> v115 [label="ch_coverage_bg"];
+
+v114 [shape=point,label="",fixedsize=true,width=0.1];
+v115 [label="NFCORE_SSDS:SSDS:MAKE_SSDS_BIGWIGS:UCSC_BEDGRAPHTOBIGWIG"];
+v114 -> v115 [label="sizes"];
+
+v115 [label="NFCORE_SSDS:SSDS:MAKE_SSDS_BIGWIGS:UCSC_BEDGRAPHTOBIGWIG"];
+v116 [shape=point];
+v115 -> v116 [label="bigwig"];
+
+v115 [label="NFCORE_SSDS:SSDS:MAKE_SSDS_BIGWIGS:UCSC_BEDGRAPHTOBIGWIG"];
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v115 -> v119;
+
+v117 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v117 -> v118;
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v118 -> v120 [label="ch_versions"];
+
+v119 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v119 -> v120;
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v120 -> v121 [label="versions"];
+
+v121 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v121 -> v122;
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v122 -> v131 [label="ch_versions"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v123 [label="bam"];
+
+v123 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v123 -> v124;
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v129 [label="NFCORE_SSDS:SSDS:CALCULATESPOT"];
+v124 -> v129 [label="ch_bams_for_spot"];
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v125 -> v126;
+
+v126 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 -> v127;
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v129 [label="NFCORE_SSDS:SSDS:CALCULATESPOT"];
+v127 -> v129 [label="ch_intervals_for_spot"];
+
+v128 [shape=point,label="",fixedsize=true,width=0.1];
+v129 [label="NFCORE_SSDS:SSDS:CALCULATESPOT"];
+v128 -> v129 [label="index"];
+
+v129 [label="NFCORE_SSDS:SSDS:CALCULATESPOT"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v129 -> v160;
+
+v129 [label="NFCORE_SSDS:SSDS:CALCULATESPOT"];
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v129 -> v130;
+
+v130 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v130 -> v131;
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v131 -> v137 [label="ch_versions"];
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v132 [label="bam"];
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v132 -> v133;
+
+v133 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v134 [label="NFCORE_SSDS:SSDS:DEEPTOOLS_PLOTFINGERPRINT"];
+v133 -> v134 [label="ch_fingerprint_bams"];
+
+v134 [label="NFCORE_SSDS:SSDS:DEEPTOOLS_PLOTFINGERPRINT"];
+v135 [shape=point];
+v134 -> v135;
+
+v134 [label="NFCORE_SSDS:SSDS:DEEPTOOLS_PLOTFINGERPRINT"];
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v134 -> v166;
+
+v134 [label="NFCORE_SSDS:SSDS:DEEPTOOLS_PLOTFINGERPRINT"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v134 -> v163;
+
+v134 [label="NFCORE_SSDS:SSDS:DEEPTOOLS_PLOTFINGERPRINT"];
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v134 -> v136;
+
+v136 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v136 -> v137;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v137 -> v138 [label="ch_versions"];
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v138 -> v139;
+
+v139 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v140 [label="NFCORE_SSDS:SSDS:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v139 -> v140;
+
+v140 [label="NFCORE_SSDS:SSDS:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v142 [shape=point];
+v140 -> v142;
+
+v140 [label="NFCORE_SSDS:SSDS:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v140 -> v152;
+
+v140 [label="NFCORE_SSDS:SSDS:CUSTOM_DUMPSOFTWAREVERSIONS"];
+v141 [shape=point];
+v140 -> v141;
+
+v143 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v143 -> v145 [label="ch_multiqc_files"];
+
+v144 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.from"];
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v144 -> v145;
+
+v145 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v145 -> v148 [label="ch_multiqc_files"];
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v147 -> v148;
+
+v148 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v148 -> v151 [label="ch_multiqc_files"];
+
+v149 [shape=point,label="",fixedsize=true,width=0.1];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v149 -> v150 [label="ch_workflow_summary"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v150 -> v151;
+
+v151 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v151 -> v153 [label="ch_multiqc_files"];
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v153 -> v156 [label="ch_multiqc_files"];
+
+v154 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v155 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v156 -> v159 [label="ch_multiqc_files"];
+
+v157 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v157 -> v158;
+
+v158 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v158 -> v159;
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v159 -> v162 [label="ch_multiqc_files"];
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v160 -> v161;
+
+v161 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v161 -> v162;
+
+v162 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v162 -> v165 [label="ch_multiqc_files"];
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v163 -> v164;
+
+v164 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v164 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v165 -> v168 [label="ch_multiqc_files"];
+
+v166 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v166 -> v167;
+
+v167 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="ifEmpty"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v167 -> v168;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v168 -> v169 [label="ch_multiqc_files"];
+
+v169 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v170 [label="NFCORE_SSDS:SSDS:MULTIQC_SSDS"];
+v169 -> v170;
+
+v170 [label="NFCORE_SSDS:SSDS:MULTIQC_SSDS"];
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v170 -> v173;
+
+v170 [label="NFCORE_SSDS:SSDS:MULTIQC_SSDS"];
+v172 [shape=point];
+v170 -> v172;
+
+v170 [label="NFCORE_SSDS:SSDS:MULTIQC_SSDS"];
+v171 [shape=point];
+v170 -> v171;
+
+v170 [label="NFCORE_SSDS:SSDS:MULTIQC_SSDS"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v170 -> v175;
+
+v173 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v174 [shape=point];
+v173 -> v174;
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v137 -> v175 [label="ch_versions"];
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v176 [shape=point];
+v175 -> v176 [label="ch_versions"];
+
+}
